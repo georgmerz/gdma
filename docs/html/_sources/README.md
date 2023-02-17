@@ -1,2 +1,0 @@
-# gdma
-Grundlagen der Mathematik
