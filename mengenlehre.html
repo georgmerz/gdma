@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Markdown Files &#8212; My sample book</title>
+    <title>Kapitel 1 - Mengenlehre &#8212; Grundlagen der Mathematik</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -25,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -49,10 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Content with notebooks" href="notebooks.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <link rel="prev" title="Willkommen im Kurs “Grundlagen der Mathematik”" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -96,7 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">My sample book</h1>
+      <h1 class="site-logo" id="site-title">Grundlagen der Mathematik</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -108,29 +110,14 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Willkommen im Kurs “Grundlagen der Mathematik”
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Markdown Files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="markdown-notebooks.html">
-   Notebooks with MyST Markdown
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Matrixmultiplikation.html">
-   Matrixmultiplikation
+   Kapitel 1 - Mengenlehre
   </a>
  </li>
 </ul>
@@ -223,7 +210,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/georgmerz/gdma/issues/new?title=Issue%20on%20page%20%2Fmarkdown.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/georgmerz/gdma/issues/new?title=Issue%20on%20page%20%2Fmengenlehre.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -251,7 +238,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/markdown.md"
+        <a href="_sources/mengenlehre.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -311,23 +298,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-myst">
-   What is MyST?
+  <a class="reference internal nav-link" href="#lernziele">
+   1.1 Lernziele
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sample-roles-and-directives">
-   Sample Roles and Directives
+  <a class="reference internal nav-link" href="#definition-einer-menge">
+   1.1 Definition einer Menge
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citations">
-   Citations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learn-more">
-   Learn more
+  <a class="reference internal nav-link" href="#notation">
+   1.2 Notation
   </a>
  </li>
 </ul>
@@ -339,7 +321,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Markdown Files</h1>
+                <h1>Kapitel 1 - Mengenlehre</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -350,23 +332,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-myst">
-   What is MyST?
+  <a class="reference internal nav-link" href="#lernziele">
+   1.1 Lernziele
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sample-roles-and-directives">
-   Sample Roles and Directives
+  <a class="reference internal nav-link" href="#definition-einer-menge">
+   1.1 Definition einer Menge
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citations">
-   Citations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learn-more">
-   Learn more
+  <a class="reference internal nav-link" href="#notation">
+   1.2 Notation
   </a>
  </li>
 </ul>
@@ -379,58 +356,115 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="markdown-files">
-<h1>Markdown Files<a class="headerlink" href="#markdown-files" title="Permalink to this headline">#</a></h1>
-<p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
-in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
-called <strong>MyST Markdown</strong>.
-This is a simple file to help you get started and show off some syntax.</p>
-<div class="section" id="what-is-myst">
-<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Permalink to this headline">#</a></h2>
-<p>MyST stands for “Markedly Structured Text”. It
-is a slight variation on a flavor of markdown called “CommonMark” markdown,
-with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
-in the Sphinx ecosystem.</p>
-<p>For more about MyST, see <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST Markdown Overview</a>.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="kapitel-1-mengenlehre">
+<h1>Kapitel 1 - Mengenlehre<a class="headerlink" href="#kapitel-1-mengenlehre" title="Permalink to this headline">#</a></h1>
+<div class="section" id="lernziele">
+<h2>1.1 Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<p>In diesem Kurs lernen wir die folgenden Dinge:</p>
+<ul class="simple">
+<li><p>Schreibweise/Syntax in der Mengenlehre</p></li>
+<li><p>Beschreibung von Mengen</p></li>
+<li><p>Mengenoperationen (Schnitt, Vereinigung, kartesisches Produkt)</p></li>
+<li><p>Mächtigkeit/Kardinalität einer Menge</p></li>
+</ul>
+<p>:::{admonition}  Lernziele
+:class:note</p>
+<ul class="simple">
+<li><p>Sie haben ein Verständnis für den Begriff der Menge und können diesen intuitiv verstehen.</p></li>
+<li><p>Sie können sicher mit den Grundoperatoren der Mengenlehre umgehen und können aus bekannten Mengen mittels Mathematischer Sprache neue Mengen konstruieren.</p></li>
+<li><p>Sie können den Aufbau der Natürlichen Zahlen als Mengen nachvollziehen</p></li>
+<li><p>Sie haben ein Verständnis für die Paradoxien der naiven Mengenlehre und können dies mit den Zermelo Fraenkl Axiomen in Verbindung bringen
+:::</p></li>
+</ul>
 </div>
-<div class="section" id="sample-roles-and-directives">
-<h2>Sample Roles and Directives<a class="headerlink" href="#sample-roles-and-directives" title="Permalink to this headline">#</a></h2>
-<p>Roles and directives are two of the most powerful tools in Jupyter Book. They
-are kind of like functions, but written in a markup language. They both
-serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
-<strong>directives span many lines</strong>. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.</p>
-<p>Here is a “note” directive:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note</p>
+<div class="section" id="definition-einer-menge">
+<h2>1.1 Definition einer Menge<a class="headerlink" href="#definition-einer-menge" title="Permalink to this headline">#</a></h2>
+<p>Zu erklären was eine Menge denn wirklich ist, ist garnicht so einfach, aber das gilt vor allem wenn man es exakt mathematisch definieren will. Intuitiv ist es gar nicht so  schwer.
+So gibt es beispielsweise folgende Definition von <em>Georg Cantor</em> aus dem Jahre</p>
+<div class="proof definition admonition" id="my-definition2">
+<p class="admonition-title"><span class="caption-number">Definition 1 </span></p>
+<div class="definition-content section" id="proof-content">
+<p>“Eine Menge ist eine Zusammenfassung bestimmter wohlunterschiede- ner Objekte unserer Anschauung oder unseres Denkens - welche die Elemente der Menge genannt werden - zu einem Ganzen.”</p>
 </div>
-<p>It will be rendered in a special box when you build your book.</p>
-<p>Here is an inline directive to refer to a document: <a class="reference internal" href="markdown-notebooks.html"><span class="doc">Notebooks with MyST Markdown</span></a>.</p>
+</div><p>Das klingt in der Tat nicht sehr Mathematisch Exakt, aber soll uns zu Beginn erstmal reichen.</p>
+<p>Wichtige Folgerungen aus der obigen Definition sind:</p>
+<ul class="simple">
+<li><p>Die Objekte einer Menge heißen <strong>Elemente</strong></p></li>
+<li><p>Die <strong>Elemente</strong> müssen alle verschieden sein</p></li>
+<li><p>In der Definition von Cantor spielt die Reihenfolge <strong>keine</strong> Rolle</p></li>
+</ul>
+<div class="proof example admonition" id="Mengen">
+<p class="admonition-title"><span class="caption-number">Example 1 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Folgendes sind Beispiele für Mengen:</p>
+<ul class="simple">
+<li><p>( A:={0,1,2,3,4} )</p></li>
+<li><p>$B:={a,b,c,d,e,f,g} $</p></li>
+<li><p>$C:={ 👍, 👮🏿 , 🇧🇱 , 🔨}  $</p></li>
+</ul>
 </div>
-<div class="section" id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
-<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
-the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id1">[<a class="reference internal" href="#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">HdHPK14</a>]</span>.</p>
-<p>Moreover, you can insert a bibliography into your page with this syntax:
-The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
-render properly.
-For example, if the references for your book are stored in <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>,
-then the bibliography is inserted with:</p>
-<div class="docutils container" id="id2">
-<dl class="citation">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">HdHPK14</a></span></dt>
-<dd><p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
-</dd>
-</dl>
+</div><p><strong>Beobachtungen</strong>:</p>
+<ul class="simple">
+<li><p>Wie Sie sehen können Elemente einer Menge ganz unterschiedlicher Natur sein. Sie können Zahlen, Buchstaben, oder auch Zeichen sein. Wichtig ist nur, das sie unterscheidbar sind und eindeutig.</p></li>
+<li><p>Um eine Menge aus endlich vielen Elementen hinzuschreibne nutzen wir geschweifte Klammern ($ { } $).</p></li>
+</ul>
+<p><strong>Frage:</strong></p>
+<p>Kann ein Element einer Menge auch selbst eine Menge sein?</p>
+<p><strong>Antwort:</strong></p>
+<div class="toggle docutils container">
+<p><strong>Ja!</strong> Denn Mengen sind eindeutig und unterscheidbar. Damit können Sie auch selbst Mengen sein. Wir werden am Ende dieses Kapitels sogar sehen, dass wir die komplette Mathematik auf der Grundlagen von Mengen aufbauen können.</p>
 </div>
+<div class="proof example admonition" id="Mengen von Mengen">
+<p class="admonition-title"><span class="caption-number">Example 2 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Folgendes sind Beispiele für Mengen von Mengen:</p>
+<ul class="simple">
+<li><p>$D:={ {0,1} ,{2,3,4}} $</p></li>
+<li><p>$E:={{ 0,1,2,3,4 } } $</p></li>
+</ul>
 </div>
-<div class="section" id="learn-more">
-<h2>Learn more<a class="headerlink" href="#learn-more" title="Permalink to this headline">#</a></h2>
-<p>This is just a simple starter to get you started.
-You can learn a lot more at <a class="reference external" href="https://jupyterbook.org">jupyterbook.org</a>.</p>
+</div></div>
+<div class="section" id="notation">
+<h2>1.2 Notation<a class="headerlink" href="#notation" title="Permalink to this headline">#</a></h2>
+<p>Eine ungewöhnliche Menge  ist die folgende:</p>
+<div class="proof definition admonition" id="my-definition">
+<p class="admonition-title"><span class="caption-number">Definition 2 </span></p>
+<div class="definition-content section" id="proof-content">
+<p>Diejenige Menge, die <strong>kein</strong> Element enthält wird die <em>leere Menge</em>* genant und mit</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ \{ \} \text{ oder } \varnothing 
+\end{align*}\]</div>
+<p>bezeichnet.</p>
+</div>
+</div><p>Als nächstes führen wir das Symbol $\in $ und $\notin$ ein.</p>
+<div class="proof definition admonition" id="element">
+<p class="admonition-title"><span class="caption-number">Definition 3 </span></p>
+<div class="definition-content section" id="proof-content">
+<p>Wir schreiben $x\in M$. Falls  $x$ ein Element von $M$ ist.
+Wir schreiben $x\in M$ falls $x$ kein Element von $M$ ist.</p>
+</div>
+</div><div class="proof example admonition" id="elementbsp">
+<p class="admonition-title"><span class="caption-number">Example 3 </span></p>
+<div class="example-content section" id="proof-content">
+<p>Betrachten wir unsere Beispielmengen</p>
+<ul class="simple">
+<li><p>:math: A:={0,1,2,3,4}</p></li>
+<li><p>$B:={a,b,c,d,e,f,g} $</p></li>
+<li><p>$C:={ 👍, 👮🏿 , 🇧🇱 , 🔨}  $</p></li>
+<li><p>$D:={ {0,1} ,{2,3,4}} $</p></li>
+<li><p>$E:={{ 0,1,2,3,4 } } $</p></li>
+</ul>
+<p>Dann gilt z.B.:</p>
+<ul class="simple">
+<li><p>$0 \in A$</p></li>
+<li><p>$5 \notin A$.</p></li>
+<li><p>$a\in B$</p></li>
+<li><p>{ 0,1,2,3,4 } \in E</p></li>
+<li><p>{0,1}</p></li>
+</ul>
+</div>
+</div><p>$\sum_{k=0}$</p>
 </div>
 </div>
 
@@ -465,15 +499,8 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+            <p class="prev-next-title">Willkommen im Kurs “Grundlagen der Mathematik”</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="notebooks.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Content with notebooks</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
@@ -482,7 +509,7 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By The Jupyter Book Community<br/>
+    By Prof. Dr. Georg Merz<br/>
   
       &copy; Copyright 2022.<br/>
 </p>
