@@ -5,5 +5,4 @@ format: jb-book
 root: intro
 chapters:
 - file: mengenlehre
-- file: logik
-- file: relationsAndFunctions
+
