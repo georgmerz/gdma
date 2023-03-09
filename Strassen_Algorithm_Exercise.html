@@ -1,0 +1,968 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strassens Algorithmus &#8212; Grundlagen der Mathematik</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Grundlagen der Mathematik</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Willkommen im Kurs “Grundlagen der Mathematik”
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="mengenlehre.html">
+   Kapitel 1 - Mengenlehre
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="logik.html">
+   Kapitel 2 Grundlagen der Logik
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="relationsAndFunctions.html">
+   Kapitel 3 - Relationen und Funktionen
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/georgmerz/gdma/master?urlpath=tree/Strassen_Algorithm_Exercise.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/georgmerz/gdma"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/georgmerz/gdma/issues/new?title=Issue%20on%20page%20%2FStrassen_Algorithm_Exercise.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Strassen_Algorithm_Exercise.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Strassens Algorithmus
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#schritt-1-standard-matrix-multiplikation">
+     Schritt 1: Standard Matrix Multiplikation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#schritt-2-strassenalgorithmus-fur-2-times-2-matrizen">
+     Schritt 2: Strassenalgorithmus für
+     <span class="math notranslate nohighlight">
+      \(2\times 2\)
+     </span>
+     Matrizen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schritt-3-implementierung-des-strassen-algorithmus-fur-blockmatrizen">
+   Schritt 3 Implementierung des Strassen Algorithmus für Blockmatrizen
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#schritt-4-rekursiver-strassenalgorithmus-fur-2-n-times-2-n-matrizen">
+     Schritt 4: Rekursiver Strassenalgorithmus für
+     <span class="math notranslate nohighlight">
+      \(2^n\times 2^n\)
+     </span>
+     Matrizen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schritt-5-implementierung-des-strassen-algorithmus-mit-einer-allgemeinen-matrix">
+   Schritt 5 Implementierung des Strassen Algorithmus mit einer allgemeinen Matrix
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Strassens Algorithmus</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Strassens Algorithmus
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#schritt-1-standard-matrix-multiplikation">
+     Schritt 1: Standard Matrix Multiplikation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#schritt-2-strassenalgorithmus-fur-2-times-2-matrizen">
+     Schritt 2: Strassenalgorithmus für
+     <span class="math notranslate nohighlight">
+      \(2\times 2\)
+     </span>
+     Matrizen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schritt-3-implementierung-des-strassen-algorithmus-fur-blockmatrizen">
+   Schritt 3 Implementierung des Strassen Algorithmus für Blockmatrizen
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#schritt-4-rekursiver-strassenalgorithmus-fur-2-n-times-2-n-matrizen">
+     Schritt 4: Rekursiver Strassenalgorithmus für
+     <span class="math notranslate nohighlight">
+      \(2^n\times 2^n\)
+     </span>
+     Matrizen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schritt-5-implementierung-des-strassen-algorithmus-mit-einer-allgemeinen-matrix">
+   Schritt 5 Implementierung des Strassen Algorithmus mit einer allgemeinen Matrix
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="strassens-algorithmus">
+<h1>Strassens Algorithmus<a class="headerlink" href="#strassens-algorithmus" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In diesem Notebook sollen Sie den Strassen Algorithmus für allgemeine Matrizen implementieren.</p>
+<p>Mehr Informationen zur Matrixmultiplikation finden Sie
+<a href=https://de.wikipedia.org/wiki/Matrizenmultiplikation> hier </a>.</p>
+<p>Mehr Informationen zum Strassen Algorithmus finden Sie auf Wikipedia:
+<a href=https://en.wikipedia.org/wiki/Strassen_algorithm> hier </a>.</p>
+<p>Dabei gehen wir wie folgt vor:</p>
+<p><strong>Schritt 1</strong>:
+Implementierung der Standard Matrix Multiplikation</p>
+<p><strong>Schritt 2</strong>
+Implementierung des Strassen Algorithmus mit einer 2x2 Matrix</p>
+<p><strong>Schritt 3</strong>
+Implementierung des Strassen Algorithmus für Blockmatrizen</p>
+<p><strong>Schritt 4</strong>
+Implementierung des Strassen Algorithmus mit einer <span class="math notranslate nohighlight">\( 2^n\times 2^n\)</span> Matrix</p>
+<p><strong>Schritt 5</strong>
+Implementierung der Allgemeinen Matrixmultiplikation</p>
+<div class="section" id="schritt-1-standard-matrix-multiplikation">
+<h2>Schritt 1: Standard Matrix Multiplikation<a class="headerlink" href="#schritt-1-standard-matrix-multiplikation" title="Permalink to this headline">#</a></h2>
+<p>Sei <span class="math notranslate nohighlight">\(A=\begin{pmatrix} a_{11}&amp;\dots &amp;a_{1k} \\ \vdots &amp;\ddots&amp;\vdots \\ a_{n1}&amp;\dots &amp; a_{nk} \end{pmatrix}\in \mathbb{R}^{n\times k}\)</span> sowie <span class="math notranslate nohighlight">\(B=\begin{pmatrix} b_{11}&amp;\dots &amp;b_{1m} \\ \vdots &amp;\ddots&amp;\vdots \\ b_{k1}&amp;\dots &amp; b_{km} \end{pmatrix}\in \mathbb{R}^{k\times m}\)</span>.
+Sei weiterhin <span class="math notranslate nohighlight">\(C=\begin{pmatrix} c_{11}&amp;\dots &amp;c_{1m} \\ \vdots &amp;\ddots&amp;\vdots \\ c_{n1}&amp;\dots &amp; c_{nm} \end{pmatrix}\in \mathbb{R}^{n\times m}\)</span>.</p>
+<p>Dann gilt folgende Formel für die Elemente von <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(c_{ij}=\sum_{s=1,\dots k}a_{is}b_{sj}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">matrix_times_matrix</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A,B are numpy arrays such that A*B is defined.</span>
+<span class="sd">    The function returns a numpy array C which is the Matrix product of A and B</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">k</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="n">B</span><span class="o">.</span><span class="n">shape</span>
+
+
+    <span class="n">C</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="c1"># define here the shape of the resulting matrix c</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+                <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">+=</span> <span class="c1"># Add the corresponding number according to the sum Formula </span>
+
+    <span class="k">return</span> <span class="n">C</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-2-3726d2fd48b2&gt;&quot;</span><span class="gt">, line </span><span class="mi">13</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Teste deine Funktion: (Code nicht verändern!!)</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">B</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]])</span>
+
+
+<span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">matrix_times_matrix</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">A</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">23</span><span class="p">,</span> <span class="mi">34</span><span class="p">],[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">46</span><span class="p">],[</span><span class="mi">39</span><span class="p">,</span> <span class="mi">58</span><span class="p">]])):</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Success&quot;</span><span class="p">)</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try again&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Success
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="schritt-2-strassenalgorithmus-fur-2-times-2-matrizen">
+<h2>Schritt 2: Strassenalgorithmus für <span class="math notranslate nohighlight">\(2\times 2\)</span> Matrizen<a class="headerlink" href="#schritt-2-strassenalgorithmus-fur-2-times-2-matrizen" title="Permalink to this headline">#</a></h2>
+<p>Im zweiten Schritt implementieren Sie den Strassen Algorithmus für eine <span class="math notranslate nohighlight">\(2\times 2\)</span> Matrix. Dafür können Sie das folgende Schaubild nutzen.</p>
+<p><img alt="image.png" src="attachment:image.png" /></p>
+<p><strong>Quelle</strong>: Fawzi, A. et al. Discovering faster matrix multiplication algorithms with reinforcement learning. Nature 610 (2022)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">strassen2x2</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Strassen Algorithm for 2x2 Matrices, i.e. the shape of A and B is (2,2)</span>
+<span class="sd">    Returns the matrix product C=A*B computed with strassen algorithm</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">m1</span><span class="o">=</span> <span class="c1"># type m1 def here</span>
+    <span class="n">m2</span><span class="o">=</span> <span class="c1"># type m2 def here</span>
+    <span class="n">m3</span><span class="o">=</span> <span class="c1"># type m1 def here</span>
+    <span class="n">m4</span><span class="o">=</span> <span class="c1"># type m1 def here</span>
+    <span class="n">m5</span><span class="o">=</span> <span class="c1"># type m1 def here</span>
+    <span class="n">m6</span><span class="o">=</span> <span class="c1"># type m1 def here</span>
+    <span class="n">m7</span><span class="o">=</span> <span class="c1"># type m1 def here</span>
+
+    <span class="n">C</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">m1</span><span class="o">+</span><span class="n">m4</span><span class="o">-</span><span class="n">m5</span><span class="o">+</span><span class="n">m7</span><span class="p">,</span><span class="n">m3</span><span class="o">+</span><span class="n">m5</span><span class="p">],[</span><span class="n">m2</span><span class="o">+</span><span class="n">m4</span><span class="p">,</span><span class="n">m1</span><span class="o">-</span><span class="n">m2</span><span class="o">+</span><span class="n">m3</span><span class="o">+</span><span class="n">m6</span><span class="p">]])</span>
+    <span class="k">return</span> <span class="n">C</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Teste deine Funktion: (Code nicht verändern!!)</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">B</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]])</span>
+
+
+<span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">strassen2x2</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">A</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">23</span><span class="p">,</span><span class="mi">34</span><span class="p">],[</span><span class="mi">31</span><span class="p">,</span><span class="mi">46</span><span class="p">]])):</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Success&quot;</span><span class="p">)</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try again&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Success
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="schritt-3-implementierung-des-strassen-algorithmus-fur-blockmatrizen">
+<h1>Schritt 3 Implementierung des Strassen Algorithmus für Blockmatrizen<a class="headerlink" href="#schritt-3-implementierung-des-strassen-algorithmus-fur-blockmatrizen" title="Permalink to this headline">#</a></h1>
+<p>Der Strassen Algorithmus kann nicht nur für <span class="math notranslate nohighlight">\(2\times 2\)</span> Matrizen genutzt werden, sondern auch für allgemeine quadratische Matrizen mit einer geraden Anzahl an Spalten und Zeilen.</p>
+<p>Dabei gehen Sie analog zum <span class="math notranslate nohighlight">\(2\times 2\)</span> Fall vor.</p>
+<p>Zunächst teilen Sie die Matrizen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> in Blockmatrizen auf:
+<img alt="image.png" src="attachment:image.png" /></p>
+<p>Danach berechnen Sie die Matrizen <span class="math notranslate nohighlight">\(M_i\)</span> als Zwischenergebnis:
+<img alt="image-2.png" src="attachment:image-2.png" /></p>
+<p>Schlussendlich erhalten Sie das Ergebnis der Matrix C mittels der Blöcke:</p>
+<p><img alt="image-3.png" src="attachment:image-3.png" /></p>
+<p>Implementieren Sie daher zunächst eine Funktion die aus einer quadratischen Matrix mit gerade Anzahl an Spalten/Zeilen, die entsprechenden Blockmatrizen bestimmt. Dabei haben die einzelnen Blöcke dann <span class="math notranslate nohighlight">\(n/2\)</span> Spalten/Zeilen</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">splitmatrix</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Given an even length matrix, returns the top_left, top_right, bot_left, bot_right</span>
+<span class="sd">    quadrant.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span>
+    
+    <span class="k">if</span> <span class="n">n</span><span class="o">!=</span><span class="n">m</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Only square matrices are supported!&quot;</span><span class="p">)</span>
+    
+    
+    
+    <span class="k">if</span>  <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">m</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Odd matrices are not supported!&quot;</span><span class="p">)</span>
+        
+        
+    <span class="n">A11</span><span class="o">=</span> <span class="c1"># define corresponding matrix using the A[0:n,0:m] notation</span>
+    <span class="n">A12</span><span class="o">=</span><span class="c1"># define corresponding matrix using the A[0:n,0:m] notation</span>
+    <span class="n">A21</span><span class="o">=</span> <span class="c1"># define corresponding matrix using the A[0:n,0:m] notation</span>
+    <span class="n">A22</span><span class="o">=</span><span class="c1"># define corresponding matrix using the A[0:n,0:m] notation</span>
+    
+     
+    <span class="k">return</span> <span class="n">A11</span><span class="p">,</span><span class="n">A12</span><span class="p">,</span><span class="n">A21</span><span class="p">,</span><span class="n">A22</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-1-b67e7384db3d&gt;&quot;</span><span class="gt">, line </span><span class="mi">19</span>
+    <span class="n">A11</span><span class="o">=</span> <span class="c1"># define corresponding matrix using the A[0:n,0:m] notation</span>
+         <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Teste deine Funktion: (Code nicht verändern!!)</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">D</span><span class="o">=</span><span class="n">splitmatrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">],[</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">]]))</span>
+
+<span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">A</span><span class="o">==</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]))</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">C</span><span class="o">==</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">],[</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">]])):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Succes&quot;</span><span class="p">)</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try Again&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Succes
+</pre></div>
+</div>
+</div>
+</div>
+<p>Implementieren Sie nun den Strassenalgorithmus für Blockmatrizen. Nutzen Sie für die Multiplikation der Matrizen, zur Berechnung der <span class="math notranslate nohighlight">\(M_i\)</span> die Funktion <em>matrix_times_matrix</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">strassen2n</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the product of two matrices, using the Strassen</span>
+<span class="sd">    Algorithm for Block Matrices.  It only supports even length matrices.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">k</span><span class="o">=</span><span class="n">B</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    
+    
+    
+    <span class="n">A11</span><span class="p">,</span> <span class="n">A12</span><span class="p">,</span> <span class="n">A21</span><span class="p">,</span> <span class="n">A22</span> <span class="o">=</span> <span class="c1"># Split matrix</span>
+    <span class="n">B11</span><span class="p">,</span> <span class="n">B12</span><span class="p">,</span> <span class="n">B21</span><span class="p">,</span> <span class="n">B22</span> <span class="o">=</span> <span class="c1"># Split matrix</span>
+    
+    
+    
+ 
+    <span class="n">M1</span> <span class="o">=</span> <span class="c1"># Compute Matrix using matrix_times_matrix(A,B)</span>
+    <span class="n">M2</span> <span class="o">=</span> <span class="c1"># define corresponding matrix using the A[0:n,0:m] notation</span>
+    <span class="n">M3</span> <span class="o">=</span> <span class="c1"># define corresponding matrix using the A[0:n,0:m] notation</span>
+    <span class="n">M4</span> <span class="o">=</span> <span class="c1"># define corresponding matrix using the A[0:n,0:m] notation</span>
+    <span class="n">M5</span> <span class="o">=</span> <span class="c1"># define corresponding matrix using the A[0:n,0:m] notation</span>
+    <span class="n">M6</span> <span class="o">=</span> <span class="c1"># define corresponding matrix using the A[0:n,0:m] notation</span>
+    <span class="n">M7</span> <span class="o">=</span> <span class="c1"># define corresponding matrix using the A[0:n,0:m] notation</span>
+ 
+
+
+    <span class="n">C</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+    
+    <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span> <span class="c1">#get result</span>
+    <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">:</span><span class="n">n</span><span class="p">]</span><span class="o">=</span> <span class="c1">#get result</span>
+    <span class="n">C</span><span class="p">[</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">:</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span> <span class="c1">#get result</span>
+    <span class="n">C</span><span class="p">[</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">:</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">:</span><span class="n">n</span><span class="p">]</span><span class="o">=</span> <span class="c1">#get result</span>
+    
+    <span class="k">return</span> <span class="n">C</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Teste deine Funktion: (Code nicht verändern!!)</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">B</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]])</span>
+
+
+<span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">strassen2n</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">A</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">26</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">78</span><span class="p">,</span><span class="mi">104</span><span class="p">],[</span><span class="mi">26</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">78</span><span class="p">,</span><span class="mi">104</span><span class="p">],[</span><span class="mi">26</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">78</span><span class="p">,</span><span class="mi">104</span><span class="p">],[</span><span class="mi">26</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">78</span><span class="p">,</span><span class="mi">104</span><span class="p">]])):</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Success&quot;</span><span class="p">)</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try again&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Success
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="schritt-4-rekursiver-strassenalgorithmus-fur-2-n-times-2-n-matrizen">
+<h2>Schritt 4: Rekursiver Strassenalgorithmus für <span class="math notranslate nohighlight">\(2^n\times 2^n\)</span> Matrizen<a class="headerlink" href="#schritt-4-rekursiver-strassenalgorithmus-fur-2-n-times-2-n-matrizen" title="Permalink to this headline">#</a></h2>
+<p>Im nächsten Schritt gehen wir nun davon aus, dass <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> zwei Matrizen mit <span class="math notranslate nohighlight">\(2^n\)</span> Spalten und Zeilen sind.</p>
+<p>In diesem Fall können wir den Strassenalgorithmus rekursiv auch für die Berechnung der Zwischenergebnisse <span class="math notranslate nohighlight">\(M_i\)</span> anwenden. Wir wollen im Folgenden also den Strassenalgorithmus rekursiv berechnen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">strassen2n_recursive</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Recursive function to calculate the product of two matrices, using the Strassen</span>
+<span class="sd">    Algorithm.  It only supports even length matrices.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">k</span><span class="o">=</span><span class="n">B</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">k</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">A</span><span class="o">*</span><span class="n">B</span>
+    <span class="n">A11</span><span class="p">,</span> <span class="n">A12</span><span class="p">,</span> <span class="n">A21</span><span class="p">,</span> <span class="n">A22</span> <span class="o">=</span> <span class="c1"># split matrix</span>
+    <span class="n">B11</span><span class="p">,</span> <span class="n">B12</span><span class="p">,</span> <span class="n">B21</span><span class="p">,</span> <span class="n">B22</span> <span class="o">=</span> <span class="c1"># split matrix</span>
+    
+    
+ 
+    <span class="n">M1</span> <span class="o">=</span> <span class="c1">#Compute using the the strassen2n Algorithm</span>
+    <span class="n">M2</span> <span class="o">=</span> <span class="c1">#Compute using the the strassen2n Algorithm</span>
+    <span class="n">M3</span> <span class="o">=</span> <span class="c1">#Compute using the the strassen2n Algorithm</span>
+    <span class="n">M4</span> <span class="o">=</span> <span class="c1">#Compute using the the strassen2n Algorithm</span>
+    <span class="n">M5</span> <span class="o">=</span> <span class="c1">#Compute using the the strassen2n Algorithm</span>
+    <span class="n">M6</span> <span class="o">=</span> <span class="c1">#Compute using the the strassen2n Algorithm)</span>
+    <span class="n">M7</span> <span class="o">=</span> <span class="c1">#Compute using the the strassen2n Algorithm</span>
+ 
+
+
+    <span class="n">C</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+    
+    <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span> <span class="c1"># compute</span>
+    <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">:</span><span class="n">n</span><span class="p">]</span><span class="o">=</span> <span class="c1">#compute </span>
+    <span class="n">C</span><span class="p">[</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">:</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span> <span class="c1">#compute</span>
+    <span class="n">C</span><span class="p">[</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">:</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">:</span><span class="n">n</span><span class="p">]</span><span class="o">=</span> <span class="c1">#compute </span>
+    
+    <span class="k">return</span> <span class="n">C</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Teste deine Funktion: (Code nicht verändern!!)</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">B</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]])</span>
+
+
+<span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">strassen2n_recursive</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">A</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">26</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">78</span><span class="p">,</span><span class="mi">104</span><span class="p">],[</span><span class="mi">26</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">78</span><span class="p">,</span><span class="mi">104</span><span class="p">],[</span><span class="mi">26</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">78</span><span class="p">,</span><span class="mi">104</span><span class="p">],[</span><span class="mi">26</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">78</span><span class="p">,</span><span class="mi">104</span><span class="p">]])):</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Success&quot;</span><span class="p">)</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try again&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Success
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="schritt-5-implementierung-des-strassen-algorithmus-mit-einer-allgemeinen-matrix">
+<h1>Schritt 5 Implementierung des Strassen Algorithmus mit einer allgemeinen Matrix<a class="headerlink" href="#schritt-5-implementierung-des-strassen-algorithmus-mit-einer-allgemeinen-matrix" title="Permalink to this headline">#</a></h1>
+<p>Wir können nun wie folgt den allgemeinen Fall auf den Fall von zwei Quadratischen Matrizen mit <span class="math notranslate nohighlight">\(2^n\)</span> Spalten/Zeilen zurückführen:</p>
+<ol class="simple">
+<li><p>Finde die kleinste Zahl <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span>, so dass <span class="math notranslate nohighlight">\(2^n\)</span> größer gleich der maximalen Spalten/Zeilen- Anzahl von <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> ist.</p></li>
+<li><p>Mache aus <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> eine <span class="math notranslate nohighlight">\(2^n\times 2^n\)</span> Matrix in demm du den Rest mit <span class="math notranslate nohighlight">\(0\)</span>en auffüllst.</p></li>
+<li><p>Führe den rekursiven Strassenalgorithmus für <span class="math notranslate nohighlight">\(2^n\times 2^n\)</span>-Matrizen durch.</p></li>
+<li><p>Transformiere das Endergebnis wieder in die Richtige Größe und entferne die <span class="math notranslate nohighlight">\(0\)</span>en</p></li>
+</ol>
+<p>Schreibe eine Funktion die aus einer Matrix <span class="math notranslate nohighlight">\(A\)</span> eine quadratische Matrix der Länge <span class="math notranslate nohighlight">\(n\)</span> macht in dem du <span class="math notranslate nohighlight">\(0\)</span>en hinzufügst. (Vgl 1))</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pad</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    adds zeros to the matrix A such that it will be transformed into a nxn Matrix</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">B</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+    
+    <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span>
+    
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute B</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    
+    <span class="k">return</span> <span class="n">B</span>
+    
+    
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>Schreibe nun eine Funktion die aus einer Matrix <span class="math notranslate nohighlight">\(A\)</span> eine verkleinerte Matrix mit <span class="math notranslate nohighlight">\(n\)</span> Zeilen und <span class="math notranslate nohighlight">\(m\)</span> Spalten macht.(Vgl. 4))</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">depad</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="c1"># use the A[0:x,0:y] notation</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Füge nun alles zusammen und führe die Schritte 1) bis 4) in einer Funktion aus</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">strassenforall</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes the product of the Matrices by executing Step 1 to Step 4</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">r</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="o">=</span><span class="n">B</span><span class="o">.</span><span class="n">shape</span>
+    
+    <span class="k">if</span> <span class="n">s</span><span class="o">!=</span><span class="n">k</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Shapes do not fit together&quot;</span><span class="p">)</span>
+    
+    
+    <span class="n">maximal_dimension</span><span class="o">=</span><span class="nb">max</span><span class="p">([</span><span class="n">r</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">])</span>
+    
+    <span class="n">new_dimension</span> <span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">t</span><span class="p">))))</span> <span class="c1"># This is the n we are looking for. I did this already for you. Lucky you ;)</span>
+    
+    <span class="n">A</span><span class="o">=</span> <span class="c1"># add zeros and make it a new matrix of dimension (new_dimension,new_dimension)</span>
+    <span class="n">B</span><span class="o">=</span> <span class="c1"># same for B</span>
+    
+    <span class="n">C</span><span class="o">=</span><span class="n">strassen2n</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+    
+    <span class="n">C</span><span class="o">=</span> <span class="c1"># get rid of the zeros -&gt; by using the fact that you know the shape of the result of A*B</span>
+    
+    <span class="k">return</span> <span class="n">C</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-2-ee061e19ff48&gt;&quot;</span><span class="gt">, line </span><span class="mi">18</span>
+    <span class="n">A</span><span class="o">=</span> <span class="c1"># add zeros and make it a new matrix of dimension (new_dimension,new_dimension)</span>
+       <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Teste deine Funktion: (Code nicht verändern!!)</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="p">])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">121</span><span class="p">,</span>  <span class="mi">73</span><span class="p">,</span> <span class="mi">149</span><span class="p">,</span>  <span class="mi">59</span><span class="p">]</span>
+     <span class="p">,[</span> <span class="mi">83</span><span class="p">,</span>  <span class="mi">37</span><span class="p">,</span>  <span class="mi">61</span><span class="p">,</span>  <span class="mi">43</span><span class="p">]</span>
+     <span class="p">,[</span><span class="mi">151</span><span class="p">,</span>  <span class="mi">99</span><span class="p">,</span> <span class="mi">207</span><span class="p">,</span>  <span class="mi">81</span><span class="p">]</span>
+     <span class="p">,[</span> <span class="mi">72</span><span class="p">,</span>  <span class="mi">56</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span>  <span class="mi">36</span><span class="p">]</span>
+     <span class="p">,[</span><span class="mi">121</span><span class="p">,</span>  <span class="mi">73</span><span class="p">,</span> <span class="mi">149</span><span class="p">,</span>  <span class="mi">59</span><span class="p">]</span>
+     <span class="p">,[</span> <span class="mi">83</span><span class="p">,</span>  <span class="mi">37</span><span class="p">,</span>  <span class="mi">61</span><span class="p">,</span>  <span class="mi">43</span><span class="p">]</span>
+     <span class="p">,[</span><span class="mi">151</span><span class="p">,</span>  <span class="mi">99</span><span class="p">,</span> <span class="mi">207</span><span class="p">,</span>  <span class="mi">81</span><span class="p">]</span>
+     <span class="p">,[</span> <span class="mi">72</span><span class="p">,</span>  <span class="mi">56</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span>  <span class="mi">36</span><span class="p">]</span>
+     <span class="p">,[</span><span class="mi">121</span><span class="p">,</span>  <span class="mi">73</span><span class="p">,</span> <span class="mi">149</span><span class="p">,</span>  <span class="mi">59</span><span class="p">]</span>
+     <span class="p">,[</span> <span class="mi">51</span><span class="p">,</span>  <span class="mi">33</span><span class="p">,</span>  <span class="mi">55</span><span class="p">,</span>  <span class="mi">37</span><span class="p">]])</span>
+
+<span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">strassenforall</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span><span class="o">==</span><span class="n">result</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Herzlichen Glückwunsch Sie haben erfolgreich das Experiment absolviert!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try again&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Herzlichen Glückwunsch Sie haben erfolgreich das Experiment absolviert!
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Prof. Dr. Georg Merz<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
