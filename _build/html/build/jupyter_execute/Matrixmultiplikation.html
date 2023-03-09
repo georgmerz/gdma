@@ -1,0 +1,887 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matrixmultiplikation &#8212; Grundlagen der Mathematik</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Grundlagen der Mathematik</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Willkommen im Kurs “Grundlagen der Mathematik”
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../mengenlehre.html">
+   Kapitel 1 - Mengenlehre
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/georgmerz/gdma/master?urlpath=tree/build/jupyter_execute/Matrixmultiplikation.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/georgmerz/gdma"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/georgmerz/gdma/issues/new?title=Issue%20on%20page%20%2Fbuild/jupyter_execute/Matrixmultiplikation.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/build/jupyter_execute/Matrixmultiplikation.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Matrixmultiplikation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vektoren-und-matrizen-in-numpy">
+     1. Vektoren und Matrizen in Numpy
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#schritt-numpy-importieren">
+       1. Schritt (numpy importieren)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#schritt-vektoren-und-matrizen-definieren">
+       2. Schritt(Vektoren und Matrizen definieren)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#schritt">
+       3. Schritt
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grundrechenarten-in-numpy">
+   2 Grundrechenarten in Numpy
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#addition">
+     Addition
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiplikation-von-matrizen">
+     Multiplikation von Matrizen
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#matrix-mal-vektor">
+       Matrix mal Vektor
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#matrix-mal-matrix">
+       Matrix mal Matrix
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Matrixmultiplikation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Matrixmultiplikation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vektoren-und-matrizen-in-numpy">
+     1. Vektoren und Matrizen in Numpy
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#schritt-numpy-importieren">
+       1. Schritt (numpy importieren)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#schritt-vektoren-und-matrizen-definieren">
+       2. Schritt(Vektoren und Matrizen definieren)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#schritt">
+       3. Schritt
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grundrechenarten-in-numpy">
+   2 Grundrechenarten in Numpy
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#addition">
+     Addition
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiplikation-von-matrizen">
+     Multiplikation von Matrizen
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#matrix-mal-vektor">
+       Matrix mal Vektor
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#matrix-mal-matrix">
+       Matrix mal Matrix
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="matrixmultiplikation">
+<h1>Matrixmultiplikation<a class="headerlink" href="#matrixmultiplikation" title="Permalink to this headline">#</a></h1>
+<p>In diesem Google Colab Notebook werden wir uns vor allen Dingen mit der Matrixmultiplikation beschäftigen. Wir werden die Matrixmultiplikation von Hand mittels Schleifen nachimplementieren.</p>
+<div class="section" id="vektoren-und-matrizen-in-numpy">
+<h2>1. Vektoren und Matrizen in Numpy<a class="headerlink" href="#vektoren-und-matrizen-in-numpy" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Numpy ist das wichtigste Werkzeug in Python wenn es um Matrizen und Vektoren geht.</p></li>
+<li><p>Numpy ist nicht das schnellste Paket um in Python mit Vektoren zu rechnen es ist aber das Intuitivste</p></li>
+<li><p><strong>Ziel</strong> in diesem Kurs ist es alle Algorithmen und Berechnungen nur mit den einfachsten Numpy Werkzeugen durchzuführen</p></li>
+</ul>
+<div class="section" id="schritt-numpy-importieren">
+<h3>1. Schritt (numpy importieren)<a class="headerlink" href="#schritt-numpy-importieren" title="Permalink to this headline">#</a></h3>
+<p>Zunächst müssen wir numpy importieren und es mit einem kürzel versehen. In der regel verwendet man dafür np.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="schritt-vektoren-und-matrizen-definieren">
+<h3>2. Schritt(Vektoren und Matrizen definieren)<a class="headerlink" href="#schritt-vektoren-und-matrizen-definieren" title="Permalink to this headline">#</a></h3>
+<p>Sagen wir zum Beispiel wir wollen folgende Vektoren und Matrizen in Numpy definieren:</p>
+<p>$\vec{w}=\begin{pmatrix} 1 &amp; 2 &amp; 3 \end{pmatrix}\in \mathbb{R}^{1\times3 },\quad \vec{v}=\begin{pmatrix} 2 \ 0 \ 1 \end{pmatrix}\in \mathbb{R}^{3\times 1} \quad
+A=\begin{pmatrix} 1&amp;1&amp;0 \ 0&amp;1&amp;1 \ 1&amp;0&amp;1 \end{pmatrix}\in \mathbb{R}^{3\times 3}$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">w</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">],[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2],
+       [0],
+       [1]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 1, 0],
+       [0, 1, 1],
+       [1, 0, 1]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Falls wir nicht mehr sicher sind welche Dimension unsere Matrix bzw. unser Vektor hat. Können wir dies mittels <code class="docutils literal notranslate"><span class="pre">np.shape(A)</span></code> abfragen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 3)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="schritt">
+<h3>3. Schritt<a class="headerlink" href="#schritt" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### 3. Schritt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wollen wir nun beispielsweise $a_{12}$ von $A$ bestimmen. Also den zweiten Eintrag der ersten Zeile so können wir dies mittels Eckigen klammern machen.</p>
+<p><strong>Achtung</strong>: Python beginnt bei <strong>0</strong> zu zählen. In der Mathematik wird für indizes häufig mit 1 gestartet. D.h. $a_{12}$ entsprich dann <code class="docutils literal notranslate"><span class="pre">A[0,1]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Bei Spaltenvektoren müssen wir um eine Zahl zu bekommen noch den zweiten Index mitnehmen. D.h. wenn wir  𝑣3
+v
+3
+bekommen wollen müssen wir folgendes schreiben:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="grundrechenarten-in-numpy">
+<h1>2 Grundrechenarten in Numpy<a class="headerlink" href="#grundrechenarten-in-numpy" title="Permalink to this headline">#</a></h1>
+<div class="section" id="addition">
+<h2>Addition<a class="headerlink" href="#addition" title="Permalink to this headline">#</a></h2>
+<p>Matrizen und Vektoren können sehr einfach addiert und subtrahiert werden. Dafür können wir einfach die gewöhnliche <code class="docutils literal notranslate"><span class="pre">+</span></code>und <code class="docutils literal notranslate"><span class="pre">-</span></code> verwenden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">+</span><span class="n">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 2, 0],
+       [0, 2, 2],
+       [2, 0, 2]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="o">+</span><span class="n">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4],
+       [0],
+       [2]])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Achtung</strong></p>
+<p>Wenn Sie zwei Vektoren/Matrizen mit unterschiedlichen Dimensionen addieren kommt keine Fehlermeldung.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">+</span><span class="n">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 3, 2],
+       [0, 1, 1],
+       [2, 1, 2]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="o">+</span><span class="n">w</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 4, 5],
+       [1, 2, 3],
+       [2, 3, 4]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Konnten Sie eine Logik festellen? Gar nicht so einfach oder?</p>
+</div>
+<div class="section" id="multiplikation-von-matrizen">
+<h2>Multiplikation von Matrizen<a class="headerlink" href="#multiplikation-von-matrizen" title="Permalink to this headline">#</a></h2>
+<p>In diesem Abschnitt wollen wir die Matrixmultiplikation so wie wir sie im Kurs gelernt haben implementieren auf der Ebene der Matrix Elemente.</p>
+<div class="section" id="matrix-mal-vektor">
+<h3>Matrix mal Vektor<a class="headerlink" href="#matrix-mal-vektor" title="Permalink to this headline">#</a></h3>
+<p>Sei $A=\begin{pmatrix} a_{11}&amp;\dots &amp;a_{1k} \ \vdots &amp;\ddots&amp;\vdots \ a_{n1}&amp;\dots &amp; a_{nk} \end{pmatrix}\in \mathbb{R}^{n\times k}$ sowie $v=\begin{pmatrix}v_1 \ \vdots \ v_k \end{pmatrix}$.
+Sei weiterhin $w=\begin{pmatrix}w_1 \ \vdots \ w_n \end{pmatrix}\in \mathbb{R}^n$</p>
+<p>Dann gilt folgende Formel für die Elemente von $C$.</p>
+<p>$w_i=\sum_{j=1,\dots n}a_{ij}v_j$.</p>
+<p>Schauen wir nun wie wir das in Numpy umsetzen können.</p>
+<ol class="simple">
+<li><p>Versuch Wir multiplizieren mit <code class="docutils literal notranslate"><span class="pre">*</span></code></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">*</span><span class="n">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 2, 0],
+       [0, 0, 0],
+       [1, 0, 1]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ist das Richtig also gilt:</p>
+<p>$\begin{pmatrix} 1&amp;1&amp;0 \ 0&amp;1&amp;1 \ 1&amp;0&amp;1 \end{pmatrix}\begin{pmatrix} 2 \ 0 \ 1 \end{pmatrix}=\begin{pmatrix} 2&amp;2&amp;0 \ 0&amp;0&amp;0 \ 1&amp;0&amp;1\end{pmatrix} $</p>
+<p><strong>Antwort:</strong> NEIN. Stimmt schon von den dimensionen natürlich nicht!</p>
+<p>Ok. Dann berechnen wir das eben Selbst mithilfe einer einfachen Schleife.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">matrix_times_Vector</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">v</span><span class="p">):</span>
+  <span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span>
+  
+  <span class="n">w</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>   <span class="c1"># initialisiere das Ergebnis mit einem 0 Vektor der Dimension n,1 </span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>      
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+      <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+  <span class="k">return</span> <span class="n">w</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrix_times_Vector</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">matrix_times_Vector</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3.],
+       [4.],
+       [5.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Aufgaben</strong></p>
+<ul class="simple">
+<li><p>Bestimmen Sie mit Hilfe der Obigen Funktion den Vektor $a=A\cdot A \cdot v$</p></li>
+<li><p>Bestimmen Sie mit Hilfe der obigen Funktion den Vektor $b=A\cdot w^T$. <em>Hinweis: Sie können für $w^T$ die Funktion <code class="docutils literal notranslate"><span class="pre">np.atleast_2d(w).T</span></code> benutzen</em></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="c1"># Insert Text here</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="c1"># Insert Text here</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-18-e51945b2e885&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="c1"># Insert Text here</span>
+        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="matrix-mal-matrix">
+<h3>Matrix mal Matrix<a class="headerlink" href="#matrix-mal-matrix" title="Permalink to this headline">#</a></h3>
+<p>Sei $A=\begin{pmatrix} a_{11}&amp;\dots &amp;a_{1k} \ \vdots &amp;\ddots&amp;\vdots \ a_{n1}&amp;\dots &amp; a_{nk} \end{pmatrix}\in \mathbb{R}^{n\times k}$ sowie $B=\begin{pmatrix} b_{11}&amp;\dots &amp;b_{1m} \ \vdots &amp;\ddots&amp;\vdots \ b_{k1}&amp;\dots &amp; b_{km} \end{pmatrix}\in \mathbb{R}^{k\times m}$.
+Sei weiterhin $C=\begin{pmatrix} c_{11}&amp;\dots &amp;c_{1m} \ \vdots &amp;\ddots&amp;\vdots \ c_{n1}&amp;\dots &amp; c_{nm} \end{pmatrix}\in \mathbb{R}^{n\times m}$.</p>
+<p>Dann gilt folgende Formel für die Elemente von $C$.</p>
+<p>$c_{ij}=\sum_{s=1,\dots k}a_{is}b_{sj}$.</p>
+<p>Auch hier gucken wir uns wieder an wenn wir nun z.B. $A^2$ bestimmen mit `A*A</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">*</span><span class="n">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 1, 0],
+       [0, 1, 1],
+       [1, 0, 1]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Stimmt das? Ist $\begin{pmatrix} 1&amp;1&amp;0 \ 0&amp;1&amp;1 \ 1&amp;0&amp;1 \end{pmatrix}  \begin{pmatrix} 1&amp;1&amp;0 \ 0&amp;1&amp;1 \ 1&amp;0&amp;1 \end{pmatrix}=\begin{pmatrix} 1&amp;1&amp;0 \ 0&amp;1&amp;1 \ 1&amp;0&amp;1 \end{pmatrix}$?</p>
+<p><strong>Antwort:</strong> Nein!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">matrix_times_matrix</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
+  <span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span>
+  <span class="n">k</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="n">B</span><span class="o">.</span><span class="n">shape</span>
+  <span class="n">C</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">))</span>
+
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+      <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+        <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">+=</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">s</span><span class="p">]</span><span class="o">*</span><span class="n">B</span><span class="p">[</span><span class="n">s</span><span class="p">,</span><span class="n">j</span><span class="p">]</span>
+
+
+  <span class="k">return</span> <span class="n">C</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrix_times_matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+3
+3
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3., 2., 1.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Aufgaben</strong></p>
+<ul class="simple">
+<li><p>Bestimmen Sie nochmals $A\cdot A \cdot v$ mithilfe der neuen Funktion <code class="docutils literal notranslate"><span class="pre">matrix_times_matrix(A,B)</span></code></p></li>
+<li><p>Bestimmen Sie nochmals $v^T\cdot A$ mithilfe der neuen Funktion.</p></li>
+</ul>
+<p><a class="reference external" href="https://">Linktext</a></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./build/jupyter_execute"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Prof. Dr. Georg Merz<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
+title: Grundlagen der Mathematik
+author: Prof. Dr. Georg Merz
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -32,5 +32,14 @@ html:
   use_repository_button: true
 
 
-launch_buttons:
-  colab_url: "https://colab.research.google.com"
+
+
+sphinx:
+  config:
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+  myst_enable_extensions: 
+    - amsmath
+ 
+  extra_extensions: 
+    - sphinx_proof

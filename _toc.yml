@@ -4,7 +4,6 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
-- file: Matrixmultiplikation
+- file: mengenlehre
+- file: logik
+- file: relationsAndFunctions
