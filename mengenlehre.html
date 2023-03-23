@@ -1,48 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kapitel 1 - Mengenlehre &#8212; Grundlagen der Mathematik</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>Kapitel 1 - Mengenlehre &#8212; Grundlagen der Mathematik</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,61 +64,87 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'mengenlehre';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Kapitel 2 Grundlagen der Logik" href="logik.html" />
     <link rel="prev" title="Willkommen im Kurs “Grundlagen der Mathematik”" href="intro.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
-      
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Grundlagen der Mathematik</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Grundlagen der Mathematik</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -116,647 +154,269 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Kapitel 1 - Mengenlehre
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="logik.html">
-   Kapitel 2 Grundlagen der Logik
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="relationsAndFunctions.html">
-   Kapitel 3 - Relationen und Funktionen
-  </a>
- </li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Kapitel 1 - Mengenlehre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logik.html">Kapitel 2 Grundlagen der Logik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relationsAndFunctions.html">Kapitel 3 - Relationen und Funktionen</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/georgmerz/gdma" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/georgmerz/gdma/issues/new?title=Issue%20on%20page%20%2Fmengenlehre.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/mengenlehre.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/georgmerz/gdma"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/georgmerz/gdma/issues/new?title=Issue%20on%20page%20%2Fmengenlehre.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/mengenlehre.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lernziele">
-   1. 0 Lernziele
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#definition-einer-menge">
-   1.1 Definition einer Menge
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#notation">
-   1.2 Notation
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#leere-menge">
-     Leere Menge
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#elemente-einer-menge">
-     Elemente einer Menge
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#teilmenge">
-     Teilmenge
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gleichheit-zweier-mengen">
-     Gleichheit zweier Mengen
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#kardinalitat-einer-menge">
-     Kardinalität einer Menge
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#definition-von-mengen">
-   1.3 Definition von Mengen
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#endliche-mengen">
-     Endliche Mengen
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unendliche-mengen-mit-regeln">
-     Unendliche Mengen mit Regeln
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zahlenmengen">
-   1.4 Zahlenmengen
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-naturlichen-zahlen-mathbb-n">
-     Die natürlichen Zahlen
-     <span class="math notranslate nohighlight">
-      \(\mathbb{N}\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-ganzen-zahlen-mathbb-z">
-     Die ganzen Zahlen
-     <span class="math notranslate nohighlight">
-      \(\mathbb{Z}\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-rationalen-zahlen-mathbb-q">
-     Die rationalen Zahlen
-     <span class="math notranslate nohighlight">
-      \(\mathbb{Q}\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-reellen-zahlen-mathbb-r">
-     Die reellen Zahlen
-     <span class="math notranslate nohighlight">
-      \(\mathbb{R}\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zusammenhang-zwischen-den-verschiedenen-zahlenmengen">
-     Zusammenhang zwischen den verschiedenen Zahlenmengen
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#intervallschreibweise">
-     Intervallschreibweise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mengenoperationen">
-   1.5 Mengenoperationen
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-schnittmenge">
-     Die Schnittmenge
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-vereinigung">
-     Die Vereinigung
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#differenz">
-     Differenz
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#das-kartesische-produkt">
-     Das Kartesische Produkt
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#potenzmenge">
-     Potenzmenge
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#venn-diagramme">
-     Venn Diagramme
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#naturliche-zahlen-als-menge">
-   1.6 Natürliche Zahlen als Menge
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#definition-der-naturlichen-zahlen">
-     Definition der natürlichen Zahlen
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rechnen-mit-naturlichen-zahlen">
-     Rechnen mit natürlichen Zahlen
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#die-vollstandige-induktion">
-   1.7 Die vollständige Induktion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre">
-   1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#russelsche-antinomie">
-     Russelsche Antinomie
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#auflosung-der-russelschen-antinomie">
-     Auflösung der Russelschen Antinomie
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#russels-typentheorie">
-       Russels Typentheorie
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#zermelo-fraenkel-mengenlehre">
-       Zermelo-Fraenkel Mengenlehre
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#aussonderungsaxiom">
-         Aussonderungsaxiom
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#fundierungsaxiom">
-         Fundierungsaxiom
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Kapitel 1 - Mengenlehre</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lernziele">
-   1. 0 Lernziele
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#definition-einer-menge">
-   1.1 Definition einer Menge
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#notation">
-   1.2 Notation
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#leere-menge">
-     Leere Menge
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#elemente-einer-menge">
-     Elemente einer Menge
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#teilmenge">
-     Teilmenge
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gleichheit-zweier-mengen">
-     Gleichheit zweier Mengen
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#kardinalitat-einer-menge">
-     Kardinalität einer Menge
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#definition-von-mengen">
-   1.3 Definition von Mengen
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#endliche-mengen">
-     Endliche Mengen
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unendliche-mengen-mit-regeln">
-     Unendliche Mengen mit Regeln
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zahlenmengen">
-   1.4 Zahlenmengen
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-naturlichen-zahlen-mathbb-n">
-     Die natürlichen Zahlen
-     <span class="math notranslate nohighlight">
-      \(\mathbb{N}\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-ganzen-zahlen-mathbb-z">
-     Die ganzen Zahlen
-     <span class="math notranslate nohighlight">
-      \(\mathbb{Z}\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-rationalen-zahlen-mathbb-q">
-     Die rationalen Zahlen
-     <span class="math notranslate nohighlight">
-      \(\mathbb{Q}\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-reellen-zahlen-mathbb-r">
-     Die reellen Zahlen
-     <span class="math notranslate nohighlight">
-      \(\mathbb{R}\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zusammenhang-zwischen-den-verschiedenen-zahlenmengen">
-     Zusammenhang zwischen den verschiedenen Zahlenmengen
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#intervallschreibweise">
-     Intervallschreibweise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mengenoperationen">
-   1.5 Mengenoperationen
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-schnittmenge">
-     Die Schnittmenge
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-vereinigung">
-     Die Vereinigung
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#differenz">
-     Differenz
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#das-kartesische-produkt">
-     Das Kartesische Produkt
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#potenzmenge">
-     Potenzmenge
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#venn-diagramme">
-     Venn Diagramme
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#naturliche-zahlen-als-menge">
-   1.6 Natürliche Zahlen als Menge
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#definition-der-naturlichen-zahlen">
-     Definition der natürlichen Zahlen
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rechnen-mit-naturlichen-zahlen">
-     Rechnen mit natürlichen Zahlen
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#die-vollstandige-induktion">
-   1.7 Die vollständige Induktion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre">
-   1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#russelsche-antinomie">
-     Russelsche Antinomie
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#auflosung-der-russelschen-antinomie">
-     Auflösung der Russelschen Antinomie
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#russels-typentheorie">
-       Russels Typentheorie
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#zermelo-fraenkel-mengenlehre">
-       Zermelo-Fraenkel Mengenlehre
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#aussonderungsaxiom">
-         Aussonderungsaxiom
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#fundierungsaxiom">
-         Fundierungsaxiom
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Kapitel 1 - Mengenlehre</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">1. 0 Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-einer-menge">1.1 Definition einer Menge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">1.2 Notation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leere-menge">Leere Menge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elemente-einer-menge">Elemente einer Menge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teilmenge">Teilmenge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gleichheit-zweier-mengen">Gleichheit zweier Mengen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kardinalitat-einer-menge">Kardinalität einer Menge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-von-mengen">1.3 Definition von Mengen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#endliche-mengen">Endliche Mengen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unendliche-mengen-mit-regeln">Unendliche Mengen mit Regeln</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zahlenmengen">1.4 Zahlenmengen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-naturlichen-zahlen-mathbb-n">Die natürlichen Zahlen <span class="math notranslate nohighlight">\(\mathbb{N}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-ganzen-zahlen-mathbb-z">Die ganzen Zahlen <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-rationalen-zahlen-mathbb-q">Die rationalen Zahlen <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-reellen-zahlen-mathbb-r">Die reellen Zahlen <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenhang-zwischen-den-verschiedenen-zahlenmengen">Zusammenhang zwischen den verschiedenen Zahlenmengen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intervallschreibweise">Intervallschreibweise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengenoperationen">1.5 Mengenoperationen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-schnittmenge">Die Schnittmenge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-vereinigung">Die Vereinigung</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differenz">Differenz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#das-kartesische-produkt">Das Kartesische Produkt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#potenzmenge">Potenzmenge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#venn-diagramme">Venn Diagramme</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naturliche-zahlen-als-menge">1.6 Natürliche Zahlen als Menge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-der-naturlichen-zahlen">Definition der natürlichen Zahlen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rechnen-mit-naturlichen-zahlen">Rechnen mit natürlichen Zahlen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-vollstandige-induktion">1.7 Die vollständige Induktion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre">1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#russelsche-antinomie">Russelsche Antinomie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auflosung-der-russelschen-antinomie">Auflösung der Russelschen Antinomie</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#russels-typentheorie">Russels Typentheorie</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zermelo-fraenkel-mengenlehre">Zermelo-Fraenkel Mengenlehre</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#aussonderungsaxiom">Aussonderungsaxiom</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#fundierungsaxiom">Fundierungsaxiom</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="kapitel-1-mengenlehre">
-<h1>Kapitel 1 - Mengenlehre<a class="headerlink" href="#kapitel-1-mengenlehre" title="Permalink to this headline">#</a></h1>
-<div class="section" id="lernziele">
-<h2>1. 0 Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="kapitel-1-mengenlehre">
+<h1>Kapitel 1 - Mengenlehre<a class="headerlink" href="#kapitel-1-mengenlehre" title="Permalink to this heading">#</a></h1>
+<section id="lernziele">
+<h2>1. 0 Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
 <p>In diesem Kurs lernen wir die folgenden Dinge:</p>
 <ul class="simple">
 <li><p>Schreibweise/Syntax in der Mengenlehre</p></li>
@@ -777,16 +437,16 @@ title="Print to PDF"
 <li><p>Sie haben ein Verständnis für die Paradoxien der naiven Mengenlehre und können dies mit den Zermelo Fraenkl Axiomen in Verbindung bringen</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="definition-einer-menge">
-<h2>1.1 Definition einer Menge<a class="headerlink" href="#definition-einer-menge" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="definition-einer-menge">
+<h2>1.1 Definition einer Menge<a class="headerlink" href="#definition-einer-menge" title="Permalink to this heading">#</a></h2>
 <p>Zu erklären was eine Menge denn wirklich ist, ist garnicht so einfach. Das gilt vor allem wenn man es exakt mathematisch definieren will. Intuitiv ist es gar nicht so  schwer.
 So gibt es beispielsweise folgende Definition von <em>Georg Cantor</em>.</p>
 <div class="proof definition admonition" id="my-definition2">
 <p class="admonition-title"><span class="caption-number">Definition 1 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>“Eine Menge ist eine Zusammenfassung bestimmter wohlunterschiedener Objekte unserer Anschauung oder unseres Denkens - (welche die Elemente der Menge genannt werden) - zu einem Ganzen.”</p>
-</div>
+</section>
 </div><p>Das klingt in der Tat nicht sehr Mathematisch Exakt, aber soll uns zu Beginn erstmal reichen.</p>
 <p>Wichtige Folgerungen aus der obigen Definition sind:</p>
 <ul class="simple">
@@ -796,14 +456,14 @@ So gibt es beispielsweise folgende Definition von <em>Georg Cantor</em>.</p>
 </ul>
 <div class="proof example admonition" id="Mengen">
 <p class="admonition-title"><span class="caption-number">Example 1 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Folgendes sind Beispiele für Mengen:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(A:=\{0,1,2,3,4\} \)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(B:=\{a,b,c,d,e,f,g\} \)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(C:=\{ 👍, 👮 , 🔨\}  \)</span></p></li>
 </ul>
-</div>
+</section>
 </div><p><strong>Beobachtungen</strong>:</p>
 <ul class="simple">
 <li><p>Wie Sie sehen können Elemente einer Menge ganz unterschiedlicher Natur sein. Sie können Zahlen, Buchstaben oder auch Zeichen sein. Wichtig ist nur, dass sie unterscheidbar sind und eindeutig.</p></li>
@@ -817,45 +477,45 @@ So gibt es beispielsweise folgende Definition von <em>Georg Cantor</em>.</p>
 </div>
 <div class="proof example admonition" id="Mengen von Mengen">
 <p class="admonition-title"><span class="caption-number">Example 2 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Folgendes sind Beispiele für Mengen von Mengen:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(D:=\{ \{0,1\} ,\{2,3,4\}\} \)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(E:=\{\{ 0,1,2,3,4 \} \} \)</span></p></li>
 </ul>
-</div>
+</section>
 </div><div align="center">
     <iframe width="560" height="315"
     src="https://www.youtube.com/embed/U9bZdkcox8g">
     </iframe>
 </div>
-</div>
-<div class="section" id="notation">
-<h2>1.2 Notation<a class="headerlink" href="#notation" title="Permalink to this headline">#</a></h2>
-<div class="section" id="leere-menge">
-<h3>Leere Menge<a class="headerlink" href="#leere-menge" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="notation">
+<h2>1.2 Notation<a class="headerlink" href="#notation" title="Permalink to this heading">#</a></h2>
+<section id="leere-menge">
+<h3>Leere Menge<a class="headerlink" href="#leere-menge" title="Permalink to this heading">#</a></h3>
 <p>Eine ungewöhnliche Menge  ist die Folgende:</p>
 <div class="proof definition admonition" id="my-definition">
 <p class="admonition-title"><span class="caption-number">Definition 2 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Diejenige Menge, die <strong>kein</strong> Element enthält, wird die <strong>leere Menge</strong> genant und mit</p>
 <div class="math notranslate nohighlight">
 \[    \{ \} \text{ oder } \varnothing \]</div>
 <p>bezeichnet.</p>
-</div>
-</div></div>
-<div class="section" id="elemente-einer-menge">
-<h3>Elemente einer Menge<a class="headerlink" href="#elemente-einer-menge" title="Permalink to this headline">#</a></h3>
+</section>
+</div></section>
+<section id="elemente-einer-menge">
+<h3>Elemente einer Menge<a class="headerlink" href="#elemente-einer-menge" title="Permalink to this heading">#</a></h3>
 <p>Als nächstes führen wir das Symbol <span class="math notranslate nohighlight">\(\in \)</span> und <span class="math notranslate nohighlight">\(\notin\)</span> ein.</p>
 <div class="proof definition admonition" id="element">
 <p class="admonition-title"><span class="caption-number">Definition 6 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Wir schreiben <span class="math notranslate nohighlight">\(x\in M\)</span>. Falls  <span class="math notranslate nohighlight">\(x\)</span> ein Element von <span class="math notranslate nohighlight">\(M\)</span> ist.
 Wir schreiben <span class="math notranslate nohighlight">\(x\in M\)</span> falls <span class="math notranslate nohighlight">\(x\)</span> kein Element von <span class="math notranslate nohighlight">\(M\)</span> ist.</p>
-</div>
+</section>
 </div><div class="proof example admonition" id="elementbsp">
 <p class="admonition-title"><span class="caption-number">Example 4 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Betrachten wir unsere Beispielmengen</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(A:=\{0,1,2,3,4\}\)</span></p></li>
@@ -872,24 +532,24 @@ Wir schreiben <span class="math notranslate nohighlight">\(x\in M\)</span> falls
 <li><p>{ 0,1,2,3,4 } \in E</p></li>
 <li><p>{0,1}</p></li>
 </ul>
-</div>
+</section>
 </div><p>Im obigen Beispiel sehen wir, dass die Klammern <span class="math notranslate nohighlight">\(\{ \}\)</span> eine große Rolle Spielen. Elemente einer Menge sind eben nur diejenigen Objekte die genaue eine Hierarchieebene unterhalb der Menge sind.</p>
-</div>
-<div class="section" id="teilmenge">
-<h3>Teilmenge<a class="headerlink" href="#teilmenge" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="teilmenge">
+<h3>Teilmenge<a class="headerlink" href="#teilmenge" title="Permalink to this heading">#</a></h3>
 <p>Als nächstes definieren wir den Begriff der Teilmenge <span class="math notranslate nohighlight">\(\subset \)</span>.</p>
 <div class="proof definition admonition" id="element">
 <p class="admonition-title"><span class="caption-number">Definition 6 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Seien A,B zwei Mengen.
 Wir schreiben</p>
 <div class="math notranslate nohighlight">
 \[  A \subset  B\]</div>
 <p>genau dann wenn für jedes Element <span class="math notranslate nohighlight">\(a\in A\)</span> auch gilt <span class="math notranslate nohighlight">\(a\in B\)</span>.</p>
-</div>
+</section>
 </div><div class="proof example admonition" id="elementbsp">
 <p class="admonition-title"><span class="caption-number">Example 4 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Betrachten wir unsere Beispielmengen</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(A:=\{0,1,2,3,4\} \)</span></p></li>
@@ -904,14 +564,14 @@ Wir schreiben</p>
 <li><p><span class="math notranslate nohighlight">\(\{\{0,1 \}\}\subset D\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(E\subset E.\)</span></p></li>
 </ul>
-</div>
-</div></div>
-<div class="section" id="gleichheit-zweier-mengen">
-<h3>Gleichheit zweier Mengen<a class="headerlink" href="#gleichheit-zweier-mengen" title="Permalink to this headline">#</a></h3>
+</section>
+</div></section>
+<section id="gleichheit-zweier-mengen">
+<h3>Gleichheit zweier Mengen<a class="headerlink" href="#gleichheit-zweier-mengen" title="Permalink to this heading">#</a></h3>
 <p>Mithilfe der Teilmenge können wir ebenso die Gleichheit zweier Mengen definieren.</p>
 <div class="proof definition admonition" id="element">
 <p class="admonition-title"><span class="caption-number">Definition 6 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Seien A,B zwei Mengen.
 Wir schreiben</p>
 <div class="math notranslate nohighlight">
@@ -919,37 +579,37 @@ Wir schreiben</p>
 <p>genau dann wenn</p>
 <div class="math notranslate nohighlight">
 \[A  \subset B \text{ und } B\subset A. \]</div>
-</div>
+</section>
 </div><p>Die obige Definition mag etwas unnatürlich wirken, aber Sie hilft uns die oben Beschriebenen Eigenschaften, dass es bei einer Menge nicht um die Reihenfolge und die dopplung von Elementen geht.</p>
 <p><strong>Aufgabe:</strong></p>
 <p>Zeigen Sie auf Grundlage der Definition von Gleichheit, dass</p>
 <div class="math notranslate nohighlight">
 \[  \{0,0,1,2\} =\{2,1,0\}. \]</div>
-</div>
-<div class="section" id="kardinalitat-einer-menge">
-<h3>Kardinalität einer Menge<a class="headerlink" href="#kardinalitat-einer-menge" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="kardinalitat-einer-menge">
+<h3>Kardinalität einer Menge<a class="headerlink" href="#kardinalitat-einer-menge" title="Permalink to this heading">#</a></h3>
 <p>In vielen Fällen interessiert uns wie viele verschiedene Elemente eine Menge enthält. Dies können wir zunächst nur für endliche Mengen, also Mengen mit endlich vielen Elementen definieren.</p>
 <div class="proof definition admonition" id="element">
 <p class="admonition-title"><span class="caption-number">Definition 6 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine Menge. Dann bezeichnen wir mit <span class="math notranslate nohighlight">\(\vert A \vert\)</span> die Anzahl der Elemente von <span class="math notranslate nohighlight">\(A\)</span> und nennen diese Zahl die <strong>Kardinalität</strong> von <span class="math notranslate nohighlight">\(A\)</span>.</p>
-</div>
+</section>
 </div><div align="center">
     <iframe width="560" height="315"
     src="https://www.youtube.com/embed/rDicOAuEn5s">
     </iframe>
 </div>
-</div>
-</div>
-<div class="section" id="definition-von-mengen">
-<h2>1.3 Definition von Mengen<a class="headerlink" href="#definition-von-mengen" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="definition-von-mengen">
+<h2>1.3 Definition von Mengen<a class="headerlink" href="#definition-von-mengen" title="Permalink to this heading">#</a></h2>
 <p>In diesen Abschnitt wollen wir uns genauer anschauen, welche Möglichkeiten es gibt mathematisch präzise Mengen zu bilden. Wir haben das schon für endliche Mengen gesehen. Hier können wir einfach alle Elemente hinschreiben. Es gibt aber auch unendliche Mengen, die einer gewissen Regel gehorchen. Hierfür brauchen wir eine Sprache bzw. Syntax um diese Mengen formulieren zu können.</p>
-<div class="section" id="endliche-mengen">
-<h3>Endliche Mengen<a class="headerlink" href="#endliche-mengen" title="Permalink to this headline">#</a></h3>
+<section id="endliche-mengen">
+<h3>Endliche Mengen<a class="headerlink" href="#endliche-mengen" title="Permalink to this heading">#</a></h3>
 <p>Wie schon erwähnt können wir endliche Mengen durch die Nutzung der geschweiften Klamern <span class="math notranslate nohighlight">\(\{\)</span> und <span class="math notranslate nohighlight">\(\}\)</span> und die Angabe der Elemente, getrennt durch Kommata angeben. Dabei spielt wie erwähnt die Reihenfolge der Elemente sowie die doppelte Nennung der Menge keine Rolle.</p>
 <div class="proof example admonition" id="example-10">
 <p class="admonition-title"><span class="caption-number">Example 5 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Betrachten wir unsere Beispielmengen</p>
 <ul class="simple">
 <li><p>$A:={0,1,2,3,4}</p></li>
@@ -958,10 +618,10 @@ Wir schreiben</p>
 <li><p><span class="math notranslate nohighlight">\(D:=\{ \{0,1\} ,\{2,3,4\}\} \)</span></p></li>
 <li><p>$E:={{ 0,1,2,3,4 } }</p></li>
 </ul>
-</div>
-</div></div>
-<div class="section" id="unendliche-mengen-mit-regeln">
-<h3>Unendliche Mengen mit Regeln<a class="headerlink" href="#unendliche-mengen-mit-regeln" title="Permalink to this headline">#</a></h3>
+</section>
+</div></section>
+<section id="unendliche-mengen-mit-regeln">
+<h3>Unendliche Mengen mit Regeln<a class="headerlink" href="#unendliche-mengen-mit-regeln" title="Permalink to this heading">#</a></h3>
 <p>Nehmen wir an, wir haben bereits eine Grundmenge (z.B. $\mathbb{N})). Jetzt wollen wir aus dieser Grundmenge eine neue Menge definieren. Zum Beispiel die Menge aller geraden Zahlen.</p>
 <p>Dann können wir das mit folgender Notation:</p>
 <div class="math notranslate nohighlight">
@@ -974,40 +634,40 @@ Wir schreiben</p>
 </ul>
 <div class="proof example admonition" id="example-11">
 <p class="admonition-title"><span class="caption-number">Example 6 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(M= \{ n\in \mathbb{N} \vert n&gt;3\} \)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(N= \{ n\in \mathbb{N} \vert n&lt;3 \}= \{0,1,2\}\)</span></p></li>
 </ul>
-</div>
+</section>
 </div><div align="center">
     <iframe width="560" height="315"
     src="https://www.youtube.com/embed/uErBJTrx-kI">
     </iframe>
 </div>
-</div>
-</div>
-<div class="section" id="zahlenmengen">
-<h2>1.4 Zahlenmengen<a class="headerlink" href="#zahlenmengen" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="zahlenmengen">
+<h2>1.4 Zahlenmengen<a class="headerlink" href="#zahlenmengen" title="Permalink to this heading">#</a></h2>
 <p>Sie kennen vermutlich alle die Symbole <span class="math notranslate nohighlight">\(\mathbb{N}, \mathbb{Z},\mathbb{Q}, \mathbb{R}\)</span> und vielleicht sogar <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>. Dabei handelt es sich um Mengen. Da diese einen so wichtigen Stellenwert in der Mathematik einnehmen, wollen wir diese Zahlenmengen kurz wiederholen.</p>
-<div class="section" id="die-naturlichen-zahlen-mathbb-n">
-<h3>Die natürlichen Zahlen <span class="math notranslate nohighlight">\(\mathbb{N}\)</span><a class="headerlink" href="#die-naturlichen-zahlen-mathbb-n" title="Permalink to this headline">#</a></h3>
+<section id="die-naturlichen-zahlen-mathbb-n">
+<h3>Die natürlichen Zahlen <span class="math notranslate nohighlight">\(\mathbb{N}\)</span><a class="headerlink" href="#die-naturlichen-zahlen-mathbb-n" title="Permalink to this heading">#</a></h3>
 <p>Die natürlichen Zahlen sind die Menge der positiven ganzen Zahlen. Die Elemente sind also:</p>
 <div class="math notranslate nohighlight">
 \[0, 1,2,3,4,\dots .\]</div>
 <p>Ob die <span class="math notranslate nohighlight">\(0\)</span> in der Menge der natürlichen Zahlen enthalten sind, hängt vom Geschmack der einzelnen Person ab. In meiner Vorlesung wird die <span class="math notranslate nohighlight">\(0\)</span>  <strong>enthalten</strong> sein.</p>
 <p>Manchmal schreibt  man auch <span class="math notranslate nohighlight">\(\mathbb{N}_0\)</span> für die Menge der natürlichen Zahlen mit <span class="math notranslate nohighlight">\(0\)</span> um zu betonen, dass die <span class="math notranslate nohighlight">\(0\)</span> enthalten ist.</p>
-</div>
-<div class="section" id="die-ganzen-zahlen-mathbb-z">
-<h3>Die ganzen Zahlen <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span><a class="headerlink" href="#die-ganzen-zahlen-mathbb-z" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="die-ganzen-zahlen-mathbb-z">
+<h3>Die ganzen Zahlen <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span><a class="headerlink" href="#die-ganzen-zahlen-mathbb-z" title="Permalink to this heading">#</a></h3>
 <p>Die Menge der ganzen Zahlen sind wohl selbsterklärend. Die Elemente von <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> sind alle ganzen Zahlen. Insbesondere auch die negativen Zahlen.</p>
-</div>
-<div class="section" id="die-rationalen-zahlen-mathbb-q">
-<h3>Die rationalen Zahlen <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span><a class="headerlink" href="#die-rationalen-zahlen-mathbb-q" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="die-rationalen-zahlen-mathbb-q">
+<h3>Die rationalen Zahlen <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span><a class="headerlink" href="#die-rationalen-zahlen-mathbb-q" title="Permalink to this heading">#</a></h3>
 <p>Die Menge der rationalen Zahlen sind alle diejenigen Zahlen, die als Bruch zweier ganzer Zahlen dargestellt werden können. Also von der Form <span class="math notranslate nohighlight">\(n/m\)</span> mit <span class="math notranslate nohighlight">\(n,m \in \mathbb{Z}\)</span> mit <span class="math notranslate nohighlight">\(m\neq 0\)</span>.</p>
-</div>
-<div class="section" id="die-reellen-zahlen-mathbb-r">
-<h3>Die reellen Zahlen <span class="math notranslate nohighlight">\(\mathbb{R}\)</span><a class="headerlink" href="#die-reellen-zahlen-mathbb-r" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="die-reellen-zahlen-mathbb-r">
+<h3>Die reellen Zahlen <span class="math notranslate nohighlight">\(\mathbb{R}\)</span><a class="headerlink" href="#die-reellen-zahlen-mathbb-r" title="Permalink to this heading">#</a></h3>
 <p>Was genau die reellen Zahlen sind, ist gar nicht so einfach zu sagen. Zunächst einmal hat man lange Zeit gedacht, es gibt sie gar nicht. So glaubten die Pythagorärer, dass jede Zahl als Bruch oder ganze Zahl darstellbar ist. Wie wir heute wissen, gilt das für Zahlen wie <span class="math notranslate nohighlight">\(\sqrt{5} oder \pi\)</span> nicht. Doch was genau sind irrationale Zahlen.
 Wir werden in diesem Kurs keine genaue Definition geben können, sondern lediglich eine Intuition.</p>
 <p><strong>Intuition</strong>:</p>
@@ -1015,15 +675,15 @@ Wir werden in diesem Kurs keine genaue Definition geben können, sondern ledigli
 <li><p>Sie können sich die reellen Zahlen als Punkte auf einem Zahlenstrahl vorstellen.</p></li>
 <li><p>Sie können sich die reellen Zahlen als alle möglichen unendlichen Varianten von Dezimalzahlen vorstellen.</p></li>
 </ul>
-</div>
-<div class="section" id="zusammenhang-zwischen-den-verschiedenen-zahlenmengen">
-<h3>Zusammenhang zwischen den verschiedenen Zahlenmengen<a class="headerlink" href="#zusammenhang-zwischen-den-verschiedenen-zahlenmengen" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="zusammenhang-zwischen-den-verschiedenen-zahlenmengen">
+<h3>Zusammenhang zwischen den verschiedenen Zahlenmengen<a class="headerlink" href="#zusammenhang-zwischen-den-verschiedenen-zahlenmengen" title="Permalink to this heading">#</a></h3>
 <p>Es gilt</p>
 <div class="math notranslate nohighlight">
 \[\mathbb{N}\subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}.\]</div>
-</div>
-<div class="section" id="intervallschreibweise">
-<h3>Intervallschreibweise<a class="headerlink" href="#intervallschreibweise" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="intervallschreibweise">
+<h3>Intervallschreibweise<a class="headerlink" href="#intervallschreibweise" title="Permalink to this heading">#</a></h3>
 <p>Für die reellen Zahlen gibt es weitere nützliche Teilmengen, die eine Abkürzung besitzen. Die sogenannten <strong>Intervalle</strong>. Intervalle werden durch zwei Grenzpunkte <span class="math notranslate nohighlight">\(a,b\in \mathbb{R}\)</span> definiert. Wichtig ist es aber darüber hinaus anzugeben, ob der Punkt selbst im Intervall enthalten ist.</p>
 <p>Es gibt auch Intervalle, die nur einen Grenzpunkt besitzen und sich zur anderen Seite bis ins unendliche erstrecken.</p>
 <p>Wir können die Intervalle wie folgt schreiben und definieren:</p>
@@ -1039,29 +699,29 @@ Wir werden in diesem Kurs keine genaue Definition geben können, sondern ledigli
 <li><p><span class="math notranslate nohighlight">\([a,\infty):=\{x\in \mathbb{R} \ \vert \  x\geq a\}\)</span></p></li>
 </ul>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WtmN_iQ8a-M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</div>
-<div class="section" id="mengenoperationen">
-<h2>1.5 Mengenoperationen<a class="headerlink" href="#mengenoperationen" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="mengenoperationen">
+<h2>1.5 Mengenoperationen<a class="headerlink" href="#mengenoperationen" title="Permalink to this heading">#</a></h2>
 <p>Wir kennen nun schon ein paar Mengen und wir wissen wie wir mit Hilfe von Regeln weitere Mengen konstruieren können. In diesem Abschnitt wollen wir lernen wie wir zwei oder mehrere Mengen miteinander kombinieren können um so weitere Mengen zu erhalten.</p>
-<div class="section" id="die-schnittmenge">
-<h3>Die Schnittmenge<a class="headerlink" href="#die-schnittmenge" title="Permalink to this headline">#</a></h3>
+<section id="die-schnittmenge">
+<h3>Die Schnittmenge<a class="headerlink" href="#die-schnittmenge" title="Permalink to this heading">#</a></h3>
 <p>Die Schnittmenge von zwei Mengen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> ist diejenige Menge, die sowohl die Elemente von <span class="math notranslate nohighlight">\(A\)</span> als auch die von <span class="math notranslate nohighlight">\(B\)</span> enthält.</p>
 <p>Mathematisch ausgedrückt können wir folgendes schreiben:</p>
 <div class="proof definition admonition" id="definition-12">
 <p class="admonition-title"><span class="caption-number">Definition 7 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Seien <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> zwei Mengen, dann definieren wir <span class="math notranslate nohighlight">\(A\cap B\)</span> wie folgt:</p>
 <div class="math notranslate nohighlight">
 \[A\cap B = \{x\in A \ \vert \ x\in B \}\]</div>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-13">
 <p class="admonition-title"><span class="caption-number">Example 7 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A=\{0,1,2,3,4\}\)</span> und <span class="math notranslate nohighlight">\(B=\{3,4,5,6 \}\)</span>. Dann gilt</p>
 <div class="math notranslate nohighlight">
 \[A\cap B= \{3,4\}\]</div>
-</div>
+</section>
 </div><p><strong>Frage:</strong></p>
 <p>Sei</p>
 <ul class="simple">
@@ -1073,25 +733,25 @@ Was ist <span class="math notranslate nohighlight">\(E\cap D\)</span>?</p></li>
 <div class="toggle docutils container">
 <p><span class="math notranslate nohighlight">\(E\cap D=\emptyset\)</span>. <span class="math notranslate nohighlight">\(D\)</span> besitzt die Elemente <span class="math notranslate nohighlight">\(\{0,1\}\)</span> und <span class="math notranslate nohighlight">\(\{2,3,4\}\)</span> und <span class="math notranslate nohighlight">\(E\)</span> besitzt nur das Element <span class="math notranslate nohighlight">\(\{ 0,1,2,3,4 \}\)</span>. D.h. beide Mengen besitzen kein gemeinsames Element.</p>
 </div>
-</div>
-<div class="section" id="die-vereinigung">
-<h3>Die Vereinigung<a class="headerlink" href="#die-vereinigung" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="die-vereinigung">
+<h3>Die Vereinigung<a class="headerlink" href="#die-vereinigung" title="Permalink to this heading">#</a></h3>
 <p>Die Vereinigung von zwei Mengen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> enthält alle Elemente die in <span class="math notranslate nohighlight">\(A\)</span> <strong>oder</strong> <span class="math notranslate nohighlight">\(B\)</span> enthalten sind.</p>
 <p>Das heißt</p>
 <div class="proof definition admonition" id="definition-14">
 <p class="admonition-title"><span class="caption-number">Definition 8 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Seien <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> zwei Mengen so definieren wir <span class="math notranslate nohighlight">\(A\cup B\)</span> durch folgende Eigenschaft:</p>
 <div class="math notranslate nohighlight">
 \[x\in A\cup B \Leftrightarrow x\in A \text{ oder } x\in B.\]</div>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-15">
 <p class="admonition-title"><span class="caption-number">Example 8 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A=\{0,1,2,3,4\}\)</span> und <span class="math notranslate nohighlight">\(B=\{3,4,5,6 \}\)</span>. Dann gilt</p>
 <div class="math notranslate nohighlight">
 \[A\cup B= \{0,1,2,3,4,5,6\}\]</div>
-</div>
+</section>
 </div><p><strong>Frage:</strong></p>
 <p>Sei</p>
 <ul class="simple">
@@ -1103,36 +763,36 @@ Was ist <span class="math notranslate nohighlight">\(E \cap D\)</span></p></li>
 <div class="toggle docutils container">
 <p><span class="math notranslate nohighlight">\(D\cup E =\{ \{0,1\} ,\{2,3,4\},\{ 0,1,2,3,4 \} \}\)</span></p>
 </div>
-</div>
-<div class="section" id="differenz">
-<h3>Differenz<a class="headerlink" href="#differenz" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="differenz">
+<h3>Differenz<a class="headerlink" href="#differenz" title="Permalink to this heading">#</a></h3>
 <p>Wir können die Differenz von zwei Mengen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> bilden. Also diejenige Menge, die nur Elemente aus A enthält, die nicht in <span class="math notranslate nohighlight">\(B\)</span> enthalten sind.</p>
 <div class="proof definition admonition" id="definition-16">
 <p class="admonition-title"><span class="caption-number">Definition 9 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Seien <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> zwei Mengen so definieren wir <span class="math notranslate nohighlight">\(A\setminus B\)</span> durch folgende Eigenschaft:</p>
 <div class="math notranslate nohighlight">
 \[A \setminus B:=\{a\in A \ \vert \ a\notin B\}\]</div>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-17">
 <p class="admonition-title"><span class="caption-number">Example 9 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A=\{0,1,2,3,4\}\)</span> und <span class="math notranslate nohighlight">\(B=\{3,4,5,6 \}\)</span>. Dann gilt</p>
 <div class="math notranslate nohighlight">
 \[A\setminus B= \{0,1,2\}\]</div>
-</div>
-</div></div>
-<div class="section" id="das-kartesische-produkt">
-<h3>Das Kartesische Produkt<a class="headerlink" href="#das-kartesische-produkt" title="Permalink to this headline">#</a></h3>
+</section>
+</div></section>
+<section id="das-kartesische-produkt">
+<h3>Das Kartesische Produkt<a class="headerlink" href="#das-kartesische-produkt" title="Permalink to this heading">#</a></h3>
 <p>Wir können auch das Produkt von zwei Mengen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> definieren als die  Menge aller geordneten Paare von  <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span>.</p>
 <p>Genauer definieren wir:</p>
 <div class="proof definition admonition" id="definition-18">
 <p class="admonition-title"><span class="caption-number">Definition 10 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Seien <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> zwei Mengen so definieren wir das kartesische Produkt <span class="math notranslate nohighlight">\(A\times B\)</span> wie folgt:</p>
 <div class="math notranslate nohighlight">
 \[A\times B = \{(a,b) \vert a\in A, b\in B\}\]</div>
-</div>
+</section>
 </div><p><strong>Bemerkungen:</strong></p>
 <ul class="simple">
 <li><p>Im Gegensatz zu Elementen einer Menge, spielt bei geordneten Paaren die Reihenfolge der Objekte sehr wohl eine Rolle. So gilt für <span class="math notranslate nohighlight">\(a\neq b\)</span> das</p></li>
@@ -1145,20 +805,20 @@ Was ist <span class="math notranslate nohighlight">\(E \cap D\)</span></p></li>
 <div class="toggle docutils container">
 <p>Es gilt <span class="math notranslate nohighlight">\(\vert A\times B\vert = \vert A \vert \cdot \vert B\vert.\)</span></p>
 </div>
-</div>
-<div class="section" id="potenzmenge">
-<h3>Potenzmenge<a class="headerlink" href="#potenzmenge" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="potenzmenge">
+<h3>Potenzmenge<a class="headerlink" href="#potenzmenge" title="Permalink to this heading">#</a></h3>
 <p>Die Potenzmenge einer Menge ist die Menge aller Teilmengen. Genauer können wir auch hier die Potenzmenge wie folgt definieren.</p>
 <div class="proof definition admonition" id="definition-19">
 <p class="admonition-title"><span class="caption-number">Definition 11 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine Menge so definieren wir die  Potenzmenge <span class="math notranslate nohighlight">\(\mathcal{P}(A)\)</span> wie folgt:</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{P}(A) = \{U \ \vert \ U\subset A \}.\]</div>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-20">
 <p class="admonition-title"><span class="caption-number">Example 10 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A:=\{0,1,2,3,4\}\)</span>. Was ist nun <span class="math notranslate nohighlight">\(\mathcal{P}(A)\)</span>?</p>
 <p>Nun zunächst einmal gibt es die Teilmengen mit nur einem Element:</p>
 <div class="math notranslate nohighlight">
@@ -1188,7 +848,7 @@ In der Tat es gibt noch die Teilmenge mit null Elementen:
 \{ 1,3,4\},\{ 2,3,4\},\{0,1,2,3\},\{0,1,2,4\},\{0,1,3,4\},
  \{0,2,3,4\},\{1,2,3,4\},\{0,1,2,3,4\},\emptyset \right\}
 \end{split}\]</div>
-</div>
+</section>
 </div><p><strong>Frage:</strong></p>
 <p>Wie groß ist <span class="math notranslate nohighlight">\(\vert \mathcal{P} (A)\vert\)</span> ?</p>
 <p><strong>Antwort:</strong></p>
@@ -1199,13 +859,13 @@ In der Tat es gibt noch die Teilmenge mit null Elementen:
 </div>
 <div class="proof theorem admonition" id="theorem-21">
 <p class="admonition-title"><span class="caption-number">Theorem 1 </span></p>
-<div class="theorem-content section" id="proof-content">
+<section class="theorem-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine endliche Menge. Dann gilt für die Kardinalität der Potenzmenge folgende Formel</p>
 <div class="math notranslate nohighlight">
 \[
 \vert \mathcal{P}(A)=2^{\vert A \vert }.
 \]</div>
-</div>
+</section>
 </div><div class="proof admonition" id="proof">
 <p>Proof. Wir beweisen die Aussage in dem wir herleiten wie viel Möglichkeiten es gibt eine Teilmenge <span class="math notranslate nohighlight">\(U \subset A\)</span> zu konstruieren.
 Wir iterieren hierfür über die Anzahl <span class="math notranslate nohighlight">\(n\)</span> der Elemente von <span class="math notranslate nohighlight">\(A\)</span>, d.h. <span class="math notranslate nohighlight">\(\vert A \vert =n\)</span>.
@@ -1222,9 +882,9 @@ Für jedes Element <span class="math notranslate nohighlight">\(a\in A\)</span> 
 <p>Möglichkeiten.</p>
 </div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QJHyLDSeHqA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-<div class="section" id="venn-diagramme">
-<h3>Venn Diagramme<a class="headerlink" href="#venn-diagramme" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="venn-diagramme">
+<h3>Venn Diagramme<a class="headerlink" href="#venn-diagramme" title="Permalink to this heading">#</a></h3>
 <p>Wir können viele der Grundoperationen von Mengen auch graphisch darstellen durch sogenannten Venn Diagramme.</p>
 <p>Dabei stellen Kreise Mengen dar und wir können Schnitte zwischen Mengen als den überlappenden Teil der Kreise interpretieren.</p>
 <p>Hier ein paar Beispiele</p>
@@ -1252,16 +912,16 @@ Für jedes Element <span class="math notranslate nohighlight">\(a\in A\)</span> 
 <div class="math notranslate nohighlight">
 \[M=(B\cap C)\setminus A.\]</div>
 </div>
-</div>
-</div>
-<div class="section" id="naturliche-zahlen-als-menge">
-<h2>1.6 Natürliche Zahlen als Menge<a class="headerlink" href="#naturliche-zahlen-als-menge" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="naturliche-zahlen-als-menge">
+<h2>1.6 Natürliche Zahlen als Menge<a class="headerlink" href="#naturliche-zahlen-als-menge" title="Permalink to this heading">#</a></h2>
 <p>Was sind eigentlich Zahlen?
 Das ist eine philosophische Frage, die schon viel diskutiert wurde. Falls Sie sich näher dafür interessieren, lesen Sie zunächst diesen <a class="reference external" href="https://de.wikipedia.org/wiki/Philosophie_der_Mathematik">Wikipedia Artikel</a></p>
 <p>Eine erste zufriedenstellende Antwort auf die Frage, was die Zahlen sind hat Frege (1884) in <a class="reference external" href="https://de.wikipedia.org/wiki/Die_Grundlagen_der_Arithmetik">Grundlagen der Arithmetik</a> gegeben. Sein Ziel in dem Buch ist es die Zahlen mathematisch zu definieren. Oder in Freges Worten:</p>
 <p><em>„So ist auch die Zahl etwas Objektives. […] So verstehe ich unter Objektivität eine Unabhängigkeit von unserem Empfinden, Anschauen und Vorstellen […].“ (§ 26)</em></p>
-<div class="section" id="definition-der-naturlichen-zahlen">
-<h3>Definition der natürlichen Zahlen<a class="headerlink" href="#definition-der-naturlichen-zahlen" title="Permalink to this headline">#</a></h3>
+<section id="definition-der-naturlichen-zahlen">
+<h3>Definition der natürlichen Zahlen<a class="headerlink" href="#definition-der-naturlichen-zahlen" title="Permalink to this heading">#</a></h3>
 <p>Freges Grundideen für die Konstruktion der natürlichen Zahlen blieben erhalten, doch seine Ideen und die darauffolgende Entdeckung der sogenannten Russel’schen Antinomie führten zu einer Grundlagenkrise der Mathematik (mehr dazu im nächsten Abschnitt)</p>
 <p>Die Grundlegende Idee von Frege ist die, dass Zahlen aus Mengen abgeleitet werden können. Er hält Mengen für objektiver als Zahlen, worüber man sicher auch streiten kann.</p>
 <p>Dennoch die Konstruktion der natürlichen Zahlen aus Mengen hat sich in der Mathematik weitestgehend durchgesetzt.
@@ -1280,9 +940,9 @@ Wir können die Menge, die die leere Menge enthält bilden:</p>
 <div class="math notranslate nohighlight">
 \[n:= \{0,1,2,3, \dots, n-1\}.\]</div>
 <p>D.h. die Elemente der Menge <span class="math notranslate nohighlight">\(n\)</span> sind die Mengen <span class="math notranslate nohighlight">\(1,\dots,n-1\)</span>.</p>
-</div>
-<div class="section" id="rechnen-mit-naturlichen-zahlen">
-<h3>Rechnen mit natürlichen Zahlen<a class="headerlink" href="#rechnen-mit-naturlichen-zahlen" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="rechnen-mit-naturlichen-zahlen">
+<h3>Rechnen mit natürlichen Zahlen<a class="headerlink" href="#rechnen-mit-naturlichen-zahlen" title="Permalink to this heading">#</a></h3>
 <p>Zahlen sind nun aber vor allem darin charakterisiert, dass man mit ihnen rechnen kann.</p>
 <p>Wie können wir nun die Addition dieser Mengen definieren. Die Idee ist, dass wir definieren was wir mit <span class="math notranslate nohighlight">\( \_ + 1\)</span> meinen. Wir nennen diese Funktion <span class="math notranslate nohighlight">\(S(n)\)</span> oder auch Nachfolgerfunktion</p>
 <p>Wir definieren</p>
@@ -1290,10 +950,10 @@ Wir können die Menge, die die leere Menge enthält bilden:</p>
 \[S(n):= n \cup \{n\}.\]</div>
 <p>Dann können wir <span class="math notranslate nohighlight">\(n+2\)</span> als <span class="math notranslate nohighlight">\(S(S(n))\)</span> definieren und so weiter.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jZ65h6FwfoU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-</div>
-<div class="section" id="die-vollstandige-induktion">
-<h2>1.7 Die vollständige Induktion<a class="headerlink" href="#die-vollstandige-induktion" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="die-vollstandige-induktion">
+<h2>1.7 Die vollständige Induktion<a class="headerlink" href="#die-vollstandige-induktion" title="Permalink to this heading">#</a></h2>
 <p>Die vollständige Induktion ist eines der wichtigsten Beweistechniken der Mathematik.
 Die vollständige Induktion kann immer dann verwendet werden, wenn wir eine Aussage über natürliche Zahlen beweisen müssen.</p>
 <p>Beispiele für den Beweis sind folgende:</p>
@@ -1305,29 +965,29 @@ Die vollständige Induktion kann immer dann verwendet werden, wenn wir eine Auss
 <p>Wir brauchen zunächst folgende Definition:</p>
 <div class="proof definition admonition" id="definition-22">
 <p class="admonition-title"><span class="caption-number">Definition 12 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Wir sagen eine Menge <span class="math notranslate nohighlight">\(M\)</span> ist induktiv falls  gilt:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\emptyset \in M\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(m\cup \{m\}\in M\)</span> für alle Elemente <span class="math notranslate nohighlight">\(m\in M\)</span>.</p></li>
 </ul>
-</div>
+</section>
 </div><p><strong>Bemerkung</strong></p>
 <p>Die Menge <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> wurde genau so konstruiert, dass Sie Induktiv ist.</p>
 <p>Der Nächste Satz ist eigentlich eher eine Beobachtung, dennoch ist er so zentral für das Prinzip vollständige Induktion, dass wir in als Theorem formulieren.</p>
 <div class="proof theorem admonition" id="induktion">
 <p class="admonition-title"><span class="caption-number">Theorem 2 </span></p>
-<div class="theorem-content section" id="proof-content">
+<section class="theorem-content" id="proof-content">
 <p>Die Menge <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> ist die kleinste induktive Menge. D.h. falls <span class="math notranslate nohighlight">\(M\subset \mathbb{N}\)</span> und <span class="math notranslate nohighlight">\(M\)</span> induktiv dann ist <span class="math notranslate nohighlight">\(M=\mathbb{N}\)</span>.</p>
-</div>
+</section>
 </div><p>Wir versuchen nun mit diesem Satz die folgende Aussage zu beweisen:</p>
 <div class="proof theorem admonition" id="theorem-24">
 <p class="admonition-title"><span class="caption-number">Theorem 3 </span></p>
-<div class="theorem-content section" id="proof-content">
+<section class="theorem-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span> dann gilt</p>
 <div class="math notranslate nohighlight">
 \[0+ 1+2+3+\dots + n =\frac{n(n+1)}{2}.\]</div>
-</div>
+</section>
 </div><div class="proof admonition" id="proof">
 <p>Proof. Definieren wir zunächste <span class="math notranslate nohighlight">\(P(n)=1+2+3+\dots + n\)</span>.
 Definieren wir nun die folgende Menge</p>
@@ -1361,15 +1021,15 @@ Das heißt wir müssen noch die beiden Eigenschaften für induktive Mengen zeige
 <li><p><strong>Induktionsschritt</strong>: Wir zeigen, dass <span class="math notranslate nohighlight">\(A(n+1)\)</span> gilt unter der Verwendung von <span class="math notranslate nohighlight">\(A(n)\)</span>.</p></li>
 </ul>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iRmJp1FGPgQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-<div class="section" id="grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre">
-<h2>1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre<a class="headerlink" href="#grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre">
+<h2>1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre<a class="headerlink" href="#grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre" title="Permalink to this heading">#</a></h2>
 <p>Nachdem Frege sein Hauptwerk <a class="reference external" href="https://de.wikipedia.org/wiki/Grundgesetze_der_Arithmetik">Grundgesetze der Arithmetik</a> 1893 veröffentlicht hat, war er der Meinung, er hat die Mathematik auf eine objektiv Grundlage gestellt und alle Mathematischen Formeln konnten nun aus der Mengenlehre und der Logik abgeleitet werden.</p>
 <p>Leider machte ihm Russel einen Strich durch die Rechnung.
 Russel fand einen Widerspruch in der Mengenlehre und berichtet seinem Kollegen in einem Brief 1902 davon.
 Sie können den Originalbrief <a class="reference external" href="https://bayes.net/frege/">hier</a> finden.</p>
-<div class="section" id="russelsche-antinomie">
-<h3>Russelsche Antinomie<a class="headerlink" href="#russelsche-antinomie" title="Permalink to this headline">#</a></h3>
+<section id="russelsche-antinomie">
+<h3>Russelsche Antinomie<a class="headerlink" href="#russelsche-antinomie" title="Permalink to this heading">#</a></h3>
 <p>Der Widerspruch ist die Existenz folgender Menge</p>
 <div class="math notranslate nohighlight">
 \[M=\{x \ \vert\ \ x\notin x\}.\]</div>
@@ -1384,23 +1044,23 @@ Sie können den Originalbrief <a class="reference external" href="https://bayes.
 <p>Als Frege den Brief von Russel liest, merkt er sofort, dass sein Hauptwerk einen kolossalen Fehler enthalt.
 In seinem  zweiten Band schreibt er:</p>
 <p><em>„Einem wissenschaftlichen Schriftsteller kann kaum etwas Unerwünschteres begegnen, als daß ihm nach Vollendung einer Arbeit eine der Grundlagen seines Baues erschüttert wird. In diese Lage wurde ich durch einen Brief des Herrn Bertrand Russell versetzt, als der Druck dieses Bandes sich seinem Ende näherte.“</em></p>
-</div>
-<div class="section" id="auflosung-der-russelschen-antinomie">
-<h3>Auflösung der Russelschen Antinomie<a class="headerlink" href="#auflosung-der-russelschen-antinomie" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="auflosung-der-russelschen-antinomie">
+<h3>Auflösung der Russelschen Antinomie<a class="headerlink" href="#auflosung-der-russelschen-antinomie" title="Permalink to this heading">#</a></h3>
 <p>Im Grunde gab es zwei Wege aus der Russelschen Antinomie.</p>
-<div class="section" id="russels-typentheorie">
-<h4>Russels Typentheorie<a class="headerlink" href="#russels-typentheorie" title="Permalink to this headline">#</a></h4>
+<section id="russels-typentheorie">
+<h4>Russels Typentheorie<a class="headerlink" href="#russels-typentheorie" title="Permalink to this heading">#</a></h4>
 <p>Der erste Ansatz war der von Russel, der anstatt einer Mengenlehre als Fundament, eine Typentheorie vorschlug. Grob gesagt, gibt es in der Typentheorie verschiedene Typen von Objekte, die in einer Hierarchie zueinander stehen. In der Naiven Mengenlehre können Mengen auch Elemente einer Menge sein. Das ergibt im Wesentlichen den Widerspruch der Russelschen Antinomie und muss daher untersagt werden. Die Typentheorie ist eine Ausformulierung dieses Verbotes.</p>
 <p>Russels Auflösung gipfelte in einer dreibändigen Schrift mit dem Namen “Principia Mathematica” welche er zusammen Whitehead zwischen 1910 und 1913 veröffentlichte.</p>
 <p>Leider hat sich die Typentheorie nicht wirklich durchgesetzt. Kaum ein:e Mathematiker:in hat  die “Principia Mathematica” wirklich gelesen und das Werk gilt eher von historischem Wert. Zu kompliziert und unintuitiv haben viele die Theorien empfunden. Dennoch lösen sie die Grundlagenkrise der Mathematik auf und bieten ein Fundament der Arithmetik.</p>
-</div>
-<div class="section" id="zermelo-fraenkel-mengenlehre">
-<h4>Zermelo-Fraenkel Mengenlehre<a class="headerlink" href="#zermelo-fraenkel-mengenlehre" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="zermelo-fraenkel-mengenlehre">
+<h4>Zermelo-Fraenkel Mengenlehre<a class="headerlink" href="#zermelo-fraenkel-mengenlehre" title="Permalink to this heading">#</a></h4>
 <p>Die zweite Auflösung der Russelschen Antinomie ist die Erweiterungen der Mengenlehre. Die Mengenlehre muss in sich selbst verhindern, dass solche Widersprüche wie die Russelsche Antinomie enstehen können.
 Basis hierfür sind die sogenannten Axiome der <a class="reference external" href="https://de.wikipedia.org/wiki/Zermelo-Fraenkel-Mengenlehre(ZFM)">Zermelo-Freankel Mengenlehre</a>, die in ihrer heutigen Form etwa seit 1930 bestehen.</p>
 <p>Alle Axiome der ZFM durchzugehen würde definitiv den Rahmen dieses Kurses sprengen. Dennoch schauen wir uns die wichtigsten Axiome an, die verhindern, dass ein Widerspruch wie dem der Russelschen Antinomie auftreten kann, verhindert.</p>
-<div class="section" id="aussonderungsaxiom">
-<h5>Aussonderungsaxiom<a class="headerlink" href="#aussonderungsaxiom" title="Permalink to this headline">#</a></h5>
+<section id="aussonderungsaxiom">
+<h5>Aussonderungsaxiom<a class="headerlink" href="#aussonderungsaxiom" title="Permalink to this heading">#</a></h5>
 <p>Sei <span class="math notranslate nohighlight">\(P(m)\)</span> eine logische Aussage, die von einem Element <span class="math notranslate nohighlight">\(m\)</span> der Menge <span class="math notranslate nohighlight">\(M\)</span> abhängt. Also <span class="math notranslate nohighlight">\(m\in M\)</span>.</p>
 <p>Denken sie zum Beispiel an eine Aussage wie <span class="math notranslate nohighlight">\(P(n)=n \text{ ist eine gerade Zahl}\)</span>.</p>
 <p>Das Aussonderungsaxiom besagt nun, dass folgende Menge existiert:</p>
@@ -1412,18 +1072,18 @@ Basis hierfür sind die sogenannten Axiome der <a class="reference external" hre
 \[M=\{x \ \vert\ \ x\notin x\}.\]</div>
 <p>Der Unterschied ist dass wir <span class="math notranslate nohighlight">\(x\)</span> nicht beschränken. Wir geben keine schon existierende Menge, in der <span class="math notranslate nohighlight">\(x\)</span> eingebettet ist.
 Obige Menge <span class="math notranslate nohighlight">\(M\)</span> kann also nicht in der Zermelo-Fraenkel Mengenlehre konstruiert werden und damit bekommen wir keinen Widerspruch.</p>
-</div>
-<div class="section" id="fundierungsaxiom">
-<h5>Fundierungsaxiom<a class="headerlink" href="#fundierungsaxiom" title="Permalink to this headline">#</a></h5>
+</section>
+<section id="fundierungsaxiom">
+<h5>Fundierungsaxiom<a class="headerlink" href="#fundierungsaxiom" title="Permalink to this heading">#</a></h5>
 <p>Das Fundierungsaxiom sagt, dass jede Nichtleere Menge <span class="math notranslate nohighlight">\(M\)</span> eine Element <span class="math notranslate nohighlight">\(m\)</span> enthält, so dass <span class="math notranslate nohighlight">\(M\cap m\not =  \emptyset\)</span></p>
 <p>Das Fundierungsaxiom mag erst einmal etwas kryptisch wirken. Doch es ist genau die Regel, die besagt, dass keine Menge sich selbst enthalten darf.</p>
 <p>Angenommen es gilt <span class="math notranslate nohighlight">\(A\in A\)</span>. Betrachte nun die Menge <span class="math notranslate nohighlight">\(M=\{A\}\)</span>. Das einzige Element von <span class="math notranslate nohighlight">\(M\)</span> ist <span class="math notranslate nohighlight">\(A\)</span>. Also muss nach dem Fundierungsaxiom gelten, dass <span class="math notranslate nohighlight">\(A\cap \{A\}=\emptyset\)</span>. Das ergibt aber einen Widerspruch mit der Tatsache, dass <span class="math notranslate nohighlight">\(A\in A\cap \{A\}\)</span>.</p>
 <p>Also kann nach dem Fundierungsaxiom keine Menge sich selbst enthalten.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wgFkVg1icD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-</div>
-</div>
-</div>
-</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wgFkVg1icD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1445,50 +1105,150 @@ Obige Menge <span class="math notranslate nohighlight">\(M\)</span> kann also ni
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Willkommen im Kurs “Grundlagen der Mathematik”</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Willkommen im Kurs “Grundlagen der Mathematik”</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="logik.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="logik.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Kapitel 2 Grundlagen der Logik</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">1. 0 Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-einer-menge">1.1 Definition einer Menge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">1.2 Notation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leere-menge">Leere Menge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elemente-einer-menge">Elemente einer Menge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teilmenge">Teilmenge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gleichheit-zweier-mengen">Gleichheit zweier Mengen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kardinalitat-einer-menge">Kardinalität einer Menge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-von-mengen">1.3 Definition von Mengen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#endliche-mengen">Endliche Mengen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unendliche-mengen-mit-regeln">Unendliche Mengen mit Regeln</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zahlenmengen">1.4 Zahlenmengen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-naturlichen-zahlen-mathbb-n">Die natürlichen Zahlen <span class="math notranslate nohighlight">\(\mathbb{N}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-ganzen-zahlen-mathbb-z">Die ganzen Zahlen <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-rationalen-zahlen-mathbb-q">Die rationalen Zahlen <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-reellen-zahlen-mathbb-r">Die reellen Zahlen <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenhang-zwischen-den-verschiedenen-zahlenmengen">Zusammenhang zwischen den verschiedenen Zahlenmengen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intervallschreibweise">Intervallschreibweise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengenoperationen">1.5 Mengenoperationen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-schnittmenge">Die Schnittmenge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-vereinigung">Die Vereinigung</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differenz">Differenz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#das-kartesische-produkt">Das Kartesische Produkt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#potenzmenge">Potenzmenge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#venn-diagramme">Venn Diagramme</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naturliche-zahlen-als-menge">1.6 Natürliche Zahlen als Menge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-der-naturlichen-zahlen">Definition der natürlichen Zahlen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rechnen-mit-naturlichen-zahlen">Rechnen mit natürlichen Zahlen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-vollstandige-induktion">1.7 Die vollständige Induktion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre">1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#russelsche-antinomie">Russelsche Antinomie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auflosung-der-russelschen-antinomie">Auflösung der Russelschen Antinomie</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#russels-typentheorie">Russels Typentheorie</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zermelo-fraenkel-mengenlehre">Zermelo-Fraenkel Mengenlehre</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#aussonderungsaxiom">Aussonderungsaxiom</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#fundierungsaxiom">Fundierungsaxiom</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-    By Prof. Dr. Georg Merz<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
-</div>
+<p class="component-author">
+By Prof. Dr. Georg Merz
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
 
-      </div>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

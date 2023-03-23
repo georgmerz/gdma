@@ -1,48 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kapitel 3 - Relationen und Funktionen &#8212; Grundlagen der Mathematik</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>Kapitel 3 - Relationen und Funktionen &#8212; Grundlagen der Mathematik</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,60 +64,86 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'relationsAndFunctions';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Kapitel 2 Grundlagen der Logik" href="logik.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
-      
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Grundlagen der Mathematik</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Grundlagen der Mathematik</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -115,468 +153,252 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="mengenlehre.html">
-   Kapitel 1 - Mengenlehre
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="logik.html">
-   Kapitel 2 Grundlagen der Logik
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Kapitel 3 - Relationen und Funktionen
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="mengenlehre.html">Kapitel 1 - Mengenlehre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logik.html">Kapitel 2 Grundlagen der Logik</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Kapitel 3 - Relationen und Funktionen</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/georgmerz/gdma" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/georgmerz/gdma/issues/new?title=Issue%20on%20page%20%2FrelationsAndFunctions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/relationsAndFunctions.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/georgmerz/gdma"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/georgmerz/gdma/issues/new?title=Issue%20on%20page%20%2FrelationsAndFunctions.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/relationsAndFunctions.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lernziele">
-   3.1 Lernziele
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#relationen">
-   3.2 Relationen
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#binare-relationen">
-     Binäre Relationen
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#darstellung-binarer-relationen">
-       Darstellung binärer Relationen
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#eigenschaften-binarer-relationen">
-       Eigenschaften binärer Relationen
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#reflexiv">
-         Reflexiv
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#symmetrisch">
-         Symmetrisch
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#antisymmetrisch">
-         Antisymmetrisch
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#transitiv">
-       Transitiv
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ordnungen">
-     Ordnungen
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aquivalenzrelationen">
-     Äquivalenzrelationen
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#funktionen">
-   3.3 Funktionen
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#funktionen-als-relationen">
-     Funktionen als Relationen
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#darstellung-von-funktionen">
-     Darstellung von Funktionen
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#wertetabelle">
-       Wertetabelle
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#abschnittsweise-definierte-funktionen">
-       Abschnittsweise definierte Funktionen
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#verknupfung-von-funktionen">
-     Verknüpfung von Funktionen
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-umkehrfunktion">
-     Die Umkehrfunktion
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#injektivitat">
-       Injektivität
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#surjektivitat">
-       Surjektivität
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#bijektivitat">
-       Bijektivität
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Kapitel 3 - Relationen und Funktionen</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lernziele">
-   3.1 Lernziele
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#relationen">
-   3.2 Relationen
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#binare-relationen">
-     Binäre Relationen
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#darstellung-binarer-relationen">
-       Darstellung binärer Relationen
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#eigenschaften-binarer-relationen">
-       Eigenschaften binärer Relationen
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#reflexiv">
-         Reflexiv
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#symmetrisch">
-         Symmetrisch
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#antisymmetrisch">
-         Antisymmetrisch
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#transitiv">
-       Transitiv
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ordnungen">
-     Ordnungen
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aquivalenzrelationen">
-     Äquivalenzrelationen
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#funktionen">
-   3.3 Funktionen
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#funktionen-als-relationen">
-     Funktionen als Relationen
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#darstellung-von-funktionen">
-     Darstellung von Funktionen
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#wertetabelle">
-       Wertetabelle
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#abschnittsweise-definierte-funktionen">
-       Abschnittsweise definierte Funktionen
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#verknupfung-von-funktionen">
-     Verknüpfung von Funktionen
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-umkehrfunktion">
-     Die Umkehrfunktion
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#injektivitat">
-       Injektivität
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#surjektivitat">
-       Surjektivität
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#bijektivitat">
-       Bijektivität
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Kapitel 3 - Relationen und Funktionen</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">3.1 Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relationen">3.2 Relationen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binare-relationen">Binäre Relationen</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#darstellung-binarer-relationen">Darstellung binärer Relationen</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaften-binarer-relationen">Eigenschaften binärer Relationen</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#reflexiv">Reflexiv</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetrisch">Symmetrisch</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#antisymmetrisch">Antisymmetrisch</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#transitiv">Transitiv</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordnungen">Ordnungen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aquivalenzrelationen">Äquivalenzrelationen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen">3.3 Funktionen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-als-relationen">Funktionen als Relationen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#darstellung-von-funktionen">Darstellung von Funktionen</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wertetabelle">Wertetabelle</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#abschnittsweise-definierte-funktionen">Abschnittsweise definierte Funktionen</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verknupfung-von-funktionen">Verknüpfung von Funktionen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-umkehrfunktion">Die Umkehrfunktion</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#injektivitat">Injektivität</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#surjektivitat">Surjektivität</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="kapitel-3-relationen-und-funktionen">
-<h1>Kapitel 3 - Relationen und Funktionen<a class="headerlink" href="#kapitel-3-relationen-und-funktionen" title="Permalink to this headline">#</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="kapitel-3-relationen-und-funktionen">
+<h1>Kapitel 3 - Relationen und Funktionen<a class="headerlink" href="#kapitel-3-relationen-und-funktionen" title="Permalink to this heading">#</a></h1>
 <p>Funktionen kennen Sie wohl alle noch aus der Schule. Dort haben Sie vermutlich die Quadratische Funktion, die Logarthmusfunktion, Sinus und Cosinus sowie die Exponentialfunktion kennengelernt. Doch was sind Relationen.</p>
 <p>Tatsächlich sind Relationen, das allgemeinere Konzept. Am Anschaulichsten wird dies im Bereich der Datenspeicherung offensichtlich. Sie haben vermutlich schon einmal etwas von <strong>relationalen Datenbanken</strong> gehört.</p>
 <p>Diese bedienen sich genau aus dem Konzept der Relationen.</p>
 <p>eine relationale Datenbank ist eine Sammlung von Relationen. Relationen selber kann man sich als eine Tabelle vorstellen</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Name</strong></p></th>
 <th class="head"><p><strong>Geburtstag</strong></p></th>
@@ -608,8 +430,8 @@ title="Print to PDF"
 </tbody>
 </table>
 <p>Wie wir dieses Konzept formalisieren lernen wir in den nächsten Kapiteln.d</p>
-<div class="section" id="lernziele">
-<h2>3.1 Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<section id="lernziele">
+<h2>3.1 Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
 <p>In diesem Abschnitt lernen wir die folgenden Dinge:</p>
 <ul class="simple">
 <li><p>Syntax/Schreibweise der Aussagenlogik</p></li>
@@ -628,9 +450,9 @@ title="Print to PDF"
 <li><p>Verständnis des Gödelschen Unvollständigkeitssatz erlangen</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="relationen">
-<h2>3.2 Relationen<a class="headerlink" href="#relationen" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="relationen">
+<h2>3.2 Relationen<a class="headerlink" href="#relationen" title="Permalink to this heading">#</a></h2>
 <p>Wir haben in der Einleitung schon versucht die Relation als eine Tabelle zu motivieren. Dabei Haben wir zunächst die Kategorien wie in unserem Beispiel Name, Geburtstag, Wohnort und Matrikelnr. Kategorien interpretieren wir als Mengen wobei die Menge der Namen alle Namen enthält die Potentiell auftreten können (z.B. ein Auszug aller Meldeämter). Die Menge der Matrikelnr. enthält alle validen Kombinationen aus Zahlen die eine Matrikelnr. bilden und so weiter.</p>
 <p>Sagen wir also wir haben unsere Kategorien in Mengen <span class="math notranslate nohighlight">\(A_1,\dots, A_n\)</span> übersetzt.</p>
 <p>Was ist nun eine Zeile in dieser Tabelle? Nun es ist eine Liste von Werten</p>
@@ -639,15 +461,15 @@ title="Print to PDF"
 <p>Damit ergibt sich die Formale Definition einer Relation wie folgt</p>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 20 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Seien <span class="math notranslate nohighlight">\(A_1,\dots, A_n\)</span> Mengen. Eine <strong><span class="math notranslate nohighlight">\(n\)</span>-stellige Relation</strong> <span class="math notranslate nohighlight">\(R\)</span> ist definiert als eine Teilmenge</p>
 <div class="math notranslate nohighlight">
 \[R\subset A_1\times \dots \times A_n.\]</div>
 <p>Sind alle <span class="math notranslate nohighlight">\(A_i\)</span> identisch so heißt <span class="math notranslate nohighlight">\(R\)</span> auch <strong>homogen</strong>, ansonsten <strong>heterogen</strong>. Für eine <span class="math notranslate nohighlight">\(n\)</span>-stellige homogene Relation <span class="math notranslate nohighlight">\(R\subset A\times\dots\times A\)</span> heißt <span class="math notranslate nohighlight">\(A\)</span> auch die <strong>Grundmenge</strong>.</p>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 22 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A_1=\left\{0,1\right\}, A_2=\left\{0,1,2\right\},A_3=\left\{0,1,2,3\right\}\)</span>.</p>
 <p>Dann sind folgende Mengen 3-stellige Relationen:</p>
 <ul class="simple">
@@ -655,36 +477,36 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(R_2=\left\{ (x,y,z)\in A_1\times A_2 \times A_3 \ \vert \ x+y+z=3\right\}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(R_3=\left\{ (x,y,z)\in A_1\times A_2 \times A_3 \ \vert \ x=0\right\}\)</span></p></li>
 </ul>
-</div>
+</section>
 </div><p><strong>Aufgabe</strong></p>
 <p>Geben Sie <span class="math notranslate nohighlight">\(R_2 und R_3\)</span> ein aufzählender Form an!</p>
-<div class="section" id="binare-relationen">
-<h3>Binäre Relationen<a class="headerlink" href="#binare-relationen" title="Permalink to this headline">#</a></h3>
+<section id="binare-relationen">
+<h3>Binäre Relationen<a class="headerlink" href="#binare-relationen" title="Permalink to this heading">#</a></h3>
 <p>Der Fall <span class="math notranslate nohighlight">\(n=2\)</span> ist ein wichtiger Spezialfall. Deshalb verdient er eine eigene Definition.</p>
 <div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 21 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Eine zweistellige Relation <span class="math notranslate nohighlight">\(R\subset A_1\times A_2\)</span> nennen wir auch <strong>binäre Relation</strong>. Falls <span class="math notranslate nohighlight">\((a_1,a_2)\in R\)</span> so schreiben wir auch <span class="math notranslate nohighlight">\(a_1Ra_2\)</span>.</p>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-3">
 <p class="admonition-title"><span class="caption-number">Example 23 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Wir definieren eine Relation $R\subset \mathbb{R}\times \mathbb{R} wie folgt:</p>
 <div class="math notranslate nohighlight">
 \[R=\left\{(x,y)\in \mathbb{R}\times \mathbb{R} \ \vert \ x&lt;y \right\}\]</div>
 <p>Wir nennen diese Relation auch die <strong>kleiner Relation</strong> und schreiben <span class="math notranslate nohighlight">\(x&lt;y\)</span> falls <span class="math notranslate nohighlight">\(xRy\)</span>.</p>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 24 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Wir definieren eine weitere Relation $R\subset \mathbb{R}\times \mathbb{R} wie folgt:</p>
 <div class="math notranslate nohighlight">
 \[R=\left\{(x,y)\in \mathbb{R}\times \mathbb{R} \ \vert \ x=y \right\}\]</div>
 <p>Wir nennen diese Relation auch die <strong>gleich Relation</strong> und schreiben <span class="math notranslate nohighlight">\(x=y\)</span> falls <span class="math notranslate nohighlight">\(xRy\)</span>.</p>
-</div>
+</section>
 </div><p>Wie Sie sehen haben wir Relationen also schon genutzt ohne es zu wissen die Zeichen <span class="math notranslate nohighlight">\(=,\not =, &lt; ,\leq,&gt;,\geq\)</span> sind alle binäre Relationen mit der Grundmenge <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
-<div class="section" id="darstellung-binarer-relationen">
-<h4>Darstellung binärer Relationen<a class="headerlink" href="#darstellung-binarer-relationen" title="Permalink to this headline">#</a></h4>
+<section id="darstellung-binarer-relationen">
+<h4>Darstellung binärer Relationen<a class="headerlink" href="#darstellung-binarer-relationen" title="Permalink to this heading">#</a></h4>
 <p>Binäre Relationen lassen sich im Falle von endlichen Mengen <span class="math notranslate nohighlight">\(A_1\)</span> und <span class="math notranslate nohighlight">\(A_2\)</span> kompakt darstellen. Dabei gibt es zwei Möglichkeiten der Darstellung, die wir im Folgenden näher betrachten wollen:</p>
 <ul class="simple">
 <li><p>Pfeildarstellung</p></li>
@@ -704,7 +526,7 @@ title="Print to PDF"
 <p>Die Pfeildarstellung ist fast selbsterklärend. Wir sehen anhand der Darstellung dass Student:in <span class="math notranslate nohighlight">\(S_1\)</span> die Fächer “Grundlagen der Mathematik” und “Programmieren 1” belegt hat.
 Hingegen belegt <span class="math notranslate nohighlight">\(S_4\)</span> die Fächer “Programmieren 1” und “Programmieren 2” gleichzeitig.</p>
 <p><strong>Matrixdarstellung</strong></p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(S_1\)</span></p></th>
@@ -751,20 +573,20 @@ Hingegen belegt <span class="math notranslate nohighlight">\(S_4\)</span> die F�
 </tbody>
 </table>
 <p>Die Matrixdarstellung ist eine Tabellarische Darstellung bei der wir an jeder Spalten-Zeilen Kombination ein x schreiben falls, die Kombination in der Relation enthalten ist.</p>
-</div>
-<div class="section" id="eigenschaften-binarer-relationen">
-<h4>Eigenschaften binärer Relationen<a class="headerlink" href="#eigenschaften-binarer-relationen" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="eigenschaften-binarer-relationen">
+<h4>Eigenschaften binärer Relationen<a class="headerlink" href="#eigenschaften-binarer-relationen" title="Permalink to this heading">#</a></h4>
 <p>Es gibt viele definierende Eigenschaften von Relationen, die wir hier kurz zusammenfassen wollen.
 Im folgenden Sei <span class="math notranslate nohighlight">\(R\)</span> immer eine homogene binäre Relation.</p>
-<div class="section" id="reflexiv">
-<h5>Reflexiv<a class="headerlink" href="#reflexiv" title="Permalink to this headline">#</a></h5>
+<section id="reflexiv">
+<h5>Reflexiv<a class="headerlink" href="#reflexiv" title="Permalink to this heading">#</a></h5>
 <div class="proof definition admonition" id="definition-5">
 <p class="admonition-title"><span class="caption-number">Definition 22 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(R\)</span> eine homogene binäre Relation mit Grundmenge <span class="math notranslate nohighlight">\(A\)</span>. Dann nennen wir <span class="math notranslate nohighlight">\(R\)</span> <strong>reflexiv</strong> falls</p>
 <div class="math notranslate nohighlight">
 \[xRx \text{ für alle } x\in A\]</div>
-</div>
+</section>
 </div><p>In der Sprache der Prädikatenlogik können wir schreiben:</p>
 <div class="math notranslate nohighlight">
 \[\forall x\in A: xRx.\]</div>
@@ -776,14 +598,14 @@ Im folgenden Sei <span class="math notranslate nohighlight">\(R\)</span> immer e
 <p>Die Relationen
 <span class="math notranslate nohighlight">\(=,\leq,\geq\)</span>.</p>
 </div>
-</div>
-<div class="section" id="symmetrisch">
-<h5>Symmetrisch<a class="headerlink" href="#symmetrisch" title="Permalink to this headline">#</a></h5>
+</section>
+<section id="symmetrisch">
+<h5>Symmetrisch<a class="headerlink" href="#symmetrisch" title="Permalink to this heading">#</a></h5>
 <div class="proof definition admonition" id="definition-6">
 <p class="admonition-title"><span class="caption-number">Definition 23 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(R\)</span> eine homogene binäre Relation mit Grundmenge <span class="math notranslate nohighlight">\(A\)</span>. Dann nennen wir <span class="math notranslate nohighlight">\(R\)</span> <strong>symmetrisch</strong> falls für alle <span class="math notranslate nohighlight">\(x,y\in A\)</span> mit <span class="math notranslate nohighlight">\(xRy\)</span> auch gilt <span class="math notranslate nohighlight">\(yRx\)</span>.</p>
-</div>
+</section>
 </div><p>In der Sprache der Prädikatenlogik können wir schreiben:</p>
 <div class="math notranslate nohighlight">
 \[\forall x,y\in A: (xRy \to yRx).\]</div>
@@ -794,14 +616,14 @@ Im folgenden Sei <span class="math notranslate nohighlight">\(R\)</span> immer e
 <div class="toggle docutils container">
 <p>Nur <span class="math notranslate nohighlight">\(=\)</span>.</p>
 </div>
-</div>
-<div class="section" id="antisymmetrisch">
-<h5>Antisymmetrisch<a class="headerlink" href="#antisymmetrisch" title="Permalink to this headline">#</a></h5>
+</section>
+<section id="antisymmetrisch">
+<h5>Antisymmetrisch<a class="headerlink" href="#antisymmetrisch" title="Permalink to this heading">#</a></h5>
 <div class="proof definition admonition" id="definition-7">
 <p class="admonition-title"><span class="caption-number">Definition 24 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(R\)</span> eine homogene binäre Relation mit Grundmenge <span class="math notranslate nohighlight">\(A\)</span>. Dann nennen wir <span class="math notranslate nohighlight">\(R\)</span> <strong>antisymmetrisch</strong> falls für alle <span class="math notranslate nohighlight">\(x,y\in A\)</span> mit sowohl <span class="math notranslate nohighlight">\(xRy\)</span> als auch <span class="math notranslate nohighlight">\(yRx\)</span> gilt, dass <span class="math notranslate nohighlight">\(x=y\)</span> sein muss.</p>
-</div>
+</section>
 </div><p>In der Sprache der Prädikatenlogik können wir schreiben:</p>
 <div class="math notranslate nohighlight">
 \[\forall x,y\in A: ((xRy \land yRx) \to x=y).\]</div>
@@ -813,15 +635,15 @@ Im folgenden Sei <span class="math notranslate nohighlight">\(R\)</span> immer e
 <p>Die Relationen <span class="math notranslate nohighlight">\(=, &lt; ,\leq,&gt;,\geq\)</span> antisymmetrisch. Für die Relationen <span class="math notranslate nohighlight">\(\leq\)</span> und <span class="math notranslate nohighlight">\(\geq \)</span> ist das einfacher zu sehen. Für die Relationen <span class="math notranslate nohighlight">\(&lt;,&gt;\)</span> liegt, dass daran dass niemals <span class="math notranslate nohighlight">\(x&lt;y und \)</span>y&lt;x$ gleichzeitig gelten kann. Also der linke Teil der Implikation immer falsch ist.</p>
 <p>Übung: Warum ist <span class="math notranslate nohighlight">\(=\)</span> antisymmetrisch?</p>
 </div>
-</div>
-</div>
-<div class="section" id="transitiv">
-<h4>Transitiv<a class="headerlink" href="#transitiv" title="Permalink to this headline">#</a></h4>
+</section>
+</section>
+<section id="transitiv">
+<h4>Transitiv<a class="headerlink" href="#transitiv" title="Permalink to this heading">#</a></h4>
 <div class="proof definition admonition" id="definition-8">
 <p class="admonition-title"><span class="caption-number">Definition 25 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(R\)</span> eine homogene binäre Relation mit Grundmenge <span class="math notranslate nohighlight">\(A\)</span>. Dann nennen wir <span class="math notranslate nohighlight">\(R\)</span> <strong>transitiv</strong> falls für alle <span class="math notranslate nohighlight">\(x,y,z\in A\)</span> mit <span class="math notranslate nohighlight">\(xRy\)</span> und <span class="math notranslate nohighlight">\(yRz\)</span> auch gilt: <span class="math notranslate nohighlight">\(xRz\)</span>.</p>
-</div>
+</section>
 </div><p>In der Sprache der Prädikatenlogik können wir schreiben:</p>
 <div class="math notranslate nohighlight">
 \[\forall x,y,z\in A: ((xRy \land yRz)\to xRz).\]</div>
@@ -833,30 +655,30 @@ Im folgenden Sei <span class="math notranslate nohighlight">\(R\)</span> immer e
 <p>Die Relationen <span class="math notranslate nohighlight">\(=, &lt; ,\leq,&gt;,\geq\)</span> sind alle transitiv.
 Wir betrachten das Beispiel <span class="math notranslate nohighlight">\(&lt;\)</span>. Falls die Zahl <span class="math notranslate nohighlight">\(x&lt;y\)</span> und <span class="math notranslate nohighlight">\(y&lt;z\)</span>. Dann haben wir drei Zahlen <span class="math notranslate nohighlight">\(x,y,z\)</span> in aufsteigender Reihenfolge. Es gilt demnach natürlich auch <span class="math notranslate nohighlight">\(x&lt;z\)</span>, was genau die Transitivität bedeutet.</p>
 </div>
-</div>
-</div>
-<div class="section" id="ordnungen">
-<h3>Ordnungen<a class="headerlink" href="#ordnungen" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="ordnungen">
+<h3>Ordnungen<a class="headerlink" href="#ordnungen" title="Permalink to this heading">#</a></h3>
 <p>Ordnungsrelationen sind eine Verallgemeinerung der Relationen <span class="math notranslate nohighlight">\(\geq,\leg,&lt;,&gt;\)</span> die wir schon für Zahlen kennen.
 Zunächst einmal definieren wir formal eine Ordnungsrelation und betrachten, dann warum diese Definition sinnvoll ist.</p>
 <div class="proof definition admonition" id="definition-9">
 <p class="admonition-title"><span class="caption-number">Definition 26 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Eine binäre homogene Relation <span class="math notranslate nohighlight">\(R\subset A\times A\)</span> heißt <strong>Ordnung</strong> falls <span class="math notranslate nohighlight">\(R\)</span> folgende Eigenschaften besitzt:</p>
 <ul class="simple">
 <li><p>reflexiv</p></li>
 <li><p>antisymmetrisch</p></li>
 <li><p>transitiv</p></li>
 </ul>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-10">
 <p class="admonition-title"><span class="caption-number">Example 25 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Wir haben bereits anhand der Beispiele gesehen, dass nach obiger Definition <span class="math notranslate nohighlight">\(=,\leq, &lt;, \geq,&gt;\)</span> Ordnungen sind.</p>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-11">
 <p class="admonition-title"><span class="caption-number">Example 26 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A=\mathcal{P}(\mathbb{N})\)</span>. Dann definieren wir eine Relation <span class="math notranslate nohighlight">\(R\subset \mathcal{P}(\mathbb{N}\times \mathcal{P}(\mathbb{N}\)</span> wie folgt</p>
 <div class="math notranslate nohighlight">
 \[R=\left\{ (A,B)\in \mathcal{P}(\mathbb{N}\times \mathcal{P}(\mathbb{N} \ \vert \ A\subset B \right\}\]</div>
@@ -873,46 +695,46 @@ Zunächst einmal definieren wir formal eine Ordnungsrelation und betrachten, dan
 <li><p>Transitiv:</p></li>
 </ul>
 <p>Sei nun <span class="math notranslate nohighlight">\((A,B) \in R\)</span> und <span class="math notranslate nohighlight">\((B,C)\in R\)</span>. Also <span class="math notranslate nohighlight">\(A\subset B\)</span> und <span class="math notranslate nohighlight">\(B\subset C\)</span>. Dann gilt <span class="math notranslate nohighlight">\(A\subset C\)</span> (Übung!)</p>
-</div>
+</section>
 </div><div class="proof definition admonition" id="definition-12">
 <p class="admonition-title"><span class="caption-number">Definition 27 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(R\subset A\times A\)</span> eine Ordnung. Dann nennen wir <span class="math notranslate nohighlight">\(A\)</span> eine <strong>geordnete Menge</strong> bzgl. <span class="math notranslate nohighlight">\(A\)</span>.</p>
-</div>
+</section>
 </div><p>Es ist also <span class="math notranslate nohighlight">\(\mathcal{P}(\mathbb{N})\)</span> eine geoordnete Menge bezüglich der obigen Relation “\subset”.
 Das heißt aber nicht, dass wir alle Elemente in <span class="math notranslate nohighlight">\(A\)</span> miteinander “vergleichen” können. So kann es zwei Teilmengen <span class="math notranslate nohighlight">\(A,B\subset \mathbb{N}\)</span> geben für die weder <span class="math notranslate nohighlight">\(A\subset B\)</span> noch <span class="math notranslate nohighlight">\(B\subset A\)</span> gilt. Z.B. <span class="math notranslate nohighlight">\(A=\{1,2,3\}\)</span> und <span class="math notranslate nohighlight">\(B\{4,5,6,7\}\)</span>.</p>
 <p>Im Gegensatz dazu ist in <span class="math notranslate nohighlight">\(\mathcal{N}\)</span> bzgl. \leq jede Zahl vergleichbar, denn für zwei zahlen <span class="math notranslate nohighlight">\(n,m\in \mathbb{N}\)</span> gilt immer entweder <span class="math notranslate nohighlight">\(a\leq b\)</span> oder <span class="math notranslate nohighlight">\(b\leq a\)</span>.</p>
 <p>Solch eine Ordnung nennen wir Totale Ordnung.</p>
 <div class="proof definition admonition" id="definition-13">
 <p class="admonition-title"><span class="caption-number">Definition 28 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine geoordnete Menge bzgl. der Relation <span class="math notranslate nohighlight">\(R\)</span>. Dann nennen wir <span class="math notranslate nohighlight">\(R\)</span> eine <strong>totale Ordnung</strong> falls für alle <span class="math notranslate nohighlight">\(a,b\in A\)</span> gilt:</p>
 <div class="math notranslate nohighlight">
 \[aRb \quad \text{ oder } bRa.\]</div>
-</div>
-</div></div>
-<div class="section" id="aquivalenzrelationen">
-<h3>Äquivalenzrelationen<a class="headerlink" href="#aquivalenzrelationen" title="Permalink to this headline">#</a></h3>
+</section>
+</div></section>
+<section id="aquivalenzrelationen">
+<h3>Äquivalenzrelationen<a class="headerlink" href="#aquivalenzrelationen" title="Permalink to this heading">#</a></h3>
 <p>Eine weitere wichtige binäre Relation ist die Äquivalenzrelation. Die Äquivalenzrelation regelt welche Objekte wir als Identisch miteinander setzen wollen. So gibt es beispielsweise in der Zahlentheorie manchmal Situation wo wir alle Zahlen die gerade sind als identisch setzen wollen und nur den Unterschied machen wollen zwischen Gerade und Ungerade. Oder wir wollen nur den Rest durch 3 oder durch 7 oder einer belibigen Zahl <span class="math notranslate nohighlight">\(n\)</span> unterscheiden. Hierfür eignen sich die sogenannten Äquivalenzrelationen, wie wir gleich sehen werden.</p>
 <p>Aber erstmal wollen wir die Äquivalenzrelation formal einführen.</p>
 <div class="proof definition admonition" id="definition-14">
 <p class="admonition-title"><span class="caption-number">Definition 29 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Eine binäre homogene Relation <span class="math notranslate nohighlight">\(R\subset A\times A\)</span> heißt <strong>Ordnung</strong> falls <span class="math notranslate nohighlight">\(R\)</span> folgende Eigenschaften besitzt:</p>
 <ul class="simple">
 <li><p>reflexiv</p></li>
 <li><p>symmetrisch</p></li>
 <li><p>transitiv</p></li>
 </ul>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-15">
 <p class="admonition-title"><span class="caption-number">Example 27 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Von den Relationen <span class="math notranslate nohighlight">\(=,\not =, &lt; ,\leq,&gt;,\geq\)</span> ist nur <span class="math notranslate nohighlight">\(=\)</span> eine Äquivalenzrelation denn alle anderen sind nicht symmetrisch.</p>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-16">
 <p class="admonition-title"><span class="caption-number">Example 28 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Sei nun <span class="math notranslate nohighlight">\(A=\mathbb{N}\)</span> und wir definieren folgende Relation <span class="math notranslate nohighlight">\(R\subset \mathbb{Z}\times \mathbb{Z}\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[R=\{(a,b)\in \mathbb{Z}\times \mathbb{Z} \ \vert \ a-b \text{ ist durch 3 teilbar}\}\]</div>
@@ -935,20 +757,20 @@ Es gilt jedoch <span class="math notranslate nohighlight">\(b-a=-(a-b)\)</span> 
 \]</div>
 <p>durch drei Teilbar. Also <span class="math notranslate nohighlight">\(aRc\)</span>.</p>
 <p>Wir haben also gesehen, dass <span class="math notranslate nohighlight">\(R\)</span> eine Äquivalenzrelation ist. Die Zahl <span class="math notranslate nohighlight">\(3\)</span> hat hierbei keine Rolle gespielt und wir hätten alle Zahlen einsetzen können. Wir schreiben falls <span class="math notranslate nohighlight">\(aRB\)</span> gilt auch <span class="math notranslate nohighlight">\(a\equiv_3 b\)</span> oder <span class="math notranslate nohighlight">\(a=b \mod 3\)</span>.</p>
-</div>
+</section>
 </div><p>Wir haben also gesehen, wie wir Äquivalenzrelationen nutzen können um mit “Resten” zu rechnen.</p>
 <p>Eine weitere wichtige Eigenschaft von Äquivalenzrelation ist, dass sie eine Aufteilung der Menge <span class="math notranslate nohighlight">\(A\)</span> induzieren in sogenannte <strong>Äquivalenzklassen</strong>.</p>
 <div class="proof definition admonition" id="definition-17">
 <p class="admonition-title"><span class="caption-number">Definition 30 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(R\subset A\times\)</span> eine Äquivalenzrelation. Sei <span class="math notranslate nohighlight">\(x\in A\)</span>. Dann nennt man</p>
 <div class="math notranslate nohighlight">
 \[[x]_R =\left\{ y\in A \ \vert \       \right\}\]</div>
 <p>eine <strong>Äquivalenzklasse</strong> von <span class="math notranslate nohighlight">\(A\)</span>. Das Element <span class="math notranslate nohighlight">\(x\)</span> heißt <strong>Repräsentant</strong> der Äquivalenzklasse und die Anzahl der Äquivalenzklassen heißt <strong>Index</strong>.</p>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-18">
 <p class="admonition-title"><span class="caption-number">Example 29 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Die Äquivalenzklassen der Relation <span class="math notranslate nohighlight">\(\equiv_3\)</span> sind gegeben durch:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\([0]_3= \{\dots, -3,0,3,6,\dots\}\)</span></p></li>
@@ -957,13 +779,13 @@ Es gilt jedoch <span class="math notranslate nohighlight">\(b-a=-(a-b)\)</span> 
 </ul>
 <p>Wie wir sehen gibt es also drei disjunkte Äquivalenzklassen deren Vereinigung die ganzen Zahlen bildet.</p>
 <p>Wir nennen in diesem Fall die Äquivalenzklassen auch <strong>Restklassen</strong>.</p>
-</div>
+</section>
 </div><p>Tatsächlich sind obige Beobachtungen kein Spezialfall. Es gilt der folgende Satz.</p>
 <div class="proof theorem admonition" id="theorem-19">
 <p class="admonition-title"><span class="caption-number">Theorem 16 </span></p>
-<div class="theorem-content section" id="proof-content">
+<section class="theorem-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(R\subset A\times\)</span> eine Äquivalenzrelation. Dann gilt:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\([y]_R=[x]_R \)</span> für alle <span class="math notranslate nohighlight">\(y\in [x]_R\)</span></p></li>
 <li><p>Für <span class="math notranslate nohighlight">\(x,y\in A\)</span> mit <span class="math notranslate nohighlight">\((x,y)\not\in R\)</span> gilt $[x]_R\cap [y]_R =\emptyset</p></li>
 <li><p>Es gilt</p></li>
@@ -971,11 +793,11 @@ Es gilt jedoch <span class="math notranslate nohighlight">\(b-a=-(a-b)\)</span> 
 <div class="math notranslate nohighlight">
 \[A= \bigcup_{x\in A} [x]_R.\]</div>
 <p>D.h. die Äquivalenzklassen bilden eine Überdeckung.</p>
-</div>
-</div></div>
-</div>
-<div class="section" id="funktionen">
-<h2>3.3 Funktionen<a class="headerlink" href="#funktionen" title="Permalink to this headline">#</a></h2>
+</section>
+</div></section>
+</section>
+<section id="funktionen">
+<h2>3.3 Funktionen<a class="headerlink" href="#funktionen" title="Permalink to this heading">#</a></h2>
 <p>Funktionen bilden eine der wichtigsten Klassen von Relationen.</p>
 <p>Die charakteristische Eigenschaft von Funktionen ist, im Gegensatz zu allgemeinen Relationen, jedem Wert aus einer Definitionsmenge <span class="math notranslate nohighlight">\(X\)</span> <strong>genau ein Wert</strong> aus der Zielmenge zugeordnet wird.</p>
 <p>Als Beispiel dient die Zuuordnung von Studiengängen zu Studierenden:</p>
@@ -983,7 +805,7 @@ Es gilt jedoch <span class="math notranslate nohighlight">\(b-a=-(a-b)\)</span> 
 <p>Wichtig ist hierbei zu bemerken, dass ein:e Student:in genau einem Studiengang zugeordnet werden kann. Es könn zwar mehrere Studierende dem gleichen Studiengang zugeordnet werden, aber eben nicht eine:e  Student:in mehreren Studiengängen.</p>
 <div class="proof definition admonition" id="definition-20">
 <p class="admonition-title"><span class="caption-number">Definition 31 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Es seien <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(Y\)</span> beliebige Mengen. Eine Funktion <span class="math notranslate nohighlight">\(f\)</span> ordnet jedem Element <span class="math notranslate nohighlight">\(x\in X\)</span> <strong>genau ein</strong> element <span class="math notranslate nohighlight">\(y\in Y\)</span> zu.</p>
 <p>Wir schreiben</p>
 <div class="math notranslate nohighlight">
@@ -991,10 +813,10 @@ Es gilt jedoch <span class="math notranslate nohighlight">\(b-a=-(a-b)\)</span> 
 x&amp;\mapsto f(x).\end{split}\]</div>
 <p>Wir schreiben auch <span class="math notranslate nohighlight">\(f(x)\in Y\)</span> für den Wert, der (unter <span class="math notranslate nohighlight">\(f\)</span>) dem Wert <span class="math notranslate nohighlight">\(y\)</span> zugeordnet wird.
 Die Menge <span class="math notranslate nohighlight">\(X\)</span> nennen wir dann <strong>Definitionsmenge</strong> und die Menge <span class="math notranslate nohighlight">\(Y\)</span> nennen wir <strong>Zielmenge</strong></p>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-21">
 <p class="admonition-title"><span class="caption-number">Example 30 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <ul class="simple">
 <li><p>Die Funktion</p></li>
 </ul>
@@ -1023,18 +845,18 @@ x&amp;\mapsto x^2.\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}f\colon \mathbb{R} &amp;\to \mathbb{R}\\
 x&amp;\mapsto \frac{1}{x}.\end{split}\]</div>
-</div>
+</section>
 </div><div class="proof definition admonition" id="definition-22">
 <p class="admonition-title"><span class="caption-number">Definition 32 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(f\colon X\to Y\)</span> eine Funktion mit <span class="math notranslate nohighlight">\(x\mapsto f(x)\)</span>. Dann nennen wir die Menge</p>
 <div class="math notranslate nohighlight">
 \[f(X)=\{f(x)\in Y \ \vert \ x\in X\}\]</div>
 <p>das <strong>Bild von <span class="math notranslate nohighlight">\(X\)</span> unter <span class="math notranslate nohighlight">\(f\)</span></strong>. Manchmal nenen wir <span class="math notranslate nohighlight">\(f(X)\)</span> auch den <strong>Wertebereich von <span class="math notranslate nohighlight">\(f\)</span></strong>.</p>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-23">
 <p class="admonition-title"><span class="caption-number">Example 31 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <ul class="simple">
 <li><p>Betrachten wir die Funktion</p></li>
 </ul>
@@ -1053,9 +875,9 @@ x&amp;\mapsto \frac{1}{x}.\end{split}\]</div>
 <p>Dann gilt:</p>
 <div class="math notranslate nohighlight">
 \[f(X)=\mathbb{R}\setminus\{0\}\]</div>
-</div>
-</div><div class="section" id="funktionen-als-relationen">
-<h3>Funktionen als Relationen<a class="headerlink" href="#funktionen-als-relationen" title="Permalink to this headline">#</a></h3>
+</section>
+</div><section id="funktionen-als-relationen">
+<h3>Funktionen als Relationen<a class="headerlink" href="#funktionen-als-relationen" title="Permalink to this heading">#</a></h3>
 <p>Was haben nun Funktionen mit Relationen zu tun. Auf den ersten Blick scheinen es komplett verschiedene Definitionen zu sein.</p>
 <p>Wir können aber wie folgt, eine Funktion als Relation verstehen.</p>
 <p>Sei dazu <span class="math notranslate nohighlight">\(f\)</span> eine Funktion</p>
@@ -1075,19 +897,19 @@ Gilt auch das umgekehrt? Also ist jede Relation auch eine Funktion?</p>
 <p>Hierfür brauchen wir eine zusätzliche Definition.</p>
 <div class="proof definition admonition" id="definition-24">
 <p class="admonition-title"><span class="caption-number">Definition 33 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Eine binäre relation <span class="math notranslate nohighlight">\(R\subset X\times Y\)</span> heißt <strong>rechtseindeutig</strong> falls für alle <span class="math notranslate nohighlight">\(x_1Ry_1\)</span> und <span class="math notranslate nohighlight">\(x_2R y_2\)</span> mit <span class="math notranslate nohighlight">\(x_1=x_2\)</span> auch gilt <span class="math notranslate nohighlight">\(y_1=y_2\)</span>.</p>
-</div>
+</section>
 </div><p>Damit können wir nun sagen:</p>
 <p><em>Eine Funktion ist eine rechtseindeutige binäre Relation.</em></p>
-</div>
-<div class="section" id="darstellung-von-funktionen">
-<h3>Darstellung von Funktionen<a class="headerlink" href="#darstellung-von-funktionen" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="darstellung-von-funktionen">
+<h3>Darstellung von Funktionen<a class="headerlink" href="#darstellung-von-funktionen" title="Permalink to this heading">#</a></h3>
 <p>Es gibt in der Sprache der Mathematik, mehrere Möglichkeiten eine Funktion zu definieren.</p>
 <p>Eine haben Sie schon gesehen, in dem wir eine Formel angeben wie Beispielsweise <span class="math notranslate nohighlight">\(x^2\)</span> oder <span class="math notranslate nohighlight">\(\ƒrac{1}{x}\)</span>.</p>
 <p>Wir wollen in diesem Abschnitt zwei weitere Möglichkeiten vorstellen.</p>
-<div class="section" id="wertetabelle">
-<h4>Wertetabelle<a class="headerlink" href="#wertetabelle" title="Permalink to this headline">#</a></h4>
+<section id="wertetabelle">
+<h4>Wertetabelle<a class="headerlink" href="#wertetabelle" title="Permalink to this heading">#</a></h4>
 <p>Wie wir gesehen, haben ist eine Funktion nichts anderes Wie eine rechtseindeutige Relation.
 Wenn wir es mit endlichen Mengen <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(Y\)</span> zu tun haben, reicht es auch zusätzlich zu den Mengen <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(Y\)</span> die Relation <span class="math notranslate nohighlight">\(R\)</span> in aufzählender Form anzugeben. Dies kann am anschaulichsten über eine Tabelle gemacht werden.</p>
 <p>Machen wir ein Beispiel.</p>
@@ -1095,7 +917,7 @@ Wenn wir es mit endlichen Mengen <span class="math notranslate nohighlight">\(X\
 <div class="math notranslate nohighlight">
 \[\{(0,8),(1,7),(2,8),(3,5),(4,8)\}\subset X\times Y.\]</div>
 <p>Dies könenn wir wie erwähnt auch in einer Tabellenform angeben.</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
 <th class="head"><p></p></th>
@@ -1125,9 +947,9 @@ Wenn wir es mit endlichen Mengen <span class="math notranslate nohighlight">\(X\
 <p>Solch eine Tabelle nennen wir Wertetabelle.</p>
 <p><strong>Wichtig</strong>
 Eine Wertetabelle alleine ist noch keine Funktion. Es muss noch die Zielmenge <span class="math notranslate nohighlight">\(Y\)</span> angegeben werden um eine Funktion zu definieren.</p>
-</div>
-<div class="section" id="abschnittsweise-definierte-funktionen">
-<h4>Abschnittsweise definierte Funktionen<a class="headerlink" href="#abschnittsweise-definierte-funktionen" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="abschnittsweise-definierte-funktionen">
+<h4>Abschnittsweise definierte Funktionen<a class="headerlink" href="#abschnittsweise-definierte-funktionen" title="Permalink to this heading">#</a></h4>
 <p>Manche Funktionsvorschriften lassen sich nicht für alle Werte aus einer Definitionsmenge mit einem einzigen Ausdruck definieren. In diesem Fall können wir die Funktion auch Abschnittsweise definieren</p>
 <p>Als Beispiel wollen wir die Betragsfunktion für eine reellel Zahl heranziehen. Der Betrag einer Zahl <span class="math notranslate nohighlight">\(x\in\mathbb{R}\)</span> ist dabei definiert als der “Abstand” zum Nullpunkt und wird mit <span class="math notranslate nohighlight">\(\vert x\vert\)</span> beschrieben. Zum Beispiel ist <span class="math notranslate nohighlight">\(\vert 3 \vert =3\)</span> und <span class="math notranslate nohighlight">\(\vert -4,5\vert =4,5\)</span>.</p>
 <p>Es handelt sich also um eine Funktion:</p>
@@ -1142,10 +964,10 @@ x&amp;\mapsto
 x &amp; x\geq 0 \\ 
 -x &amp; x&lt;0 
 \end{cases}\end{split}\]</div>
-</div>
-</div>
-<div class="section" id="verknupfung-von-funktionen">
-<h3>Verknüpfung von Funktionen<a class="headerlink" href="#verknupfung-von-funktionen" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="verknupfung-von-funktionen">
+<h3>Verknüpfung von Funktionen<a class="headerlink" href="#verknupfung-von-funktionen" title="Permalink to this heading">#</a></h3>
 <p>Wir können Funktionen miteinander Verknpüfen.
 Nehmen wir an wir haben unsere obige Funktion die Studierenden Fachbereiche zuordnet. Nehmen wir nun an wir haben eine weitere Funktion, die den Fachbereichen eine Regelstudienzeit zuordnet.</p>
 <p><img alt="" src="_images/funktion2.png" /></p>
@@ -1153,12 +975,12 @@ Nehmen wir an wir haben unsere obige Funktion die Studierenden Fachbereiche zuor
 <p><img alt="" src="_images/composition.png" /></p>
 <div class="proof definition admonition" id="definition-25">
 <p class="admonition-title"><span class="caption-number">Definition 34 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(f\colon A\toB\)</span> und <span class="math notranslate nohighlight">\(g\colon C\to D\)</span> zwei funktionen mit <span class="math notranslate nohighlight">\(f(A)\subset C\)</span> Dann definieren wir die Verknüpfte Funktion <span class="math notranslate nohighlight">\(f\circ g\)</span> wie folgt:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}(g\circ f) \colon X&amp;\to Z\\
 x&amp;\mapsto g(f(x)).\end{split}\]</div>
-</div>
+</section>
 </div><p><strong>Wichtig</strong></p>
 <ul class="simple">
 <li><p>Bei der Verknüpfung <span class="math notranslate nohighlight">\(g\circ f\)</span> wird zuerst <span class="math notranslate nohighlight">\(f\)</span> ausgeführt und dann erst <span class="math notranslate nohighlight">\(g\)</span>. Das mag am Anfang etwas unintuitiv wirken, da wir von rechts nach links lesen.</p></li>
@@ -1166,7 +988,7 @@ x&amp;\mapsto g(f(x)).\end{split}\]</div>
 </ul>
 <div class="proof example admonition" id="example-26">
 <p class="admonition-title"><span class="caption-number">Example 32 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(f\colon \mathbb{R}\setminus \{0\} \to \mathbb{R}, \quad x \mapsto \frac{1}{x}\)</span> und
 <span class="math notranslate nohighlight">\(g\colon \mathbb{R} \to \mathbb{R}, \quad x \mapsto x^2\)</span>.
 Dann ist</p>
@@ -1175,10 +997,10 @@ Dann ist</p>
 x&amp;\mapsto \frac{1}{x^2}.\end{split}\]</div>
 <p>Die Funktion <span class="math notranslate nohighlight">\(f\circ g\)</span> kann nicht definiert werden, denn <span class="math notranslate nohighlight">\(g(\mathbb{R})\not \subset\mathbb{R}\setminus \{0\}\)</span>.
 (Übung: Warum?)</p>
-</div>
-</div></div>
-<div class="section" id="die-umkehrfunktion">
-<h3>Die Umkehrfunktion<a class="headerlink" href="#die-umkehrfunktion" title="Permalink to this headline">#</a></h3>
+</section>
+</div></section>
+<section id="die-umkehrfunktion">
+<h3>Die Umkehrfunktion<a class="headerlink" href="#die-umkehrfunktion" title="Permalink to this heading">#</a></h3>
 <p>Nehmen wir an wir haben eine Funktion <span class="math notranslate nohighlight">\(f\colon S\to M\)</span></p>
 <p>die jedem Studendierenden eine Matrikelnr. zuordnet, wobei <span class="math notranslate nohighlight">\(S\)</span> die Menge der Studierenden und <span class="math notranslate nohighlight">\(M\)</span> die Menge aller vergebenen Matrikelnr. bezeichnet.</p>
 <p><img alt="" src="_images/matrikelnr.png" /></p>
@@ -1195,39 +1017,39 @@ Im Prinzip, sollte das möglich sein, denn die Beziehung ist eine 1:1 Beziehung.
 <p>Wir nennen, dann <span class="math notranslate nohighlight">\(f^{-1}\)</span> die Umkehrfunktion von <span class="math notranslate nohighlight">\(f\)</span>.</p>
 <div class="proof definition admonition" id="definition-27">
 <p class="admonition-title"><span class="caption-number">Definition 35 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(f\colon X\to Y\)</span> eine Funktion. Dann nennen wir <span class="math notranslate nohighlight">\(f^{-1}\colon Y\to X\)</span> die Umkehrfunktion von <span class="math notranslate nohighlight">\(f\)</span> falls gilt:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}f^{-1}(f(x))&amp;=x \text{ für alle } x\in X \text{ und}\\
 f(f^{-1}(y)&amp;=y \text{ für alle }y\in Y.\end{split}\]</div>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-28">
 <p class="admonition-title"><span class="caption-number">Example 33 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(f\colon \mathbb{R}\to \mathbb{R} \quad x\mapsto 2x+1\)</span>.</p>
 <p>Dann ist <span class="math notranslate nohighlight">\(f^{-1}\colon \mathbb{R}\to \mathbb{R} \quad x\mapsto 0,5x-0,5\)</span>.</p>
 <p>Denn es gilt:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}f^{-1}(f(x))&amp;=f^{-1}(2x+1)=0.5(2x+1)-0,5=x \text{ und }\\
 f(f^{-1}(x)&amp;=f(0.5x-1)=2(0,5x-0,5)+1=x.\end{split}\]</div>
-</div>
+</section>
 </div><p>Es stellt sich die Frage, wann eine Funktion eine Umkehrfunktion besitzt. Wir haben bereits erwähnt, dass es sich wohl um eine 1:1 Beziehung handeln muss.</p>
 <p>Das können wir noch etwas genauer aufsplitten. Nämlich in die <strong>Injektivität</strong> und <strong>Surjektivität</strong> einer Funktion.</p>
-<div class="section" id="injektivitat">
-<h4>Injektivität<a class="headerlink" href="#injektivitat" title="Permalink to this headline">#</a></h4>
+<section id="injektivitat">
+<h4>Injektivität<a class="headerlink" href="#injektivitat" title="Permalink to this heading">#</a></h4>
 <p>Injektive Funktionen sind eindeutige Funktionen. Es kann also nicht vorkommen, das zwei Elemente auf das selbe Element abgebildet werden. Das ist insbesondere bei unserer Funktion, die Studierenden eine Matrikelnr. zweist. Denn ansonsten könnte man die Studierenden nicht eindeutig durch angabe der Matrikelnr. unterscheiden.</p>
 <div class="proof definition admonition" id="definition-29">
 <p class="admonition-title"><span class="caption-number">Definition 36 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Se <span class="math notranslate nohighlight">\(f\colon X\to Y\)</span> eine Funktion. Wir nennen <span class="math notranslate nohighlight">\(f\)</span> <strong>injektiv</strong> falls für alle <span class="math notranslate nohighlight">\(x_1,x_2\in X\)</span> mit <span class="math notranslate nohighlight">\(f(x_1)=f(x_2)\)</span> gilt <span class="math notranslate nohighlight">\(x_1=x_2\)</span>.</p>
-</div>
+</section>
 </div><p>Wenn wir die Funktion <span class="math notranslate nohighlight">\(f\)</span> mithilfe eines Pfeildiagramms beschreiben bedeutet injektiv, dass auf jedes Element der Zielmenge <span class="math notranslate nohighlight">\(Y\)</span> maximal ein Pfeil zeigt.</p>
 <p><img alt="" src="_images/injektiv.png" /></p>
 <p>Umgekehrt ist eine Funktion nicht injektiv falls es mind. ein Element gibt, auf das mind. zwei Pfeile zeigen.</p>
 <p><img alt="" src="_images/not_injektiv.png" /></p>
 <div class="proof example admonition" id="example-30">
 <p class="admonition-title"><span class="caption-number">Example 34 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Wir wollen zeigen, dass die Funktion</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}f\colon \mathbb{R}&amp;\to \mathbb{R}\\
@@ -1238,23 +1060,23 @@ x&amp;\mapsto 3x+1\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[3x_1+1=3x_2+1 \Leftrightarrow  3x_1=3x_2 \Leftrightarrow x_1=x_2.\]</div>
 <p>Damit folgt, dass <span class="math notranslate nohighlight">\(x_1=x_2\)</span> und wir haben die Behauptung gezeigt.</p>
-</div>
-</div></div>
-<div class="section" id="surjektivitat">
-<h4>Surjektivität<a class="headerlink" href="#surjektivitat" title="Permalink to this headline">#</a></h4>
+</section>
+</div></section>
+<section id="surjektivitat">
+<h4>Surjektivität<a class="headerlink" href="#surjektivitat" title="Permalink to this heading">#</a></h4>
 <p>Die zweite wichtige Voraussetzung für die Existenz einer Umkehrfunktion ist, die Surjektivität. Währen die Injektivität darauf abziehlt, dass Matrikelnr. eindeutig sind. Ziehlt die Surjektivität darauf ab, dass die Matrikelnr. überhaupt vergeben ist. Also dass es mind. einen Studierenden gibt, der dieser Matrikelnr. zugeordnet ist.</p>
 <div class="proof definition admonition" id="definition-31">
 <p class="admonition-title"><span class="caption-number">Definition 37 </span></p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Se <span class="math notranslate nohighlight">\(f\colon X\to Y\)</span> eine Funktion. Wir nennen <span class="math notranslate nohighlight">\(f\)</span> <strong>surjektiv</strong> falls für alle <span class="math notranslate nohighlight">\(y\in Y\)</span> ein <span class="math notranslate nohighlight">\(x\in X\)</span> existiert mit <span class="math notranslate nohighlight">\(f(x)=y\)</span>.</p>
-</div>
+</section>
 </div><p>Wenn wir wieder die Pfeildiagramme betrachten, so bedeutet surjektiv, dass bei jedem <span class="math notranslate nohighlight">\(y\in Y\)</span> mind. ein Pfeil endet.</p>
 <p><img alt="" src="_images/surjektiv.png" /></p>
 <p>Nicht surjektiv bedeutet dann, dass bei mind. ein <span class="math notranslate nohighlight">\(y\in Y\)</span> kein Pfeil endet.</p>
 <p><img alt="" src="_images/not_surjektiv.png" /></p>
 <div class="proof example admonition" id="example-32">
 <p class="admonition-title"><span class="caption-number">Example 35 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Wir wollen zeigen, dass die Funktion</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}f\colon \mathbb{R}&amp;\to \mathbb{R}\\
@@ -1266,35 +1088,33 @@ x&amp;\mapsto 3x+1\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[f(x)=3(\frac{1}{3}y-\frac{1}{3})+1=y\]</div>
 <p>Also haben wir für ein beliebiges Element <span class="math notranslate nohighlight">\(y\)</span> ein <span class="math notranslate nohighlight">\(x\)</span> gefunden mit <span class="math notranslate nohighlight">\(f(x)=y\)</span> damit ist <span class="math notranslate nohighlight">\(f\)</span> surjektiv.</p>
-</div>
+<p class="rubric">Bijektivität</p>
+<p>Beide Eigenschaften, injektivität und surjektivität, werden benötigt um eine Umkehrfunktion zu definieren. Daher geben wir Funktionen mit diesen beiden Eigenschaften einen besonderen Namen.</p>
+<div class="proof definition admonition" id="definition-33">
+<p class="admonition-title"><span class="caption-number">Definition 38 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Eine Funktion <span class="math notranslate nohighlight">\(f\colon X\to Y\)</span> heißt <strong>bijektiv</strong> falls sie sowohl injektiv als auch surjektiv ist.</p>
+</section>
+</div></section>
 </div><p>Es gilt nun der folgende Zusammenhang zwischen Bijektiven Funktionen und der Umkehrfunktion.</p>
 <div class="proof theorem admonition" id="theorem-34">
 <p class="admonition-title"><span class="caption-number">Theorem 17 </span></p>
-<div class="theorem-content section" id="proof-content">
+<section class="theorem-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(f\colon X\to Y\)</span> eine bijektive Funktion. Dann gibt es die Umkehrfunktion von <span class="math notranslate nohighlight">\(f^{-1}\colon Y\to X\)</span>.</p>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-35">
 <p class="admonition-title"><span class="caption-number">Example 36 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Wir haben berreits gesehen, dass die Funktion</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}f\colon \mathbb{R}&amp;\to \mathbb{R}\\
 x&amp;\mapsto 3x+1\end{split}\]</div>
 <p>eine Umkehrfunktion besitzt als auch injektiv und surjektiv, also bijektiv ist.</p>
-</div>
-</div></div>
-<div class="section" id="bijektivitat">
-<h4>Bijektivität<a class="headerlink" href="#bijektivitat" title="Permalink to this headline">#</a></h4>
-<p>Beide Eigenschaften, injektivität und surjektivität, werden benötigt um eine Umkehrfunktion zu definieren. Daher geben wir Funktionen mit diesen beiden Eigenschaften einen besonderen Namen.</p>
-<div class="proof definition admonition" id="definition-33">
-<p class="admonition-title"><span class="caption-number">Definition 38 </span></p>
-<div class="definition-content section" id="proof-content">
-<p>Eine Funktion <span class="math notranslate nohighlight">\(f\colon X\to Y\)</span> heißt <strong>bijektiv</strong> falls sie sowohl injektiv als auch surjektiv ist.</p>
-</div>
-</div></div>
-</div>
-</div>
-</div>
+</section>
+</div></section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1316,43 +1136,121 @@ x&amp;\mapsto 3x+1\end{split}\]</div>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="logik.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Kapitel 2 Grundlagen der Logik</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="logik.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Kapitel 2 Grundlagen der Logik</p>
+      </div>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">3.1 Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relationen">3.2 Relationen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binare-relationen">Binäre Relationen</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#darstellung-binarer-relationen">Darstellung binärer Relationen</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaften-binarer-relationen">Eigenschaften binärer Relationen</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#reflexiv">Reflexiv</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetrisch">Symmetrisch</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#antisymmetrisch">Antisymmetrisch</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#transitiv">Transitiv</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordnungen">Ordnungen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aquivalenzrelationen">Äquivalenzrelationen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen">3.3 Funktionen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-als-relationen">Funktionen als Relationen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#darstellung-von-funktionen">Darstellung von Funktionen</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wertetabelle">Wertetabelle</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#abschnittsweise-definierte-funktionen">Abschnittsweise definierte Funktionen</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verknupfung-von-funktionen">Verknüpfung von Funktionen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-umkehrfunktion">Die Umkehrfunktion</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#injektivitat">Injektivität</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#surjektivitat">Surjektivität</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-    By Prof. Dr. Georg Merz<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
-</div>
+<p class="component-author">
+By Prof. Dr. Georg Merz
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
 
-      </div>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
