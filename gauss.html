@@ -1,0 +1,806 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Kapitel 4 - Der Gauß-Algorithmus &#8212; Grundlagen der Mathematik</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'gauss';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Kapitel 3 - Relationen und Funktionen" href="relationsAndFunctions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Grundlagen der Mathematik</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Willkommen im Kurs “Grundlagen der Mathematik”
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="mengenlehre.html">Kapitel 1 - Mengenlehre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logik.html">Kapitel 2 Grundlagen der Logik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relationsAndFunctions.html">Kapitel 3 - Relationen und Funktionen</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Kapitel 4 - Der Gauß-Algorithmus</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/georgmerz/gdma" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/georgmerz/gdma/issues/new?title=Issue%20on%20page%20%2Fgauss.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/gauss.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Kapitel 4 - Der Gauß-Algorithmus</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">4.1 Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-pagerank-algorithmus">4.2 Der PageRank Algorithmus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lineare-gleichungssysteme">4.3 Lineare Gleichungssysteme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometrische-interpretation-von-linearen-gleichungssystemen">4.4 Geometrische Interpretation von Linearen Gleichungssystemen</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zeileninterpretation">Zeileninterpretation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spalteninterpretation">Spalteninterpretation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#der-gausz-algorithmus">4.5 Der Gauß-Algorithmus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiele-fur-den-gausz-algorithmus">Beispiele für den Gauß-Algorithmus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-edgecases-reparierbarer-und-nicht-reparierbarer-fall">Die Edgecases - Reparierbarer und nicht reparierbarer Fall.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#der-allgemeine-fall">Der Allgemeine Fall</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="kapitel-4-der-gausz-algorithmus">
+<h1>Kapitel 4 - Der Gauß-Algorithmus<a class="headerlink" href="#kapitel-4-der-gausz-algorithmus" title="Permalink to this heading">#</a></h1>
+<section id="lernziele">
+<h2>4.1 Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
+<p>In diesem Abschnitt lernen wir die folgenden Dinge:</p>
+<ul class="simple">
+<li><p>Grundbegriffe für Lineare Gleichungssysteme</p></li>
+<li><p>Den Gauß-Algorithmus</p></li>
+<li><p>Anwendung des Page-Rank Algorithmus</p></li>
+<li><p>Allgemeine Beschreibung der Lösungsmenge für ein Lineares Gleichungssystem</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Lösen von linearen Gleichungssystemem mittels Gauß-Algorithmus</p></li>
+<li><p>Matrizen in Zeilenstufenform bringen</p></li>
+<li><p>Geometrisches Verständnis für Lineare Gleichungssysteme</p></li>
+</ul>
+</div>
+</section>
+<section id="der-pagerank-algorithmus">
+<h2>4.2 Der PageRank Algorithmus<a class="headerlink" href="#der-pagerank-algorithmus" title="Permalink to this heading">#</a></h2>
+<p>Der <strong>PageRank</strong> Algorithmus ist ein Verfahren, das von Google entwickelt wurde um die Popularität von Webseiten zu bemessen und damit bessere Suchergebnisse zu produzieren.</p>
+<p>Die Grundidee besteht darin, dass wir die popularität davon abhängt wie viele andere populäre Webseiten auf die ursprüngliche Seite verlinken. Wenn eine Seite also von vielen Populären Webseiten verlinkt wird, so der PageRank eher groß. Falls es nur von wenigen weniger Populären Seiten verlinkt wird so ist er eher klein.</p>
+<p>Als Beispiel nehmen wir an wir haben ein Netzwerk aus Vier Webseiten (A,B,C,D). Diese sind wie folgt verlinkt.</p>
+<p><img alt="" src="_images/pagerank.png" /></p>
+<p>Das heißt, das z.B. 0,5 der Links von Seite A auf Seite B verweisen und 0,2 der Links von B auf A verweisen.</p>
+<p>Der Pagerank ist nun durch die folgende Wahrscheinlichkeit gegeben:</p>
+<p><strong><span class="math notranslate nohighlight">\(P(X)\)</span></strong> bezeichnet die Wahrscheinlichkeit, dass ein User sich auf Webseite X zu einem gegebenen Zeitpunk <span class="math notranslate nohighlight">\(t\)</span> aufhält.</p>
+<p>Der Pagerank ist nun die Sortierung nach <span class="math notranslate nohighlight">\(P(X)\)</span> je größer <span class="math notranslate nohighlight">\(P(X)\)</span> desto populärer ist diese Webseite.</p>
+<p>Es gibt nun zwei MÖglichkeiten auf die Seite <span class="math notranslate nohighlight">\(X\)</span> zu gelangen:</p>
+<p><strong>2 Möglichkeiten</strong></p>
+<ol class="arabic simple">
+<li><p>User ist auf Webseite Y und klickt auf den Link zu X.</p></li>
+<li><p>User wählt eine zufällige Webseite adhoc aus.</p></li>
+</ol>
+<p>Der <strong>Dampingfaktor</strong> d (normalerweise gilt d=0,85) besagt, dass mit Wahrscheinlichkeit <span class="math notranslate nohighlight">\(d\)</span> die Möglichkeit 1) passiert und mit Wahrscheinlichkeit <span class="math notranslate nohighlight">\(1-d\)</span> Möglichkeit 2).</p>
+<p><strong>Frage:</strong>
+Wie berechnen wir die Wahrscheinlichkeiten <span class="math notranslate nohighlight">\(P(A),P(B),P(C)\)</span> und <span class="math notranslate nohighlight">\(P(D)\)</span>.</p>
+<p>Wir versuchen zunächst eine Gleichung für <span class="math notranslate nohighlight">\(P(A)\)</span> aufzustellen.</p>
+<p>Berechnen wir zunächst die Wahrscheinlichkeit für Variante 1): Die Wahrscheinlichkeit, dass jemand von Seite B auf A kommt ist: <span class="math notranslate nohighlight">\(0,2\cdot P(B)\)</span>, von C auf A ist <span class="math notranslate nohighlight">\(0,2\cdot P(C)\)</span> und von D auf A ist <span class="math notranslate nohighlight">\(0,1\cdot P(D)\)</span>. Damit ergibt sich für Möglichkeit 1):</p>
+<div class="math notranslate nohighlight">
+\[0,2P(B)+0,2P(C)+0,1P(D) \]</div>
+<p>Wie sieht es mit Variante 2) aus. Da es Vier Webseiten gibt, ist die Wahrscheinlichkeit zufällig auf Seite 4 zu kommen: <span class="math notranslate nohighlight">\(1/4\)</span>.</p>
+<p>Insgesamt ergibt sich unter Berücksichtigung des Dampingfaktors <span class="math notranslate nohighlight">\(d=0.85\)</span> folgende Gleichung:</p>
+<div class="math notranslate nohighlight">
+\[P(A)=0,85(0,2P(B)+0,2P(C)+0,1P(D) )+0,15\cdot 1/4
+\]</div>
+<p>Wenn wir das selbe für die Wahrscheinlichkeiten <span class="math notranslate nohighlight">\(P(B)\)</span>,<span class="math notranslate nohighlight">\(P(C)\)</span> und <span class="math notranslate nohighlight">\(P(D)\)</span> machen bekommen wir folgendes System von Gleichungen:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}P(A)&amp;=0,85(0,2𝑃(𝐶)+0,2𝑃(𝐵)+0,1𝑃(𝐷))+0,15⋅0.25 \\
+𝑃(𝐵)&amp;=0,85(0,5𝑃(𝐴)+0,6𝑃(𝐶)+0,8𝑃(𝐷))+0,15⋅0,25\\
+𝑃(𝐶)&amp;=0,85(0,4𝑃(𝐴)+0,7𝑃(𝐵)+0,1𝑃(𝐷))+0,15⋅0,25\\
+𝑃(𝐷)&amp;=0,85(0,1𝑃(𝐴)+0,1𝑃(𝐵)+0,2𝑃(𝐶))+0,15⋅0,25\end{split}\]</div>
+<p>Das sind also 4 Gleichungen mit 4 Unbekannten.</p>
+<p><strong>Frage:</strong>
+Wie können wir ein solches System lösen. Genau damit wollen wir uns in diesem Kapitel beschäftigen.</p>
+<p>Mit der Lösung von <strong>Linearen Gleichungssystemen</strong> mittels dem <strong>Gauß-Algorithmus</strong>.</p>
+<section id="lineare-gleichungssysteme">
+<h3>4.3 Lineare Gleichungssysteme<a class="headerlink" href="#lineare-gleichungssysteme" title="Permalink to this heading">#</a></h3>
+<p>In diesem Kapitel wollen wir formal einführen was ein lineares Gleichungssystem ist und wie dieses durch Matrizen dargestellt werden kann.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 39 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Ein <strong>lineares Gleichungssystem</strong> mit <span class="math notranslate nohighlight">\(n\)</span> Unbekannten besteht aus <span class="math notranslate nohighlight">\(m\in \mathbb{N}\)</span> Gleichungen der Form:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n &amp;=b_1 \\
+&amp;\vdots \\
+a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n &amp;=b_m. \end{split}\]</div>
+<p>Dabei sind <span class="math notranslate nohighlight">\(x_1,\dots,x_n\)</span> die **Variablen<span class="math notranslate nohighlight">\( des Systems und die \)</span>a_ij$ die <strong>Koeffizienten</strong>.</p>
+<p>Wir nennen <span class="math notranslate nohighlight">\(A = \left( \begin{matrix} a_{11} &amp; \dots &amp; a_{1n} \\ \vdots &amp; \ddots &amp; \vdots \\ a_{m1} &amp; \dots &amp; a_{mn} \end{matrix} \right)\)</span> die <strong>Matrix</strong> des Systems und <span class="math notranslate nohighlight">\((A,b)=\left( \begin{matrix} a_{11} &amp; \dots &amp; a_{1n} &amp; b_1 \\ \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\ a_{m1} &amp; \dots &amp; a_{mn} &amp; b_m \end{matrix} \right)\)</span> die <strong>erweiterte Koeffizientenmatrix</strong>.</p>
+</section>
+</div><div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 37 </span></p>
+<section class="example-content" id="proof-content">
+<p>Bestimmen Sie die Lösungsmenge des folgenden linearen Gleichungssystem</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x + 2y =&amp; 1 \\
+3x + 4y =&amp; 0\end{split}\]</div>
+<p>Wir lösen zunächst die erste Gleichung nach <span class="math notranslate nohighlight">\(x\)</span> auf:</p>
+<div class="math notranslate nohighlight">
+\[x =1-2y. (*)\]</div>
+<p>Nun setzen wir diese Identität in die zweite Gleichung ein und erhalten:</p>
+<div class="math notranslate nohighlight">
+\[3(1-2y)+4y=0.\]</div>
+<p>Dies können wir nun leicht nach <span class="math notranslate nohighlight">\(y\)</span> auflösen und erhalten:</p>
+<div class="math notranslate nohighlight">
+\[y=3/2.\]</div>
+<p>Setzen wir dies wieder in (*) ein erhalten wir außerdem:</p>
+<div class="math notranslate nohighlight">
+\[x=1-2\cdot 3/2=-2.\]</div>
+<p>Die Lösungsmenge ist also:</p>
+<div class="math notranslate nohighlight">
+\[L=\{(-2,3/2)\}.\]</div>
+</section>
+</div><p>Das war einfach aber was machen wir mit 3 Gleichungen mit 3 Unbekannten. Oder noch schlimmer was machen wir mit <span class="math notranslate nohighlight">\(n\)</span> Gleichungen und <span class="math notranslate nohighlight">\(n\)</span> Unbekannten? Dafür brauchen wir den Gauß-Algorithmus. Aber vorher schauen wir uns noch die Geometrische Interpretation von Linearen Gleichungssystem an.</p>
+</section>
+<section id="geometrische-interpretation-von-linearen-gleichungssystemen">
+<h3>4.4 Geometrische Interpretation von Linearen Gleichungssystemen<a class="headerlink" href="#geometrische-interpretation-von-linearen-gleichungssystemen" title="Permalink to this heading">#</a></h3>
+<p>Lineare Gleichungssysteme haben neben der algebraischen Beschreibung auch eine intuitive geometrische Interpretation.
+Es gibt Grundsätzlich zwei verschiedene Geometrische Berschreibungen:</p>
+<ul class="simple">
+<li><p>Zeileninterpretation</p></li>
+<li><p>Spalteninterpretation</p></li>
+</ul>
+<section id="zeileninterpretation">
+<h4>Zeileninterpretation<a class="headerlink" href="#zeileninterpretation" title="Permalink to this heading">#</a></h4>
+<p>Als Beispiel betrachten wir das folgende Lineare Gleichungssystem</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\color{green}2x - y =&amp; 1 \\
+\color {blue}x + y =&amp; 5\end{split}\]</div>
+<p>Beide Gleichungen können wir als Geraden in der Ebene interpretieren.
+Die Lösungsmenge können wir dann als Schnittpunktmenge der beiden Geraden interpretieren.
+Es ergibt sich also folgendes Bild.</p>
+<p><img alt="" src="_images/zeileninterpretation.png" /></p>
+<p>Durch diese Interpretation können wir direkt die Struktur der möglichne Lösungsmengen von zwei Gleichungen mit zwei Unbekannten ablesen:</p>
+<ol class="arabic simple">
+<li><p>Zwei Geraden schneiden sich: <strong>genaue eine Lösung</strong></p></li>
+<li><p>Zwei Gerade sind parallel aber nicht identisch: <strong>keine Lösung</strong></p></li>
+<li><p>Zwei Geraden sind identisch: <strong>unendlich viele Lösungen</strong>.</p></li>
+</ol>
+</section>
+<section id="spalteninterpretation">
+<h4>Spalteninterpretation<a class="headerlink" href="#spalteninterpretation" title="Permalink to this heading">#</a></h4>
+<p>Eine weitere aber weniger bekannte Beschreibung ist die Spalteninterpretation.
+Dafür schreiben wir die beiden Gleichungen in Spaltenform um:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\color{green}x\cdot \begin{pmatrix} 2\\ 1
+\end{pmatrix}
++ y \cdot \color{blue}\begin{pmatrix}
+-1\\ 1
+\end{pmatrix}
+=\color{purple}\begin{pmatrix}
+1 \\ 5
+\end{pmatrix}
+\end{split}\]</div>
+<p>Das kann man interpretieren, dass die Lösungen die Vielfache die wir zu den Vektoren <span class="math notranslate nohighlight">\(\begin{pmatrix} 2\\ 1
+\end{pmatrix}\)</span> und <span class="math notranslate nohighlight">\(\begin{pmatrix}
+-1\\ 1
+\end{pmatrix}\)</span> mutliplizierne müssen um auf den Punkt <span class="math notranslate nohighlight">\(\begin{pmatrix}
+1\\ 5
+\end{pmatrix}\)</span> zu kommen.</p>
+<p><img alt="" src="_images/spalteninterpretation.png" /></p>
+<p>Auch mit dieser Interpreation können wir nun wieder die Lösungsmenge charakterisieren:</p>
+<ol class="arabic simple">
+<li><p>Zwei Vektoren haben verschiedene Richtungen: ** es gibt genau eine Lösung**</p></li>
+<li><p>Zwei Vektoren sind in der Gleichungen Richtung und der Punkt liegt nicht auf der Geraden: <strong>keine Lösung</strong></p></li>
+<li><p>Zwei Vektoren sind in der gleichen Richtung und der Punkt liegt auf der dadurch definierten Geraden: <strong>unendlich viele Lösungen</strong>.</p></li>
+</ol>
+</section>
+</section>
+<section id="der-gausz-algorithmus">
+<h3>4.5 Der Gauß-Algorithmus<a class="headerlink" href="#der-gausz-algorithmus" title="Permalink to this heading">#</a></h3>
+<p>Der Gauß Algorithmus ist ein Verfahren um systematisch die Lösungsmenge von linearen Gleichungssystemen zu bestimmen.</p>
+<p>Der Gauß-Algorithmus basiert auf sogenannten elementaren Zeilenumformungen.</p>
+<div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 40 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\((A,b)=\left( \begin{matrix} a_{11} &amp; \dots &amp; a_{1n} &amp; b_1 \\ \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\ a_{m1} &amp; \dots &amp; a_{mn} &amp; b_m \end{matrix} \right)\)</span> die erweiterte Koeffizientenmatrix eines linearen Gleichungssystems.</p>
+<p>Wir nennen die folgenden Operationen auf der Matrix eine <strong>elementare Zeilenumformung</strong>:</p>
+<ol class="arabic simple">
+<li><p>Vertauschung zweier Zeilen</p></li>
+<li><p>Addition des 𝜆- fachen Einer Zeile einer Zeile zu einer anderen Zeile.</p></li>
+</ol>
+</section>
+</div><p>In form von Gleichungen bedeutet 1) einfache nur die Reihenfolge der Gleichungen zu tauschen und 2) Bedeutet, dass wir zwei Gleichungen addieren und eine neue Gleichung dadurch entsteht.</p>
+<p>Die Wichtige Erkenntnis ist nun, das beide Umformungen die Lösungsmenge des Systems nicht ändern.</p>
+<p>Wir haben daher folgenden Satz:</p>
+<div class="proof theorem admonition" id="theorem-3">
+<p class="admonition-title"><span class="caption-number">Theorem 18 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\((𝐴,𝑏)\)</span> die erweiterte Koeffizientenmatrix eines lineares Gleichungssystems und <span class="math notranslate nohighlight">\((\tilde{𝐴},\tilde{𝑏} )\)</span> ein weiteres Gleichungssystem, dass durch elementare Zeilenumformung aus <span class="math notranslate nohighlight">\((𝐴,𝑏)\)</span> entsteht. Dann haben beide Gleichungssystem, die gleiche Lösungsmenge.</p>
+</section>
+</div><p>Der Gauß Algorithmus ist nun ein Verfahren welches die erweiterte Koeffizientenmatrix unter Zuhilfenahme von elementaren Zeilenumformungen soweit vereinfacht, dass wir das System lösen können.</p>
+</section>
+<section id="beispiele-fur-den-gausz-algorithmus">
+<h3>Beispiele für den Gauß-Algorithmus<a class="headerlink" href="#beispiele-fur-den-gausz-algorithmus" title="Permalink to this heading">#</a></h3>
+<p>Wir wollen zunächst den Fall betrachten, wenn der Gauß-Algorithmus erfolgreich durchgeführt werden kann. Hierfür betrachten wir den Fall, dass wir <span class="math notranslate nohighlight">\(n\)</span> Gleichungen mit <span class="math notranslate nohighlight">\(n\)</span> Unbekannten haben. Also gleich viele Gleichungen wie unbekannte.</p>
+<p>Wir betrachten das Beispiel:</p>
+<div class="proof example admonition" id="example-4">
+<p class="admonition-title"><span class="caption-number">Example 38 </span></p>
+<section class="example-content" id="proof-content">
+<p>Es sei folgendes Lineares Gleichungssystem gegeben:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u+2v+w &amp;=2\\
+3u+8v+w&amp;=12\\
+4v+w&amp;=2.\end{split}\]</div>
+<p>Die Lösung mittels Gauß Algorithmus wird in dem folgendem Video beschrieben:</p>
+</section>
+</div><p>Und noch ein Beispiel:</p>
+<div class="proof example admonition" id="example-5">
+<p class="admonition-title"><span class="caption-number">Example 39 </span></p>
+<section class="example-content" id="proof-content">
+<p>Es sei folgendes Lineares Gleichungssystem gegeben:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}2u+-3v-w &amp;=1\\
+2v+3w&amp;=11\\
+4u+2v+3w&amp;=6.\end{split}\]</div>
+</section>
+</div></section>
+<section id="die-edgecases-reparierbarer-und-nicht-reparierbarer-fall">
+<h3>Die Edgecases - Reparierbarer und nicht reparierbarer Fall.<a class="headerlink" href="#die-edgecases-reparierbarer-und-nicht-reparierbarer-fall" title="Permalink to this heading">#</a></h3>
+<p>Der Algorithmus so wie wir ihn gesehen haben kann fehlschlagen wenn wir in einem Diagonelement eine <span class="math notranslate nohighlight">\(0\)</span> stehen haben. Dann können wir kein Vielfaches dieser Zeile zu einer weiteren addieren um die Zahlen unterhalb dieses Diagonalelements zu null zu machen.</p>
+<p>Es kann jedoch sein, dass dieser Fall reparierbar ist, in dem wir Zeilen vertauschen.</p>
+<p>Dafür betrachten wir das folgende Beispiel:</p>
+<div class="proof example admonition" id="example-6">
+<p class="admonition-title"><span class="caption-number">Example 40 </span></p>
+<section class="example-content" id="proof-content">
+<p>Es sei folgendes Lineares Gleichungssystem gegeben:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u+v+w &amp;=1\\
+2u+2v+2w&amp;=2\\
+4u+6v+8w&amp;=6.\end{split}\]</div>
+<p>Betrachten Sie nun das folgende Video:</p>
+</section>
+</div><p>Es kann leider aber auch vorkommen, dass wir durch vertauschen von zwei Zeilen den Algorithmus nicht reparieren können.
+Dafür betrachten wir das folgende Beispiel.</p>
+<div class="proof example admonition" id="example-7">
+<p class="admonition-title"><span class="caption-number">Example 41 </span></p>
+<section class="example-content" id="proof-content">
+<p>Es sei folgendes Lineares Gleichungssystem gegeben:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u+v+w &amp;=1\\
+2u+2v+5w&amp;=2\\
+4u+4v+8w&amp;=6.\end{split}\]</div>
+<p>Betrachten Sie nun das folgende Video:</p>
+</section>
+</div></section>
+<section id="der-allgemeine-fall">
+<h3>Der Allgemeine Fall<a class="headerlink" href="#der-allgemeine-fall" title="Permalink to this heading">#</a></h3>
+<p>Wir wollen nun im letzten Schritt eine Allgemeine Beschreibung der Lösungsmenge von linearen Gleichungssystemen geben.</p>
+<p>Dafür müssen wir zunächst die Folgenden Definitionen vornehmen.</p>
+<div class="proof definition admonition" id="definition-8">
+<p class="admonition-title"><span class="caption-number">Definition 41 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Eine Matrix <span class="math notranslate nohighlight">\(A\)</span> ist eine <strong>Zeilenstufenform</strong> falls es von der folgenden Gestalt ist.
+<img alt="" src="_images/zeilenstufenform.png" />
+wobei die mit (*) markierten Einträge <span class="math notranslate nohighlight">\(\neq 0\)</span> sind. Wir nennen die Zahl <span class="math notranslate nohighlight">\(r\in \mathbb{N}\)</span> den Rang der Matrix.</p>
+</section>
+</div><p>Die Definition ist weniger kompliziert als es zunächst aussehen mag. Wir meinen lediglich das wenn wir eine Trennline zwischen Einträgen, die nicht 0 sind und den Nulleinträgen wie eine Treppe verläuft. Also entweder runter geht oder gerade bleibt. Dabei kanne die Treppenstufe beliebig lang sein.</p>
+<p>Ein wichtiger Spezialfall, den wir bereits gesehen haben sind sogenannte obere Dreiecksmatrizen. Diese sind wie folgt definiert.</p>
+<div class="proof definition admonition" id="definition-9">
+<p class="admonition-title"><span class="caption-number">Definition 42 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Wir nennen eine Matrix, mit der folgenden Form eine <strong>obere Dreiecksmatrix</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left(
+\begin{array}
+a a_{1,1} &amp; a_{1,2} &amp; a_{1,3} &amp; \dots &amp; a_{1,n-1} &amp; a_{1,n} \\
+0 &amp; a_{2,2} &amp; a_{2,3} &amp; \dots &amp; a_{2,n-1} &amp; a_{2,n} \\
+0 &amp; 0 &amp; a_{3,3} &amp; \dots &amp; a_{3,n-1} &amp; a_{3,n} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; \dots &amp; a_{n-1,n-1} &amp; a_{n-1,n} \\
+0 &amp; 0 &amp; 0 &amp; \dots &amp; 0 &amp; a_{n,n} 
+\end{array}\right),\end{split}\]</div>
+<p>wobei die <span class="math notranslate nohighlight">\(a_ii\neq 0\)</span>.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-10">
+<p class="admonition-title"><span class="caption-number">Remark 2 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Jede obere Dreiecksmatrix ist insbesondere eine Matrix in Zeilenstufenform</p>
+</section>
+</div><p>Wir sind nun in der Lage einen Allgemeinen Satz zu formulieren welches Ergebnis der Gauß-Algorithmus in jedem Fall liefert.</p>
+<div class="proof theorem admonition" id="theorem-11">
+<p class="admonition-title"><span class="caption-number">Theorem 19 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\((𝐴,𝑏)\)</span> die erweiterte Koeffizientenmatrix eines linearen Gleichungssystems.
+Dann existiert eine endliche Kette von elementaren Zeilenumformungen, so dass das Transformierte System <span class="math notranslate nohighlight">\((\tilde{𝐴} ,\tilde{𝑏} )\)</span> die Eigenschaft hat, dass <span class="math notranslate nohighlight">\(\tilde{𝐴}\)</span>  Zeilenstufenform besitzt.</p>
+</section>
+</div><p>Anders ausgedrückt besagt der obige Satz, dass das Ergebnis einer Matrix nach dem Gauß-Algorithmus stets Zeilenstufenform besitzt.</p>
+<p>Nun können wir beschreiben wir die Lösungsmenge von Linearen Gleichungen allgemein beschreiben.</p>
+<p>Nun bemerken wir das folgende. Nehmen wir an wir haben ein erweiterte Koeffizientenmatrix, wobei <span class="math notranslate nohighlight">\(A\)</span> Zeilenstuform besitzt. Dann haben wir die folgende Situation</p>
+<p><img alt="" src="_images/zeilenstufenerw.png" />.</p>
+<p>Falls nun eine der Zahlen <span class="math notranslate nohighlight">\(b_{r+1},\dots , b_n \neq 0\)</span> so kann das System keine Lösungen besitzen, da dann die Gleichung niemals erfüllt sein kann.</p>
+<p>Falls <span class="math notranslate nohighlight">\(b_{r+1}=b_{r+2}=\dots = b_n=0\)</span> so sind die Gleichung stets erfüllt und wir erhalten unendlich viele Lösungen.</p>
+<p>Falls die Matrix <span class="math notranslate nohighlight">\(A\)</span> eine obere Dreiecksmatrix ist, so bekommen wir eine einzige Lösung.</p>
+<p>Insgesamt ergibt sich der folgende Satz.</p>
+<div class="proof theorem admonition" id="theorem-12">
+<p class="admonition-title"><span class="caption-number">Theorem 20 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Gegeben sein ein lineares Gleichungssystem mit <span class="math notranslate nohighlight">\(n\)</span> Gleichungen in <span class="math notranslate nohighlight">\(m\)</span> Unbekannten mit einer erweiterten Koeffizientenmatrix <span class="math notranslate nohighlight">\(B=(A,b)\)</span> wo bei <span class="math notranslate nohighlight">\(A\)</span> die Matrix des Systems ist. Dann gibt es die folgenden Fälle:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span> ist eine obere Dreiecksmatrix: In diesem Fall besteht die Lösungsmenge aus genau einem Element.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> ist keine obere Dreiecksmatrix, es gilt <span class="math notranslate nohighlight">\(r&lt;n\)</span> und es gibt ein <span class="math notranslate nohighlight">\(b_k\neq 0\)</span> für ein <span class="math notranslate nohighlight">\(k\in \left\{r+1,\dots , n\right\}\)</span>. Dann gibt es keine Lösung.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> ist keine obere Dreiecksmatrix und es gilt entweder <span class="math notranslate nohighlight">\(r=n\)</span> oder <span class="math notranslate nohighlight">\(b_{r+1}=\dots b_n\)</span>. Dann gibt es unendlich viele Lösungen.</p></li>
+</ul>
+</section>
+</div><p>Das ganze wollen wir nun noch an zwei Beispielen illustrieren.</p>
+<div class="proof example admonition" id="example-13">
+<p class="admonition-title"><span class="caption-number">Example 42 </span></p>
+<section class="example-content" id="proof-content">
+<p>Beschreibe die Lösungsmenge des folgenden Linearen Gleichungssystems:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x-z&amp;=0 \\
+y+2z&amp;=0\end{split}\]</div>
+</section>
+</div><div class="proof example admonition" id="example-14">
+<p class="admonition-title"><span class="caption-number">Example 43 </span></p>
+<section class="example-content" id="proof-content">
+<p>Wir schauen uns nun nochmal das folgende Gleichungssystem an</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}xu+v+w &amp;=1\\
+2u+2v+5w&amp;=2\\
+4u+4v+8w&amp;=6.\end{split}\]</div>
+</section>
+</div></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="relationsAndFunctions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Kapitel 3 - Relationen und Funktionen</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">4.1 Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-pagerank-algorithmus">4.2 Der PageRank Algorithmus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lineare-gleichungssysteme">4.3 Lineare Gleichungssysteme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometrische-interpretation-von-linearen-gleichungssystemen">4.4 Geometrische Interpretation von Linearen Gleichungssystemen</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zeileninterpretation">Zeileninterpretation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spalteninterpretation">Spalteninterpretation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#der-gausz-algorithmus">4.5 Der Gauß-Algorithmus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiele-fur-den-gausz-algorithmus">Beispiele für den Gauß-Algorithmus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-edgecases-reparierbarer-und-nicht-reparierbarer-fall">Die Edgecases - Reparierbarer und nicht reparierbarer Fall.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#der-allgemeine-fall">Der Allgemeine Fall</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Prof. Dr. Georg Merz
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

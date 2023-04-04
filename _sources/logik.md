@@ -14,9 +14,9 @@ In diesem Abschnitt lernen wir die folgenden Dinge:
 :::{admonition}  Lernziele
 :class: note
 
-- Syntaktisch korrekte Logische Formeln konstruieren
-- Interpretieren von Logischen Ausdrücken 
-- Folgerungen von Logischen Aussagen mittels Wahrheitstafeln
+- Syntaktisch korrekte logische Formeln konstruieren
+- Interpretieren von logischen Ausdrücken 
+- Folgerungen von logischen Aussagen mittels Wahrheitstafeln und Gesetzen der Aussagenlogik
 - Ausdrücke mithilfe von Quantoren formulieren und negieren
 - Verständnis des Gödelschen Unvollständigkeitssatz erlangen
 :::
@@ -24,18 +24,18 @@ In diesem Abschnitt lernen wir die folgenden Dinge:
 
 ## 1.2 Einleitung mit Sudoku 
 
-Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge. Es ist aber wichtig er einmal fest zu halten, dass wir alle von Natur aus logisch denken können ohne, dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir dass was wir natürlicherweise machen hier formalisieren wollen.
+Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge, es ist aber wichtig er einmal fest zu halten, dass wir alle von Natur aus logisch denken können ohne, dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir das was wir natürlicherweise machen hier formalisieren wollen.
 
 Um Sie davon zu überzeugen, dass Sie Logik bereits verstehen, will ich Ihnen folgendes Beispiel zeigen.
 
-Nehmen wir an wir spielen Soduku nur, dass wir die Zahlen $1$ bis $4$ verwenden statt $1$ bis $9$.
+Nehmen wir an wir spielen Soduku. Wir beschränken uns aber hierfür auf Zahlen $1$ bis $4$ statt $1$ bis $9$.
 
 Nehmen wir an wir haben also folgendes Sudoku gegeben:
 
 ![](images/sudoku.png)
 
 
-Wir betrachten, das grüne Feld.
+Wir betrachten das grüne Feld.
 
 Welche Zahl muss hier rein?
 
@@ -69,9 +69,9 @@ Also gilt:
 
 $ A\vee B\vee C\vee D$
 
-Ok soweit so gut. Was wissen wir noch.
+Ok soweit so gut. Was wissen wir noch?
 
-Wir wissen es darf keine 1 sein, denn diese Zahl ist bereits im Quadranten und es darf keine 2 oder 3 sein denn diese Zahlen sind in der selben Zeile.
+Wir wissen, es darf keine 1 sein, denn diese Zahl ist bereits im Quadranten. Außerdem darf es keine 2 oder 3 sein, denn diese Zahlen sind in der selben Zeile.
 
 Damit wissen wir, dass gilt:
 
@@ -87,19 +87,23 @@ Anstatt **nicht** schreiben Mathematiker:innen $\neg$ und anstatt **und** schrei
 
 Damit ergibt sich also:
 
-$ \neg (A \wedge B \wedge C \wedge D )$.
+$ \neg A \wedge  \neg B \wedge \neg C  $.
 
 Zusammen mit dem Ersten Teil: ergibt sich als Ausdruck:
 
 
- $(A\vee B\vee C\vee D)\wedge \neg (A \wedge B \wedge C \wedge D )$
+ $(A\vee B\vee C\vee D)\wedge (\neg A \wedge \neg B \wedge \neg C)$
 
-Es soll also A oder B oder C gelten und **nicht** (A oder B oder C). Wir alle wissen, dass das nichts anderes heißt, dass $A$ gilt. Also das die Zahl die 4 sein muss. 
+Es soll also A oder B oder C oder D gelten und **nicht** A und  **nicht** B und **nicht** C. Wir alle wissen, dass das nichts anderes heißt, dass $D$ gilt. Also dass die Zahl die 4 sein muss. 
 Aber warum eigentlich? Welche Logischen Gesetze stecken dahinter? Genau das wollen wir in diesem Kapitel genauer untersuchen.
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xleOtHLj61g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## 2.1 Aussagenlogik
 
-Wie wir in der Einleitung gesehen, haben beschäftigen wir uns im ersten Teil mit der Sogenannten Aussagenlogik.
+Wie wir in der Einleitung gesehen, haben beschäftigen wir uns im ersten Teil mit der sogenannten Aussagenlogik.
 
 
 ````{prf:definition}
@@ -127,7 +131,7 @@ Z.B. A="Heute hat es geregnet" oder $B="3+5=9".
 Wir nennen dann $A$ und $B$ **Aussagenvariablen**.
 
 
-Wir können nun Aussagen mithilfen Operatoren Aussagen verknüpfen. Dafür haben wir verschiedene Symbole zu Verfügung, die
+Wir können nun Aussagen mithilfe von Operatoren  verknüpfen. Dafür haben wir verschiedene Symbole zu Verfügung, die
 man alltagssprachlich wie folgt interpretieren kann:
 
 - $A\wedge B$ heißt A und B
@@ -141,7 +145,7 @@ man alltagssprachlich wie folgt interpretieren kann:
 - $A\leftrightarrow B$ A und B sind äquivalent.
 
 
-Wir werden im Kapitel zu Semantik noch genauer verstehen, was diese Operatoren **genau* bedeuten. Das reicht uns aber erstmal
+Wir werden im Kapitel zu Semantik noch genauer verstehen, was diese Operatoren **genau** bedeuten. Das reicht uns aber erstmal
 als Intuition für das nächste Kapitel.
 
 ### Syntax der Aussagenlogik - Formeln
@@ -153,9 +157,9 @@ Wir nennen zusammengesetzte Aussagen auch Formeln und Sie können wie folgt iter
 
 ````{prf:definition}
 Eine Formel ist eine Kombination aus Aussagen und logischen Operatoren und kann wie folgt iterativ erzeugt werden:
-1) Einzelne Aussagen sind Formeln
+1) Einzelne Aussagen sind Formeln.
 
-2) 0 (die immer Falsche Aussage) und 1 (die immer wahre Aussage) sind Formeln
+2) 0 (die immer Falsche Aussage) und 1 (die immer wahre Aussage) sind Formeln.
 
 3) Wenn $F_1$ und $F_2$ Formeln sind, so sind auch folgende Ausdrücke Formeln:
 
@@ -167,7 +171,7 @@ Eine Formel ist eine Kombination aus Aussagen und logischen Operatoren und kann 
 
 - $(F_1 \to F_2)$
 
-- $(F_1 \leftrightarrow F_2)$
+- $(F_1 \leftrightarrow F_2)$.
 
 ````
 
@@ -201,14 +205,14 @@ Folgende Ausdrücke sind **keine** Formeln:
 
 
 ````
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jcDwLQCHVzM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Semantik der Aussagenlogik - Wahrheitstafeln
 
 
 Wir haben nun im letzten Abschnitt gesehen, wie wir Formeln syntaktisch korrekt formulieren können.
 Doch was bedeuten die Formeln? Wann sind zwei Formeln identisch und wann ist eine Formel selbst wiederum wahr oder falsch. Mit diesen Fragestellung beschäftigt sich die **Semantik** der Aussagenlogik.
-Das wichtigste Werkzeug hierfür sind sogenannte Wahrheitstafeln:
+Das wichtigste Werkzeug hierfür sind sogenannte Wahrheitstafeln.
 
 
 #### Wahrheitstafeln
@@ -267,7 +271,7 @@ F & F & \\
 
 Nun tragen wir die Wahrheitswerte für die Formel $F$ ein unter der Berücksichtigung der Wahrheitswerte von $A$ und $B$. Denken Sie hierbei daran  dass $A\vee B$  genau dann wahr ist wenn mind. eine Aussagen wahr ist.
 
-Wir bekommen also folgende Wahrheitstabelle.
+Wir bekommen also folgende Wahrheitstafel.
 
 ```{math}
 \begin{array}{|c c|c|}
@@ -291,7 +295,7 @@ F & F & F\\
 
 Die Aussage $A\land B$ ist genau dann wahr wenn beide Aussagen wahr sind.
 
-Wir erhalten folgende Wahrheitstabelle
+Wir erhalten folgende Wahrheitstafel
 
 ```{math}
 \begin{array}{|c c|c|}
@@ -311,7 +315,7 @@ F & F & F\\
 
 #### Der $\neg$ - Operator
 
-Die Aussage $\neg A$ ist genau dann wahr wenn $A$ falsch ist. Also gilt:
+Die Aussage $\neg A$ ist genau dann wahr, wenn $A$ falsch ist. Also gilt:
 
 ```{math}
 \begin{array}{|c|c|}
@@ -323,17 +327,17 @@ F & T\\
 ```
 #### Der $\to$ - Operator
 
-Die Aussagen $A\to B$ is etwas unintuitiver. Es gilt folgendes:
+Die Aussagen $A\to B$ ist etwas unintuitiver. Es gilt folgendes:
 
-$A\to B$ is wahr falls:
+$A\to B$ ist wahr falls:
 
 - $A$ und $B$ wahr sind
 
 - $A$ falsch ist.
 
-Intuitiv bedeutet dies das aus einer Falschen Aussage alles folgen kann.
+Intuitiv bedeutet dies, dass aus einer Falschen Aussage alles folgen kann.
 
-Als Wahrheitstabelle gilt:
+Als Wahrheitstafel:
 
 
 ```{math}
@@ -356,7 +360,7 @@ F & F & T\\
 #### Der $\leftrightarrow$ - Operator
 
 
-Die Aussage $A\leftrightarrow B$ ist das logische "genau dann wenn". Es ist also $A\leftrightarrow B$ genau dann wahr wenn $A$ und $B$ entweder beide wahr oder beide falsch sind.
+Die Aussage $A\leftrightarrow B$ ist das logische "genau dann wenn". Es ist also $A\leftrightarrow B$ genau dann wahr, wenn $A$ und $B$ entweder beide wahr oder beide falsch sind.
 
 ```{math}
 \begin{array}{|c c|c|}
@@ -373,11 +377,11 @@ F & T & F\\
 F & F & T\\
 \end{array}
 ```
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vea-kTjWm4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+#### Wahrheitstafeln für allgemeine Formeln
 
-#### Wahrheitstabellen für allgemeine Formeln
-
-Da allgemeine Formeln rekursiv aus Aussagenvariablen $A,B,C,\dots $ und den Operatoren $\wedge, vee, \neg, \to,\leftrightarrow$ zusammengesetzt sind, können wir eine Wahrheitstabelle für allgemeine Formen auf die Wahrheitstabellen für die obig beschriebenen Operatoren zurückführen.
+Da allgemeine Formeln rekursiv aus Aussagenvariablen $A,B,C,\dots $ und den Operatoren $\wedge, \vee, \neg, \to,\leftrightarrow$ zusammengesetzt sind, können wir eine Wahrheitstafel für allgemeine Formen auf die Wahrheitstafeln für die obig beschriebenen Operatoren zurückführen.
 
 
 Am Besten kann dies durch ein Beispiel veranschaulicht werden.
@@ -415,9 +419,9 @@ T&T &T & & &
 ```
 
 **Schritt 2**
-Nun können wir die abgeleiteten Wahrheitswerte für die Teilausdrücke eintragen. Diese ergeben sich nun eindeutig aus der Belegung von $A,B$ und $C$ und können mithilfe der Wahrheitstabellen für die Operatoren hergeleitet werden.
+Nun können wir die abgeleiteten Wahrheitswerte für die Teilausdrücke eintragen. Diese ergeben sich nun eindeutig aus der Belegung von $A,B$ und $C$ und können mithilfe der Wahrheitstafeln für die Operatoren hergeleitet werden.
 
-Machen wir dies zunächste für den ersten Ausdruck $A\land B$.
+Machen wir dies zunächst für den ersten Ausdruck $A\land B$.
 
 
 ```{math}
@@ -461,7 +465,7 @@ F&F &F &F &F &T\\
 F&F &T &F &T &T\\
 F&T &T &F & T&T\\
 F&T &F &F& F&T\\
-T&F &F &F &T &F\\
+T&F &F &F &T &T\\
 T&T &F &T &T &T\\
 T&F &T &F &T &T\\
 T&T &T &T &T &T
@@ -469,10 +473,10 @@ T&T &T &T &T &T
 ```
 
 
-Wir sehen also, dass die Formel $F$ fast immer wahr ist ausser wenn $A$ wahr ist und $B$ und $C$ falsch sind.
+Wir sehen also, dass die Formel $F$ immer wahr ist. Wir nennen $F$ in diesem Fall eine **Tautologie**.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kvJrGAIrdDk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-
-### Wichtige Definitionen mit Hilfe von Wahrheitstabellen
+### Wichtige Definitionen mit Hilfe von Wahrheitstafeln
 
 ```{prf:definition}
 Sei $F$ eine aussagenlogische Formel. Dann heißt $F$
@@ -485,7 +489,7 @@ Sei $F$ eine aussagenlogische Formel. Dann heißt $F$
 
 ```
 
-Wir sehen also, dass unser vorheriges Beispiel $F= (A \land B) \to (A\lor C)$ erfüllbar ist, aber weder eine Tautologie noch eine Kontradiktion.
+Wir sehen also, dass unser vorheriges Beispiel $F= (A \land B) \to (A\lor C)$ erfüllbar ist und eine Tautologie.
 
 
 ```{prf:example}
@@ -506,7 +510,7 @@ Beispiele für Kontradiktionen:
 **Übung**
 
 Betrachten Sie die Formel $F= (A\to B) \to (\neg B \to \neg A)$.
-Mann kann nun mit Hilfe einer Wahrheitstabelle zeigen, dass dies eine Tautologie ist.
+Mann kann nun mit Hilfe einer Wahrheitstafel zeigen, dass dies eine Tautologie ist.
 
 Eine weitere wichtige Definition ist wann zwei Formeln semantisch gesehen gleich sind. D.h. dass sie die selbe Wahrheitstafel haben.
 
@@ -524,10 +528,10 @@ Seien $A,B$ Aussagenvariablen. Dann gilt folgende logische Äquivalenz
 ```{math}
 A\to B \equiv \neg A\lor B
 ```
-Zum Beweis können wir einfach die Wahrheitstabellen vergleichen.
+Zum Beweis können wir einfach die Wahrheitstafeln vergleichen.
 
 
-Wir kennen ja bereits folgende Wahrheitstabelle.
+Wir kennen ja bereits folgende Wahrheitstafel.
 ```{math}
 \begin{array}{|c c|c|}
 A & B & A \to B\\ % Use & to separate the columns
@@ -538,7 +542,7 @@ F & T & T\\
 F & F & T\\
 \end{array}
 ```
-Nun wollen wir die Wahrheitstabelle für den zweiten Ausdruck erstellen.
+Nun wollen wir die Wahrheitstafel für den zweiten Ausdruck erstellen.
 
 ```{math}
 \begin{array}{|c c|c c|}
@@ -560,11 +564,11 @@ Wie wir sehen, dass die letzte Spalte identisch ist und damit müssen beide Form
 
 
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9sYbzC8irrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 ### Gesetze der Aussagenlogik
-Wahrheitstabellen sind ein extrem nützliches Werkzeug um zu zeigen, dass etwas eine Tautologie ist oder die logische Äquivalenz  von Formeln zu beweisen. Wenn die Anzahl der Aussagenvariablen jedoch groß ist, so ist auch die Anzahl der Möglichen Belegungen hoch.
+Wahrheitstafeln sind ein extrem nützliches Werkzeug um zu zeigen, dass etwas eine Tautologie ist oder die logische Äquivalenz  von Formeln zu beweisen. Wenn die Anzahl der Aussagenvariablen jedoch groß ist, so ist auch die Anzahl der Möglichen Belegungen hoch.
 
 
 
@@ -813,7 +817,7 @@ Wir können mittels den Gesetzen der Aussagenlogik prüfen ob es sich bei einer 
 ````{prf:example}
 Sei $F=(A\land B)\to (A\lor B)$.
 
-Intuitiv scheint es klar zu sein, dass es sich bei $F$ um eine Tautologie handelt, denn A und B sollte ja A oder B implizieren. Doch wir können dies auch formal zeigen, ohne Nutzung einer Wahrheitstabelle.
+Intuitiv scheint es klar zu sein, dass es sich bei $F$ um eine Tautologie handelt, denn A und B sollte ja A oder B implizieren. Doch wir können dies auch formal zeigen, ohne Nutzung einer Wahrheitstafel.
 
 Wir nutzen zunächst einmal Formel (11) zur Implikation:
 ```{math}

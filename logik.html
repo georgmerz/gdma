@@ -157,6 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="mengenlehre.html">Kapitel 1 - Mengenlehre</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Kapitel 2 Grundlagen der Logik</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relationsAndFunctions.html">Kapitel 3 - Relationen und Funktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gauss.html">Kapitel 4 - Der Gauß-Algorithmus</a></li>
 </ul>
 
     </div>
@@ -361,10 +362,10 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#der-neg-operator">Der <span class="math notranslate nohighlight">\(\neg\)</span> - Operator</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#der-to-operator">Der <span class="math notranslate nohighlight">\(\to\)</span> - Operator</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#der-leftrightarrow-operator">Der <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> - Operator</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wahrheitstabellen-fur-allgemeine-formeln">Wahrheitstabellen für allgemeine Formeln</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wahrheitstafeln-fur-allgemeine-formeln">Wahrheitstafeln für allgemeine Formeln</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wichtige-definitionen-mit-hilfe-von-wahrheitstabellen">Wichtige Definitionen mit Hilfe von Wahrheitstabellen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wichtige-definitionen-mit-hilfe-von-wahrheitstafeln">Wichtige Definitionen mit Hilfe von Wahrheitstafeln</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gesetze-der-aussagenlogik">Gesetze der Aussagenlogik</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#idempotenzgesetz">Idempotenzgesetz</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kommutativgesetz">Kommutativgesetz</a></li>
@@ -418,9 +419,9 @@ document.write(`
 <div class="note admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Syntaktisch korrekte Logische Formeln konstruieren</p></li>
-<li><p>Interpretieren von Logischen Ausdrücken</p></li>
-<li><p>Folgerungen von Logischen Aussagen mittels Wahrheitstafeln</p></li>
+<li><p>Syntaktisch korrekte logische Formeln konstruieren</p></li>
+<li><p>Interpretieren von logischen Ausdrücken</p></li>
+<li><p>Folgerungen von logischen Aussagen mittels Wahrheitstafeln und Gesetzen der Aussagenlogik</p></li>
 <li><p>Ausdrücke mithilfe von Quantoren formulieren und negieren</p></li>
 <li><p>Verständnis des Gödelschen Unvollständigkeitssatz erlangen</p></li>
 </ul>
@@ -428,12 +429,12 @@ document.write(`
 </section>
 <section id="einleitung-mit-sudoku">
 <h2>1.2 Einleitung mit Sudoku<a class="headerlink" href="#einleitung-mit-sudoku" title="Permalink to this heading">#</a></h2>
-<p>Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge. Es ist aber wichtig er einmal fest zu halten, dass wir alle von Natur aus logisch denken können ohne, dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir dass was wir natürlicherweise machen hier formalisieren wollen.</p>
+<p>Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge, es ist aber wichtig er einmal fest zu halten, dass wir alle von Natur aus logisch denken können ohne, dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir das was wir natürlicherweise machen hier formalisieren wollen.</p>
 <p>Um Sie davon zu überzeugen, dass Sie Logik bereits verstehen, will ich Ihnen folgendes Beispiel zeigen.</p>
-<p>Nehmen wir an wir spielen Soduku nur, dass wir die Zahlen <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(4\)</span> verwenden statt <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(9\)</span>.</p>
+<p>Nehmen wir an wir spielen Soduku. Wir beschränken uns aber hierfür auf Zahlen <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(4\)</span> statt <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(9\)</span>.</p>
 <p>Nehmen wir an wir haben also folgendes Sudoku gegeben:</p>
 <p><img alt="" src="_images/sudoku.png" /></p>
-<p>Wir betrachten, das grüne Feld.</p>
+<p>Wir betrachten das grüne Feld.</p>
 <p>Welche Zahl muss hier rein?</p>
 <p>Sie werden intuitiv vermutlich 4 sagen.</p>
 <p>Doch wir wollen, das ganze Schritt für Schritt einmal durchgehen:</p>
@@ -451,8 +452,8 @@ document.write(`
 <p>In der Logik schreibt man nun statt “oder” auch <span class="math notranslate nohighlight">\(\vee \)</span>.</p>
 <p>Also gilt:</p>
 <p><span class="math notranslate nohighlight">\( A\vee B\vee C\vee D\)</span></p>
-<p>Ok soweit so gut. Was wissen wir noch.</p>
-<p>Wir wissen es darf keine 1 sein, denn diese Zahl ist bereits im Quadranten und es darf keine 2 oder 3 sein denn diese Zahlen sind in der selben Zeile.</p>
+<p>Ok soweit so gut. Was wissen wir noch?</p>
+<p>Wir wissen, es darf keine 1 sein, denn diese Zahl ist bereits im Quadranten. Außerdem darf es keine 2 oder 3 sein, denn diese Zahlen sind in der selben Zeile.</p>
 <p>Damit wissen wir, dass gilt:</p>
 <p><em>Nicht A und Nicht B und Nicht C.</em></p>
 <p>Das ist aber das selbe wie</p>
@@ -460,15 +461,16 @@ document.write(`
 <p>Hier haben wir schon ein erstes Gesetz der Aussagenlogik angewendet. Das Gesetz von <strong>de Morgan</strong>.</p>
 <p>Anstatt <strong>nicht</strong> schreiben Mathematiker:innen <span class="math notranslate nohighlight">\(\neg\)</span> und anstatt <strong>und</strong> schreiben sie <span class="math notranslate nohighlight">\(\wedge\)</span>.</p>
 <p>Damit ergibt sich also:</p>
-<p><span class="math notranslate nohighlight">\( \neg (A \wedge B \wedge C \wedge D )\)</span>.</p>
+<p><span class="math notranslate nohighlight">\( \neg A \wedge  \neg B \wedge \neg C  \)</span>.</p>
 <p>Zusammen mit dem Ersten Teil: ergibt sich als Ausdruck:</p>
-<p><span class="math notranslate nohighlight">\((A\vee B\vee C\vee D)\wedge \neg (A \wedge B \wedge C \wedge D )\)</span></p>
-<p>Es soll also A oder B oder C gelten und <strong>nicht</strong> (A oder B oder C). Wir alle wissen, dass das nichts anderes heißt, dass <span class="math notranslate nohighlight">\(A\)</span> gilt. Also das die Zahl die 4 sein muss.
+<p><span class="math notranslate nohighlight">\((A\vee B\vee C\vee D)\wedge (\neg A \wedge \neg B \wedge \neg C)\)</span></p>
+<p>Es soll also A oder B oder C oder D gelten und <strong>nicht</strong> A und  <strong>nicht</strong> B und <strong>nicht</strong> C. Wir alle wissen, dass das nichts anderes heißt, dass <span class="math notranslate nohighlight">\(D\)</span> gilt. Also dass die Zahl die 4 sein muss.
 Aber warum eigentlich? Welche Logischen Gesetze stecken dahinter? Genau das wollen wir in diesem Kapitel genauer untersuchen.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xleOtHLj61g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 <section id="aussagenlogik">
 <h2>2.1 Aussagenlogik<a class="headerlink" href="#aussagenlogik" title="Permalink to this heading">#</a></h2>
-<p>Wie wir in der Einleitung gesehen, haben beschäftigen wir uns im ersten Teil mit der Sogenannten Aussagenlogik.</p>
+<p>Wie wir in der Einleitung gesehen, haben beschäftigen wir uns im ersten Teil mit der sogenannten Aussagenlogik.</p>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 13 </span></p>
 <section class="definition-content" id="proof-content">
@@ -493,7 +495,7 @@ Aber warum eigentlich? Welche Logischen Gesetze stecken dahinter? Genau das woll
 </div><p>Häufig kürzen wir Aussagen mit Großbuchstaben ab.</p>
 <p>Z.B. A=”Heute hat es geregnet” oder $B=”3+5=9”.</p>
 <p>Wir nennen dann <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> <strong>Aussagenvariablen</strong>.</p>
-<p>Wir können nun Aussagen mithilfen Operatoren Aussagen verknüpfen. Dafür haben wir verschiedene Symbole zu Verfügung, die
+<p>Wir können nun Aussagen mithilfe von Operatoren  verknüpfen. Dafür haben wir verschiedene Symbole zu Verfügung, die
 man alltagssprachlich wie folgt interpretieren kann:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(A\wedge B\)</span> heißt A und B</p></li>
@@ -502,7 +504,7 @@ man alltagssprachlich wie folgt interpretieren kann:</p>
 <li><p><span class="math notranslate nohighlight">\(A\to B\)</span> heißt A impliziert B</p></li>
 <li><p><span class="math notranslate nohighlight">\(A\leftrightarrow B\)</span> A und B sind äquivalent.</p></li>
 </ul>
-<p>Wir werden im Kapitel zu Semantik noch genauer verstehen, was diese Operatoren *<em>genau</em> bedeuten. Das reicht uns aber erstmal
+<p>Wir werden im Kapitel zu Semantik noch genauer verstehen, was diese Operatoren <strong>genau</strong> bedeuten. Das reicht uns aber erstmal
 als Intuition für das nächste Kapitel.</p>
 <section id="syntax-der-aussagenlogik-formeln">
 <h3>Syntax der Aussagenlogik - Formeln<a class="headerlink" href="#syntax-der-aussagenlogik-formeln" title="Permalink to this heading">#</a></h3>
@@ -514,8 +516,8 @@ Dabei ist die Bedeutung der Aussagen erst einmal nicht bedeutend.</p>
 <section class="definition-content" id="proof-content">
 <p>Eine Formel ist eine Kombination aus Aussagen und logischen Operatoren und kann wie folgt iterativ erzeugt werden:</p>
 <ol class="arabic simple">
-<li><p>Einzelne Aussagen sind Formeln</p></li>
-<li><p>0 (die immer Falsche Aussage) und 1 (die immer wahre Aussage) sind Formeln</p></li>
+<li><p>Einzelne Aussagen sind Formeln.</p></li>
+<li><p>0 (die immer Falsche Aussage) und 1 (die immer wahre Aussage) sind Formeln.</p></li>
 <li><p>Wenn <span class="math notranslate nohighlight">\(F_1\)</span> und <span class="math notranslate nohighlight">\(F_2\)</span> Formeln sind, so sind auch folgende Ausdrücke Formeln:</p></li>
 </ol>
 <ul class="simple">
@@ -523,7 +525,7 @@ Dabei ist die Bedeutung der Aussagen erst einmal nicht bedeutend.</p>
 <li><p><span class="math notranslate nohighlight">\((F_1 \vee F_2)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\((F_1 \wedge F_2 )\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\((F_1 \to F_2)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\((F_1 \leftrightarrow F_2)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((F_1 \leftrightarrow F_2)\)</span>.</p></li>
 </ul>
 </section>
 </div><p><strong>Achtung</strong></p>
@@ -545,12 +547,13 @@ Dabei ist die Bedeutung der Aussagen erst einmal nicht bedeutend.</p>
 <li><p><span class="math notranslate nohighlight">\(A\neg\)</span>.</p></li>
 </ul>
 </section>
-</div></section>
+</div><iframe width="560" height="315" src="https://www.youtube.com/embed/jcDwLQCHVzM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
 <section id="semantik-der-aussagenlogik-wahrheitstafeln">
 <h3>Semantik der Aussagenlogik - Wahrheitstafeln<a class="headerlink" href="#semantik-der-aussagenlogik-wahrheitstafeln" title="Permalink to this heading">#</a></h3>
 <p>Wir haben nun im letzten Abschnitt gesehen, wie wir Formeln syntaktisch korrekt formulieren können.
 Doch was bedeuten die Formeln? Wann sind zwei Formeln identisch und wann ist eine Formel selbst wiederum wahr oder falsch. Mit diesen Fragestellung beschäftigt sich die <strong>Semantik</strong> der Aussagenlogik.
-Das wichtigste Werkzeug hierfür sind sogenannte Wahrheitstafeln:</p>
+Das wichtigste Werkzeug hierfür sind sogenannte Wahrheitstafeln.</p>
 <section id="wahrheitstafeln">
 <h4>Wahrheitstafeln<a class="headerlink" href="#wahrheitstafeln" title="Permalink to this heading">#</a></h4>
 <p>Nehmen wir an wir haben eine Formel <span class="math notranslate nohighlight">\(F\)</span>, die aus den Aussagenvariablen <span class="math notranslate nohighlight">\(A,B,C,\dots, \)</span> formuliert wurde. Dann beantwortet die Wahrheitstafel folgende Fragestellung:</p>
@@ -594,7 +597,7 @@ F &amp; F &amp; \\
 \end{array}\end{split}\]</div>
 <p><strong>Schritt 3</strong></p>
 <p>Nun tragen wir die Wahrheitswerte für die Formel <span class="math notranslate nohighlight">\(F\)</span> ein unter der Berücksichtigung der Wahrheitswerte von <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span>. Denken Sie hierbei daran  dass <span class="math notranslate nohighlight">\(A\vee B\)</span>  genau dann wahr ist wenn mind. eine Aussagen wahr ist.</p>
-<p>Wir bekommen also folgende Wahrheitstabelle.</p>
+<p>Wir bekommen also folgende Wahrheitstafel.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{|c c|c|}
 % |c c|c| means that there are three columns in the table and
@@ -613,7 +616,7 @@ F &amp; F &amp; F\\
 <section id="der-land-operator">
 <h4>Der <span class="math notranslate nohighlight">\(\land\)</span> - Operator<a class="headerlink" href="#der-land-operator" title="Permalink to this heading">#</a></h4>
 <p>Die Aussage <span class="math notranslate nohighlight">\(A\land B\)</span> ist genau dann wahr wenn beide Aussagen wahr sind.</p>
-<p>Wir erhalten folgende Wahrheitstabelle</p>
+<p>Wir erhalten folgende Wahrheitstafel</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{|c c|c|}
 % |c c|c| means that there are three columns in the table and
@@ -631,7 +634,7 @@ F &amp; F &amp; F\\
 </section>
 <section id="der-neg-operator">
 <h4>Der <span class="math notranslate nohighlight">\(\neg\)</span> - Operator<a class="headerlink" href="#der-neg-operator" title="Permalink to this heading">#</a></h4>
-<p>Die Aussage <span class="math notranslate nohighlight">\(\neg A\)</span> ist genau dann wahr wenn <span class="math notranslate nohighlight">\(A\)</span> falsch ist. Also gilt:</p>
+<p>Die Aussage <span class="math notranslate nohighlight">\(\neg A\)</span> ist genau dann wahr, wenn <span class="math notranslate nohighlight">\(A\)</span> falsch ist. Also gilt:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{|c|c|}
 A &amp; \neg A\\ % Use &amp; to separate the columns
@@ -642,14 +645,14 @@ F &amp; T\\
 </section>
 <section id="der-to-operator">
 <h4>Der <span class="math notranslate nohighlight">\(\to\)</span> - Operator<a class="headerlink" href="#der-to-operator" title="Permalink to this heading">#</a></h4>
-<p>Die Aussagen <span class="math notranslate nohighlight">\(A\to B\)</span> is etwas unintuitiver. Es gilt folgendes:</p>
-<p><span class="math notranslate nohighlight">\(A\to B\)</span> is wahr falls:</p>
+<p>Die Aussagen <span class="math notranslate nohighlight">\(A\to B\)</span> ist etwas unintuitiver. Es gilt folgendes:</p>
+<p><span class="math notranslate nohighlight">\(A\to B\)</span> ist wahr falls:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> wahr sind</p></li>
 <li><p><span class="math notranslate nohighlight">\(A\)</span> falsch ist.</p></li>
 </ul>
-<p>Intuitiv bedeutet dies das aus einer Falschen Aussage alles folgen kann.</p>
-<p>Als Wahrheitstabelle gilt:</p>
+<p>Intuitiv bedeutet dies, dass aus einer Falschen Aussage alles folgen kann.</p>
+<p>Als Wahrheitstafel:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{|c c|c|}
 % |c c|c| means that there are three columns in the table and
@@ -667,7 +670,7 @@ F &amp; F &amp; T\\
 </section>
 <section id="der-leftrightarrow-operator">
 <h4>Der <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> - Operator<a class="headerlink" href="#der-leftrightarrow-operator" title="Permalink to this heading">#</a></h4>
-<p>Die Aussage <span class="math notranslate nohighlight">\(A\leftrightarrow B\)</span> ist das logische “genau dann wenn”. Es ist also <span class="math notranslate nohighlight">\(A\leftrightarrow B\)</span> genau dann wahr wenn <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> entweder beide wahr oder beide falsch sind.</p>
+<p>Die Aussage <span class="math notranslate nohighlight">\(A\leftrightarrow B\)</span> ist das logische “genau dann wenn”. Es ist also <span class="math notranslate nohighlight">\(A\leftrightarrow B\)</span> genau dann wahr, wenn <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> entweder beide wahr oder beide falsch sind.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{|c c|c|}
 % |c c|c| means that there are three columns in the table and
@@ -682,10 +685,11 @@ T &amp; F &amp; F\\
 F &amp; T &amp; F\\
 F &amp; F &amp; T\\
 \end{array}\end{split}\]</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vea-kTjWm4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
-<section id="wahrheitstabellen-fur-allgemeine-formeln">
-<h4>Wahrheitstabellen für allgemeine Formeln<a class="headerlink" href="#wahrheitstabellen-fur-allgemeine-formeln" title="Permalink to this heading">#</a></h4>
-<p>Da allgemeine Formeln rekursiv aus Aussagenvariablen <span class="math notranslate nohighlight">\(A,B,C,\dots \)</span> und den Operatoren <span class="math notranslate nohighlight">\(\wedge, vee, \neg, \to,\leftrightarrow\)</span> zusammengesetzt sind, können wir eine Wahrheitstabelle für allgemeine Formen auf die Wahrheitstabellen für die obig beschriebenen Operatoren zurückführen.</p>
+<section id="wahrheitstafeln-fur-allgemeine-formeln">
+<h4>Wahrheitstafeln für allgemeine Formeln<a class="headerlink" href="#wahrheitstafeln-fur-allgemeine-formeln" title="Permalink to this heading">#</a></h4>
+<p>Da allgemeine Formeln rekursiv aus Aussagenvariablen <span class="math notranslate nohighlight">\(A,B,C,\dots \)</span> und den Operatoren <span class="math notranslate nohighlight">\(\wedge, \vee, \neg, \to,\leftrightarrow\)</span> zusammengesetzt sind, können wir eine Wahrheitstafel für allgemeine Formen auf die Wahrheitstafeln für die obig beschriebenen Operatoren zurückführen.</p>
 <p>Am Besten kann dies durch ein Beispiel veranschaulicht werden.</p>
 <p>Sei <span class="math notranslate nohighlight">\(F=(A \land B) \to (A\lor C)\)</span>.</p>
 <p><strong>Schritt 1</strong>
@@ -712,8 +716,8 @@ T&amp;F &amp;T &amp; &amp; &amp;\\
 T&amp;T &amp;T &amp; &amp; &amp;
 \end{array}\end{split}\]</div>
 <p><strong>Schritt 2</strong>
-Nun können wir die abgeleiteten Wahrheitswerte für die Teilausdrücke eintragen. Diese ergeben sich nun eindeutig aus der Belegung von <span class="math notranslate nohighlight">\(A,B\)</span> und <span class="math notranslate nohighlight">\(C\)</span> und können mithilfe der Wahrheitstabellen für die Operatoren hergeleitet werden.</p>
-<p>Machen wir dies zunächste für den ersten Ausdruck <span class="math notranslate nohighlight">\(A\land B\)</span>.</p>
+Nun können wir die abgeleiteten Wahrheitswerte für die Teilausdrücke eintragen. Diese ergeben sich nun eindeutig aus der Belegung von <span class="math notranslate nohighlight">\(A,B\)</span> und <span class="math notranslate nohighlight">\(C\)</span> und können mithilfe der Wahrheitstafeln für die Operatoren hergeleitet werden.</p>
+<p>Machen wir dies zunächst für den ersten Ausdruck <span class="math notranslate nohighlight">\(A\land B\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{|c  c c|c|c|c|}
 A &amp; B &amp; C &amp; A\land B &amp; A \lor C &amp; (A \land B) \to (A\lor C)\\
@@ -751,16 +755,17 @@ F&amp;F &amp;F &amp;F &amp;F &amp;T\\
 F&amp;F &amp;T &amp;F &amp;T &amp;T\\
 F&amp;T &amp;T &amp;F &amp; T&amp;T\\
 F&amp;T &amp;F &amp;F&amp; F&amp;T\\
-T&amp;F &amp;F &amp;F &amp;T &amp;F\\
+T&amp;F &amp;F &amp;F &amp;T &amp;T\\
 T&amp;T &amp;F &amp;T &amp;T &amp;T\\
 T&amp;F &amp;T &amp;F &amp;T &amp;T\\
 T&amp;T &amp;T &amp;T &amp;T &amp;T
 \end{array}\end{split}\]</div>
-<p>Wir sehen also, dass die Formel <span class="math notranslate nohighlight">\(F\)</span> fast immer wahr ist ausser wenn <span class="math notranslate nohighlight">\(A\)</span> wahr ist und <span class="math notranslate nohighlight">\(B\)</span> und <span class="math notranslate nohighlight">\(C\)</span> falsch sind.</p>
+<p>Wir sehen also, dass die Formel <span class="math notranslate nohighlight">\(F\)</span> immer wahr ist. Wir nennen <span class="math notranslate nohighlight">\(F\)</span> in diesem Fall eine <strong>Tautologie</strong>.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kvJrGAIrdDk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 </section>
-<section id="wichtige-definitionen-mit-hilfe-von-wahrheitstabellen">
-<h3>Wichtige Definitionen mit Hilfe von Wahrheitstabellen<a class="headerlink" href="#wichtige-definitionen-mit-hilfe-von-wahrheitstabellen" title="Permalink to this heading">#</a></h3>
+<section id="wichtige-definitionen-mit-hilfe-von-wahrheitstafeln">
+<h3>Wichtige Definitionen mit Hilfe von Wahrheitstafeln<a class="headerlink" href="#wichtige-definitionen-mit-hilfe-von-wahrheitstafeln" title="Permalink to this heading">#</a></h3>
 <div class="proof definition admonition" id="definition-4">
 <p class="admonition-title"><span class="caption-number">Definition 15 </span></p>
 <section class="definition-content" id="proof-content">
@@ -771,7 +776,7 @@ T&amp;T &amp;T &amp;T &amp;T &amp;T
 <li><p><strong>Kontradiktion</strong>, falls <span class="math notranslate nohighlight">\(F\)</span> für jede Belegung mit Wahrheitswerten falsch ist.</p></li>
 </ul>
 </section>
-</div><p>Wir sehen also, dass unser vorheriges Beispiel <span class="math notranslate nohighlight">\(F= (A \land B) \to (A\lor C)\)</span> erfüllbar ist, aber weder eine Tautologie noch eine Kontradiktion.</p>
+</div><p>Wir sehen also, dass unser vorheriges Beispiel <span class="math notranslate nohighlight">\(F= (A \land B) \to (A\lor C)\)</span> erfüllbar ist und eine Tautologie.</p>
 <div class="proof example admonition" id="example-5">
 <p class="admonition-title"><span class="caption-number">Example 13 </span></p>
 <section class="example-content" id="proof-content">
@@ -789,7 +794,7 @@ T&amp;T &amp;T &amp;T &amp;T &amp;T
 </section>
 </div><p><strong>Übung</strong></p>
 <p>Betrachten Sie die Formel <span class="math notranslate nohighlight">\(F= (A\to B) \to (\neg B \to \neg A)\)</span>.
-Mann kann nun mit Hilfe einer Wahrheitstabelle zeigen, dass dies eine Tautologie ist.</p>
+Mann kann nun mit Hilfe einer Wahrheitstafel zeigen, dass dies eine Tautologie ist.</p>
 <p>Eine weitere wichtige Definition ist wann zwei Formeln semantisch gesehen gleich sind. D.h. dass sie die selbe Wahrheitstafel haben.</p>
 <div class="proof definition admonition" id="definition-6">
 <p class="admonition-title"><span class="caption-number">Definition 16 </span></p>
@@ -803,8 +808,8 @@ Mann kann nun mit Hilfe einer Wahrheitstabelle zeigen, dass dies eine Tautologie
 <p>Seien <span class="math notranslate nohighlight">\(A,B\)</span> Aussagenvariablen. Dann gilt folgende logische Äquivalenz</p>
 <div class="math notranslate nohighlight">
 \[A\to B \equiv \neg A\lor B\]</div>
-<p>Zum Beweis können wir einfach die Wahrheitstabellen vergleichen.</p>
-<p>Wir kennen ja bereits folgende Wahrheitstabelle.</p>
+<p>Zum Beweis können wir einfach die Wahrheitstafeln vergleichen.</p>
+<p>Wir kennen ja bereits folgende Wahrheitstafel.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{|c c|c|}
 A &amp; B &amp; A \to B\\ % Use &amp; to separate the columns
@@ -814,7 +819,7 @@ T &amp; F &amp; F\\
 F &amp; T &amp; T\\
 F &amp; F &amp; T\\
 \end{array}\end{split}\]</div>
-<p>Nun wollen wir die Wahrheitstabelle für den zweiten Ausdruck erstellen.</p>
+<p>Nun wollen wir die Wahrheitstafel für den zweiten Ausdruck erstellen.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{|c c|c c|}
 A &amp; B &amp; \neg A &amp; \neg A\lor B\\ % Use &amp; to separate the columns
@@ -826,10 +831,11 @@ F &amp; F &amp; T &amp; T\\
 \end{array}\end{split}\]</div>
 <p>Wie wir sehen, dass die letzte Spalte identisch ist und damit müssen beide Formeln logisch äquivalent sein.</p>
 </section>
-</div></section>
+</div><iframe width="560" height="315" src="https://www.youtube.com/embed/9sYbzC8irrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
 <section id="gesetze-der-aussagenlogik">
 <h3>Gesetze der Aussagenlogik<a class="headerlink" href="#gesetze-der-aussagenlogik" title="Permalink to this heading">#</a></h3>
-<p>Wahrheitstabellen sind ein extrem nützliches Werkzeug um zu zeigen, dass etwas eine Tautologie ist oder die logische Äquivalenz  von Formeln zu beweisen. Wenn die Anzahl der Aussagenvariablen jedoch groß ist, so ist auch die Anzahl der Möglichen Belegungen hoch.</p>
+<p>Wahrheitstafeln sind ein extrem nützliches Werkzeug um zu zeigen, dass etwas eine Tautologie ist oder die logische Äquivalenz  von Formeln zu beweisen. Wenn die Anzahl der Aussagenvariablen jedoch groß ist, so ist auch die Anzahl der Möglichen Belegungen hoch.</p>
 <p><strong>Frage</strong></p>
 <p>Wie viele Mögliche Belegungen gibt es für eine Formel mit <span class="math notranslate nohighlight">\(n\)</span> Aussagenvariablen?</p>
 <p><strong>Antwort:</strong></p>
@@ -1034,7 +1040,7 @@ Nehmen wir an wir haben</p>
 <p class="admonition-title"><span class="caption-number">Example 17 </span></p>
 <section class="example-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(F=(A\land B)\to (A\lor B)\)</span>.</p>
-<p>Intuitiv scheint es klar zu sein, dass es sich bei <span class="math notranslate nohighlight">\(F\)</span> um eine Tautologie handelt, denn A und B sollte ja A oder B implizieren. Doch wir können dies auch formal zeigen, ohne Nutzung einer Wahrheitstabelle.</p>
+<p>Intuitiv scheint es klar zu sein, dass es sich bei <span class="math notranslate nohighlight">\(F\)</span> um eine Tautologie handelt, denn A und B sollte ja A oder B implizieren. Doch wir können dies auch formal zeigen, ohne Nutzung einer Wahrheitstafel.</p>
 <p>Wir nutzen zunächst einmal Formel (11) zur Implikation:</p>
 <div class="math notranslate nohighlight">
 \[F\equiv\neg (A\land B) \lor (A\lor B).\]</div>
@@ -1353,10 +1359,10 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#der-neg-operator">Der <span class="math notranslate nohighlight">\(\neg\)</span> - Operator</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#der-to-operator">Der <span class="math notranslate nohighlight">\(\to\)</span> - Operator</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#der-leftrightarrow-operator">Der <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> - Operator</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wahrheitstabellen-fur-allgemeine-formeln">Wahrheitstabellen für allgemeine Formeln</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wahrheitstafeln-fur-allgemeine-formeln">Wahrheitstafeln für allgemeine Formeln</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wichtige-definitionen-mit-hilfe-von-wahrheitstabellen">Wichtige Definitionen mit Hilfe von Wahrheitstabellen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wichtige-definitionen-mit-hilfe-von-wahrheitstafeln">Wichtige Definitionen mit Hilfe von Wahrheitstafeln</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gesetze-der-aussagenlogik">Gesetze der Aussagenlogik</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#idempotenzgesetz">Idempotenzgesetz</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kommutativgesetz">Kommutativgesetz</a></li>

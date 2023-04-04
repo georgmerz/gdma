@@ -159,6 +159,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="mengenlehre.html">Kapitel 1 - Mengenlehre</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logik.html">Kapitel 2 Grundlagen der Logik</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relationsAndFunctions.html">Kapitel 3 - Relationen und Funktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gauss.html">Kapitel 4 - Der Gauß-Algorithmus</a></li>
 </ul>
 
     </div>
@@ -342,6 +343,7 @@ document.write(`
    <a href="#cap-example-10"><strong>example-10</strong></a> | 
    <a href="#cap-example-11"><strong>example-11</strong></a> | 
    <a href="#cap-example-13"><strong>example-13</strong></a> | 
+   <a href="#cap-example-14"><strong>example-14</strong></a> | 
    <a href="#cap-example-15"><strong>example-15</strong></a> | 
    <a href="#cap-example-16"><strong>example-16</strong></a> | 
    <a href="#cap-example-17"><strong>example-17</strong></a> | 
@@ -360,12 +362,15 @@ document.write(`
    <a href="#cap-example-35"><strong>example-35</strong></a> | 
    <a href="#cap-example-4"><strong>example-4</strong></a> | 
    <a href="#cap-example-5"><strong>example-5</strong></a> | 
+   <a href="#cap-example-6"><strong>example-6</strong></a> | 
    <a href="#cap-example-7"><strong>example-7</strong></a> | 
    <a href="#cap-induktion"><strong>induktion</strong></a> | 
    <a href="#cap-my-definition"><strong>my-definition</strong></a> | 
    <a href="#cap-my-definition2"><strong>my-definition2</strong></a> | 
+   <a href="#cap-remark-10"><strong>remark-10</strong></a> | 
    <a href="#cap-remark-24"><strong>remark-24</strong></a> | 
    <a href="#cap-theorem-10"><strong>theorem-10</strong></a> | 
+   <a href="#cap-theorem-11"><strong>theorem-11</strong></a> | 
    <a href="#cap-theorem-12"><strong>theorem-12</strong></a> | 
    <a href="#cap-theorem-13"><strong>theorem-13</strong></a> | 
    <a href="#cap-theorem-14"><strong>theorem-14</strong></a> | 
@@ -377,6 +382,7 @@ document.write(`
    <a href="#cap-theorem-26"><strong>theorem-26</strong></a> | 
    <a href="#cap-theorem-28"><strong>theorem-28</strong></a> | 
    <a href="#cap-theorem-29"><strong>theorem-29</strong></a> | 
+   <a href="#cap-theorem-3"><strong>theorem-3</strong></a> | 
    <a href="#cap-theorem-30"><strong>theorem-30</strong></a> | 
    <a href="#cap-theorem-34"><strong>theorem-34</strong></a> | 
    <a href="#cap-theorem-8"><strong>theorem-8</strong></a> | 
@@ -406,7 +412,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="relationsAndFunctions.html#definition-0"><code class="xref">definition-0</code></a> <em>(relationsAndFunctions)</em></td><td>
+       <a href="logik.html#definition-0"><code class="xref">definition-0</code></a> <em>(logik)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-12"><td></td><td>
@@ -470,7 +476,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="relationsAndFunctions.html#definition-2"><code class="xref">definition-2</code></a> <em>(relationsAndFunctions)</em></td><td>
+       <a href="logik.html#definition-2"><code class="xref">definition-2</code></a> <em>(logik)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-20"><td></td><td>
@@ -478,7 +484,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="relationsAndFunctions.html#definition-20"><code class="xref">definition-20</code></a> <em>(relationsAndFunctions)</em></td><td>
+       <a href="logik.html#definition-20"><code class="xref">definition-20</code></a> <em>(logik)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-22"><td></td><td>
@@ -486,7 +492,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="relationsAndFunctions.html#definition-22"><code class="xref">definition-22</code></a> <em>(relationsAndFunctions)</em></td><td>
+       <a href="logik.html#definition-22"><code class="xref">definition-22</code></a> <em>(logik)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-23"><td></td><td>
@@ -566,7 +572,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="relationsAndFunctions.html#definition-6"><code class="xref">definition-6</code></a> <em>(relationsAndFunctions)</em></td><td>
+       <a href="logik.html#definition-6"><code class="xref">definition-6</code></a> <em>(logik)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-7"><td></td><td>
@@ -582,7 +588,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="relationsAndFunctions.html#definition-8"><code class="xref">definition-8</code></a> <em>(relationsAndFunctions)</em></td><td>
+       <a href="gauss.html#definition-8"><code class="xref">definition-8</code></a> <em>(gauss)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-9"><td></td><td>
@@ -590,7 +596,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="relationsAndFunctions.html#definition-9"><code class="xref">definition-9</code></a> <em>(relationsAndFunctions)</em></td><td>
+       <a href="gauss.html#definition-9"><code class="xref">definition-9</code></a> <em>(gauss)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-element"><td></td><td>
@@ -614,7 +620,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="relationsAndFunctions.html#example-1"><code class="xref">example-1</code></a> <em>(relationsAndFunctions)</em></td><td>
+       <a href="logik.html#example-1"><code class="xref">example-1</code></a> <em>(logik)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-10"><td></td><td>
@@ -630,7 +636,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="relationsAndFunctions.html#example-11"><code class="xref">example-11</code></a> <em>(relationsAndFunctions)</em></td><td>
+       <a href="logik.html#example-11"><code class="xref">example-11</code></a> <em>(logik)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-13"><td></td><td>
@@ -638,7 +644,15 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="mengenlehre.html#example-13"><code class="xref">example-13</code></a> <em>(mengenlehre)</em></td><td>
+       <a href="gauss.html#example-13"><code class="xref">example-13</code></a> <em>(gauss)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-14"><td></td><td>
+       <strong>example-14</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="gauss.html#example-14"><code class="xref">example-14</code></a> <em>(gauss)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-15"><td></td><td>
@@ -646,7 +660,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="relationsAndFunctions.html#example-15"><code class="xref">example-15</code></a> <em>(relationsAndFunctions)</em></td><td>
+       <a href="logik.html#example-15"><code class="xref">example-15</code></a> <em>(logik)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-16"><td></td><td>
@@ -670,7 +684,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="relationsAndFunctions.html#example-18"><code class="xref">example-18</code></a> <em>(relationsAndFunctions)</em></td><td>
+       <a href="logik.html#example-18"><code class="xref">example-18</code></a> <em>(logik)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-19"><td></td><td>
@@ -694,7 +708,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="relationsAndFunctions.html#example-21"><code class="xref">example-21</code></a> <em>(relationsAndFunctions)</em></td><td>
+       <a href="logik.html#example-21"><code class="xref">example-21</code></a> <em>(logik)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-23"><td></td><td>
@@ -742,7 +756,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="relationsAndFunctions.html#example-3"><code class="xref">example-3</code></a> <em>(relationsAndFunctions)</em></td><td>
+       <a href="logik.html#example-3"><code class="xref">example-3</code></a> <em>(logik)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-30"><td></td><td>
@@ -774,7 +788,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="relationsAndFunctions.html#example-4"><code class="xref">example-4</code></a> <em>(relationsAndFunctions)</em></td><td>
+       <a href="gauss.html#example-4"><code class="xref">example-4</code></a> <em>(gauss)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-5"><td></td><td>
@@ -783,6 +797,14 @@ document.write(`
        <td></td>
        <td>
        <a href="logik.html#example-5"><code class="xref">example-5</code></a> <em>(logik)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-6"><td></td><td>
+       <strong>example-6</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="gauss.html#example-6"><code class="xref">example-6</code></a> <em>(gauss)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-7"><td></td><td>
@@ -817,6 +839,14 @@ document.write(`
        <a href="mengenlehre.html#my-definition2"><code class="xref">my-definition2</code></a> <em>(mengenlehre)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-10"><td></td><td>
+       <strong>remark-10</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="gauss.html#remark-10"><code class="xref">remark-10</code></a> <em>(gauss)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-24"><td></td><td>
        <strong>remark-24</strong></td><td></td></tr>
      <tr>
@@ -831,6 +861,14 @@ document.write(`
        <td></td>
        <td>
        <a href="logik.html#theorem-10"><code class="xref">theorem-10</code></a> <em>(logik)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-theorem-11"><td></td><td>
+       <strong>theorem-11</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="gauss.html#theorem-11"><code class="xref">theorem-11</code></a> <em>(gauss)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-12"><td></td><td>
@@ -919,6 +957,14 @@ document.write(`
        <td></td>
        <td>
        <a href="logik.html#theorem-29"><code class="xref">theorem-29</code></a> <em>(logik)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-theorem-3"><td></td><td>
+       <strong>theorem-3</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="gauss.html#theorem-3"><code class="xref">theorem-3</code></a> <em>(gauss)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-30"><td></td><td>
