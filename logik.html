@@ -379,18 +379,14 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgabentypen-zu-den-gesetzen-der-aussagenlogik">Aufgabentypen zu den Gesetzen der Aussagenlogik</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pradikatenlogik-quantoren">Prädikatenlogik - Quantoren</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pradikate">Prädikate</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantoren">Quantoren</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pradikatenlogische-formeln">Prädikatenlogische Formeln</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negation-von-pradikatenlogischen-formeln">Negation von Prädikatenlogischen Formeln</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negation-von-pradikatenlogischen-formeln">Negation von Prädikatenlogischen Formeln</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#beweisidee-des-ersten-unvollstandigkeitssatzes">Beweisidee des ersten Unvollständigkeitssatzes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#der-wohlordnungssatz">Der Wohlordnungssatz</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#godelscher-unvollstandigkeitssatz">Gödelscher Unvollständigkeitssatz</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beweisidee-des-ersten-unvollstandigkeitssatzes">Beweisidee des ersten Unvollständigkeitssatzes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#der-wohlordnungssatz">Der Wohlordnungssatz</a></li>
 </ul>
 </li>
 </ul>
@@ -853,7 +849,7 @@ F &amp; F &amp; T &amp; T\\
 \[A\land A\equiv A \quad \text{ und } A\lor A\equiv A.\]</div>
 </section>
 </div><p>Die Formel ist fast trivial und für uns intuitiv klar.
-Diese Identität hilft dabei Formeln mit dem Doppelten Vorkommen von Aussagenvariablen zu verkürzen.</p>
+Diese Identität hilft dabei Formeln mit dem doppelten Vorkommen von Aussagenvariablen zu verkürzen.</p>
 </section>
 <section id="kommutativgesetz">
 <h4>Kommutativgesetz<a class="headerlink" href="#kommutativgesetz" title="Permalink to this heading">#</a></h4>
@@ -875,7 +871,7 @@ Diese Identität hilft dabei Formeln mit dem Doppelten Vorkommen von Aussagenvar
 <div class="math notranslate nohighlight">
 \[A\land (B \land C )\equiv (A\land B)\land C \quad \text{ und } A\lor (B\lor C)\equiv (A\lor B)\lor C.\]</div>
 </section>
-</div><p>Aufgrund des Assoziativgesetzes können wir also bei reinen <span class="math notranslate nohighlight">\(\land\)</span> oder <span class="math notranslate nohighlight">\(\lor\)</span> Termen Klammern wie wir wollen. Wir können deshalb auch die Klammern gleich ganz weglassen und schreiben einfach <span class="math notranslate nohighlight">\(A\land B \land C\)</span>.</p>
+</div><p>Aufgrund des Assoziativgesetzes können wir also bei reinen <span class="math notranslate nohighlight">\(\land\)</span> oder <span class="math notranslate nohighlight">\(\lor\)</span> Termen Klammern, wie wir wollen. Wir können deshalb auch die Klammern gleich ganz weglassen und schreiben einfach <span class="math notranslate nohighlight">\(A\land B \land C\)</span>.</p>
 <div class="proof example admonition" id="example-11">
 <p class="admonition-title"><span class="caption-number">Example 15 </span></p>
 <section class="example-content" id="proof-content">
@@ -899,7 +895,7 @@ Nehmen wir an wir haben</p>
 </div></section>
 <section id="distributivgesetz">
 <h4>Distributivgesetz<a class="headerlink" href="#distributivgesetz" title="Permalink to this heading">#</a></h4>
-<p>Bisher haben wir uns vor allem reine <span class="math notranslate nohighlight">\(\lor\)</span> oder <span class="math notranslate nohighlight">\(\land\)</span> Terme angeschaut. Welche Regeln gibt es nun für gemischt Terme. Sie kennen die Regel von den Zahlen. Die Regel besagt, dass man  ausmultiplizieren oder eben ausklammern kann und nennt sich Distributivgesetz.</p>
+<p>Bisher haben wir uns vor allem reine <span class="math notranslate nohighlight">\(\lor\)</span> oder <span class="math notranslate nohighlight">\(\land\)</span> Terme angeschaut. Welche Regeln gibt es nun für gemischt Terme? Sie kennen die Regel von den Zahlen. Die Regel besagt, dass man  ausmultiplizieren oder eben ausklammern kann und nennt sich Distributivgesetz.</p>
 <div class="proof theorem admonition" id="theorem-12">
 <p class="admonition-title"><span class="caption-number">Theorem 7 </span></p>
 <section class="theorem-content" id="proof-content">
@@ -944,7 +940,7 @@ Nehmen wir an wir haben</p>
 <section class="theorem-content" id="proof-content">
 <p>Seien <span class="math notranslate nohighlight">\(A,B\)</span>   Aussagenvariablen dann gilt</p>
 <div class="math notranslate nohighlight">
-\[A\land (A\lor B)\equiv A \quad \text{und }A\land (A\lor B)\equiv A.\]</div>
+\[A\land (A\lor B)\equiv A \quad \text{und }A\lor (A\land B)\equiv A.\]</div>
 </section>
 </div><p>Auch das Absorptionsgesetz ist intuitiv klar. Denn es ist völlig irrelevant ob <span class="math notranslate nohighlight">\(B\)</span> Falsch oder wahr ist. Falls <span class="math notranslate nohighlight">\(B\)</span> Falsch ist, so ist sicher <span class="math notranslate nohighlight">\(A\land B\)</span> falsch und der Ausdruck hängt nur vom ersten <span class="math notranslate nohighlight">\(A\)</span> ab.</p>
 <p>Falls aber <span class="math notranslate nohighlight">\(B\)</span> Wahr ist, so ist <span class="math notranslate nohighlight">\(A\land B\)</span> wahr genau dann wenn <span class="math notranslate nohighlight">\(A\)</span> wahr ist. Also in beiden Fällen hängt der Wahrheitswert der Formel nur von <span class="math notranslate nohighlight">\(A\)</span> ab.</p>
@@ -956,7 +952,7 @@ Nehmen wir an wir haben</p>
 <section class="theorem-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine  Aussagenvariable dann gilt</p>
 <div class="math notranslate nohighlight">
-\[A\land 0 \equiv A \quad \text{ and } A\land  \equiv 1.\]</div>
+\[A\lor 0 \equiv A \quad \text{ and } A\land 1  \equiv 1.\]</div>
 </section>
 </div><p><strong>Erinnerung:</strong></p>
 <ul class="simple">
@@ -971,7 +967,7 @@ Nehmen wir an wir haben</p>
 <p>Für einen besseren Überblick sind hier die wichtigsten Logischen Formeln nochmal aufgelistet:</p>
 <p><strong>Idempotenzgesetz(1)</strong></p>
 <ul class="simple">
-<li><p>$A\land A \equiv A</p></li>
+<li><p><span class="math notranslate nohighlight">\(A \land A \equiv A\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(A\lor A \equiv A\)</span></p></li>
 </ul>
 <p><strong>Kommutativgesetz(2)</strong></p>
@@ -987,12 +983,12 @@ Nehmen wir an wir haben</p>
 <p><strong>Absorptionsgesetz(4)</strong></p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(A\land (A\lor B)\equiv A\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\( A\land (A\lor B)\equiv A\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( A\lor (A\land B)\equiv A\)</span></p></li>
 </ul>
 <p><strong>Neutralitätsgesetz(5)</strong></p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(A\land 0 \equiv A \)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(A\land  \equiv 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A\lor 0 \equiv A \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A\land  1 \equiv 1\)</span></p></li>
 </ul>
 <p><strong>Distributivgesetz(6)</strong></p>
 <ul class="simple">
@@ -1031,11 +1027,12 @@ Nehmen wir an wir haben</p>
 <li><p><span class="math notranslate nohighlight">\(A\lor (\neg A\land B)\equiv (A\lor B)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(A\land (\neg A\lor B)\equiv (A\land B)\)</span></p></li>
 </ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fRaL803drJk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 <section id="aufgabentypen-zu-den-gesetzen-der-aussagenlogik">
 <h4>Aufgabentypen zu den Gesetzen der Aussagenlogik<a class="headerlink" href="#aufgabentypen-zu-den-gesetzen-der-aussagenlogik" title="Permalink to this heading">#</a></h4>
 <p><strong>Tautologien prüfen</strong></p>
-<p>Wir können mittels den Gesetzen der Aussagenlogik prüfen ob es sich bei einer Formel <span class="math notranslate nohighlight">\(F\)</span> um eine Tautologie handelt. Dafür müssen wir zeigen, dass <span class="math notranslate nohighlight">\(F\equiv 1\)</span>.</p>
+<p>Wir können mittels den Gesetzen der Aussagenlogik prüfen, ob es sich bei einer Formel <span class="math notranslate nohighlight">\(F\)</span> um eine Tautologie handelt. Dafür müssen wir zeigen, dass <span class="math notranslate nohighlight">\(F\equiv 1\)</span>.</p>
 <div class="proof example admonition" id="example-18">
 <p class="admonition-title"><span class="caption-number">Example 17 </span></p>
 <section class="example-content" id="proof-content">
@@ -1050,7 +1047,7 @@ Nehmen wir an wir haben</p>
 <p>Wir haben nun nur noch <span class="math notranslate nohighlight">\(\lor\)</span> Operatoren und können damit aufgrund des Assoziativgesetzes(2) und des Kommutativgesetzes(3) Klammern weglassen und die einzelnen Terme vertauschen und dann wieder neu klammern, so dass wir folgende Äquivalenz bekommen</p>
 <div class="math notranslate nohighlight">
 \[F\equiv(\neg A \lor A) \lor (\neg B \lor B).\]</div>
-<p>Nun können wir das Komplementaritätsgesetz(7) anwenden un d erhalten</p>
+<p>Nun können wir das Komplementaritätsgesetz(7) anwenden und erhalten</p>
 <div class="math notranslate nohighlight">
 \[F\equiv1\lor 1\]</div>
 <p>und mit dem Idempotenzgesetz(1) letztenendes</p>
@@ -1066,7 +1063,7 @@ Nehmen wir an wir haben</p>
 <p>Beweisen Sie dass Prinzip der Kontraposition</p>
 <div class="math notranslate nohighlight">
 \[A\to B \equiv \neg B \to \neg A.\]</div>
-<p>Dafür vereinfachen wir zunächst die Linke Seite die wir mit <span class="math notranslate nohighlight">\(L\)</span> bezeichnen unter Verwendung von (11):</p>
+<p>Dafür vereinfachen wir zunächst die inke Seite die wir mit <span class="math notranslate nohighlight">\(L\)</span> bezeichnen unter Verwendung von (11):</p>
 <div class="math notranslate nohighlight">
 \[L:=A\to B \equiv \neg A \lor B\]</div>
 <p>Nun vereinfachen wir die Rechte Seite ebenfalls zunächst mit (11):</p>
@@ -1077,13 +1074,10 @@ Nehmen wir an wir haben</p>
 \[R\equiv B\lor \neg A.\]</div>
 <p>Dann folgt mittels Kommutativgesetz(2), dass <span class="math notranslate nohighlight">\(R\equiv L\)</span>.</p>
 </section>
-</div></section>
-</section>
-</section>
-<section id="pradikatenlogik-quantoren">
-<h2>Prädikatenlogik - Quantoren<a class="headerlink" href="#pradikatenlogik-quantoren" title="Permalink to this heading">#</a></h2>
-<p>Die Aussagenlogik ist eine wichtige Grundlage der Logik. Wir haben im letzten Abschnitt gelernt wie wir allerhand Formel kreieren können und wie wir diese interpretieren können.</p>
-<p>Die Aussagenlogik reicht jedoch häufig in der Mathematik nicht aus um Aussagen formuluieren zu können.</p>
+</div><iframe width="560" height="315" src="https://www.youtube.com/embed/-totTQPSx3U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+## Prädikatenlogik - Quantoren
+Die Aussagenlogik ist eine wichtige Grundlage der Logik. Wir haben im letzten Abschnitt gelernt, wie wir allerhand Formel kreieren können und wie wir diese interpretieren können. 
+<p>Die Aussagenlogik reicht jedoch häufig in der Mathematik nicht aus um Aussagen formulieren zu können.</p>
 <p>Betrachte hierfür folgendes Beispiel aus dem letzten Kapitel.
 Dort haben wir die Gauß’sche Summenformel bewiesen:</p>
 <p><em>Für alle <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span> gilt: <span class="math notranslate nohighlight">\(1+2+3+\dots +n =\frac{n(n+1)}{2}\)</span></em>.</p>
@@ -1091,6 +1085,8 @@ Dort haben wir die Gauß’sche Summenformel bewiesen:</p>
 <p><span class="math notranslate nohighlight">\(1+2+3+\dots +n =\frac{n(n+1)}{2}\)</span> zu formulieren und auch keinen Formalismus für den Satz</p>
 <p>Für alle <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span>.</p>
 <p>Beides werden wir mit der Prädikatenlogik einführen.</p>
+</section>
+</section>
 <section id="pradikate">
 <h3>Prädikate<a class="headerlink" href="#pradikate" title="Permalink to this heading">#</a></h3>
 <p>Eine mathematisch exakte Definition von Prädikaten würde den Rahmen dieses Kurses sprengen. Deshalb werden wir Prädikate nur ungefähr definieren.</p>
@@ -1105,7 +1101,7 @@ Dort haben wir die Gauß’sche Summenformel bewiesen:</p>
 <p>Beispiele für Prädikate sind:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(P(x)=(x&gt;3)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(P(x,y)=(x+y=7)\)</span>”</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(x,y)=(x+y=7)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(P(x,y,z)=(x^2+y^2=z^2)\)</span></p></li>
 </ul>
 </section>
@@ -1120,7 +1116,8 @@ Dort haben wir die Gauß’sche Summenformel bewiesen:</p>
 <p>Auch hierfür gibt es einen Formalismus in der Prädikatenlogik: Quantoren.</p>
 <p>Es gibt zwei Arten von Quantoren:</p>
 <p><strong>1. Der Allquantor</strong></p>
-<p>Der Allquantor wird mit <span class="math notranslate nohighlight">\(\forall\)</span> abgekürzt und bedeutet ausgesprochen: “für alle. Wir schreiben obigen Ausdruck dann zu:</p>
+<p>Der Allquantor wird mit <span class="math notranslate nohighlight">\(\forall\)</span> abgekürzt und bedeutet ausgesprochen: “für alle”.</p>
+<p>Wir schreiben obigen Ausdruck dann zu:</p>
 <div class="math notranslate nohighlight">
 \[\forall n\in \mathbb{N}:1+2+3+\dots + n = \frac{n(n+1)}{2}.\]</div>
 <p>Falls klar ist, dass die Grundmenge <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> ist schreiben wir auch einfach abgekürzt:</p>
@@ -1130,12 +1127,12 @@ Dort haben wir die Gauß’sche Summenformel bewiesen:</p>
 <p>Der Existenzquantor wird mit <span class="math notranslate nohighlight">\(\exists\)</span> abekürzt und bedeutet ausgesprochen: “es existiert mindestens ein”.</p>
 <p>Damit bedeutet die Aussage</p>
 <div class="math notranslate nohighlight">
-\[\exists n\in \mathbb{N}:1+2+3+\dots + n = \frac{n(n+1)}{2}\]</div>
-<p>das das Prädikat <span class="math notranslate nohighlight">\(P(n)\)</span> mindestens für eine natürliche Zahl erfüllt ist. Die Aussage ist demnach deutlich schwächer als die Originalaussage.</p>
+\[\exists n\in \mathbb{N}:1+2+3+\dots + n = \frac{n(n+1)}{2},\]</div>
+<p>dass das Prädikat <span class="math notranslate nohighlight">\(P(n)\)</span> mindestens für eine natürliche Zahl erfüllt ist. Die Aussage ist demnach deutlich schwächer als die Originalaussage.</p>
 </section>
 <section id="pradikatenlogische-formeln">
 <h3>Prädikatenlogische Formeln<a class="headerlink" href="#pradikatenlogische-formeln" title="Permalink to this heading">#</a></h3>
-<p>Ähnlich wie in der Aussagenlogik können wir nun auch in der Prädikatenlogik formeln bilden.</p>
+<p>Ähnlich wie in der Aussagenlogik können wir nun auch in der Prädikatenlogik Formeln bilden.</p>
 <div class="proof definition admonition" id="definition-22">
 <p class="admonition-title"><span class="caption-number">Definition 18 </span></p>
 <section class="definition-content" id="proof-content">
@@ -1171,14 +1168,14 @@ Eine Formel heißt <strong>geschlossen</strong> falls alle Variablen gebunden si
 <p>Dafür schreiben wir <span class="math notranslate nohighlight">\(F(x,y,z)\)</span> einmal mit Worten:</p>
 <p>“Es gibt ein y, so dass für alle x ein z existiert so dass <span class="math notranslate nohighlight">\(x^2+y^2=z^2\)</span>.”</p>
 <p>Wie können wir herausfinden, ob das wahr oder falsch ist?</p>
-<p>Wir lesen von links nach Rechts. Der erste Quantor ist <span class="math notranslate nohighlight">\(\exists z\)</span>. Ok nehmen wir einfach mal <span class="math notranslate nohighlight">\(y=0\)</span> und hoffen, dass wir Glück haben.
+<p>Wir lesen von links nach rechts. Der erste Quantor ist <span class="math notranslate nohighlight">\(\exists y\)</span>. Ok nehmen wir einfach mal <span class="math notranslate nohighlight">\(y=0\)</span> und hoffen, dass wir Glück haben.
 Wir müssen nun zeigen, dass für alle <span class="math notranslate nohighlight">\(x\)</span> ein <span class="math notranslate nohighlight">\(z\)</span> existiert, so dass <span class="math notranslate nohighlight">\(x^2=z^2\)</span>.
 Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</span> ein <span class="math notranslate nohighlight">\(z\)</span> finden. Der entscheidene Punkt ist hierbei jedoch, dass <span class="math notranslate nohighlight">\(z\)</span> von <span class="math notranslate nohighlight">\(x\)</span> abhängen darf, weil <span class="math notranslate nohighlight">\(\exists y\)</span> nach <span class="math notranslate nohighlight">\(\forall x\)</span> kommt. Damit können wir <span class="math notranslate nohighlight">\(z=x\)</span> wählen und dann gilt trivialerweise auch <span class="math notranslate nohighlight">\(x^2=z^2\)</span>. Damit ist die Aussage <span class="math notranslate nohighlight">\(F(x,y,z)\)</span> wahr.</p>
 </section>
 </div></section>
 <section id="negation-von-pradikatenlogischen-formeln">
 <h3>Negation von Prädikatenlogischen Formeln<a class="headerlink" href="#negation-von-pradikatenlogischen-formeln" title="Permalink to this heading">#</a></h3>
-<p>Die Negation von Prädikatenlogischen Formeln können wir im einfachen Fall ebenfalls intuitiv. Machen wir hiezu ein kurzes Beispiel:</p>
+<p>Die Negation von Prädikatenlogischen Formeln können wir im einfachen Fall ebenfalls intuitiv herleiten. Machen wir hiezu ein kurzes Beispiel:</p>
 <p>“Ich mag alle Kaffeesorten”.</p>
 <p>Etwas formaler würden wir schreiben:</p>
 <p>“Für alle Kaffeesorten x gilt: Ich mag x”</p>
@@ -1186,7 +1183,7 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <p>Es würde heißen es gibt Kaffeesorten, die ich nicht mag. Also etwas formaler:</p>
 <p>“Es existiert eine Kaffeesorte x für die gilt: Ich mag x nicht”.</p>
 <p>Was ist also passiert?</p>
-<p>Der Quantor hat sich getauscht und das Prädikat wurde negiert. Genau das besagt auch der Folgende formale Satz.</p>
+<p>Der Quantor hat sich getauscht und das Prädikat wurde negiert. Genau das besagt auch der folgende formale Satz.</p>
 <div class="proof theorem admonition" id="theorem-26">
 <p class="admonition-title"><span class="caption-number">Theorem 12 </span></p>
 <section class="theorem-content" id="proof-content">
@@ -1206,19 +1203,17 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <div class="math notranslate nohighlight">
 \[\begin{split}\neg F(x,y,z) &amp;\equiv \forall y \neg (\forall x \exists z: x^2+y^2=z^2)\\
  &amp;\equiv \forall y \exists x : \neg(\exists z: x^2+y^2=z^2)\\
-&amp;\equiv \forall y \exists x \forall z : x^2+y^2\not = z^2)\end{split}\]</div>
+&amp;\equiv \forall y \exists x \forall z : x^2+y^2\not = z^2\end{split}\]</div>
 <p><strong>Zusammenfassung:</strong></p>
-<p>Um eine Formel mit Quantorene zu negieren geht man also wie folgt vor:</p>
+<p>Um eine Formel mit Quantoren zu negieren, geht man also wie folgt vor:</p>
 <ul class="simple">
 <li><p>Man tauscht alle Existenzquantoren mit Allquantoren und anders herum</p></li>
 <li><p>Man negiert das Prädikat am Ende</p></li>
 </ul>
 </section>
-</div></section>
-</section>
-<section id="godelscher-unvollstandigkeitssatz">
-<h2>Gödelscher Unvollständigkeitssatz<a class="headerlink" href="#godelscher-unvollstandigkeitssatz" title="Permalink to this heading">#</a></h2>
-<p>Im letzten Abschnitt hatten wir folgende Bemerkung gemacht</p>
+</div><iframe width="560" height="315" src="https://www.youtube.com/embed/MfOo0pwpBN0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+## Gödelscher Unvollständigkeitssatz
+<p>Im letzten Abschnitt hatten wir folgende Bemerkung gemacht:</p>
 <p><em>Falls <span class="math notranslate nohighlight">\(F(x,y,z)\)</span> eine geschlossene Formel ist, so kann <span class="math notranslate nohighlight">\(F\)</span> einen Wahrheitswert besitzen, je nachdem ob die Aussage richtig oder falsch ist.</em></p>
 <p>Beachten Sie, dass wir eben nicht gesagt haben dass <span class="math notranslate nohighlight">\(F\)</span> einen Wahrheitswert besitzen muss.  Aber muss das nicht so sein?</p>
 <p>Muss nicht jede Aussage, die Sinn ergibt entweder wahr oder falsch sein? Bzw. müssen wir nicht für jede Aussage einen Beweis für die Korrektheit oder die Korrektheit der Negation führen können?</p>
@@ -1240,17 +1235,17 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <section class="theorem-content" id="proof-content">
 <p>Jedes hinreichend mächtige konsistente formale System kann die eigene Konsistenz nicht beweisen.</p>
 </section>
-</div><p>Dieser Satz besagt mehr oder weniger, dass wir uns nie wirklich sicher sein können, dass die Grundlagen auf der unsere Mathematik aufbaut wirklich Widerspruchsfrei ist. Das klingt auch erstmal sehr erschütternd.</p>
+</div><p>Dieser Satz besagt mehr oder weniger, dass wir uns nie wirklich sicher sein können, dass die Grundlagen, auf der unsere Mathematik aufbaut, wirklich Widerspruchsfrei ist. Das klingt auch erstmal sehr erschütternd.</p>
 <p>Wie die Russel’sche Antinomie führten die Gödelsch’en Unvollständigkeitssätze zu einer Grundlagenkrise der Mathematik. Gödels Sätze sind bis heute gültig. Wir hatten aber nun 80 Jahre Zeit uns an die Vorstellung zu gewöhnen, dass wir niemals sicher sein können, dass die Mathematik wirklich Widerspruchsfrei ist. Bis jetzt scheint alles gut gegangen zu sein.</p>
 <section id="beweisidee-des-ersten-unvollstandigkeitssatzes">
-<h3>Beweisidee des ersten Unvollständigkeitssatzes<a class="headerlink" href="#beweisidee-des-ersten-unvollstandigkeitssatzes" title="Permalink to this heading">#</a></h3>
+<h4>Beweisidee des ersten Unvollständigkeitssatzes<a class="headerlink" href="#beweisidee-des-ersten-unvollstandigkeitssatzes" title="Permalink to this heading">#</a></h4>
 <p>Gödels Idee ist ähnlich wie in der Russel’schen Antinomie folgenden Satz zu konstruieren:</p>
 <p>“Ich bin nicht beweisbar”.</p>
-<p>Dabei Geht er wie folgt vor:</p>
+<p>Dabei geht er wie folgt vor:</p>
 <ul class="simple">
-<li><p>Er listet zunächst alle Möglichen formalen Sätze auf die man hinschreiben kann</p></li>
+<li><p>Er listet zunächst alle Möglichen formalen Sätze auf, die man hinschreiben kann</p></li>
 <li><p>Jeder Satz bekommt dann eine Nummer <span class="math notranslate nohighlight">\(n\)</span>, die sogenannte Gödelnummer</p></li>
-<li><p>Er konstruiert dann einen Satz: “Der Satz mit der Gödelnummer <span class="math notranslate nohighlight">\(x\)</span> ist nicht ableitbar” und Zeigt, dass dieser Satz selbst Gödelnummer <span class="math notranslate nohighlight">\(x\)</span> besitzt.</p></li>
+<li><p>Er konstruiert dann einen Satz: “Der Satz mit der Gödelnummer <span class="math notranslate nohighlight">\(x\)</span> ist nicht ableitbar” und zeigt, dass dieser Satz selbst Gödelnummer <span class="math notranslate nohighlight">\(x\)</span> besitzt.</p></li>
 </ul>
 <p>Damit hat er genau den Satz “Ich bin nicht ableitbar konstruiert”.</p>
 <p>Ähnlich wie in der Russel’schen Antinomie können wir durch ein Widerspruchsargument zeigen, dass er nicht ableitbar ist.</p>
@@ -1260,8 +1255,8 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <p>Das sehen wir im nächsten Kapitel.</p>
 </section>
 <section id="der-wohlordnungssatz">
-<h3>Der Wohlordnungssatz<a class="headerlink" href="#der-wohlordnungssatz" title="Permalink to this heading">#</a></h3>
-<p>Der Wohlordnungssatz ist die Folgende Aussage:</p>
+<h4>Der Wohlordnungssatz<a class="headerlink" href="#der-wohlordnungssatz" title="Permalink to this heading">#</a></h4>
+<p>Der Wohlordnungssatz ist die folgende Aussage:</p>
 <p><em>Jede nichtleere Menge natürlicher Zahlen enthält eine kleinste Zahl.</em></p>
 <p>Was meinen Sie gilt dieser Satz oder nicht?</p>
 <p>Der Satz scheint uns intuitiv richtig oder? Denn <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> ist ja nach unten beschränkt und es sollte doch immer eine kleinste Zahl geben.</p>
@@ -1272,17 +1267,18 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <p>Nein! Denn nichtmal die gesamte Menge <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> hat ein kleinstes Element.</p>
 </div>
 <p>Tatsächlich hat Gödel gezeigt, dass dieser Satz nicht beweisbar ist.</p>
-<p>Wir können diesen Satz als Axiom für die natürlichen Zahlen hinzufügen oder nicht. Falls die Mengenlehre Widersprüche enthält so enthält Sie sie unabhängig vom Wohlordnungssatz.</p>
-<p>Daher nutzen nehmen fast alle Mathematiker:innen den Wohlordnungssatz als Wahr an.</p>
-<p>Doch es gibt auch Kritiker, die sagen, dass der Wohlordnungssatz sehr unintuitive Folgen hat.</p>
+<p>Wir können diesen Satz als Axiom für die natürlichen Zahlen hinzufügen oder nicht. Falls die Mengenlehre Widersprüche enthält so enthält sie diese unabhängig vom Wohlordnungssatz.</p>
+<p>Daher nehmen fast alle Mathematiker:innen den Wohlordnungssatz als Wahr an.</p>
+<p>Doch es gibt auch Kritiker:innen, die sagen, dass der Wohlordnungssatz sehr unintuitive Folgen hat.</p>
 <p>Man kann Zeigen, dass man mithilfe des Wohlordnungssatz und den Axiomen der Mengenlehre folgenden paradoxen Satz zeigen kann.</p>
-<p>Grog gesagt besagt das Banach-Tarski Paradoxon das Folgende</p>
+<p>Grob gesagt besagt das Banach-Tarski Paradoxon das Folgende:</p>
 <div class="proof theorem admonition" id="theorem-30">
 <p class="admonition-title"><span class="caption-number">Theorem 15 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Eine Kugel in drei oder mehr Dimensionen kann derart in Teilmengen zerleget werden, dass sich ihre Teile wieder zu zwei lückenlosen Kugeln zusammenfügen lassen, von denen jede denselben Durchmesser hat wie die ursprüngliche.</p>
 </section>
 </div><p>Ok mit diesem Satz können wir aus eins zwei machen. Das klingt extrem unintuitiv. Viele Mathematiker:innen glauben aber wie gesagt an den Wohlordnungssatz und nehmen deshalb auch an, dass das Banach-Tarski Paradoxon stimmt.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WJGEnfu02cc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
 </section>
 </section>
 </section>
@@ -1376,18 +1372,14 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgabentypen-zu-den-gesetzen-der-aussagenlogik">Aufgabentypen zu den Gesetzen der Aussagenlogik</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pradikatenlogik-quantoren">Prädikatenlogik - Quantoren</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pradikate">Prädikate</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantoren">Quantoren</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pradikatenlogische-formeln">Prädikatenlogische Formeln</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negation-von-pradikatenlogischen-formeln">Negation von Prädikatenlogischen Formeln</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negation-von-pradikatenlogischen-formeln">Negation von Prädikatenlogischen Formeln</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#beweisidee-des-ersten-unvollstandigkeitssatzes">Beweisidee des ersten Unvollständigkeitssatzes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#der-wohlordnungssatz">Der Wohlordnungssatz</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#godelscher-unvollstandigkeitssatz">Gödelscher Unvollständigkeitssatz</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beweisidee-des-ersten-unvollstandigkeitssatzes">Beweisidee des ersten Unvollständigkeitssatzes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#der-wohlordnungssatz">Der Wohlordnungssatz</a></li>
 </ul>
 </li>
 </ul>

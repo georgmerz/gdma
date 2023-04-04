@@ -596,7 +596,7 @@ A\land A\equiv A \quad \text{ und } A\lor A\equiv A.
 ````
 
 Die Formel ist fast trivial und für uns intuitiv klar.
-Diese Identität hilft dabei Formeln mit dem Doppelten Vorkommen von Aussagenvariablen zu verkürzen.
+Diese Identität hilft dabei Formeln mit dem doppelten Vorkommen von Aussagenvariablen zu verkürzen.
 #### Kommutativgesetz
 
 ````{prf:theorem}
@@ -619,7 +619,7 @@ Seien $A,B$ und $C$  Aussagenvariablen dann gilt
 A\land (B \land C )\equiv (A\land B)\land C \quad \text{ und } A\lor (B\lor C)\equiv (A\lor B)\lor C.
 ```
 ````
-Aufgrund des Assoziativgesetzes können wir also bei reinen $\land$ oder $\lor$ Termen Klammern wie wir wollen. Wir können deshalb auch die Klammern gleich ganz weglassen und schreiben einfach $A\land B \land C$.
+Aufgrund des Assoziativgesetzes können wir also bei reinen $\land$ oder $\lor$ Termen Klammern, wie wir wollen. Wir können deshalb auch die Klammern gleich ganz weglassen und schreiben einfach $A\land B \land C$.
 
 
 ````{prf:Example}
@@ -654,7 +654,7 @@ A\lor (B\lor A)\equiv A\lor B.
 
 #### Distributivgesetz
 
-Bisher haben wir uns vor allem reine $\lor$ oder $\land$ Terme angeschaut. Welche Regeln gibt es nun für gemischt Terme. Sie kennen die Regel von den Zahlen. Die Regel besagt, dass man  ausmultiplizieren oder eben ausklammern kann und nennt sich Distributivgesetz.
+Bisher haben wir uns vor allem reine $\lor$ oder $\land$ Terme angeschaut. Welche Regeln gibt es nun für gemischt Terme? Sie kennen die Regel von den Zahlen. Die Regel besagt, dass man  ausmultiplizieren oder eben ausklammern kann und nennt sich Distributivgesetz.
 
 ````{prf:theorem}
 Seien $A,B$ und $C$  Aussagenvariablen dann gilt
@@ -704,7 +704,7 @@ Sagen wir A="Milch im Kaffee" und B="Zucker im Kaffee". Wenn dann in meinem Kaff
 ````{prf:theorem}
 Seien $A,B$   Aussagenvariablen dann gilt
 ```{math}
-A\land (A\lor B)\equiv A \quad \text{und }A\land (A\lor B)\equiv A.
+A\land (A\lor B)\equiv A \quad \text{und }A\lor (A\land B)\equiv A.
 ```
 ````
 Auch das Absorptionsgesetz ist intuitiv klar. Denn es ist völlig irrelevant ob $B$ Falsch oder wahr ist. Falls $B$ Falsch ist, so ist sicher $A\land B$ falsch und der Ausdruck hängt nur vom ersten $A$ ab.
@@ -716,7 +716,7 @@ Falls aber $B$ Wahr ist, so ist $A\land B$ wahr genau dann wenn $A$ wahr ist. Al
 ````{prf:theorem}
 Sei $A$ eine  Aussagenvariable dann gilt
 ```{math}
-A\land 0 \equiv A \quad \text{ and } A\land  \equiv 1.
+A\lor 0 \equiv A \quad \text{ and } A\land 1  \equiv 1.
 ```
 ````
 
@@ -739,7 +739,7 @@ Für einen besseren Überblick sind hier die wichtigsten Logischen Formeln nochm
 
 **Idempotenzgesetz(1)**
 
-- $A\land A \equiv A
+- $A \land A \equiv A$
 
 - $A\lor A \equiv A$
 
@@ -759,12 +759,12 @@ Für einen besseren Überblick sind hier die wichtigsten Logischen Formeln nochm
 **Absorptionsgesetz(4)**
 
 - $A\land (A\lor B)\equiv A$
-- $ A\land (A\lor B)\equiv A$
+- $ A\lor (A\land B)\equiv A$
 
 **Neutralitätsgesetz(5)**
 
-- $A\land 0 \equiv A $
-- $A\land  \equiv 1$
+- $A\lor 0 \equiv A $
+- $A\land  1 \equiv 1$
 
 **Distributivgesetz(6)**
 
@@ -806,12 +806,13 @@ Für einen besseren Überblick sind hier die wichtigsten Logischen Formeln nochm
 - $A\land (\neg A\lor B)\equiv (A\land B)$
 
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fRaL803drJk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 #### Aufgabentypen zu den Gesetzen der Aussagenlogik
 
 **Tautologien prüfen**
 
-Wir können mittels den Gesetzen der Aussagenlogik prüfen ob es sich bei einer Formel $F$ um eine Tautologie handelt. Dafür müssen wir zeigen, dass $F\equiv 1$.
+Wir können mittels den Gesetzen der Aussagenlogik prüfen, ob es sich bei einer Formel $F$ um eine Tautologie handelt. Dafür müssen wir zeigen, dass $F\equiv 1$.
 
 
 ````{prf:example}
@@ -836,7 +837,7 @@ Wir haben nun nur noch $\lor$ Operatoren und können damit aufgrund des Assoziat
 F\equiv(\neg A \lor A) \lor (\neg B \lor B).
 ```
 
-Nun können wir das Komplementaritätsgesetz(7) anwenden un d erhalten
+Nun können wir das Komplementaritätsgesetz(7) anwenden und erhalten
 
 ```{math}
 F\equiv1\lor 1
@@ -861,7 +862,7 @@ Beweisen Sie dass Prinzip der Kontraposition
 ```{math}
 A\to B \equiv \neg B \to \neg A.
 ```
-Dafür vereinfachen wir zunächst die Linke Seite die wir mit $L$ bezeichnen unter Verwendung von (11):
+Dafür vereinfachen wir zunächst die inke Seite die wir mit $L$ bezeichnen unter Verwendung von (11):
 
 ```{math}
 L:=A\to B \equiv \neg A \lor B
@@ -881,11 +882,11 @@ R\equiv B\lor \neg A.
 Dann folgt mittels Kommutativgesetz(2), dass $R\equiv L$.
 
 ````
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-totTQPSx3U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ## Prädikatenlogik - Quantoren
-Die Aussagenlogik ist eine wichtige Grundlage der Logik. Wir haben im letzten Abschnitt gelernt wie wir allerhand Formel kreieren können und wie wir diese interpretieren können. 
+Die Aussagenlogik ist eine wichtige Grundlage der Logik. Wir haben im letzten Abschnitt gelernt, wie wir allerhand Formel kreieren können und wie wir diese interpretieren können. 
 
-Die Aussagenlogik reicht jedoch häufig in der Mathematik nicht aus um Aussagen formuluieren zu können.
+Die Aussagenlogik reicht jedoch häufig in der Mathematik nicht aus um Aussagen formulieren zu können.
 
 Betrachte hierfür folgendes Beispiel aus dem letzten Kapitel.
 Dort haben wir die Gauß'sche Summenformel bewiesen:
@@ -913,7 +914,7 @@ Beispiele für Prädikate sind:
 
 - $P(x)=(x>3)$
 
-- $P(x,y)=(x+y=7)$"
+- $P(x,y)=(x+y=7)$
 
 - $P(x,y,z)=(x^2+y^2=z^2)$
 
@@ -937,7 +938,9 @@ Es gibt zwei Arten von Quantoren:
 
 **1. Der Allquantor**
 
-Der Allquantor wird mit $\forall$ abgekürzt und bedeutet ausgesprochen: "für alle. Wir schreiben obigen Ausdruck dann zu:
+Der Allquantor wird mit $\forall$ abgekürzt und bedeutet ausgesprochen: "für alle".
+
+ Wir schreiben obigen Ausdruck dann zu:
 ```{math}
 \forall n\in \mathbb{N}:1+2+3+\dots + n = \frac{n(n+1)}{2}.
 ```
@@ -953,13 +956,12 @@ Der Existenzquantor wird mit $\exists$ abekürzt und bedeutet ausgesprochen: "es
 
 Damit bedeutet die Aussage
 ```{math}
-\exists n\in \mathbb{N}:1+2+3+\dots + n = \frac{n(n+1)}{2}
+\exists n\in \mathbb{N}:1+2+3+\dots + n = \frac{n(n+1)}{2},
 ```
-
-das das Prädikat $P(n)$ mindestens für eine natürliche Zahl erfüllt ist. Die Aussage ist demnach deutlich schwächer als die Originalaussage.
+dass das Prädikat $P(n)$ mindestens für eine natürliche Zahl erfüllt ist. Die Aussage ist demnach deutlich schwächer als die Originalaussage.
 
 ### Prädikatenlogische Formeln
-Ähnlich wie in der Aussagenlogik können wir nun auch in der Prädikatenlogik formeln bilden.
+Ähnlich wie in der Aussagenlogik können wir nun auch in der Prädikatenlogik Formeln bilden.
 
 ````{prf:definition}
 Die Menge der **prädikatenlogischen Formeln** ist gegeben durch
@@ -1003,7 +1005,7 @@ Dafür schreiben wir $F(x,y,z)$ einmal mit Worten:
 Wie können wir herausfinden, ob das wahr oder falsch ist?
 
 
-Wir lesen von links nach Rechts. Der erste Quantor ist $\exists z$. Ok nehmen wir einfach mal $y=0$ und hoffen, dass wir Glück haben.
+Wir lesen von links nach rechts. Der erste Quantor ist $\exists y$. Ok nehmen wir einfach mal $y=0$ und hoffen, dass wir Glück haben.
 Wir müssen nun zeigen, dass für alle $x$ ein $z$ existiert, so dass $x^2=z^2$.
 Wir müssen also für alle $x$ ein $z$ finden. Der entscheidene Punkt ist hierbei jedoch, dass $z$ von $x$ abhängen darf, weil $\exists y$ nach $\forall x$ kommt. Damit können wir $z=x$ wählen und dann gilt trivialerweise auch $x^2=z^2$. Damit ist die Aussage $F(x,y,z)$ wahr.
 
@@ -1011,7 +1013,7 @@ Wir müssen also für alle $x$ ein $z$ finden. Der entscheidene Punkt ist hierbe
 
 ### Negation von Prädikatenlogischen Formeln
 
-Die Negation von Prädikatenlogischen Formeln können wir im einfachen Fall ebenfalls intuitiv. Machen wir hiezu ein kurzes Beispiel:
+Die Negation von Prädikatenlogischen Formeln können wir im einfachen Fall ebenfalls intuitiv herleiten. Machen wir hiezu ein kurzes Beispiel:
 
 "Ich mag alle Kaffeesorten".
 
@@ -1027,7 +1029,7 @@ Es würde heißen es gibt Kaffeesorten, die ich nicht mag. Also etwas formaler:
 
 Was ist also passiert?
 
-Der Quantor hat sich getauscht und das Prädikat wurde negiert. Genau das besagt auch der Folgende formale Satz.
+Der Quantor hat sich getauscht und das Prädikat wurde negiert. Genau das besagt auch der folgende formale Satz.
 
 ````{prf:theorem}
 Es gelten folgende logische Äquivalenzen
@@ -1051,13 +1053,13 @@ Was ist $\neg F(x,y,z)$. Dafür können wir nun iterativ obigen Satz anwenden:
 
 \neg F(x,y,z) &\equiv \forall y \neg (\forall x \exists z: x^2+y^2=z^2)\\
  &\equiv \forall y \exists x : \neg(\exists z: x^2+y^2=z^2)\\
-&\equiv \forall y \exists x \forall z : x^2+y^2\not = z^2)
+&\equiv \forall y \exists x \forall z : x^2+y^2\not = z^2
 ```
 
 
 **Zusammenfassung:**
 
-Um eine Formel mit Quantorene zu negieren geht man also wie folgt vor:
+Um eine Formel mit Quantoren zu negieren, geht man also wie folgt vor:
 
 - Man tauscht alle Existenzquantoren mit Allquantoren und anders herum
 
@@ -1065,10 +1067,10 @@ Um eine Formel mit Quantorene zu negieren geht man also wie folgt vor:
 
 
 ````
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MfOo0pwpBN0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ## Gödelscher Unvollständigkeitssatz
 
-Im letzten Abschnitt hatten wir folgende Bemerkung gemacht
+Im letzten Abschnitt hatten wir folgende Bemerkung gemacht:
 
 
 *Falls $F(x,y,z)$ eine geschlossene Formel ist, so kann $F$ einen Wahrheitswert besitzen, je nachdem ob die Aussage richtig oder falsch ist.*
@@ -1102,7 +1104,7 @@ Das Gesamte Bild wird unter Hinzunahme des zweiten Gödel'schen Unvollständigke
 Jedes hinreichend mächtige konsistente formale System kann die eigene Konsistenz nicht beweisen.
 ````
 
-Dieser Satz besagt mehr oder weniger, dass wir uns nie wirklich sicher sein können, dass die Grundlagen auf der unsere Mathematik aufbaut wirklich Widerspruchsfrei ist. Das klingt auch erstmal sehr erschütternd.
+Dieser Satz besagt mehr oder weniger, dass wir uns nie wirklich sicher sein können, dass die Grundlagen, auf der unsere Mathematik aufbaut, wirklich Widerspruchsfrei ist. Das klingt auch erstmal sehr erschütternd.
 
 
 Wie die Russel'sche Antinomie führten die Gödelsch'en Unvollständigkeitssätze zu einer Grundlagenkrise der Mathematik. Gödels Sätze sind bis heute gültig. Wir hatten aber nun 80 Jahre Zeit uns an die Vorstellung zu gewöhnen, dass wir niemals sicher sein können, dass die Mathematik wirklich Widerspruchsfrei ist. Bis jetzt scheint alles gut gegangen zu sein.
@@ -1114,13 +1116,13 @@ Gödels Idee ist ähnlich wie in der Russel'schen Antinomie folgenden Satz zu ko
 
 "Ich bin nicht beweisbar".
 
-Dabei Geht er wie folgt vor:
+Dabei geht er wie folgt vor:
 
-- Er listet zunächst alle Möglichen formalen Sätze auf die man hinschreiben kann
+- Er listet zunächst alle Möglichen formalen Sätze auf, die man hinschreiben kann
 
 - Jeder Satz bekommt dann eine Nummer $n$, die sogenannte Gödelnummer
 
-- Er konstruiert dann einen Satz: "Der Satz mit der Gödelnummer $x$ ist nicht ableitbar" und Zeigt, dass dieser Satz selbst Gödelnummer $x$ besitzt.
+- Er konstruiert dann einen Satz: "Der Satz mit der Gödelnummer $x$ ist nicht ableitbar" und zeigt, dass dieser Satz selbst Gödelnummer $x$ besitzt.
 
 Damit hat er genau den Satz "Ich bin nicht ableitbar konstruiert".
 
@@ -1138,7 +1140,7 @@ Das sehen wir im nächsten Kapitel.
 
 #### Der Wohlordnungssatz
 
-Der Wohlordnungssatz ist die Folgende Aussage:
+Der Wohlordnungssatz ist die folgende Aussage:
 
 *Jede nichtleere Menge natürlicher Zahlen enthält eine kleinste Zahl.*
 
@@ -1160,17 +1162,19 @@ Nein! Denn nichtmal die gesamte Menge $\mathbb{Z}$ hat ein kleinstes Element.
 
 Tatsächlich hat Gödel gezeigt, dass dieser Satz nicht beweisbar ist. 
 
-Wir können diesen Satz als Axiom für die natürlichen Zahlen hinzufügen oder nicht. Falls die Mengenlehre Widersprüche enthält so enthält Sie sie unabhängig vom Wohlordnungssatz.
+Wir können diesen Satz als Axiom für die natürlichen Zahlen hinzufügen oder nicht. Falls die Mengenlehre Widersprüche enthält so enthält sie diese unabhängig vom Wohlordnungssatz.
 
-Daher nutzen nehmen fast alle Mathematiker:innen den Wohlordnungssatz als Wahr an.
+Daher nehmen fast alle Mathematiker:innen den Wohlordnungssatz als Wahr an.
 
-Doch es gibt auch Kritiker, die sagen, dass der Wohlordnungssatz sehr unintuitive Folgen hat. 
+Doch es gibt auch Kritiker:innen, die sagen, dass der Wohlordnungssatz sehr unintuitive Folgen hat. 
 
 Man kann Zeigen, dass man mithilfe des Wohlordnungssatz und den Axiomen der Mengenlehre folgenden paradoxen Satz zeigen kann.
 
-Grog gesagt besagt das Banach-Tarski Paradoxon das Folgende
+Grob gesagt besagt das Banach-Tarski Paradoxon das Folgende:
 ````{prf:theorem}
 Eine Kugel in drei oder mehr Dimensionen kann derart in Teilmengen zerleget werden, dass sich ihre Teile wieder zu zwei lückenlosen Kugeln zusammenfügen lassen, von denen jede denselben Durchmesser hat wie die ursprüngliche.
 ````
 
 Ok mit diesem Satz können wir aus eins zwei machen. Das klingt extrem unintuitiv. Viele Mathematiker:innen glauben aber wie gesagt an den Wohlordnungssatz und nehmen deshalb auch an, dass das Banach-Tarski Paradoxon stimmt.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WJGEnfu02cc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
