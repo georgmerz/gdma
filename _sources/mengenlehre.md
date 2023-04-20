@@ -61,7 +61,7 @@ Folgendes sind Beispiele für Mengen:
 
 - Wie Sie sehen können Elemente einer Menge ganz unterschiedlicher Natur sein. Sie können Zahlen, Buchstaben oder auch Zeichen sein. Wichtig ist nur, dass sie unterscheidbar sind und eindeutig.
 
-- Um eine Menge aus endlich vielen Elementen hinzuschreibne nutzen wir geschweifte Klammern ($ \{ \} $).
+- Um eine Menge aus endlich vielen Elementen hinzuschreiben nutzen wir geschweifte Klammern ($ \{ \} $).
 
 
 **Frage:**
@@ -98,7 +98,7 @@ Eine ungewöhnliche Menge  ist die Folgende:
 :label: my-definition
 
 
-Diejenige Menge, die **kein** Element enthält, wird die **leere Menge** genant und mit
+Diejenige Menge, die **kein** Element enthält, wird die **leere Menge** genannt und mit
 ```{math}
     \{ \} \text{ oder } \varnothing 
 ```
@@ -112,7 +112,7 @@ Als nächstes führen wir das Symbol $\in $ und $\notin$ ein.
 ```{prf:definition}
 :label: element
 Wir schreiben $x\in M$. Falls  $x$ ein Element von $M$ ist.
-Wir schreiben $x\in M$ falls $x$ kein Element von $M$ ist.
+Wir schreiben $x\not\in M$ falls $x$ kein Element von $M$ ist.
 
 ````
 
@@ -131,8 +131,8 @@ Dann gilt z.B.:
 - $0 \in A$
 - $5 \notin A$.
 - $a\in B$
-- \{ 0,1,2,3,4 \} \in E
-- \{0,1\}
+- $\{ 0,1,2,3,4 \} \in E$
+- $\{0,1\}$
 
 ````
 
@@ -233,11 +233,11 @@ Betrachten wir unsere Beispielmengen
 - $B:=\{a,b,c,d,e,f,g\} $
 - $C:=\{ 👍, 👮 , 🔨\}  $
 - $D:=\{ \{0,1\} ,\{2,3,4\}\} $
-- $E:=\{\{ 0,1,2,3,4 \} \} 
+- $E:=\{\{ 0,1,2,3,4 \} \} $
 `````
 ### Unendliche Mengen mit Regeln
 
-Nehmen wir an, wir haben bereits eine Grundmenge (z.B. $\mathbb{N})). Jetzt wollen wir aus dieser Grundmenge eine neue Menge definieren. Zum Beispiel die Menge aller geraden Zahlen.
+Nehmen wir an, wir haben bereits eine Grundmenge (z.B. $\mathbb{N}$). Jetzt wollen wir aus dieser Grundmenge eine neue Menge definieren. Zum Beispiel die Menge aller geraden Zahlen.
 
 Dann können wir das mit folgender Notation:
 
@@ -291,7 +291,7 @@ Die Menge der rationalen Zahlen sind alle diejenigen Zahlen, die als Bruch zweie
 
 ### Die reellen Zahlen $\mathbb{R}$
 
-Was genau die reellen Zahlen sind, ist gar nicht so einfach zu sagen. Zunächst einmal hat man lange Zeit gedacht, es gibt sie gar nicht. So glaubten die Pythagorärer, dass jede Zahl als Bruch oder ganze Zahl darstellbar ist. Wie wir heute wissen, gilt das für Zahlen wie $\sqrt{5} oder \pi$ nicht. Doch was genau sind irrationale Zahlen. 
+Was genau die reellen Zahlen sind, ist gar nicht so einfach zu sagen. Zunächst einmal hat man lange Zeit gedacht, es gibt sie gar nicht. So glaubten die Pythagorärer, dass jede Zahl als Bruch oder ganze Zahl darstellbar ist. Wie wir heute wissen, gilt das für Zahlen wie $\sqrt{5}$ oder $\pi$ nicht. Doch was genau sind irrationale Zahlen. 
 Wir werden in diesem Kurs keine genaue Definition geben können, sondern lediglich eine Intuition.
 
 **Intuition**:

@@ -157,6 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Kapitel 1 - Mengenlehre</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logik.html">Kapitel 2 Grundlagen der Logik</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relationsAndFunctions.html">Kapitel 3 - Relationen und Funktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gauss.html">Kapitel 4 - Der Gauß-Algorithmus</a></li>
 </ul>
 
     </div>
@@ -467,7 +468,7 @@ So gibt es beispielsweise folgende Definition von <em>Georg Cantor</em>.</p>
 </div><p><strong>Beobachtungen</strong>:</p>
 <ul class="simple">
 <li><p>Wie Sie sehen können Elemente einer Menge ganz unterschiedlicher Natur sein. Sie können Zahlen, Buchstaben oder auch Zeichen sein. Wichtig ist nur, dass sie unterscheidbar sind und eindeutig.</p></li>
-<li><p>Um eine Menge aus endlich vielen Elementen hinzuschreibne nutzen wir geschweifte Klammern (<span class="math notranslate nohighlight">\( \{ \} \)</span>).</p></li>
+<li><p>Um eine Menge aus endlich vielen Elementen hinzuschreiben nutzen wir geschweifte Klammern (<span class="math notranslate nohighlight">\( \{ \} \)</span>).</p></li>
 </ul>
 <p><strong>Frage:</strong></p>
 <p>Kann ein Element einer Menge auch selbst eine Menge sein?</p>
@@ -498,7 +499,7 @@ So gibt es beispielsweise folgende Definition von <em>Georg Cantor</em>.</p>
 <div class="proof definition admonition" id="my-definition">
 <p class="admonition-title"><span class="caption-number">Definition 2 </span></p>
 <section class="definition-content" id="proof-content">
-<p>Diejenige Menge, die <strong>kein</strong> Element enthält, wird die <strong>leere Menge</strong> genant und mit</p>
+<p>Diejenige Menge, die <strong>kein</strong> Element enthält, wird die <strong>leere Menge</strong> genannt und mit</p>
 <div class="math notranslate nohighlight">
 \[    \{ \} \text{ oder } \varnothing \]</div>
 <p>bezeichnet.</p>
@@ -511,7 +512,7 @@ So gibt es beispielsweise folgende Definition von <em>Georg Cantor</em>.</p>
 <p class="admonition-title"><span class="caption-number">Definition 6 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Wir schreiben <span class="math notranslate nohighlight">\(x\in M\)</span>. Falls  <span class="math notranslate nohighlight">\(x\)</span> ein Element von <span class="math notranslate nohighlight">\(M\)</span> ist.
-Wir schreiben <span class="math notranslate nohighlight">\(x\in M\)</span> falls <span class="math notranslate nohighlight">\(x\)</span> kein Element von <span class="math notranslate nohighlight">\(M\)</span> ist.</p>
+Wir schreiben <span class="math notranslate nohighlight">\(x\not\in M\)</span> falls <span class="math notranslate nohighlight">\(x\)</span> kein Element von <span class="math notranslate nohighlight">\(M\)</span> ist.</p>
 </section>
 </div><div class="proof example admonition" id="elementbsp">
 <p class="admonition-title"><span class="caption-number">Example 4 </span></p>
@@ -529,8 +530,8 @@ Wir schreiben <span class="math notranslate nohighlight">\(x\in M\)</span> falls
 <li><p><span class="math notranslate nohighlight">\(0 \in A\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(5 \notin A\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(a\in B\)</span></p></li>
-<li><p>{ 0,1,2,3,4 } \in E</p></li>
-<li><p>{0,1}</p></li>
+<li><p><span class="math notranslate nohighlight">\(\{ 0,1,2,3,4 \} \in E\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\{0,1\}\)</span></p></li>
 </ul>
 </section>
 </div><p>Im obigen Beispiel sehen wir, dass die Klammern <span class="math notranslate nohighlight">\(\{ \}\)</span> eine große Rolle Spielen. Elemente einer Menge sind eben nur diejenigen Objekte die genaue eine Hierarchieebene unterhalb der Menge sind.</p>
@@ -616,13 +617,13 @@ Wir schreiben</p>
 <li><p><span class="math notranslate nohighlight">\(B:=\{a,b,c,d,e,f,g\} \)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(C:=\{ 👍, 👮 , 🔨\}  \)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(D:=\{ \{0,1\} ,\{2,3,4\}\} \)</span></p></li>
-<li><p>$E:={{ 0,1,2,3,4 } }</p></li>
+<li><p><span class="math notranslate nohighlight">\(E:=\{\{ 0,1,2,3,4 \} \} \)</span></p></li>
 </ul>
 </section>
 </div></section>
 <section id="unendliche-mengen-mit-regeln">
 <h3>Unendliche Mengen mit Regeln<a class="headerlink" href="#unendliche-mengen-mit-regeln" title="Permalink to this heading">#</a></h3>
-<p>Nehmen wir an, wir haben bereits eine Grundmenge (z.B. $\mathbb{N})). Jetzt wollen wir aus dieser Grundmenge eine neue Menge definieren. Zum Beispiel die Menge aller geraden Zahlen.</p>
+<p>Nehmen wir an, wir haben bereits eine Grundmenge (z.B. <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>). Jetzt wollen wir aus dieser Grundmenge eine neue Menge definieren. Zum Beispiel die Menge aller geraden Zahlen.</p>
 <p>Dann können wir das mit folgender Notation:</p>
 <div class="math notranslate nohighlight">
 \[M= \{ n\in \mathbb{N} \  \vert \ n \text{ ist eine Gerade Zahl} \}\]</div>
@@ -668,7 +669,7 @@ Wir schreiben</p>
 </section>
 <section id="die-reellen-zahlen-mathbb-r">
 <h3>Die reellen Zahlen <span class="math notranslate nohighlight">\(\mathbb{R}\)</span><a class="headerlink" href="#die-reellen-zahlen-mathbb-r" title="Permalink to this heading">#</a></h3>
-<p>Was genau die reellen Zahlen sind, ist gar nicht so einfach zu sagen. Zunächst einmal hat man lange Zeit gedacht, es gibt sie gar nicht. So glaubten die Pythagorärer, dass jede Zahl als Bruch oder ganze Zahl darstellbar ist. Wie wir heute wissen, gilt das für Zahlen wie <span class="math notranslate nohighlight">\(\sqrt{5} oder \pi\)</span> nicht. Doch was genau sind irrationale Zahlen.
+<p>Was genau die reellen Zahlen sind, ist gar nicht so einfach zu sagen. Zunächst einmal hat man lange Zeit gedacht, es gibt sie gar nicht. So glaubten die Pythagorärer, dass jede Zahl als Bruch oder ganze Zahl darstellbar ist. Wie wir heute wissen, gilt das für Zahlen wie <span class="math notranslate nohighlight">\(\sqrt{5}\)</span> oder <span class="math notranslate nohighlight">\(\pi\)</span> nicht. Doch was genau sind irrationale Zahlen.
 Wir werden in diesem Kurs keine genaue Definition geben können, sondern lediglich eine Intuition.</p>
 <p><strong>Intuition</strong>:</p>
 <ul class="simple">
