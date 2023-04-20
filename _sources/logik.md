@@ -1,7 +1,7 @@
 # Kapitel 2 Grundlagen der Logik
 
 
-## 1.1 Lernziele
+## 2.1 Lernziele
 In diesem Abschnitt lernen wir die folgenden Dinge:
 
 - Syntax/Schreibweise der Aussagenlogik
@@ -22,7 +22,7 @@ In diesem Abschnitt lernen wir die folgenden Dinge:
 :::
 
 
-## 1.2 Einleitung mit Sudoku 
+## 2.2 Einleitung mit Sudoku 
 
 Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge, es ist aber wichtig er einmal fest zu halten, dass wir alle von Natur aus logisch denken können ohne, dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir das was wir natürlicherweise machen hier formalisieren wollen.
 
@@ -101,7 +101,7 @@ Aber warum eigentlich? Welche Logischen Gesetze stecken dahinter? Genau das woll
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xleOtHLj61g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## 2.1 Aussagenlogik
+## 2.3 Aussagenlogik
 
 Wie wir in der Einleitung gesehen, haben beschäftigen wir uns im ersten Teil mit der sogenannten Aussagenlogik.
 
@@ -883,7 +883,8 @@ Dann folgt mittels Kommutativgesetz(2), dass $R\equiv L$.
 
 ````
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-totTQPSx3U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-## Prädikatenlogik - Quantoren
+
+## 2.3 Prädikatenlogik - Quantoren
 Die Aussagenlogik ist eine wichtige Grundlage der Logik. Wir haben im letzten Abschnitt gelernt, wie wir allerhand Formel kreieren können und wie wir diese interpretieren können. 
 
 Die Aussagenlogik reicht jedoch häufig in der Mathematik nicht aus um Aussagen formulieren zu können.
@@ -1068,7 +1069,8 @@ Um eine Formel mit Quantoren zu negieren, geht man also wie folgt vor:
 
 ````
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MfOo0pwpBN0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-## Gödelscher Unvollständigkeitssatz
+
+## 2.5 Gödelscher Unvollständigkeitssatz
 
 Im letzten Abschnitt hatten wir folgende Bemerkung gemacht:
 
@@ -1090,7 +1092,7 @@ Der erste Gödelsch'sche Unvollständigkeitssatz lautet:
 Jedes hinreichend mächtige, rekursiv aufzählbare formale System ist entweder widersprüchlich oder unvollständig.
 ````
 
-**Wiedersprüchlich:**
+**Widersprüchlich:**
 
 Am Besten Sie denken bei System zum Beispiel an die Axiome der Mengenlehre aus dem letzten Kapitel. Diese könnten natürlich Widersprüch sein. Das bedeutet dass wir eine Kontradiktion erzeugen können.
 

@@ -351,9 +351,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">1.1 Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einleitung-mit-sudoku">1.2 Einleitung mit Sudoku</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aussagenlogik">2.1 Aussagenlogik</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">2.1 Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einleitung-mit-sudoku">2.2 Einleitung mit Sudoku</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aussagenlogik">2.3 Aussagenlogik</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-der-aussagenlogik-formeln">Syntax der Aussagenlogik - Formeln</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semantik-der-aussagenlogik-wahrheitstafeln">Semantik der Aussagenlogik - Wahrheitstafeln</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wahrheitstafeln">Wahrheitstafeln</a></li>
@@ -379,14 +379,18 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgabentypen-zu-den-gesetzen-der-aussagenlogik">Aufgabentypen zu den Gesetzen der Aussagenlogik</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pradikatenlogik-quantoren">2.3 Prädikatenlogik - Quantoren</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pradikate">Prädikate</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantoren">Quantoren</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pradikatenlogische-formeln">Prädikatenlogische Formeln</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negation-von-pradikatenlogischen-formeln">Negation von Prädikatenlogischen Formeln</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#beweisidee-des-ersten-unvollstandigkeitssatzes">Beweisidee des ersten Unvollständigkeitssatzes</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#der-wohlordnungssatz">Der Wohlordnungssatz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negation-von-pradikatenlogischen-formeln">Negation von Prädikatenlogischen Formeln</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#godelscher-unvollstandigkeitssatz">2.5 Gödelscher Unvollständigkeitssatz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beweisidee-des-ersten-unvollstandigkeitssatzes">Beweisidee des ersten Unvollständigkeitssatzes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#der-wohlordnungssatz">Der Wohlordnungssatz</a></li>
 </ul>
 </li>
 </ul>
@@ -403,7 +407,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="kapitel-2-grundlagen-der-logik">
 <h1>Kapitel 2 Grundlagen der Logik<a class="headerlink" href="#kapitel-2-grundlagen-der-logik" title="Permalink to this heading">#</a></h1>
 <section id="lernziele">
-<h2>1.1 Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
+<h2>2.1 Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
 <p>In diesem Abschnitt lernen wir die folgenden Dinge:</p>
 <ul class="simple">
 <li><p>Syntax/Schreibweise der Aussagenlogik</p></li>
@@ -424,7 +428,7 @@ document.write(`
 </div>
 </section>
 <section id="einleitung-mit-sudoku">
-<h2>1.2 Einleitung mit Sudoku<a class="headerlink" href="#einleitung-mit-sudoku" title="Permalink to this heading">#</a></h2>
+<h2>2.2 Einleitung mit Sudoku<a class="headerlink" href="#einleitung-mit-sudoku" title="Permalink to this heading">#</a></h2>
 <p>Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge, es ist aber wichtig er einmal fest zu halten, dass wir alle von Natur aus logisch denken können ohne, dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir das was wir natürlicherweise machen hier formalisieren wollen.</p>
 <p>Um Sie davon zu überzeugen, dass Sie Logik bereits verstehen, will ich Ihnen folgendes Beispiel zeigen.</p>
 <p>Nehmen wir an wir spielen Soduku. Wir beschränken uns aber hierfür auf Zahlen <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(4\)</span> statt <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(9\)</span>.</p>
@@ -465,7 +469,7 @@ Aber warum eigentlich? Welche Logischen Gesetze stecken dahinter? Genau das woll
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xleOtHLj61g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 <section id="aussagenlogik">
-<h2>2.1 Aussagenlogik<a class="headerlink" href="#aussagenlogik" title="Permalink to this heading">#</a></h2>
+<h2>2.3 Aussagenlogik<a class="headerlink" href="#aussagenlogik" title="Permalink to this heading">#</a></h2>
 <p>Wie wir in der Einleitung gesehen, haben beschäftigen wir uns im ersten Teil mit der sogenannten Aussagenlogik.</p>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 13 </span></p>
@@ -1075,8 +1079,12 @@ Nehmen wir an wir haben</p>
 <p>Dann folgt mittels Kommutativgesetz(2), dass <span class="math notranslate nohighlight">\(R\equiv L\)</span>.</p>
 </section>
 </div><iframe width="560" height="315" src="https://www.youtube.com/embed/-totTQPSx3U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-## Prädikatenlogik - Quantoren
-Die Aussagenlogik ist eine wichtige Grundlage der Logik. Wir haben im letzten Abschnitt gelernt, wie wir allerhand Formel kreieren können und wie wir diese interpretieren können. 
+</section>
+</section>
+</section>
+<section id="pradikatenlogik-quantoren">
+<h2>2.3 Prädikatenlogik - Quantoren<a class="headerlink" href="#pradikatenlogik-quantoren" title="Permalink to this heading">#</a></h2>
+<p>Die Aussagenlogik ist eine wichtige Grundlage der Logik. Wir haben im letzten Abschnitt gelernt, wie wir allerhand Formel kreieren können und wie wir diese interpretieren können.</p>
 <p>Die Aussagenlogik reicht jedoch häufig in der Mathematik nicht aus um Aussagen formulieren zu können.</p>
 <p>Betrachte hierfür folgendes Beispiel aus dem letzten Kapitel.
 Dort haben wir die Gauß’sche Summenformel bewiesen:</p>
@@ -1085,8 +1093,6 @@ Dort haben wir die Gauß’sche Summenformel bewiesen:</p>
 <p><span class="math notranslate nohighlight">\(1+2+3+\dots +n =\frac{n(n+1)}{2}\)</span> zu formulieren und auch keinen Formalismus für den Satz</p>
 <p>Für alle <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span>.</p>
 <p>Beides werden wir mit der Prädikatenlogik einführen.</p>
-</section>
-</section>
 <section id="pradikate">
 <h3>Prädikate<a class="headerlink" href="#pradikate" title="Permalink to this heading">#</a></h3>
 <p>Eine mathematisch exakte Definition von Prädikaten würde den Rahmen dieses Kurses sprengen. Deshalb werden wir Prädikate nur ungefähr definieren.</p>
@@ -1212,7 +1218,10 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 </ul>
 </section>
 </div><iframe width="560" height="315" src="https://www.youtube.com/embed/MfOo0pwpBN0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-## Gödelscher Unvollständigkeitssatz
+</section>
+</section>
+<section id="godelscher-unvollstandigkeitssatz">
+<h2>2.5 Gödelscher Unvollständigkeitssatz<a class="headerlink" href="#godelscher-unvollstandigkeitssatz" title="Permalink to this heading">#</a></h2>
 <p>Im letzten Abschnitt hatten wir folgende Bemerkung gemacht:</p>
 <p><em>Falls <span class="math notranslate nohighlight">\(F(x,y,z)\)</span> eine geschlossene Formel ist, so kann <span class="math notranslate nohighlight">\(F\)</span> einen Wahrheitswert besitzen, je nachdem ob die Aussage richtig oder falsch ist.</em></p>
 <p>Beachten Sie, dass wir eben nicht gesagt haben dass <span class="math notranslate nohighlight">\(F\)</span> einen Wahrheitswert besitzen muss.  Aber muss das nicht so sein?</p>
@@ -1225,7 +1234,7 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <section class="theorem-content" id="proof-content">
 <p>Jedes hinreichend mächtige, rekursiv aufzählbare formale System ist entweder widersprüchlich oder unvollständig.</p>
 </section>
-</div><p><strong>Wiedersprüchlich:</strong></p>
+</div><p><strong>Widersprüchlich:</strong></p>
 <p>Am Besten Sie denken bei System zum Beispiel an die Axiome der Mengenlehre aus dem letzten Kapitel. Diese könnten natürlich Widersprüch sein. Das bedeutet dass wir eine Kontradiktion erzeugen können.</p>
 <p><strong>Unvollständig</strong></p>
 <p>Unvollständig bedeutet, dass es Aussagen gibt deren Korrektheit oder Falschheit nicht beweisbar ist. Wie wir aber sehen werden sind diese aber trotzdem wahr, was extrem verwirrend ist.</p>
@@ -1238,7 +1247,7 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 </div><p>Dieser Satz besagt mehr oder weniger, dass wir uns nie wirklich sicher sein können, dass die Grundlagen, auf der unsere Mathematik aufbaut, wirklich Widerspruchsfrei ist. Das klingt auch erstmal sehr erschütternd.</p>
 <p>Wie die Russel’sche Antinomie führten die Gödelsch’en Unvollständigkeitssätze zu einer Grundlagenkrise der Mathematik. Gödels Sätze sind bis heute gültig. Wir hatten aber nun 80 Jahre Zeit uns an die Vorstellung zu gewöhnen, dass wir niemals sicher sein können, dass die Mathematik wirklich Widerspruchsfrei ist. Bis jetzt scheint alles gut gegangen zu sein.</p>
 <section id="beweisidee-des-ersten-unvollstandigkeitssatzes">
-<h4>Beweisidee des ersten Unvollständigkeitssatzes<a class="headerlink" href="#beweisidee-des-ersten-unvollstandigkeitssatzes" title="Permalink to this heading">#</a></h4>
+<h3>Beweisidee des ersten Unvollständigkeitssatzes<a class="headerlink" href="#beweisidee-des-ersten-unvollstandigkeitssatzes" title="Permalink to this heading">#</a></h3>
 <p>Gödels Idee ist ähnlich wie in der Russel’schen Antinomie folgenden Satz zu konstruieren:</p>
 <p>“Ich bin nicht beweisbar”.</p>
 <p>Dabei geht er wie folgt vor:</p>
@@ -1255,7 +1264,7 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <p>Das sehen wir im nächsten Kapitel.</p>
 </section>
 <section id="der-wohlordnungssatz">
-<h4>Der Wohlordnungssatz<a class="headerlink" href="#der-wohlordnungssatz" title="Permalink to this heading">#</a></h4>
+<h3>Der Wohlordnungssatz<a class="headerlink" href="#der-wohlordnungssatz" title="Permalink to this heading">#</a></h3>
 <p>Der Wohlordnungssatz ist die folgende Aussage:</p>
 <p><em>Jede nichtleere Menge natürlicher Zahlen enthält eine kleinste Zahl.</em></p>
 <p>Was meinen Sie gilt dieser Satz oder nicht?</p>
@@ -1279,7 +1288,6 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 </section>
 </div><p>Ok mit diesem Satz können wir aus eins zwei machen. Das klingt extrem unintuitiv. Viele Mathematiker:innen glauben aber wie gesagt an den Wohlordnungssatz und nehmen deshalb auch an, dass das Banach-Tarski Paradoxon stimmt.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WJGEnfu02cc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
-</section>
 </section>
 </section>
 
@@ -1344,9 +1352,9 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">1.1 Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einleitung-mit-sudoku">1.2 Einleitung mit Sudoku</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aussagenlogik">2.1 Aussagenlogik</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">2.1 Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einleitung-mit-sudoku">2.2 Einleitung mit Sudoku</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aussagenlogik">2.3 Aussagenlogik</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-der-aussagenlogik-formeln">Syntax der Aussagenlogik - Formeln</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semantik-der-aussagenlogik-wahrheitstafeln">Semantik der Aussagenlogik - Wahrheitstafeln</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wahrheitstafeln">Wahrheitstafeln</a></li>
@@ -1372,14 +1380,18 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgabentypen-zu-den-gesetzen-der-aussagenlogik">Aufgabentypen zu den Gesetzen der Aussagenlogik</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pradikatenlogik-quantoren">2.3 Prädikatenlogik - Quantoren</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pradikate">Prädikate</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantoren">Quantoren</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pradikatenlogische-formeln">Prädikatenlogische Formeln</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negation-von-pradikatenlogischen-formeln">Negation von Prädikatenlogischen Formeln</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#beweisidee-des-ersten-unvollstandigkeitssatzes">Beweisidee des ersten Unvollständigkeitssatzes</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#der-wohlordnungssatz">Der Wohlordnungssatz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negation-von-pradikatenlogischen-formeln">Negation von Prädikatenlogischen Formeln</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#godelscher-unvollstandigkeitssatz">2.5 Gödelscher Unvollständigkeitssatz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beweisidee-des-ersten-unvollstandigkeitssatzes">Beweisidee des ersten Unvollständigkeitssatzes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#der-wohlordnungssatz">Der Wohlordnungssatz</a></li>
 </ul>
 </li>
 </ul>
