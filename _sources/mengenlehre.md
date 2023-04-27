@@ -865,7 +865,7 @@ Obige Menge $M$ kann also nicht in der Zermelo-Fraenkel Mengenlehre konstruiert 
 
 ##### Fundierungsaxiom
 
-Das Fundierungsaxiom sagt, dass jede Nichtleere Menge $M$ eine Element $m$ enthält, so dass $M\cap m\not =  \emptyset$
+Das Fundierungsaxiom sagt, dass jede Nichtleere Menge $M$ eine Element $m$ enthält, so dass $M\cap m =  \emptyset$
 
 Das Fundierungsaxiom mag erst einmal etwas kryptisch wirken. Doch es ist genau die Regel, die besagt, dass keine Menge sich selbst enthalten darf.
 
