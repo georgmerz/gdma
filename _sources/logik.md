@@ -716,7 +716,7 @@ Falls aber $B$ Wahr ist, so ist $A\land B$ wahr genau dann wenn $A$ wahr ist. Al
 ````{prf:theorem}
 Sei $A$ eine  Aussagenvariable dann gilt
 ```{math}
-A\lor 0 \equiv A \quad \text{ and } A\land 1  \equiv 1.
+A\land 0 \equiv A \quad \text{ and } A\lor 1  \equiv 1.
 ```
 ````
 
