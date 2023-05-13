@@ -1,13 +1,13 @@
 # Kapitel 3 - Relationen und Funktionen
 
 
-Funktionen kennen Sie wohl alle noch aus der Schule. Dort haben Sie vermutlich die Quadratische Funktion, die Logarthmusfunktion, Sinus und Cosinus sowie die Exponentialfunktion kennengelernt. Doch was sind Relationen.
+Funktionen kennen Sie wohl alle noch aus der Schule. Dort haben Sie vermutlich die quadratische Funktion, die Logarithmusfunktion, Sinus und Cosinus sowie die Exponentialfunktion kennengelernt. Doch was sind Relationen?
 
-Tatsächlich sind Relationen, das allgemeinere Konzept. Am Anschaulichsten wird dies im Bereich der Datenspeicherung offensichtlich. Sie haben vermutlich schon einmal etwas von **relationalen Datenbanken** gehört.
+Tatsächlich sind Relationen, das allgemeinere Konzept. Am anschaulichsten wird dies im Bereich der Datenspeicherung offenbar. Sie haben vielleicht schon einmal etwas von **relationalen Datenbanken** gehört.
 
 Diese bedienen sich genau aus dem Konzept der Relationen.
 
-eine relationale Datenbank ist eine Sammlung von Relationen. Relationen selber kann man sich als eine Tabelle vorstellen
+Eine relationale Datenbank ist eine Sammlung von Relationen. Relationen selber kann man sich als eine Tabelle vorstellen
 
 | **Name**     | **Geburtstag** | **Wohnort** | **Matrikelnr** |
 |--------------|----------------|-------------|----------------|
@@ -16,7 +16,9 @@ eine relationale Datenbank ist eine Sammlung von Relationen. Relationen selber k
 | ...          | ...            | ...         | ...            |
 | ...          | ...            | ...         | ...            |
 
-Wie wir dieses Konzept formalisieren lernen wir in den nächsten Kapiteln.d
+Wie wir dieses Konzept formalisieren lernen wir in den nächsten Kapiteln.
+
+Nachdem wir uns intensiv mit dem Begriff der Relationen auseinandergesetzt haben, werden wir dann den spezielleren Begriff der Funktion einführen und wichtige Eigenschaften von Funktionen wie die bijektivität kennenlernen.
 
 
 ## 3.1 Lernziele
@@ -43,8 +45,13 @@ In diesem Abschnitt lernen wir die folgenden Dinge:
 
 
 ## 3.2 Relationen
+In diesem Kapitel werden wir den Begriff der Relation mathematisch exakt definieren und diesen veranschaulichen mit Hilfe von Tabellen.
+Im zweiten Teil betrachten wir insbesondere binäre Relationen und einig wichtige Spezialfälle von binären Relationen.
 
-Wir haben in der Einleitung schon versucht die Relation als eine Tabelle zu motivieren. Dabei Haben wir zunächst die Kategorien wie in unserem Beispiel Name, Geburtstag, Wohnort und Matrikelnr. Kategorien interpretieren wir als Mengen wobei die Menge der Namen alle Namen enthält die Potentiell auftreten können (z.B. ein Auszug aller Meldeämter). Die Menge der Matrikelnr. enthält alle validen Kombinationen aus Zahlen die eine Matrikelnr. bilden und so weiter.
+### 3.2.1 Allgemeine Relationen
+Wir haben in der Einleitung schon versucht die Relation als eine Tabelle zu motivieren.
+In einer Tabelle besteht die erste Zeile meistens aus den Kategorien die wir betrachten.
+In unserem Beispiel Name, Geburtstag, Wohnort und Matrikelnr. Kategorien interpretieren wir als Mengen wobei die Kategorie der Namen, die Menge aller Namen,die Potentiell auftreten können ist (z.B. ein Auszug aller Meldeämter). Die Menge der Matrikelnr. enthält alle validen Kombinationen aus Zahlen, die eine Matrikelnr. bilden und so weiter.
 
 Sagen wir also wir haben unsere Kategorien in Mengen $A_1,\dots, A_n$ übersetzt.
 
@@ -52,7 +59,7 @@ Was ist nun eine Zeile in dieser Tabelle? Nun es ist eine Liste von Werten
 
 *(Karl Hecht, 01.05.2000 ,Berlin, 223323)*
 
-Wie können wir das Interpretieren? Wir können sagen, dass dieses Tupel ein Element des Kartesischen Produkts $A_1,\dots, A_n$ ist.
+Wie können wir das interpretieren? Wir können sagen, dass dieses Tupel ein Element des Kartesischen Produkts $A_1\times\dots \times A_n$ ist.
 
 Damit ergibt sich die Formale Definition einer Relation wie folgt
 
@@ -69,21 +76,24 @@ Sei $A_1=\left\{0,1\right\}, A_2=\left\{0,1,2\right\},A_3=\left\{0,1,2,3\right\}
 
 Dann sind folgende Mengen 3-stellige Relationen:
 
-- $R_1=\left\{(0,1,2),(1,2,3)\right\}$
+- $R_1=\left\{(0,1,2),(1,2,3)\right\}\subset A_1\times A_2 \times A_3$
 
-- $R_2=\left\{ (x,y,z)\in A_1\times A_2 \times A_3 \ \vert \ x+y+z=3\right\}$
+- $R_2=\left\{ (x,y,z)\in A_1\times A_2 \times A_3 \ \vert \ x+y+z=3\right\}\subset A_1\times A_2 \times A_3$
 
-- $R_3=\left\{ (x,y,z)\in A_1\times A_2 \times A_3 \ \vert \ x=0\right\}$
+- $R_3=\left\{ (x,y,z)\in A_1\times A_2 \times A_3 \ \vert \ x=0\right\}\subset A_1\times A_2 \times A_3$
 
 ````
 
 **Aufgabe**
 
-Geben Sie $R_2 und R_3$ ein aufzählender Form an!
+Geben Sie $R_2$ und $R_3$ in aufzählender Form an!
 
 
 
-### Binäre Relationen
+
+
+
+### 3.2.2 Binäre Relationen
 
 
 Der Fall $n=2$ ist ein wichtiger Spezialfall. Deshalb verdient er eine eigene Definition.
@@ -92,7 +102,7 @@ Der Fall $n=2$ ist ein wichtiger Spezialfall. Deshalb verdient er eine eigene De
 Eine zweistellige Relation $R\subset A_1\times A_2$ nennen wir auch **binäre Relation**. Falls $(a_1,a_2)\in R$ so schreiben wir auch $a_1Ra_2$.
 ````
 ````{prf:example}
-Wir definieren eine Relation $R\subset \mathbb{R}\times \mathbb{R} wie folgt:
+Wir definieren eine Relation $R\subset \mathbb{R}\times \mathbb{R}$ wie folgt:
 
 ```{math}
 R=\left\{(x,y)\in \mathbb{R}\times \mathbb{R} \ \vert \ x<y \right\}
@@ -103,7 +113,7 @@ Wir nennen diese Relation auch die **kleiner Relation** und schreiben $x<y$ fall
 
 
 ````{prf:example}
-Wir definieren eine weitere Relation $R\subset \mathbb{R}\times \mathbb{R} wie folgt:
+Wir definieren eine weitere Relation $R\subset \mathbb{R}\times \mathbb{R}$ wie folgt:
 
 ```{math}
 R=\left\{(x,y)\in \mathbb{R}\times \mathbb{R} \ \vert \ x=y \right\}
@@ -113,7 +123,7 @@ Wir nennen diese Relation auch die **gleich Relation** und schreiben $x=y$ falls
 ````
 
 
-Wie Sie sehen haben wir Relationen also schon genutzt ohne es zu wissen die Zeichen $=,\not =, < ,\leq,>,\geq$ sind alle binäre Relationen mit der Grundmenge $\mathbb{R}$.
+Wir kennen Relationen also schon ohne es zu wissen. Die Zeichen $=,\not =, < ,\leq,>,\geq$ sind alle binäre Relationen mit der Grundmenge $\mathbb{R}$.
 
 
 
@@ -127,13 +137,13 @@ Binäre Relationen lassen sich im Falle von endlichen Mengen $A_1$ und $A_2$ kom
 
 Hierfür betrachten wir folgendes Beispiel. Sei $A$ die Menge der Studierenden der THB 
 
-- $A_1=\left\{S_1,\dots, S_n\right\}
+- $A_1=\left\{S_1,\dots, S_n\right\}$
 
 Sei Weiterhin $A_2$ die Menge der Vorlesungen, die an der THB angeboten werden.
 
 - $A_2=\left\{ \text{"Grundlagen der Mathematik", "Programmieren 1", "Programmieren 2", ... } \right\}$
 
-Wir wollen nun die Relation "Vorlesungsbelegung SoSE23" beschreiben, welche Ausdrückt welche Studierenden im SoSE23 welche Vorlesung belegt.
+Wir wollen nun die Relation "Vorlesungsbelegung SoSE23" beschreiben, welche ausdrückt welche Studierenden im SoSE23 welche Vorlesung belegt.
 
 **Pfeildarstellung**
 
@@ -141,8 +151,8 @@ Wir wollen nun die Relation "Vorlesungsbelegung SoSE23" beschreiben, welche Ausd
 ![](images/relations.png)
 
 
-Die Pfeildarstellung ist fast selbsterklärend. Wir sehen anhand der Darstellung dass Student:in $S_1$ die Fächer "Grundlagen der Mathematik" und "Programmieren 1" belegt hat.
-Hingegen belegt $S_4$ die Fächer "Programmieren 1" und "Programmieren 2" gleichzeitig.
+Die Pfeildarstellung ist fast selbsterklärend. Wir sehen anhand der Darstellung, dass Student:in $S_1$ die Fächer "Grundlagen der Mathematik" und "Programmieren 1" belegt hat.
+Hingegen belegt Student:in $S_4$ die Fächer "Programmieren 1" und "Programmieren 2" gleichzeitig.
 
 
 **Matrixdarstellung**
@@ -239,7 +249,7 @@ Die Relationen $=, < ,\leq,>,\geq$ antisymmetrisch. Für die Relationen $\leq$ u
 Übung: Warum ist $=$ antisymmetrisch?
 ```
 
-#### Transitiv            
+##### Transitiv            
 
 ````{prf:definition}
 Sei $R$ eine homogene binäre Relation mit Grundmenge $A$. Dann nennen wir $R$ **transitiv** falls für alle $x,y,z\in A$ mit $xRy$ und $yRz$ auch gilt: $xRz$.
@@ -266,7 +276,7 @@ Wir betrachten das Beispiel $<$. Falls die Zahl $x<y$ und $y<z$. Dann haben wir 
 
 ### Ordnungen
 
-Ordnungsrelationen sind eine Verallgemeinerung der Relationen $\geq,\leg,<,>$ die wir schon für Zahlen kennen.
+Ordnungsrelationen sind eine Verallgemeinerung der Relationen $\geq,\leq$ die wir schon für Zahlen kennen.
 Zunächst einmal definieren wir formal eine Ordnungsrelation und betrachten, dann warum diese Definition sinnvoll ist.
 
 ````{prf:definition}
@@ -279,19 +289,19 @@ Eine binäre homogene Relation $R\subset A\times A$ heißt **Ordnung** falls $R$
 
 
 ````{prf:example}
-Wir haben bereits anhand der Beispiele gesehen, dass nach obiger Definition $=,\leq, <, \geq,>$ Ordnungen sind.
+Wir haben bereits anhand der Beispiele gesehen, dass nach obiger Definition $=,\leq,\geq$ Ordnungen sind.
 ````
 
 ````{prf:example}
-Sei $A=\mathcal{P}(\mathbb{N})$. Dann definieren wir eine Relation $R\subset \mathcal{P}(\mathbb{N}\times \mathcal{P}(\mathbb{N}$ wie folgt
+Sei $A=\mathcal{P}(\mathbb{N})$. Dann definieren wir eine Ordnung $R\subset \mathcal{P}(\mathbb{N})\times \mathcal{P}(\mathbb{N})$ wie folgt
 ```{math}
-R=\left\{ (A,B)\in \mathcal{P}(\mathbb{N}\times \mathcal{P}(\mathbb{N} \ \vert \ A\subset B \right\}
+R=\left\{ (A,B)\in \mathcal{P}(\mathbb{N})\times \mathcal{P}(\mathbb{N}) \ \vert \ A\subset B \right\}
 ```
 **Beweis:**
 
 - Reflexiv: 
 
-Wir müssen zeigen, dass für alle Mengen $A\in \mathcal{P}(\mathbb{N}$ gilt (A,A)\in R. D.h. wir müssen zeigen, dass $A\subset A$. Das gilt aber trivialerweise
+Wir müssen zeigen, dass für alle Mengen $A\in \mathcal{P}(\mathbb{N})$ gilt $(A,A)\in R$. D.h. wir müssen zeigen, dass $A\subset A$. Das gilt aber trivialerweise
 
 - Antisymmetrisch:
 
@@ -308,27 +318,27 @@ Sei $R\subset A\times A$ eine Ordnung. Dann nennen wir $A$ eine **geordnete Meng
 
 ````
 
-Es ist also $\mathcal{P}(\mathbb{N})$ eine geoordnete Menge bezüglich der obigen Relation "\subset". 
-Das heißt aber nicht, dass wir alle Elemente in $A$ miteinander "vergleichen" können. So kann es zwei Teilmengen $A,B\subset \mathbb{N}$ geben für die weder $A\subset B$ noch $B\subset A$ gilt. Z.B. $A=\{1,2,3\}$ und $B\{4,5,6,7\}$.
+Es ist also $\mathcal{P}(\mathbb{N})$ eine geordnete Menge bezüglich der obigen Relation "$\subset$". 
+Das heißt aber nicht, dass wir alle Elemente in $A$ miteinander "vergleichen" können. So kann es zwei Teilmengen $A,B\subset \mathbb{N}$ geben für die weder $A\subset B$ noch $B\subset A$ gilt. Z.B. $A=\{1,2,3\}$ und $B=\{4,5,6,7\}$.
 
-Im Gegensatz dazu ist in $\mathcal{N}$ bzgl. \leq jede Zahl vergleichbar, denn für zwei zahlen $n,m\in \mathbb{N}$ gilt immer entweder $a\leq b$ oder $b\leq a$. 
+Im Gegensatz dazu ist in $\mathbb{N}$ bzgl. $\leq$ jede Zahl vergleichbar, denn für zwei zahlen $n,m\in \mathbb{N}$ gilt immer  $a\leq b$ oder $b\leq a$. 
 
-Solch eine Ordnung nennen wir Totale Ordnung.
+Solch eine Ordnung nennen wir **totale Ordnung**.
 
 
 ````{prf:definition}
-Sei $A$ eine geoordnete Menge bzgl. der Relation $R$. Dann nennen wir $R$ eine **totale Ordnung** falls für alle $a,b\in A$ gilt:
+Sei $A$ eine geordnete Menge bzgl. der Relation $R$. Dann nennen wir $R$ eine **totale Ordnung** falls für alle $a,b\in A$ gilt:
 ```{math}
 aRb \quad \text{ oder } bRa.
 ```
 ````
-### Äquivalenzrelationen
-Eine weitere wichtige binäre Relation ist die Äquivalenzrelation. Die Äquivalenzrelation regelt welche Objekte wir als Identisch miteinander setzen wollen. So gibt es beispielsweise in der Zahlentheorie manchmal Situation wo wir alle Zahlen die gerade sind als identisch setzen wollen und nur den Unterschied machen wollen zwischen Gerade und Ungerade. Oder wir wollen nur den Rest durch 3 oder durch 7 oder einer belibigen Zahl $n$ unterscheiden. Hierfür eignen sich die sogenannten Äquivalenzrelationen, wie wir gleich sehen werden.
+### Äquivalenzrelationen(optional)
+Eine weitere wichtige binäre Relation ist die Äquivalenzrelation. Die Äquivalenzrelation regelt welche Objekte wir als identisch miteinander setzen wollen. So gibt es beispielsweise in der Zahlentheorie manchmal Situation, wo wir alle Zahlen die gerade sind als identisch setzen wollen und nur den Unterschied machen wollen zwischen gerade und ungerade. Oder wir wollen nur den Rest durch 3 oder durch 7 oder einer belibigen Zahl $n$ unterscheiden. Hierfür eignen sich die sogenannten Äquivalenzrelationen, wie wir gleich sehen werden.
 
 Aber erstmal wollen wir die Äquivalenzrelation formal einführen.
 
 ````{prf:definition}
-Eine binäre homogene Relation $R\subset A\times A$ heißt **Ordnung** falls $R$ folgende Eigenschaften besitzt:
+Eine binäre homogene Relation $R\subset A\times A$ heißt **Äquivalenzrelation** falls $R$ folgende Eigenschaften besitzt:
 
 - reflexiv
 - symmetrisch
@@ -352,7 +362,7 @@ Es gilt für alle $n\in \mathbb{Z}$, dass $n-n=0$. Die Zahl $0$ ist durch alle Z
 
 - Symmetrisch
 
-Sei $a,b /in \mathbb{Z}$ mit $aRb$, d.h. $a-b$ ist durch drei Teilbar. Wir müssen zeigen, dass $b-a$ durch 3 teilbar ist.
+Sei $a,b \in \mathbb{Z}$ mit $aRb$, d.h. $a-b$ ist durch drei teilbar. Wir müssen zeigen, dass $b-a$ durch 3 teilbar ist.
 Es gilt jedoch $b-a=-(a-b)$ und da jedes negative einer durch 3 teilbaren Zahl wieder durch 3 teilbar ist gilt damit die Behauptung.
 
 - Transitiv
@@ -364,9 +374,9 @@ Sei nun $a,b,c\in mathbb{Z}$ mit $a-b$ und $b-c$ durch drei Teilbar. Die Summer 
 (a-b)+(b-c)=a-c
 
 ```
-durch drei Teilbar. Also $aRc$.
+durch drei teilbar. Also $aRc$.
 
-Wir haben also gesehen, dass $R$ eine Äquivalenzrelation ist. Die Zahl $3$ hat hierbei keine Rolle gespielt und wir hätten alle Zahlen einsetzen können. Wir schreiben falls $aRB$ gilt auch $a\equiv_3 b$ oder $a=b \mod 3$.
+Wir haben also gesehen, dass $R$ eine Äquivalenzrelation ist. Die Zahl $3$ hat hierbei keine Rolle gespielt und wir hätten alle Zahlen einsetzen können. Wir schreiben falls $aRb$ gilt auch $a\equiv_3 b$ oder $a=b \mod 3$.
 `````
 
 

@@ -67,6 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'relationsAndFunctions';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Kapitel 4 - Der Gauß-Algorithmus" href="gauss.html" />
     <link rel="prev" title="Kapitel 2 Grundlagen der Logik" href="logik.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -156,6 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="mengenlehre.html">Kapitel 1 - Mengenlehre</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logik.html">Kapitel 2 Grundlagen der Logik</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Kapitel 3 - Relationen und Funktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gauss.html">Kapitel 4 - Der Gauß-Algorithmus</a></li>
 </ul>
 
     </div>
@@ -351,19 +353,20 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">3.1 Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relationen">3.2 Relationen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binare-relationen">Binäre Relationen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#allgemeine-relationen">3.2.1 Allgemeine Relationen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binare-relationen">3.2.2 Binäre Relationen</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#darstellung-binarer-relationen">Darstellung binärer Relationen</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaften-binarer-relationen">Eigenschaften binärer Relationen</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#reflexiv">Reflexiv</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetrisch">Symmetrisch</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#antisymmetrisch">Antisymmetrisch</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#transitiv">Transitiv</a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#transitiv">Transitiv</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordnungen">Ordnungen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aquivalenzrelationen">Äquivalenzrelationen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aquivalenzrelationen-optional">Äquivalenzrelationen(optional)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen">3.3 Funktionen</a><ul class="nav section-nav flex-column">
@@ -394,10 +397,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="kapitel-3-relationen-und-funktionen">
 <h1>Kapitel 3 - Relationen und Funktionen<a class="headerlink" href="#kapitel-3-relationen-und-funktionen" title="Permalink to this heading">#</a></h1>
-<p>Funktionen kennen Sie wohl alle noch aus der Schule. Dort haben Sie vermutlich die Quadratische Funktion, die Logarthmusfunktion, Sinus und Cosinus sowie die Exponentialfunktion kennengelernt. Doch was sind Relationen.</p>
-<p>Tatsächlich sind Relationen, das allgemeinere Konzept. Am Anschaulichsten wird dies im Bereich der Datenspeicherung offensichtlich. Sie haben vermutlich schon einmal etwas von <strong>relationalen Datenbanken</strong> gehört.</p>
+<p>Funktionen kennen Sie wohl alle noch aus der Schule. Dort haben Sie vermutlich die quadratische Funktion, die Logarithmusfunktion, Sinus und Cosinus sowie die Exponentialfunktion kennengelernt. Doch was sind Relationen?</p>
+<p>Tatsächlich sind Relationen, das allgemeinere Konzept. Am anschaulichsten wird dies im Bereich der Datenspeicherung offenbar. Sie haben vielleicht schon einmal etwas von <strong>relationalen Datenbanken</strong> gehört.</p>
 <p>Diese bedienen sich genau aus dem Konzept der Relationen.</p>
-<p>eine relationale Datenbank ist eine Sammlung von Relationen. Relationen selber kann man sich als eine Tabelle vorstellen</p>
+<p>Eine relationale Datenbank ist eine Sammlung von Relationen. Relationen selber kann man sich als eine Tabelle vorstellen</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Name</strong></p></th>
@@ -429,7 +432,8 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<p>Wie wir dieses Konzept formalisieren lernen wir in den nächsten Kapiteln.d</p>
+<p>Wie wir dieses Konzept formalisieren lernen wir in den nächsten Kapiteln.</p>
+<p>Nachdem wir uns intensiv mit dem Begriff der Relationen auseinandergesetzt haben, werden wir dann den spezielleren Begriff der Funktion einführen und wichtige Eigenschaften von Funktionen wie die bijektivität kennenlernen.</p>
 <section id="lernziele">
 <h2>3.1 Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
 <p>In diesem Abschnitt lernen wir die folgenden Dinge:</p>
@@ -453,11 +457,17 @@ document.write(`
 </section>
 <section id="relationen">
 <h2>3.2 Relationen<a class="headerlink" href="#relationen" title="Permalink to this heading">#</a></h2>
-<p>Wir haben in der Einleitung schon versucht die Relation als eine Tabelle zu motivieren. Dabei Haben wir zunächst die Kategorien wie in unserem Beispiel Name, Geburtstag, Wohnort und Matrikelnr. Kategorien interpretieren wir als Mengen wobei die Menge der Namen alle Namen enthält die Potentiell auftreten können (z.B. ein Auszug aller Meldeämter). Die Menge der Matrikelnr. enthält alle validen Kombinationen aus Zahlen die eine Matrikelnr. bilden und so weiter.</p>
+<p>In diesem Kapitel werden wir den Begriff der Relation mathematisch exakt definieren und diesen veranschaulichen mit Hilfe von Tabellen.
+Im zweiten Teil betrachten wir insbesondere binäre Relationen und einig wichtige Spezialfälle von binären Relationen.</p>
+<section id="allgemeine-relationen">
+<h3>3.2.1 Allgemeine Relationen<a class="headerlink" href="#allgemeine-relationen" title="Permalink to this heading">#</a></h3>
+<p>Wir haben in der Einleitung schon versucht die Relation als eine Tabelle zu motivieren.
+In einer Tabelle besteht die erste Zeile meistens aus den Kategorien die wir betrachten.
+In unserem Beispiel Name, Geburtstag, Wohnort und Matrikelnr. Kategorien interpretieren wir als Mengen wobei die Kategorie der Namen, die Menge aller Namen,die Potentiell auftreten können ist (z.B. ein Auszug aller Meldeämter). Die Menge der Matrikelnr. enthält alle validen Kombinationen aus Zahlen, die eine Matrikelnr. bilden und so weiter.</p>
 <p>Sagen wir also wir haben unsere Kategorien in Mengen <span class="math notranslate nohighlight">\(A_1,\dots, A_n\)</span> übersetzt.</p>
 <p>Was ist nun eine Zeile in dieser Tabelle? Nun es ist eine Liste von Werten</p>
 <p><em>(Karl Hecht, 01.05.2000 ,Berlin, 223323)</em></p>
-<p>Wie können wir das Interpretieren? Wir können sagen, dass dieses Tupel ein Element des Kartesischen Produkts <span class="math notranslate nohighlight">\(A_1,\dots, A_n\)</span> ist.</p>
+<p>Wie können wir das interpretieren? Wir können sagen, dass dieses Tupel ein Element des Kartesischen Produkts <span class="math notranslate nohighlight">\(A_1\times\dots \times A_n\)</span> ist.</p>
 <p>Damit ergibt sich die Formale Definition einer Relation wie folgt</p>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 20 </span></p>
@@ -473,15 +483,16 @@ document.write(`
 <p>Sei <span class="math notranslate nohighlight">\(A_1=\left\{0,1\right\}, A_2=\left\{0,1,2\right\},A_3=\left\{0,1,2,3\right\}\)</span>.</p>
 <p>Dann sind folgende Mengen 3-stellige Relationen:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(R_1=\left\{(0,1,2),(1,2,3)\right\}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(R_2=\left\{ (x,y,z)\in A_1\times A_2 \times A_3 \ \vert \ x+y+z=3\right\}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(R_3=\left\{ (x,y,z)\in A_1\times A_2 \times A_3 \ \vert \ x=0\right\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R_1=\left\{(0,1,2),(1,2,3)\right\}\subset A_1\times A_2 \times A_3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R_2=\left\{ (x,y,z)\in A_1\times A_2 \times A_3 \ \vert \ x+y+z=3\right\}\subset A_1\times A_2 \times A_3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R_3=\left\{ (x,y,z)\in A_1\times A_2 \times A_3 \ \vert \ x=0\right\}\subset A_1\times A_2 \times A_3\)</span></p></li>
 </ul>
 </section>
 </div><p><strong>Aufgabe</strong></p>
-<p>Geben Sie <span class="math notranslate nohighlight">\(R_2 und R_3\)</span> ein aufzählender Form an!</p>
+<p>Geben Sie <span class="math notranslate nohighlight">\(R_2\)</span> und <span class="math notranslate nohighlight">\(R_3\)</span> in aufzählender Form an!</p>
+</section>
 <section id="binare-relationen">
-<h3>Binäre Relationen<a class="headerlink" href="#binare-relationen" title="Permalink to this heading">#</a></h3>
+<h3>3.2.2 Binäre Relationen<a class="headerlink" href="#binare-relationen" title="Permalink to this heading">#</a></h3>
 <p>Der Fall <span class="math notranslate nohighlight">\(n=2\)</span> ist ein wichtiger Spezialfall. Deshalb verdient er eine eigene Definition.</p>
 <div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 21 </span></p>
@@ -491,7 +502,7 @@ document.write(`
 </div><div class="proof example admonition" id="example-3">
 <p class="admonition-title"><span class="caption-number">Example 23 </span></p>
 <section class="example-content" id="proof-content">
-<p>Wir definieren eine Relation $R\subset \mathbb{R}\times \mathbb{R} wie folgt:</p>
+<p>Wir definieren eine Relation <span class="math notranslate nohighlight">\(R\subset \mathbb{R}\times \mathbb{R}\)</span> wie folgt:</p>
 <div class="math notranslate nohighlight">
 \[R=\left\{(x,y)\in \mathbb{R}\times \mathbb{R} \ \vert \ x&lt;y \right\}\]</div>
 <p>Wir nennen diese Relation auch die <strong>kleiner Relation</strong> und schreiben <span class="math notranslate nohighlight">\(x&lt;y\)</span> falls <span class="math notranslate nohighlight">\(xRy\)</span>.</p>
@@ -499,12 +510,12 @@ document.write(`
 </div><div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 24 </span></p>
 <section class="example-content" id="proof-content">
-<p>Wir definieren eine weitere Relation $R\subset \mathbb{R}\times \mathbb{R} wie folgt:</p>
+<p>Wir definieren eine weitere Relation <span class="math notranslate nohighlight">\(R\subset \mathbb{R}\times \mathbb{R}\)</span> wie folgt:</p>
 <div class="math notranslate nohighlight">
 \[R=\left\{(x,y)\in \mathbb{R}\times \mathbb{R} \ \vert \ x=y \right\}\]</div>
 <p>Wir nennen diese Relation auch die <strong>gleich Relation</strong> und schreiben <span class="math notranslate nohighlight">\(x=y\)</span> falls <span class="math notranslate nohighlight">\(xRy\)</span>.</p>
 </section>
-</div><p>Wie Sie sehen haben wir Relationen also schon genutzt ohne es zu wissen die Zeichen <span class="math notranslate nohighlight">\(=,\not =, &lt; ,\leq,&gt;,\geq\)</span> sind alle binäre Relationen mit der Grundmenge <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
+</div><p>Wir kennen Relationen also schon ohne es zu wissen. Die Zeichen <span class="math notranslate nohighlight">\(=,\not =, &lt; ,\leq,&gt;,\geq\)</span> sind alle binäre Relationen mit der Grundmenge <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
 <section id="darstellung-binarer-relationen">
 <h4>Darstellung binärer Relationen<a class="headerlink" href="#darstellung-binarer-relationen" title="Permalink to this heading">#</a></h4>
 <p>Binäre Relationen lassen sich im Falle von endlichen Mengen <span class="math notranslate nohighlight">\(A_1\)</span> und <span class="math notranslate nohighlight">\(A_2\)</span> kompakt darstellen. Dabei gibt es zwei Möglichkeiten der Darstellung, die wir im Folgenden näher betrachten wollen:</p>
@@ -514,17 +525,17 @@ document.write(`
 </ul>
 <p>Hierfür betrachten wir folgendes Beispiel. Sei <span class="math notranslate nohighlight">\(A\)</span> die Menge der Studierenden der THB</p>
 <ul class="simple">
-<li><p>$A_1=\left{S_1,\dots, S_n\right}</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_1=\left\{S_1,\dots, S_n\right\}\)</span></p></li>
 </ul>
 <p>Sei Weiterhin <span class="math notranslate nohighlight">\(A_2\)</span> die Menge der Vorlesungen, die an der THB angeboten werden.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(A_2=\left\{ \text{&quot;Grundlagen der Mathematik&quot;, &quot;Programmieren 1&quot;, &quot;Programmieren 2&quot;, ... } \right\}\)</span></p></li>
 </ul>
-<p>Wir wollen nun die Relation “Vorlesungsbelegung SoSE23” beschreiben, welche Ausdrückt welche Studierenden im SoSE23 welche Vorlesung belegt.</p>
+<p>Wir wollen nun die Relation “Vorlesungsbelegung SoSE23” beschreiben, welche ausdrückt welche Studierenden im SoSE23 welche Vorlesung belegt.</p>
 <p><strong>Pfeildarstellung</strong></p>
 <p><img alt="" src="_images/relations.png" /></p>
-<p>Die Pfeildarstellung ist fast selbsterklärend. Wir sehen anhand der Darstellung dass Student:in <span class="math notranslate nohighlight">\(S_1\)</span> die Fächer “Grundlagen der Mathematik” und “Programmieren 1” belegt hat.
-Hingegen belegt <span class="math notranslate nohighlight">\(S_4\)</span> die Fächer “Programmieren 1” und “Programmieren 2” gleichzeitig.</p>
+<p>Die Pfeildarstellung ist fast selbsterklärend. Wir sehen anhand der Darstellung, dass Student:in <span class="math notranslate nohighlight">\(S_1\)</span> die Fächer “Grundlagen der Mathematik” und “Programmieren 1” belegt hat.
+Hingegen belegt Student:in <span class="math notranslate nohighlight">\(S_4\)</span> die Fächer “Programmieren 1” und “Programmieren 2” gleichzeitig.</p>
 <p><strong>Matrixdarstellung</strong></p>
 <table class="table">
 <thead>
@@ -636,9 +647,8 @@ Im folgenden Sei <span class="math notranslate nohighlight">\(R\)</span> immer e
 <p>Übung: Warum ist <span class="math notranslate nohighlight">\(=\)</span> antisymmetrisch?</p>
 </div>
 </section>
-</section>
 <section id="transitiv">
-<h4>Transitiv<a class="headerlink" href="#transitiv" title="Permalink to this heading">#</a></h4>
+<h5>Transitiv<a class="headerlink" href="#transitiv" title="Permalink to this heading">#</a></h5>
 <div class="proof definition admonition" id="definition-8">
 <p class="admonition-title"><span class="caption-number">Definition 25 </span></p>
 <section class="definition-content" id="proof-content">
@@ -657,9 +667,10 @@ Wir betrachten das Beispiel <span class="math notranslate nohighlight">\(&lt;\)<
 </div>
 </section>
 </section>
+</section>
 <section id="ordnungen">
 <h3>Ordnungen<a class="headerlink" href="#ordnungen" title="Permalink to this heading">#</a></h3>
-<p>Ordnungsrelationen sind eine Verallgemeinerung der Relationen <span class="math notranslate nohighlight">\(\geq,\leg,&lt;,&gt;\)</span> die wir schon für Zahlen kennen.
+<p>Ordnungsrelationen sind eine Verallgemeinerung der Relationen <span class="math notranslate nohighlight">\(\geq,\leq\)</span> die wir schon für Zahlen kennen.
 Zunächst einmal definieren wir formal eine Ordnungsrelation und betrachten, dann warum diese Definition sinnvoll ist.</p>
 <div class="proof definition admonition" id="definition-9">
 <p class="admonition-title"><span class="caption-number">Definition 26 </span></p>
@@ -674,19 +685,19 @@ Zunächst einmal definieren wir formal eine Ordnungsrelation und betrachten, dan
 </div><div class="proof example admonition" id="example-10">
 <p class="admonition-title"><span class="caption-number">Example 25 </span></p>
 <section class="example-content" id="proof-content">
-<p>Wir haben bereits anhand der Beispiele gesehen, dass nach obiger Definition <span class="math notranslate nohighlight">\(=,\leq, &lt;, \geq,&gt;\)</span> Ordnungen sind.</p>
+<p>Wir haben bereits anhand der Beispiele gesehen, dass nach obiger Definition <span class="math notranslate nohighlight">\(=,\leq,\geq\)</span> Ordnungen sind.</p>
 </section>
 </div><div class="proof example admonition" id="example-11">
 <p class="admonition-title"><span class="caption-number">Example 26 </span></p>
 <section class="example-content" id="proof-content">
-<p>Sei <span class="math notranslate nohighlight">\(A=\mathcal{P}(\mathbb{N})\)</span>. Dann definieren wir eine Relation <span class="math notranslate nohighlight">\(R\subset \mathcal{P}(\mathbb{N}\times \mathcal{P}(\mathbb{N}\)</span> wie folgt</p>
+<p>Sei <span class="math notranslate nohighlight">\(A=\mathcal{P}(\mathbb{N})\)</span>. Dann definieren wir eine Ordnung <span class="math notranslate nohighlight">\(R\subset \mathcal{P}(\mathbb{N})\times \mathcal{P}(\mathbb{N})\)</span> wie folgt</p>
 <div class="math notranslate nohighlight">
-\[R=\left\{ (A,B)\in \mathcal{P}(\mathbb{N}\times \mathcal{P}(\mathbb{N} \ \vert \ A\subset B \right\}\]</div>
+\[R=\left\{ (A,B)\in \mathcal{P}(\mathbb{N})\times \mathcal{P}(\mathbb{N}) \ \vert \ A\subset B \right\}\]</div>
 <p><strong>Beweis:</strong></p>
 <ul class="simple">
 <li><p>Reflexiv:</p></li>
 </ul>
-<p>Wir müssen zeigen, dass für alle Mengen <span class="math notranslate nohighlight">\(A\in \mathcal{P}(\mathbb{N}\)</span> gilt (A,A)\in R. D.h. wir müssen zeigen, dass <span class="math notranslate nohighlight">\(A\subset A\)</span>. Das gilt aber trivialerweise</p>
+<p>Wir müssen zeigen, dass für alle Mengen <span class="math notranslate nohighlight">\(A\in \mathcal{P}(\mathbb{N})\)</span> gilt <span class="math notranslate nohighlight">\((A,A)\in R\)</span>. D.h. wir müssen zeigen, dass <span class="math notranslate nohighlight">\(A\subset A\)</span>. Das gilt aber trivialerweise</p>
 <ul class="simple">
 <li><p>Antisymmetrisch:</p></li>
 </ul>
@@ -701,26 +712,26 @@ Zunächst einmal definieren wir formal eine Ordnungsrelation und betrachten, dan
 <section class="definition-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(R\subset A\times A\)</span> eine Ordnung. Dann nennen wir <span class="math notranslate nohighlight">\(A\)</span> eine <strong>geordnete Menge</strong> bzgl. <span class="math notranslate nohighlight">\(A\)</span>.</p>
 </section>
-</div><p>Es ist also <span class="math notranslate nohighlight">\(\mathcal{P}(\mathbb{N})\)</span> eine geoordnete Menge bezüglich der obigen Relation “\subset”.
-Das heißt aber nicht, dass wir alle Elemente in <span class="math notranslate nohighlight">\(A\)</span> miteinander “vergleichen” können. So kann es zwei Teilmengen <span class="math notranslate nohighlight">\(A,B\subset \mathbb{N}\)</span> geben für die weder <span class="math notranslate nohighlight">\(A\subset B\)</span> noch <span class="math notranslate nohighlight">\(B\subset A\)</span> gilt. Z.B. <span class="math notranslate nohighlight">\(A=\{1,2,3\}\)</span> und <span class="math notranslate nohighlight">\(B\{4,5,6,7\}\)</span>.</p>
-<p>Im Gegensatz dazu ist in <span class="math notranslate nohighlight">\(\mathcal{N}\)</span> bzgl. \leq jede Zahl vergleichbar, denn für zwei zahlen <span class="math notranslate nohighlight">\(n,m\in \mathbb{N}\)</span> gilt immer entweder <span class="math notranslate nohighlight">\(a\leq b\)</span> oder <span class="math notranslate nohighlight">\(b\leq a\)</span>.</p>
-<p>Solch eine Ordnung nennen wir Totale Ordnung.</p>
+</div><p>Es ist also <span class="math notranslate nohighlight">\(\mathcal{P}(\mathbb{N})\)</span> eine geordnete Menge bezüglich der obigen Relation “<span class="math notranslate nohighlight">\(\subset\)</span>”.
+Das heißt aber nicht, dass wir alle Elemente in <span class="math notranslate nohighlight">\(A\)</span> miteinander “vergleichen” können. So kann es zwei Teilmengen <span class="math notranslate nohighlight">\(A,B\subset \mathbb{N}\)</span> geben für die weder <span class="math notranslate nohighlight">\(A\subset B\)</span> noch <span class="math notranslate nohighlight">\(B\subset A\)</span> gilt. Z.B. <span class="math notranslate nohighlight">\(A=\{1,2,3\}\)</span> und <span class="math notranslate nohighlight">\(B=\{4,5,6,7\}\)</span>.</p>
+<p>Im Gegensatz dazu ist in <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> bzgl. <span class="math notranslate nohighlight">\(\leq\)</span> jede Zahl vergleichbar, denn für zwei zahlen <span class="math notranslate nohighlight">\(n,m\in \mathbb{N}\)</span> gilt immer  <span class="math notranslate nohighlight">\(a\leq b\)</span> oder <span class="math notranslate nohighlight">\(b\leq a\)</span>.</p>
+<p>Solch eine Ordnung nennen wir <strong>totale Ordnung</strong>.</p>
 <div class="proof definition admonition" id="definition-13">
 <p class="admonition-title"><span class="caption-number">Definition 28 </span></p>
 <section class="definition-content" id="proof-content">
-<p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine geoordnete Menge bzgl. der Relation <span class="math notranslate nohighlight">\(R\)</span>. Dann nennen wir <span class="math notranslate nohighlight">\(R\)</span> eine <strong>totale Ordnung</strong> falls für alle <span class="math notranslate nohighlight">\(a,b\in A\)</span> gilt:</p>
+<p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine geordnete Menge bzgl. der Relation <span class="math notranslate nohighlight">\(R\)</span>. Dann nennen wir <span class="math notranslate nohighlight">\(R\)</span> eine <strong>totale Ordnung</strong> falls für alle <span class="math notranslate nohighlight">\(a,b\in A\)</span> gilt:</p>
 <div class="math notranslate nohighlight">
 \[aRb \quad \text{ oder } bRa.\]</div>
 </section>
 </div></section>
-<section id="aquivalenzrelationen">
-<h3>Äquivalenzrelationen<a class="headerlink" href="#aquivalenzrelationen" title="Permalink to this heading">#</a></h3>
-<p>Eine weitere wichtige binäre Relation ist die Äquivalenzrelation. Die Äquivalenzrelation regelt welche Objekte wir als Identisch miteinander setzen wollen. So gibt es beispielsweise in der Zahlentheorie manchmal Situation wo wir alle Zahlen die gerade sind als identisch setzen wollen und nur den Unterschied machen wollen zwischen Gerade und Ungerade. Oder wir wollen nur den Rest durch 3 oder durch 7 oder einer belibigen Zahl <span class="math notranslate nohighlight">\(n\)</span> unterscheiden. Hierfür eignen sich die sogenannten Äquivalenzrelationen, wie wir gleich sehen werden.</p>
+<section id="aquivalenzrelationen-optional">
+<h3>Äquivalenzrelationen(optional)<a class="headerlink" href="#aquivalenzrelationen-optional" title="Permalink to this heading">#</a></h3>
+<p>Eine weitere wichtige binäre Relation ist die Äquivalenzrelation. Die Äquivalenzrelation regelt welche Objekte wir als identisch miteinander setzen wollen. So gibt es beispielsweise in der Zahlentheorie manchmal Situation, wo wir alle Zahlen die gerade sind als identisch setzen wollen und nur den Unterschied machen wollen zwischen gerade und ungerade. Oder wir wollen nur den Rest durch 3 oder durch 7 oder einer belibigen Zahl <span class="math notranslate nohighlight">\(n\)</span> unterscheiden. Hierfür eignen sich die sogenannten Äquivalenzrelationen, wie wir gleich sehen werden.</p>
 <p>Aber erstmal wollen wir die Äquivalenzrelation formal einführen.</p>
 <div class="proof definition admonition" id="definition-14">
 <p class="admonition-title"><span class="caption-number">Definition 29 </span></p>
 <section class="definition-content" id="proof-content">
-<p>Eine binäre homogene Relation <span class="math notranslate nohighlight">\(R\subset A\times A\)</span> heißt <strong>Ordnung</strong> falls <span class="math notranslate nohighlight">\(R\)</span> folgende Eigenschaften besitzt:</p>
+<p>Eine binäre homogene Relation <span class="math notranslate nohighlight">\(R\subset A\times A\)</span> heißt <strong>Äquivalenzrelation</strong> falls <span class="math notranslate nohighlight">\(R\)</span> folgende Eigenschaften besitzt:</p>
 <ul class="simple">
 <li><p>reflexiv</p></li>
 <li><p>symmetrisch</p></li>
@@ -746,7 +757,7 @@ Das heißt aber nicht, dass wir alle Elemente in <span class="math notranslate n
 <ul class="simple">
 <li><p>Symmetrisch</p></li>
 </ul>
-<p>Sei <span class="math notranslate nohighlight">\(a,b /in \mathbb{Z}\)</span> mit <span class="math notranslate nohighlight">\(aRb\)</span>, d.h. <span class="math notranslate nohighlight">\(a-b\)</span> ist durch drei Teilbar. Wir müssen zeigen, dass <span class="math notranslate nohighlight">\(b-a\)</span> durch 3 teilbar ist.
+<p>Sei <span class="math notranslate nohighlight">\(a,b \in \mathbb{Z}\)</span> mit <span class="math notranslate nohighlight">\(aRb\)</span>, d.h. <span class="math notranslate nohighlight">\(a-b\)</span> ist durch drei teilbar. Wir müssen zeigen, dass <span class="math notranslate nohighlight">\(b-a\)</span> durch 3 teilbar ist.
 Es gilt jedoch <span class="math notranslate nohighlight">\(b-a=-(a-b)\)</span> und da jedes negative einer durch 3 teilbaren Zahl wieder durch 3 teilbar ist gilt damit die Behauptung.</p>
 <ul class="simple">
 <li><p>Transitiv</p></li>
@@ -755,8 +766,8 @@ Es gilt jedoch <span class="math notranslate nohighlight">\(b-a=-(a-b)\)</span> 
 <div class="math notranslate nohighlight">
 \[(a-b)+(b-c)=a-c
 \]</div>
-<p>durch drei Teilbar. Also <span class="math notranslate nohighlight">\(aRc\)</span>.</p>
-<p>Wir haben also gesehen, dass <span class="math notranslate nohighlight">\(R\)</span> eine Äquivalenzrelation ist. Die Zahl <span class="math notranslate nohighlight">\(3\)</span> hat hierbei keine Rolle gespielt und wir hätten alle Zahlen einsetzen können. Wir schreiben falls <span class="math notranslate nohighlight">\(aRB\)</span> gilt auch <span class="math notranslate nohighlight">\(a\equiv_3 b\)</span> oder <span class="math notranslate nohighlight">\(a=b \mod 3\)</span>.</p>
+<p>durch drei teilbar. Also <span class="math notranslate nohighlight">\(aRc\)</span>.</p>
+<p>Wir haben also gesehen, dass <span class="math notranslate nohighlight">\(R\)</span> eine Äquivalenzrelation ist. Die Zahl <span class="math notranslate nohighlight">\(3\)</span> hat hierbei keine Rolle gespielt und wir hätten alle Zahlen einsetzen können. Wir schreiben falls <span class="math notranslate nohighlight">\(aRb\)</span> gilt auch <span class="math notranslate nohighlight">\(a\equiv_3 b\)</span> oder <span class="math notranslate nohighlight">\(a=b \mod 3\)</span>.</p>
 </section>
 </div><p>Wir haben also gesehen, wie wir Äquivalenzrelationen nutzen können um mit “Resten” zu rechnen.</p>
 <p>Eine weitere wichtige Eigenschaft von Äquivalenzrelation ist, dass sie eine Aufteilung der Menge <span class="math notranslate nohighlight">\(A\)</span> induzieren in sogenannte <strong>Äquivalenzklassen</strong>.</p>
@@ -1153,6 +1164,15 @@ x&amp;\mapsto 3x+1\end{split}\]</div>
         <p class="prev-next-title">Kapitel 2 Grundlagen der Logik</p>
       </div>
     </a>
+    <a class="right-next"
+       href="gauss.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Kapitel 4 - Der Gauß-Algorithmus</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1170,19 +1190,20 @@ x&amp;\mapsto 3x+1\end{split}\]</div>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">3.1 Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relationen">3.2 Relationen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binare-relationen">Binäre Relationen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#allgemeine-relationen">3.2.1 Allgemeine Relationen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binare-relationen">3.2.2 Binäre Relationen</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#darstellung-binarer-relationen">Darstellung binärer Relationen</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaften-binarer-relationen">Eigenschaften binärer Relationen</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#reflexiv">Reflexiv</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetrisch">Symmetrisch</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#antisymmetrisch">Antisymmetrisch</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#transitiv">Transitiv</a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#transitiv">Transitiv</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordnungen">Ordnungen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aquivalenzrelationen">Äquivalenzrelationen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aquivalenzrelationen-optional">Äquivalenzrelationen(optional)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen">3.3 Funktionen</a><ul class="nav section-nav flex-column">
