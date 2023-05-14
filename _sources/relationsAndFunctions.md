@@ -24,21 +24,23 @@ Nachdem wir uns intensiv mit dem Begriff der Relationen auseinandergesetzt haben
 ## 3.1 Lernziele
 In diesem Abschnitt lernen wir die folgenden Dinge:
 
-- Syntax/Schreibweise der Aussagenlogik
-- Logische Aussagen interpretieren und herleiten
-- Gesetze der Aussagenlogik
-- Prädikatenlogik und Quantoren formulieren
-- Die Gödelschen Unvollständigkeitssätze
+- Definition einer Relation
+- Wichtige Eigenschaften binärer Relationen
+- Darstellung von binären Relationen
+- Definition einer (totalen) Ordnung
+- Definition einer Funktion
+- Definition von von injektiv, surjektiv, bijektiv
 
 
 :::{admonition}  Lernziele
 :class: note
 
-- Syntaktisch korrekte Logische Formeln konstruieren
-- Interpretieren von Logischen Ausdrücken 
-- Folgerungen von Logischen Aussagen mittels Wahrheitstafeln
-- Ausdrücke mithilfe von Quantoren formulieren und negieren
-- Verständnis des Gödelschen Unvollständigkeitssatz erlangen
+- Studierende können eigene Relationen bilden und entscheiden, ob es sich bei gegebenen Mengen um Relationen handelt.
+- Studierende können binäre Relationen graphisch darstellen.
+- Studierende können sicher mit eigenschaften von binären Relationen umgehen und entscheiden, ob gegebene Relationen gewisse Eigenschaften besitzen.
+- Studierende können Ordnungen als binäre Relation auffassen und zu einer gegebenen Relationen entscheiden, ob es sich um eine Ordnung handelt.
+- Studierende verstehen die Definition und die Schreibweise für eine Funktion und können diese auch als Relation interpretieren.
+- Studierende können entscheiden, ob gegebene Funktionen injektiv, surjektiv oder bijektiv sind.
 :::
 
 
@@ -88,7 +90,7 @@ Dann sind folgende Mengen 3-stellige Relationen:
 
 Geben Sie $R_2$ und $R_3$ in aufzählender Form an!
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4jCqbes6654" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 
@@ -170,7 +172,7 @@ Hingegen belegt Student:in $S_4$ die Fächer "Programmieren 1" und "Programmiere
 Die Matrixdarstellung ist eine Tabellarische Darstellung bei der wir an jeder Spalten-Zeilen Kombination ein x schreiben falls, die Kombination in der Relation enthalten ist.
 
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_SjtkaUL-90" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 #### Eigenschaften binärer Relationen
 Es gibt viele definierende Eigenschaften von Relationen, die wir hier kurz zusammenfassen wollen.
@@ -273,8 +275,8 @@ Welche der Relationen $=,\not =, < ,\leq,>,\geq$ sind transitiv?
 Die Relationen $=, < ,\leq,>,\geq$ sind alle transitiv.
 Wir betrachten das Beispiel $<$. Falls die Zahl $x<y$ und $y<z$. Dann haben wir drei Zahlen $x,y,z$ in aufsteigender Reihenfolge. Es gilt demnach natürlich auch $x<z$, was genau die Transitivität bedeutet.
 ```
-
-### Ordnungen
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_SjtkaUL-90" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+### 3.2.3 Ordnungen
 
 Ordnungsrelationen sind eine Verallgemeinerung der Relationen $\geq,\leq$ die wir schon für Zahlen kennen.
 Zunächst einmal definieren wir formal eine Ordnungsrelation und betrachten, dann warum diese Definition sinnvoll ist.
@@ -332,7 +334,9 @@ Sei $A$ eine geordnete Menge bzgl. der Relation $R$. Dann nennen wir $R$ eine **
 aRb \quad \text{ oder } bRa.
 ```
 ````
-### Äquivalenzrelationen(optional)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ljoGsRbPZ1s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### 3.2.5 Äquivalenzrelationen(optional)
 Eine weitere wichtige binäre Relation ist die Äquivalenzrelation. Die Äquivalenzrelation regelt welche Objekte wir als identisch miteinander setzen wollen. So gibt es beispielsweise in der Zahlentheorie manchmal Situation, wo wir alle Zahlen die gerade sind als identisch setzen wollen und nur den Unterschied machen wollen zwischen gerade und ungerade. Oder wir wollen nur den Rest durch 3 oder durch 7 oder einer belibigen Zahl $n$ unterscheiden. Hierfür eignen sich die sogenannten Äquivalenzrelationen, wie wir gleich sehen werden.
 
 Aber erstmal wollen wir die Äquivalenzrelation formal einführen.
