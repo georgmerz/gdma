@@ -391,7 +391,7 @@ Eine weitere wichtige Eigenschaft von Äquivalenzrelation ist, dass sie eine Auf
 
 
 ````{prf:definition}
-Sei $R\subset A\times$ eine Äquivalenzrelation. Sei $x\in A$. Dann nennt man
+Sei $R\subset A\times A$ eine Äquivalenzrelation. Sei $x\in A$. Dann nennt man
 ```{math}
 [x]_R =\left\{ y\in A \ \vert \       \right\}
 ```
@@ -417,7 +417,7 @@ Wir nennen in diesem Fall die Äquivalenzklassen auch **Restklassen**.
 Tatsächlich sind obige Beobachtungen kein Spezialfall. Es gilt der folgende Satz.
 
 ````{prf:theorem}
-Sei $R\subset A\times$ eine Äquivalenzrelation. Dann gilt:
+Sei $R\subset A\times A$ eine Äquivalenzrelation. Dann gilt:
 
 1. $[y]_R=[x]_R $ für alle $y\in [x]_R$
 
@@ -437,7 +437,7 @@ D.h. die Äquivalenzklassen bilden eine Überdeckung.
 
 Funktionen bilden eine der wichtigsten Klassen von Relationen.
 
-Die charakteristische Eigenschaft von Funktionen ist, im Gegensatz zu allgemeinen Relationen, jedem Wert aus einer Definitionsmenge $X$ **genau ein Wert** aus der Zielmenge zugeordnet wird.
+Die charakteristische Eigenschaft von Funktionen ist, dass, im Gegensatz zu allgemeinen Relationen, jedem Wert aus einer Definitionsmenge $X$ **genau ein Wert** aus der Zielmenge zugeordnet wird.
 
 Als Beispiel dient die Zuuordnung von Studiengängen zu Studierenden:
 
@@ -446,10 +446,12 @@ Als Beispiel dient die Zuuordnung von Studiengängen zu Studierenden:
 ![](images/functions.png)
 
 
-Wichtig ist hierbei zu bemerken, dass ein:e Student:in genau einem Studiengang zugeordnet werden kann. Es könn zwar mehrere Studierende dem gleichen Studiengang zugeordnet werden, aber eben nicht eine:e  Student:in mehreren Studiengängen.
+Wichtig ist hierbei zu bemerken, dass ein:e Student:in **genau einem** Studiengang zugeordnet werden kann. Es können zwar mehrere Studierende dem gleichen Studiengang zugeordnet werden, aber eben nicht eine:e  Student:in mehreren Studiengängen.
+
+### 3.3.1 Definition einer Funktion
 
 ````{prf:definition}
-Es seien $X$ und $Y$ beliebige Mengen. Eine Funktion $f$ ordnet jedem Element $x\in X$ **genau ein** element $y\in Y$ zu.
+Es seien $X$ und $Y$ beliebige Mengen. Eine Funktion $f$ ordnet jedem Element $x\in X$ **genau ein** Element $y\in Y$ zu.
 
 Wir schreiben
 
@@ -476,23 +478,23 @@ kennen Sie vermutlich noch aus der Schule.
 f\colon \mathbb{R}\setminus\{0\} &\to \mathbb{R}\\
 x&\mapsto \frac{1}{x}
 ```
-ist ebenfalls definiert. Hierbei ist es jedoch essentiell, dass wir in der Definitionsmenge die $0$ entfernt haben ansererseits würde es sich nicht um eine Funktion handeln, da wir die $0$ nicht zuordnen können.
+ist ebenfalls definiert. Hierbei ist es jedoch essentiell, dass wir in der Definitionsmenge die $0$ entfernt haben. Andererseits würde es sich nicht um eine Funktion handeln, da wir die $0$ nicht zuordnen können.
 
 Folgende Beispiele sind **keine** Funktion:
 
-- Wenn wir das erste Beispiel leicht modifizieren erhalten wir keine gültige Funktion
+- Wenn wir das erste Beispiel leicht modifizieren erhalten wir **keine** gültige Funktion
 ```{math}
 f\colon \mathbb{R} &\to (0,\infty)\\
 x&\mapsto x^2.
 ```
 
-Die ist keine gültige funktion, da $0$ auf $0$ abgebildet werden würde aber $0\not \in (0,\infty)$, also nicht in der Zielmenge liegt.
+Die ist keine gültige Funktion, da $0$ auf $0$ abgebildet werden würde aber $0\not \in (0,\infty)$, also nicht in der Zielmenge liegt.
 
-- Das zweite Beispiel  ist auch keine Funktion wenn wir die $0$ nicht ausschließen:
+- Das zweite Beispiel  ist auch keine Funktion, wenn wir die $0$ nicht ausschließen:
 ```{math}
 f\colon \mathbb{R} &\to \mathbb{R}\\
 x&\mapsto \frac{1}{x}.
-```
+```s
 ````
 
 ````{prf:definition}
@@ -528,10 +530,9 @@ Dann gilt:
 f(X)=\mathbb{R}\setminus\{0\}
 ```
 ````
+### 3.3.2 Funktionen als Relationen
 
-#### Funktionen als Relationen
-
-Was haben nun Funktionen mit Relationen zu tun. Auf den ersten Blick scheinen es komplett verschiedene Definitionen zu sein.
+Was haben nun Funktionen mit Relationen zu tun? Auf den ersten Blick scheinen es komplett verschiedene Definitionen zu sein.
 
 Wir können aber wie folgt, eine Funktion als Relation verstehen.
 
@@ -566,25 +567,37 @@ Eine binäre relation $R\subset X\times Y$ heißt **rechtseindeutig** falls für
 Damit können wir nun sagen:
 
 *Eine Funktion ist eine rechtseindeutige binäre Relation.*
+````{prf:example}
+Gegeben sei folgende Relation $R=\{(1,2),(3,4),(1,8),(2,7)\}\subset \mathbb{N}\times \mathbb{N}$.
+
+Ist diese Funktion **rechtseindeutig**?
+
+Nein, denn wir haben die beiden Elemente $(1,2)$ und $(1,8)$. D.h. zwei Element, von denen die linke Seite identsich ist aber die Rechte Seite verschieden. Es ist also **keine Rechtseindeutige** Relation und stellt somit auch keine Funktion dar. 
 
 
-#### Darstellung von Funktionen
+
+````
+
+
+
+
+### 3.3.3 Darstellung von Funktionen
 
 Es gibt in der Sprache der Mathematik, mehrere Möglichkeiten eine Funktion zu definieren.
 
-Eine haben Sie schon gesehen, in dem wir eine Formel angeben wie Beispielsweise $x^2$ oder $\ƒrac{1}{x}$.
+Eine haben Sie schon gesehen, in dem wir eine Formel angeben wie Beispielsweise $x^2$ oder $1/x$.
 
 Wir wollen in diesem Abschnitt zwei weitere Möglichkeiten vorstellen.
 
 ##### Wertetabelle
 
 
-Wie wir gesehen, haben ist eine Funktion nichts anderes Wie eine rechtseindeutige Relation.
+Wie wir gesehen haben, ist eine Funktion nichts anderes als eine rechtseindeutige Relation.
 Wenn wir es mit endlichen Mengen $X$ und $Y$ zu tun haben, reicht es auch zusätzlich zu den Mengen $X$ und $Y$ die Relation $R$ in aufzählender Form anzugeben. Dies kann am anschaulichsten über eine Tabelle gemacht werden.
 
 Machen wir ein Beispiel. 
 
-Sei $X=\{0,1,2,3,4\}$ und $Y\{5,6,7,8\}$. Dann können wir die Relation einfach aufzählen. Z.B.
+Sei $X=\{0,1,2,3,4\}$ und $Y=\{5,6,7,8\}$. Dann können wir die Relation einfach aufzählen. Z.B.
 ```{math}
 \{(0,8),(1,7),(2,8),(3,5),(4,8)\}\subset X\times Y.
 ```
@@ -605,9 +618,9 @@ Eine Wertetabelle alleine ist noch keine Funktion. Es muss noch die Zielmenge $Y
 
 ##### Abschnittsweise definierte Funktionen
 
-Manche Funktionsvorschriften lassen sich nicht für alle Werte aus einer Definitionsmenge mit einem einzigen Ausdruck definieren. In diesem Fall können wir die Funktion auch Abschnittsweise definieren
+Manche Funktionsvorschriften lassen sich nicht für alle Werte aus einer Definitionsmenge mit einem einzigen Ausdruck definieren. In diesem Fall können wir die Funktion auch Abschnittsweise definieren.
 
-Als Beispiel wollen wir die Betragsfunktion für eine reellel Zahl heranziehen. Der Betrag einer Zahl $x\in\mathbb{R}$ ist dabei definiert als der "Abstand" zum Nullpunkt und wird mit $\vert x\vert$ beschrieben. Zum Beispiel ist $\vert 3 \vert =3$ und $\vert -4,5\vert =4,5$.
+Als Beispiel wollen wir die Betragsfunktion für eine reelle Zahl heranziehen. Der Betrag einer Zahl $x\in\mathbb{R}$ ist dabei definiert als der "Abstand" zum Nullpunkt und wird mit $\vert x\vert$ beschrieben. Zum Beispiel ist $\vert 3 \vert =3$ und $\vert -4,5\vert =4,5$.
 
 Es handelt sich also um eine Funktion:
 ```{math}
@@ -626,9 +639,9 @@ x & x\geq 0 \\
 \end{cases}
 ```
 
-#### Verknüpfung von Funktionen
+### 3.3.4 Verknüpfung von Funktionen
 
-Wir können Funktionen miteinander Verknpüfen. 
+Wir können Funktionen miteinander verknpüfen? 
 Nehmen wir an wir haben unsere obige Funktion die Studierenden Fachbereiche zuordnet. Nehmen wir nun an wir haben eine weitere Funktion, die den Fachbereichen eine Regelstudienzeit zuordnet.
 
 
@@ -641,7 +654,7 @@ Dann können wir beide Funktionen miteinander Verknüpfen und können damit Stud
 
 
 ````{prf:definition}
-Sei $f\colon A\toB$ und $g\colon C\to D$ zwei funktionen mit $f(A)\subset C$ Dann definieren wir die Verknüpfte Funktion $f\circ g$ wie folgt:
+Sei $f\colon A\to B$ und $g\colon C\to D$ zwei funktionen mit $f(A)\subset C$ Dann definieren wir die verknüpfte Funktion $g\circ f$ wie folgt:
 
 ```{math}
 (g\circ f) \colon X&\to Z\\
@@ -652,7 +665,7 @@ x&\mapsto g(f(x)).
 
 - Bei der Verknüpfung $g\circ f$ wird zuerst $f$ ausgeführt und dann erst $g$. Das mag am Anfang etwas unintuitiv wirken, da wir von rechts nach links lesen.
 
-- Damit wir $g\circ f$ definieren können muss $f(A)\subset C$, denn ansonsten ist $g(f(x))$ nicht definiert.
+- Damit wir $g\circ f$ definieren können, muss $f(A)\subset C$, denn ansonsten ist $g(f(x))$ nicht definiert.
 
 ````{prf:example}
 
@@ -668,7 +681,7 @@ Die Funktion $f\circ g$ kann nicht definiert werden, denn $g(\mathbb{R})\not \su
 ````
 
 
-#### Die Umkehrfunktion
+### 3.3.5 Die Umkehrfunktion
 
 Nehmen wir an wir haben eine Funktion $f\colon S\to M$
 
@@ -677,12 +690,12 @@ Nehmen wir an wir haben eine Funktion $f\colon S\to M$
 ![](images/matrikelnr.png)
 
 
-Nehmen wir nun an wir kennen eine Matrikelnr. und wir wollen wissen, zu welchem Studierenden diese gehört.
+Nehmen wir nun an, wir kennen eine Matrikelnr. und wir wollen wissen, zu welchem Studierenden diese gehört.
 Im Prinzip, sollte das möglich sein, denn die Beziehung ist eine 1:1 Beziehung.
 
 Wir suchen also die Umkehrfunktion
 ```{math}
-f^{-1}\colon M\to S
+f^{-1}\colon M\to S.
 ```
 Sei nun $Pauline$ eine Studentin mit Matrikelnr 123. Dann gilt $f(Pauline)=123$ und $f^{-1}(123)=Pauline$.
 
@@ -723,8 +736,7 @@ Das können wir noch etwas genauer aufsplitten. Nämlich in die **Injektivität*
 
 ##### Injektivität
 
-Injektive Funktionen sind eindeutige Funktionen. Es kann also nicht vorkommen, das zwei Elemente auf das selbe Element abgebildet werden. Das ist insbesondere bei unserer Funktion, die Studierenden eine Matrikelnr. zweist. Denn ansonsten könnte man die Studierenden nicht eindeutig durch angabe der Matrikelnr. unterscheiden.
-
+Injektive Funktionen sind eindeutige Funktionen. Es kann also **nicht** vorkommen, das zwei Elemente auf das selbe Element abgebildet werden. Das gilt insbesondere bei unserer Funktion, die Studierenden eine Matrikelnr. zuweist. Denn ansonsten könnte man die Studierenden nicht eindeutig durch angabe der Matrikelnr. unterscheiden.
 
 
 ````{prf:definition}
@@ -739,7 +751,7 @@ Wenn wir die Funktion $f$ mithilfe eines Pfeildiagramms beschreiben bedeutet inj
 ![](images/injektiv.png)
 
 
-Umgekehrt ist eine Funktion nicht injektiv falls es mind. ein Element gibt, auf das mind. zwei Pfeile zeigen.
+Umgekehrt ist eine Funktion nicht injektiv, falls es mind. ein Element gibt, auf das mind. zwei Pfeile zeigen.
 
 ![](images/not_injektiv.png)
 
@@ -760,9 +772,8 @@ Es gilt also
 3x_1+1=3x_2+1 \Leftrightarrow  3x_1=3x_2 \Leftrightarrow x_1=x_2.
 ```
 Damit folgt, dass $x_1=x_2$ und wir haben die Behauptung gezeigt.
-
-
 ````
+
 ##### Surjektivität
 
 Die zweite wichtige Voraussetzung für die Existenz einer Umkehrfunktion ist, die Surjektivität. Währen die Injektivität darauf abziehlt, dass Matrikelnr. eindeutig sind. Ziehlt die Surjektivität darauf ab, dass die Matrikelnr. überhaupt vergeben ist. Also dass es mind. einen Studierenden gibt, der dieser Matrikelnr. zugeordnet ist.
@@ -800,7 +811,7 @@ f(x)=3(\frac{1}{3}y-\frac{1}{3})+1=y
 ```
 
 Also haben wir für ein beliebiges Element $y$ ein $x$ gefunden mit $f(x)=y$ damit ist $f$ surjektiv.
-
+````
 
 ##### Bijektivität
 
@@ -810,10 +821,10 @@ Beide Eigenschaften, injektivität und surjektivität, werden benötigt um eine 
 Eine Funktion $f\colon X\to Y$ heißt **bijektiv** falls sie sowohl injektiv als auch surjektiv ist.
 ````
 
-Es gilt nun der folgende Zusammenhang zwischen Bijektiven Funktionen und der Umkehrfunktion.
+Es gilt nun der folgende Zusammenhang zwischen bijektiven Funktionen und der Umkehrfunktion.
 
 ````{prf:theorem}
-Sei $f\colon X\to Y$ eine bijektive Funktion. Dann gibt es die Umkehrfunktion von $f^{-1}\colon Y\to X$.
+Sei $f\colon X\to Y$ eine bijektive Funktion. Dann gibt es die Umkehrfunktion  $f^{-1}\colon Y\to X$.
 
 ````
 ````{prf:example}
@@ -822,8 +833,7 @@ Wir haben berreits gesehen, dass die Funktion
 f\colon \mathbb{R}&\to \mathbb{R}\\
 x&\mapsto 3x+1
 ```
-
-eine Umkehrfunktion besitzt als auch injektiv und surjektiv, also bijektiv ist.
+injektiv und surjektiv ist. Sie ist also bijektiv und damit besitzt sie eine Umkehrfunktion.
 
 ````
 

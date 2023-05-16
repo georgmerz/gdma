@@ -369,16 +369,18 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen">3.3 Funktionen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-als-relationen">Funktionen als Relationen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#darstellung-von-funktionen">Darstellung von Funktionen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-einer-funktion">3.3.1 Definition einer Funktion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-als-relationen">3.3.2 Funktionen als Relationen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#darstellung-von-funktionen">3.3.3 Darstellung von Funktionen</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wertetabelle">Wertetabelle</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#abschnittsweise-definierte-funktionen">Abschnittsweise definierte Funktionen</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verknupfung-von-funktionen">Verknüpfung von Funktionen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-umkehrfunktion">Die Umkehrfunktion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verknupfung-von-funktionen">3.3.4 Verknüpfung von Funktionen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-umkehrfunktion">3.3.5 Die Umkehrfunktion</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#injektivitat">Injektivität</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#surjektivitat">Surjektivität</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bijektivitat">Bijektivität</a></li>
 </ul>
 </li>
 </ul>
@@ -777,7 +779,7 @@ Es gilt jedoch <span class="math notranslate nohighlight">\(b-a=-(a-b)\)</span> 
 <div class="proof definition admonition" id="definition-17">
 <p class="admonition-title"><span class="caption-number">Definition 30 </span></p>
 <section class="definition-content" id="proof-content">
-<p>Sei <span class="math notranslate nohighlight">\(R\subset A\times\)</span> eine Äquivalenzrelation. Sei <span class="math notranslate nohighlight">\(x\in A\)</span>. Dann nennt man</p>
+<p>Sei <span class="math notranslate nohighlight">\(R\subset A\times A\)</span> eine Äquivalenzrelation. Sei <span class="math notranslate nohighlight">\(x\in A\)</span>. Dann nennt man</p>
 <div class="math notranslate nohighlight">
 \[[x]_R =\left\{ y\in A \ \vert \       \right\}\]</div>
 <p>eine <strong>Äquivalenzklasse</strong> von <span class="math notranslate nohighlight">\(A\)</span>. Das Element <span class="math notranslate nohighlight">\(x\)</span> heißt <strong>Repräsentant</strong> der Äquivalenzklasse und die Anzahl der Äquivalenzklassen heißt <strong>Index</strong>.</p>
@@ -798,7 +800,7 @@ Es gilt jedoch <span class="math notranslate nohighlight">\(b-a=-(a-b)\)</span> 
 <div class="proof theorem admonition" id="theorem-19">
 <p class="admonition-title"><span class="caption-number">Theorem 16 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>Sei <span class="math notranslate nohighlight">\(R\subset A\times\)</span> eine Äquivalenzrelation. Dann gilt:</p>
+<p>Sei <span class="math notranslate nohighlight">\(R\subset A\times A\)</span> eine Äquivalenzrelation. Dann gilt:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\([y]_R=[x]_R \)</span> für alle <span class="math notranslate nohighlight">\(y\in [x]_R\)</span></p></li>
 <li><p>Für <span class="math notranslate nohighlight">\(x,y\in A\)</span> mit <span class="math notranslate nohighlight">\((x,y)\not\in R\)</span> gilt $[x]_R\cap [y]_R =\emptyset</p></li>
@@ -813,14 +815,16 @@ Es gilt jedoch <span class="math notranslate nohighlight">\(b-a=-(a-b)\)</span> 
 <section id="funktionen">
 <h2>3.3 Funktionen<a class="headerlink" href="#funktionen" title="Permalink to this heading">#</a></h2>
 <p>Funktionen bilden eine der wichtigsten Klassen von Relationen.</p>
-<p>Die charakteristische Eigenschaft von Funktionen ist, im Gegensatz zu allgemeinen Relationen, jedem Wert aus einer Definitionsmenge <span class="math notranslate nohighlight">\(X\)</span> <strong>genau ein Wert</strong> aus der Zielmenge zugeordnet wird.</p>
+<p>Die charakteristische Eigenschaft von Funktionen ist, dass, im Gegensatz zu allgemeinen Relationen, jedem Wert aus einer Definitionsmenge <span class="math notranslate nohighlight">\(X\)</span> <strong>genau ein Wert</strong> aus der Zielmenge zugeordnet wird.</p>
 <p>Als Beispiel dient die Zuuordnung von Studiengängen zu Studierenden:</p>
 <p><img alt="" src="_images/functions.png" /></p>
-<p>Wichtig ist hierbei zu bemerken, dass ein:e Student:in genau einem Studiengang zugeordnet werden kann. Es könn zwar mehrere Studierende dem gleichen Studiengang zugeordnet werden, aber eben nicht eine:e  Student:in mehreren Studiengängen.</p>
+<p>Wichtig ist hierbei zu bemerken, dass ein:e Student:in <strong>genau einem</strong> Studiengang zugeordnet werden kann. Es können zwar mehrere Studierende dem gleichen Studiengang zugeordnet werden, aber eben nicht eine:e  Student:in mehreren Studiengängen.</p>
+<section id="definition-einer-funktion">
+<h3>3.3.1 Definition einer Funktion<a class="headerlink" href="#definition-einer-funktion" title="Permalink to this heading">#</a></h3>
 <div class="proof definition admonition" id="definition-20">
 <p class="admonition-title"><span class="caption-number">Definition 31 </span></p>
 <section class="definition-content" id="proof-content">
-<p>Es seien <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(Y\)</span> beliebige Mengen. Eine Funktion <span class="math notranslate nohighlight">\(f\)</span> ordnet jedem Element <span class="math notranslate nohighlight">\(x\in X\)</span> <strong>genau ein</strong> element <span class="math notranslate nohighlight">\(y\in Y\)</span> zu.</p>
+<p>Es seien <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(Y\)</span> beliebige Mengen. Eine Funktion <span class="math notranslate nohighlight">\(f\)</span> ordnet jedem Element <span class="math notranslate nohighlight">\(x\in X\)</span> <strong>genau ein</strong> Element <span class="math notranslate nohighlight">\(y\in Y\)</span> zu.</p>
 <p>Wir schreiben</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}f\colon X&amp;\to Y\\
@@ -844,21 +848,22 @@ x&amp;\mapsto x^2\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}f\colon \mathbb{R}\setminus\{0\} &amp;\to \mathbb{R}\\
 x&amp;\mapsto \frac{1}{x}\end{split}\]</div>
-<p>ist ebenfalls definiert. Hierbei ist es jedoch essentiell, dass wir in der Definitionsmenge die <span class="math notranslate nohighlight">\(0\)</span> entfernt haben ansererseits würde es sich nicht um eine Funktion handeln, da wir die <span class="math notranslate nohighlight">\(0\)</span> nicht zuordnen können.</p>
+<p>ist ebenfalls definiert. Hierbei ist es jedoch essentiell, dass wir in der Definitionsmenge die <span class="math notranslate nohighlight">\(0\)</span> entfernt haben. Andererseits würde es sich nicht um eine Funktion handeln, da wir die <span class="math notranslate nohighlight">\(0\)</span> nicht zuordnen können.</p>
 <p>Folgende Beispiele sind <strong>keine</strong> Funktion:</p>
 <ul class="simple">
-<li><p>Wenn wir das erste Beispiel leicht modifizieren erhalten wir keine gültige Funktion</p></li>
+<li><p>Wenn wir das erste Beispiel leicht modifizieren erhalten wir <strong>keine</strong> gültige Funktion</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}f\colon \mathbb{R} &amp;\to (0,\infty)\\
 x&amp;\mapsto x^2.\end{split}\]</div>
-<p>Die ist keine gültige funktion, da <span class="math notranslate nohighlight">\(0\)</span> auf <span class="math notranslate nohighlight">\(0\)</span> abgebildet werden würde aber <span class="math notranslate nohighlight">\(0\not \in (0,\infty)\)</span>, also nicht in der Zielmenge liegt.</p>
+<p>Die ist keine gültige Funktion, da <span class="math notranslate nohighlight">\(0\)</span> auf <span class="math notranslate nohighlight">\(0\)</span> abgebildet werden würde aber <span class="math notranslate nohighlight">\(0\not \in (0,\infty)\)</span>, also nicht in der Zielmenge liegt.</p>
 <ul class="simple">
-<li><p>Das zweite Beispiel  ist auch keine Funktion wenn wir die <span class="math notranslate nohighlight">\(0\)</span> nicht ausschließen:</p></li>
+<li><p>Das zweite Beispiel  ist auch keine Funktion, wenn wir die <span class="math notranslate nohighlight">\(0\)</span> nicht ausschließen:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}f\colon \mathbb{R} &amp;\to \mathbb{R}\\
-x&amp;\mapsto \frac{1}{x}.\end{split}\]</div>
+x&amp;\mapsto \frac{1}{x}.
+```s\end{split}\]</div>
 </section>
 </div><div class="proof definition admonition" id="definition-22">
 <p class="admonition-title"><span class="caption-number">Definition 32 </span></p>
@@ -890,9 +895,10 @@ x&amp;\mapsto \frac{1}{x}.\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[f(X)=\mathbb{R}\setminus\{0\}\]</div>
 </section>
-</div><section id="funktionen-als-relationen">
-<h3>Funktionen als Relationen<a class="headerlink" href="#funktionen-als-relationen" title="Permalink to this heading">#</a></h3>
-<p>Was haben nun Funktionen mit Relationen zu tun. Auf den ersten Blick scheinen es komplett verschiedene Definitionen zu sein.</p>
+</div></section>
+<section id="funktionen-als-relationen">
+<h3>3.3.2 Funktionen als Relationen<a class="headerlink" href="#funktionen-als-relationen" title="Permalink to this heading">#</a></h3>
+<p>Was haben nun Funktionen mit Relationen zu tun? Auf den ersten Blick scheinen es komplett verschiedene Definitionen zu sein.</p>
 <p>Wir können aber wie folgt, eine Funktion als Relation verstehen.</p>
 <p>Sei dazu <span class="math notranslate nohighlight">\(f\)</span> eine Funktion</p>
 <div class="math notranslate nohighlight">
@@ -916,18 +922,25 @@ Gilt auch das umgekehrt? Also ist jede Relation auch eine Funktion?</p>
 </section>
 </div><p>Damit können wir nun sagen:</p>
 <p><em>Eine Funktion ist eine rechtseindeutige binäre Relation.</em></p>
+<div class="proof example admonition" id="example-25">
+<p class="admonition-title"><span class="caption-number">Example 32 </span></p>
+<section class="example-content" id="proof-content">
+<p>Gegeben sei folgende Relation <span class="math notranslate nohighlight">\(R=\{(1,2),(3,4),(1,8),(2,7)\}\subset \mathbb{N}\times \mathbb{N}\)</span>.</p>
+<p>Ist diese Funktion <strong>rechtseindeutig</strong>?</p>
+<p>Nein, denn wir haben die beiden Elemente <span class="math notranslate nohighlight">\((1,2)\)</span> und <span class="math notranslate nohighlight">\((1,8)\)</span>. D.h. zwei Element, von denen die linke Seite identsich ist aber die Rechte Seite verschieden. Es ist also <strong>keine Rechtseindeutige</strong> Relation und stellt somit auch keine Funktion dar.</p>
 </section>
+</div></section>
 <section id="darstellung-von-funktionen">
-<h3>Darstellung von Funktionen<a class="headerlink" href="#darstellung-von-funktionen" title="Permalink to this heading">#</a></h3>
+<h3>3.3.3 Darstellung von Funktionen<a class="headerlink" href="#darstellung-von-funktionen" title="Permalink to this heading">#</a></h3>
 <p>Es gibt in der Sprache der Mathematik, mehrere Möglichkeiten eine Funktion zu definieren.</p>
-<p>Eine haben Sie schon gesehen, in dem wir eine Formel angeben wie Beispielsweise <span class="math notranslate nohighlight">\(x^2\)</span> oder <span class="math notranslate nohighlight">\(\ƒrac{1}{x}\)</span>.</p>
+<p>Eine haben Sie schon gesehen, in dem wir eine Formel angeben wie Beispielsweise <span class="math notranslate nohighlight">\(x^2\)</span> oder <span class="math notranslate nohighlight">\(1/x\)</span>.</p>
 <p>Wir wollen in diesem Abschnitt zwei weitere Möglichkeiten vorstellen.</p>
 <section id="wertetabelle">
 <h4>Wertetabelle<a class="headerlink" href="#wertetabelle" title="Permalink to this heading">#</a></h4>
-<p>Wie wir gesehen, haben ist eine Funktion nichts anderes Wie eine rechtseindeutige Relation.
+<p>Wie wir gesehen haben, ist eine Funktion nichts anderes als eine rechtseindeutige Relation.
 Wenn wir es mit endlichen Mengen <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(Y\)</span> zu tun haben, reicht es auch zusätzlich zu den Mengen <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(Y\)</span> die Relation <span class="math notranslate nohighlight">\(R\)</span> in aufzählender Form anzugeben. Dies kann am anschaulichsten über eine Tabelle gemacht werden.</p>
 <p>Machen wir ein Beispiel.</p>
-<p>Sei <span class="math notranslate nohighlight">\(X=\{0,1,2,3,4\}\)</span> und <span class="math notranslate nohighlight">\(Y\{5,6,7,8\}\)</span>. Dann können wir die Relation einfach aufzählen. Z.B.</p>
+<p>Sei <span class="math notranslate nohighlight">\(X=\{0,1,2,3,4\}\)</span> und <span class="math notranslate nohighlight">\(Y=\{5,6,7,8\}\)</span>. Dann können wir die Relation einfach aufzählen. Z.B.</p>
 <div class="math notranslate nohighlight">
 \[\{(0,8),(1,7),(2,8),(3,5),(4,8)\}\subset X\times Y.\]</div>
 <p>Dies könenn wir wie erwähnt auch in einer Tabellenform angeben.</p>
@@ -964,8 +977,8 @@ Eine Wertetabelle alleine ist noch keine Funktion. Es muss noch die Zielmenge <s
 </section>
 <section id="abschnittsweise-definierte-funktionen">
 <h4>Abschnittsweise definierte Funktionen<a class="headerlink" href="#abschnittsweise-definierte-funktionen" title="Permalink to this heading">#</a></h4>
-<p>Manche Funktionsvorschriften lassen sich nicht für alle Werte aus einer Definitionsmenge mit einem einzigen Ausdruck definieren. In diesem Fall können wir die Funktion auch Abschnittsweise definieren</p>
-<p>Als Beispiel wollen wir die Betragsfunktion für eine reellel Zahl heranziehen. Der Betrag einer Zahl <span class="math notranslate nohighlight">\(x\in\mathbb{R}\)</span> ist dabei definiert als der “Abstand” zum Nullpunkt und wird mit <span class="math notranslate nohighlight">\(\vert x\vert\)</span> beschrieben. Zum Beispiel ist <span class="math notranslate nohighlight">\(\vert 3 \vert =3\)</span> und <span class="math notranslate nohighlight">\(\vert -4,5\vert =4,5\)</span>.</p>
+<p>Manche Funktionsvorschriften lassen sich nicht für alle Werte aus einer Definitionsmenge mit einem einzigen Ausdruck definieren. In diesem Fall können wir die Funktion auch Abschnittsweise definieren.</p>
+<p>Als Beispiel wollen wir die Betragsfunktion für eine reelle Zahl heranziehen. Der Betrag einer Zahl <span class="math notranslate nohighlight">\(x\in\mathbb{R}\)</span> ist dabei definiert als der “Abstand” zum Nullpunkt und wird mit <span class="math notranslate nohighlight">\(\vert x\vert\)</span> beschrieben. Zum Beispiel ist <span class="math notranslate nohighlight">\(\vert 3 \vert =3\)</span> und <span class="math notranslate nohighlight">\(\vert -4,5\vert =4,5\)</span>.</p>
 <p>Es handelt sich also um eine Funktion:</p>
 <div class="math notranslate nohighlight">
 \[\vert \cdot \vert \colon \mathbb{R}\to \mathbb{R}.\]</div>
@@ -981,16 +994,16 @@ x &amp; x\geq 0 \\
 </section>
 </section>
 <section id="verknupfung-von-funktionen">
-<h3>Verknüpfung von Funktionen<a class="headerlink" href="#verknupfung-von-funktionen" title="Permalink to this heading">#</a></h3>
-<p>Wir können Funktionen miteinander Verknpüfen.
+<h3>3.3.4 Verknüpfung von Funktionen<a class="headerlink" href="#verknupfung-von-funktionen" title="Permalink to this heading">#</a></h3>
+<p>Wir können Funktionen miteinander verknpüfen?
 Nehmen wir an wir haben unsere obige Funktion die Studierenden Fachbereiche zuordnet. Nehmen wir nun an wir haben eine weitere Funktion, die den Fachbereichen eine Regelstudienzeit zuordnet.</p>
 <p><img alt="" src="_images/funktion2.png" /></p>
 <p>Dann können wir beide Funktionen miteinander Verknüpfen und können damit Studierende eine Regelstudienzeit zuordnen.</p>
 <p><img alt="" src="_images/composition.png" /></p>
-<div class="proof definition admonition" id="definition-25">
+<div class="proof definition admonition" id="definition-26">
 <p class="admonition-title"><span class="caption-number">Definition 34 </span></p>
 <section class="definition-content" id="proof-content">
-<p>Sei <span class="math notranslate nohighlight">\(f\colon A\toB\)</span> und <span class="math notranslate nohighlight">\(g\colon C\to D\)</span> zwei funktionen mit <span class="math notranslate nohighlight">\(f(A)\subset C\)</span> Dann definieren wir die Verknüpfte Funktion <span class="math notranslate nohighlight">\(f\circ g\)</span> wie folgt:</p>
+<p>Sei <span class="math notranslate nohighlight">\(f\colon A\to B\)</span> und <span class="math notranslate nohighlight">\(g\colon C\to D\)</span> zwei funktionen mit <span class="math notranslate nohighlight">\(f(A)\subset C\)</span> Dann definieren wir die verknüpfte Funktion <span class="math notranslate nohighlight">\(g\circ f\)</span> wie folgt:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}(g\circ f) \colon X&amp;\to Z\\
 x&amp;\mapsto g(f(x)).\end{split}\]</div>
@@ -998,10 +1011,10 @@ x&amp;\mapsto g(f(x)).\end{split}\]</div>
 </div><p><strong>Wichtig</strong></p>
 <ul class="simple">
 <li><p>Bei der Verknüpfung <span class="math notranslate nohighlight">\(g\circ f\)</span> wird zuerst <span class="math notranslate nohighlight">\(f\)</span> ausgeführt und dann erst <span class="math notranslate nohighlight">\(g\)</span>. Das mag am Anfang etwas unintuitiv wirken, da wir von rechts nach links lesen.</p></li>
-<li><p>Damit wir <span class="math notranslate nohighlight">\(g\circ f\)</span> definieren können muss <span class="math notranslate nohighlight">\(f(A)\subset C\)</span>, denn ansonsten ist <span class="math notranslate nohighlight">\(g(f(x))\)</span> nicht definiert.</p></li>
+<li><p>Damit wir <span class="math notranslate nohighlight">\(g\circ f\)</span> definieren können, muss <span class="math notranslate nohighlight">\(f(A)\subset C\)</span>, denn ansonsten ist <span class="math notranslate nohighlight">\(g(f(x))\)</span> nicht definiert.</p></li>
 </ul>
-<div class="proof example admonition" id="example-26">
-<p class="admonition-title"><span class="caption-number">Example 32 </span></p>
+<div class="proof example admonition" id="example-27">
+<p class="admonition-title"><span class="caption-number">Example 33 </span></p>
 <section class="example-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(f\colon \mathbb{R}\setminus \{0\} \to \mathbb{R}, \quad x \mapsto \frac{1}{x}\)</span> und
 <span class="math notranslate nohighlight">\(g\colon \mathbb{R} \to \mathbb{R}, \quad x \mapsto x^2\)</span>.
@@ -1014,22 +1027,22 @@ x&amp;\mapsto \frac{1}{x^2}.\end{split}\]</div>
 </section>
 </div></section>
 <section id="die-umkehrfunktion">
-<h3>Die Umkehrfunktion<a class="headerlink" href="#die-umkehrfunktion" title="Permalink to this heading">#</a></h3>
+<h3>3.3.5 Die Umkehrfunktion<a class="headerlink" href="#die-umkehrfunktion" title="Permalink to this heading">#</a></h3>
 <p>Nehmen wir an wir haben eine Funktion <span class="math notranslate nohighlight">\(f\colon S\to M\)</span></p>
 <p>die jedem Studendierenden eine Matrikelnr. zuordnet, wobei <span class="math notranslate nohighlight">\(S\)</span> die Menge der Studierenden und <span class="math notranslate nohighlight">\(M\)</span> die Menge aller vergebenen Matrikelnr. bezeichnet.</p>
 <p><img alt="" src="_images/matrikelnr.png" /></p>
-<p>Nehmen wir nun an wir kennen eine Matrikelnr. und wir wollen wissen, zu welchem Studierenden diese gehört.
+<p>Nehmen wir nun an, wir kennen eine Matrikelnr. und wir wollen wissen, zu welchem Studierenden diese gehört.
 Im Prinzip, sollte das möglich sein, denn die Beziehung ist eine 1:1 Beziehung.</p>
 <p>Wir suchen also die Umkehrfunktion</p>
 <div class="math notranslate nohighlight">
-\[f^{-1}\colon M\to S\]</div>
+\[f^{-1}\colon M\to S.\]</div>
 <p>Sei nun <span class="math notranslate nohighlight">\(Pauline\)</span> eine Studentin mit Matrikelnr 123. Dann gilt <span class="math notranslate nohighlight">\(f(Pauline)=123\)</span> und <span class="math notranslate nohighlight">\(f^{-1}(123)=Pauline\)</span>.</p>
 <p>Es gilt also:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}(f^{-1}\circ f)(Pauline)=Pauline \text{ und }\\
 (f\circ f^{-1})(123)=123.\end{split}\]</div>
 <p>Wir nennen, dann <span class="math notranslate nohighlight">\(f^{-1}\)</span> die Umkehrfunktion von <span class="math notranslate nohighlight">\(f\)</span>.</p>
-<div class="proof definition admonition" id="definition-27">
+<div class="proof definition admonition" id="definition-28">
 <p class="admonition-title"><span class="caption-number">Definition 35 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(f\colon X\to Y\)</span> eine Funktion. Dann nennen wir <span class="math notranslate nohighlight">\(f^{-1}\colon Y\to X\)</span> die Umkehrfunktion von <span class="math notranslate nohighlight">\(f\)</span> falls gilt:</p>
@@ -1037,8 +1050,8 @@ Im Prinzip, sollte das möglich sein, denn die Beziehung ist eine 1:1 Beziehung.
 \[\begin{split}f^{-1}(f(x))&amp;=x \text{ für alle } x\in X \text{ und}\\
 f(f^{-1}(y)&amp;=y \text{ für alle }y\in Y.\end{split}\]</div>
 </section>
-</div><div class="proof example admonition" id="example-28">
-<p class="admonition-title"><span class="caption-number">Example 33 </span></p>
+</div><div class="proof example admonition" id="example-29">
+<p class="admonition-title"><span class="caption-number">Example 34 </span></p>
 <section class="example-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(f\colon \mathbb{R}\to \mathbb{R} \quad x\mapsto 2x+1\)</span>.</p>
 <p>Dann ist <span class="math notranslate nohighlight">\(f^{-1}\colon \mathbb{R}\to \mathbb{R} \quad x\mapsto 0,5x-0,5\)</span>.</p>
@@ -1051,18 +1064,18 @@ f(f^{-1}(x)&amp;=f(0.5x-1)=2(0,5x-0,5)+1=x.\end{split}\]</div>
 <p>Das können wir noch etwas genauer aufsplitten. Nämlich in die <strong>Injektivität</strong> und <strong>Surjektivität</strong> einer Funktion.</p>
 <section id="injektivitat">
 <h4>Injektivität<a class="headerlink" href="#injektivitat" title="Permalink to this heading">#</a></h4>
-<p>Injektive Funktionen sind eindeutige Funktionen. Es kann also nicht vorkommen, das zwei Elemente auf das selbe Element abgebildet werden. Das ist insbesondere bei unserer Funktion, die Studierenden eine Matrikelnr. zweist. Denn ansonsten könnte man die Studierenden nicht eindeutig durch angabe der Matrikelnr. unterscheiden.</p>
-<div class="proof definition admonition" id="definition-29">
+<p>Injektive Funktionen sind eindeutige Funktionen. Es kann also <strong>nicht</strong> vorkommen, das zwei Elemente auf das selbe Element abgebildet werden. Das gilt insbesondere bei unserer Funktion, die Studierenden eine Matrikelnr. zuweist. Denn ansonsten könnte man die Studierenden nicht eindeutig durch angabe der Matrikelnr. unterscheiden.</p>
+<div class="proof definition admonition" id="definition-30">
 <p class="admonition-title"><span class="caption-number">Definition 36 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Se <span class="math notranslate nohighlight">\(f\colon X\to Y\)</span> eine Funktion. Wir nennen <span class="math notranslate nohighlight">\(f\)</span> <strong>injektiv</strong> falls für alle <span class="math notranslate nohighlight">\(x_1,x_2\in X\)</span> mit <span class="math notranslate nohighlight">\(f(x_1)=f(x_2)\)</span> gilt <span class="math notranslate nohighlight">\(x_1=x_2\)</span>.</p>
 </section>
 </div><p>Wenn wir die Funktion <span class="math notranslate nohighlight">\(f\)</span> mithilfe eines Pfeildiagramms beschreiben bedeutet injektiv, dass auf jedes Element der Zielmenge <span class="math notranslate nohighlight">\(Y\)</span> maximal ein Pfeil zeigt.</p>
 <p><img alt="" src="_images/injektiv.png" /></p>
-<p>Umgekehrt ist eine Funktion nicht injektiv falls es mind. ein Element gibt, auf das mind. zwei Pfeile zeigen.</p>
+<p>Umgekehrt ist eine Funktion nicht injektiv, falls es mind. ein Element gibt, auf das mind. zwei Pfeile zeigen.</p>
 <p><img alt="" src="_images/not_injektiv.png" /></p>
-<div class="proof example admonition" id="example-30">
-<p class="admonition-title"><span class="caption-number">Example 34 </span></p>
+<div class="proof example admonition" id="example-31">
+<p class="admonition-title"><span class="caption-number">Example 35 </span></p>
 <section class="example-content" id="proof-content">
 <p>Wir wollen zeigen, dass die Funktion</p>
 <div class="math notranslate nohighlight">
@@ -1079,7 +1092,7 @@ x&amp;\mapsto 3x+1\end{split}\]</div>
 <section id="surjektivitat">
 <h4>Surjektivität<a class="headerlink" href="#surjektivitat" title="Permalink to this heading">#</a></h4>
 <p>Die zweite wichtige Voraussetzung für die Existenz einer Umkehrfunktion ist, die Surjektivität. Währen die Injektivität darauf abziehlt, dass Matrikelnr. eindeutig sind. Ziehlt die Surjektivität darauf ab, dass die Matrikelnr. überhaupt vergeben ist. Also dass es mind. einen Studierenden gibt, der dieser Matrikelnr. zugeordnet ist.</p>
-<div class="proof definition admonition" id="definition-31">
+<div class="proof definition admonition" id="definition-32">
 <p class="admonition-title"><span class="caption-number">Definition 37 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Se <span class="math notranslate nohighlight">\(f\colon X\to Y\)</span> eine Funktion. Wir nennen <span class="math notranslate nohighlight">\(f\)</span> <strong>surjektiv</strong> falls für alle <span class="math notranslate nohighlight">\(y\in Y\)</span> ein <span class="math notranslate nohighlight">\(x\in X\)</span> existiert mit <span class="math notranslate nohighlight">\(f(x)=y\)</span>.</p>
@@ -1088,8 +1101,8 @@ x&amp;\mapsto 3x+1\end{split}\]</div>
 <p><img alt="" src="_images/surjektiv.png" /></p>
 <p>Nicht surjektiv bedeutet dann, dass bei mind. ein <span class="math notranslate nohighlight">\(y\in Y\)</span> kein Pfeil endet.</p>
 <p><img alt="" src="_images/not_surjektiv.png" /></p>
-<div class="proof example admonition" id="example-32">
-<p class="admonition-title"><span class="caption-number">Example 35 </span></p>
+<div class="proof example admonition" id="example-33">
+<p class="admonition-title"><span class="caption-number">Example 36 </span></p>
 <section class="example-content" id="proof-content">
 <p>Wir wollen zeigen, dass die Funktion</p>
 <div class="math notranslate nohighlight">
@@ -1102,28 +1115,30 @@ x&amp;\mapsto 3x+1\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[f(x)=3(\frac{1}{3}y-\frac{1}{3})+1=y\]</div>
 <p>Also haben wir für ein beliebiges Element <span class="math notranslate nohighlight">\(y\)</span> ein <span class="math notranslate nohighlight">\(x\)</span> gefunden mit <span class="math notranslate nohighlight">\(f(x)=y\)</span> damit ist <span class="math notranslate nohighlight">\(f\)</span> surjektiv.</p>
-<p class="rubric">Bijektivität</p>
+</section>
+</div></section>
+<section id="bijektivitat">
+<h4>Bijektivität<a class="headerlink" href="#bijektivitat" title="Permalink to this heading">#</a></h4>
 <p>Beide Eigenschaften, injektivität und surjektivität, werden benötigt um eine Umkehrfunktion zu definieren. Daher geben wir Funktionen mit diesen beiden Eigenschaften einen besonderen Namen.</p>
-<div class="proof definition admonition" id="definition-33">
+<div class="proof definition admonition" id="definition-34">
 <p class="admonition-title"><span class="caption-number">Definition 38 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Eine Funktion <span class="math notranslate nohighlight">\(f\colon X\to Y\)</span> heißt <strong>bijektiv</strong> falls sie sowohl injektiv als auch surjektiv ist.</p>
 </section>
-</div></section>
-</div><p>Es gilt nun der folgende Zusammenhang zwischen Bijektiven Funktionen und der Umkehrfunktion.</p>
-<div class="proof theorem admonition" id="theorem-34">
+</div><p>Es gilt nun der folgende Zusammenhang zwischen bijektiven Funktionen und der Umkehrfunktion.</p>
+<div class="proof theorem admonition" id="theorem-35">
 <p class="admonition-title"><span class="caption-number">Theorem 17 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>Sei <span class="math notranslate nohighlight">\(f\colon X\to Y\)</span> eine bijektive Funktion. Dann gibt es die Umkehrfunktion von <span class="math notranslate nohighlight">\(f^{-1}\colon Y\to X\)</span>.</p>
+<p>Sei <span class="math notranslate nohighlight">\(f\colon X\to Y\)</span> eine bijektive Funktion. Dann gibt es die Umkehrfunktion  <span class="math notranslate nohighlight">\(f^{-1}\colon Y\to X\)</span>.</p>
 </section>
-</div><div class="proof example admonition" id="example-35">
-<p class="admonition-title"><span class="caption-number">Example 36 </span></p>
+</div><div class="proof example admonition" id="example-36">
+<p class="admonition-title"><span class="caption-number">Example 37 </span></p>
 <section class="example-content" id="proof-content">
 <p>Wir haben berreits gesehen, dass die Funktion</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}f\colon \mathbb{R}&amp;\to \mathbb{R}\\
 x&amp;\mapsto 3x+1\end{split}\]</div>
-<p>eine Umkehrfunktion besitzt als auch injektiv und surjektiv, also bijektiv ist.</p>
+<p>injektiv und surjektiv ist. Sie ist also bijektiv und damit besitzt sie eine Umkehrfunktion.</p>
 </section>
 </div></section>
 </section>
@@ -1209,16 +1224,18 @@ x&amp;\mapsto 3x+1\end{split}\]</div>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen">3.3 Funktionen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-als-relationen">Funktionen als Relationen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#darstellung-von-funktionen">Darstellung von Funktionen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-einer-funktion">3.3.1 Definition einer Funktion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-als-relationen">3.3.2 Funktionen als Relationen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#darstellung-von-funktionen">3.3.3 Darstellung von Funktionen</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wertetabelle">Wertetabelle</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#abschnittsweise-definierte-funktionen">Abschnittsweise definierte Funktionen</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verknupfung-von-funktionen">Verknüpfung von Funktionen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-umkehrfunktion">Die Umkehrfunktion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verknupfung-von-funktionen">3.3.4 Verknüpfung von Funktionen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-umkehrfunktion">3.3.5 Die Umkehrfunktion</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#injektivitat">Injektivität</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#surjektivitat">Surjektivität</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bijektivitat">Bijektivität</a></li>
 </ul>
 </li>
 </ul>
