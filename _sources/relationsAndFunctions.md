@@ -530,6 +530,10 @@ Dann gilt:
 f(X)=\mathbb{R}\setminus\{0\}
 ```
 ````
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sJJMisxb1nU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ### 3.3.2 Funktionen als Relationen
 
 Was haben nun Funktionen mit Relationen zu tun? Auf den ersten Blick scheinen es komplett verschiedene Definitionen zu sein.
@@ -579,7 +583,7 @@ Nein, denn wir haben die beiden Elemente $(1,2)$ und $(1,8)$. D.h. zwei Element,
 ````
 
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eLN7tpjuuz4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### 3.3.3 Darstellung von Funktionen
 
@@ -639,6 +643,11 @@ x & x\geq 0 \\
 \end{cases}
 ```
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3zuYDwO5jck" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+
+
 ### 3.3.4 Verknüpfung von Funktionen
 
 Wir können Funktionen miteinander verknpüfen? 
@@ -679,7 +688,7 @@ x&\mapsto \frac{1}{x^2}.
 Die Funktion $f\circ g$ kann nicht definiert werden, denn $g(\mathbb{R})\not \subset\mathbb{R}\setminus \{0\}$.
 (Übung: Warum?)
 ````
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_IkjdJ-tYAc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### 3.3.5 Die Umkehrfunktion
 
@@ -838,7 +847,7 @@ injektiv und surjektiv ist. Sie ist also bijektiv und damit besitzt sie eine Umk
 ````
 
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FXAj3uCjKgY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 
