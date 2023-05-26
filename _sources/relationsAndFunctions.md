@@ -224,7 +224,7 @@ Welche der Relationen $=,\not =, < ,\leq,>,\geq$ sind symmetrisch?
 
 ```{toggle}
 
-Nur $=$.
+Die Relationen $=$ und $\not =$.
 ```
 ##### Antisymmetrisch
 ````{prf:definition}
