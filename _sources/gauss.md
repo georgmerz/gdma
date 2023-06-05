@@ -85,7 +85,7 @@ Wie können wir ein solches System lösen. Genau damit wollen wir uns in diesem 
 
 Mit der Lösung von **Linearen Gleichungssystemen** mittels dem **Gauß-Algorithmus**.
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KLDuFeOxvaA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## 4.3 Lineare Gleichungssysteme
 
@@ -165,7 +165,7 @@ L=\{\left(\begin{array}{c}-2 \\ 3/2 \end{array}\right)\}.
 
 Das war einfach aber was machen wir mit 3 Gleichungen mit 3 Unbekannten. Oder noch schlimmer was machen wir mit $n$ Gleichungen und $n$ Unbekannten? Dafür brauchen wir den Gauß-Algorithmus. Aber vorher schauen wir uns noch die Geometrische Interpretation von Linearen Gleichungssystem an.
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w4IuXqYE6Ss" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ## 4.4 Geometrische Interpretation von Linearen Gleichungssystemen
 
 Lineare Gleichungssysteme haben neben der algebraischen Beschreibung auch eine intuitive geometrische Interpretation. 
@@ -228,6 +228,8 @@ Auch mit dieser Interpretation können wir nun wieder die Lösungsmenge charakte
 2) Zwei Vektoren sind in der Gleichungen Richtung und der Punkt liegt nicht auf der Geraden: **keine Lösung**
 3) Zwei Vektoren sind in der gleichen Richtung und der Punkt liegt auf der dadurch definierten Geraden: **unendlich viele Lösungen**.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ndDo3pwR33A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 ## 4.5 Der Gauß-Algorithmus
 
@@ -287,6 +289,8 @@ u+2v+w &=2\\
 4v+w&=2.
 ```
 Die Lösung mittels Gauß Algorithmus wird in dem folgendem Video beschrieben:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iSl6x-d7Mww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ````
 
 Und noch ein Beispiel:
@@ -297,6 +301,8 @@ Es sei folgendes Lineares Gleichungssystem gegeben:
 2v+3w&=11\\
 4u+2v+3w&=6.
 ```
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kO-0DCtJVV0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ````
 Die Beschreibung des Gauß-Algorithmus und weitere Beispiele finden Sie auch hier:
 <a href="https://de.serlo.org/mathe/1581/gau%C3%9Fverfahren" > Klick mich </a>.
@@ -318,6 +324,7 @@ u+v+w &=1\\
 4u+6v+8w&=6.
 ```
 Betrachten Sie nun das folgende Video:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Vt-eNyaUfrQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ````
 
 
@@ -333,6 +340,7 @@ u+v+w &=1\\
 ```
 
 Betrachten Sie nun das folgende Video:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aGpHpSZHLpM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ````
 
@@ -420,6 +428,8 @@ Beschreibe die Lösungsmenge des folgenden Linearen Gleichungssystems:
 x-z&=0 \\
 y+2z&=0
 ```
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TZCw4HsUZ6M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ````
 
 ````{prf:example}
@@ -430,6 +440,7 @@ u+v+w &=1\\
 2u+2v+5w&=2\\
 4u+4v+8w&=6.
 ```
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SPD1jGwgtI8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ````
 
 
