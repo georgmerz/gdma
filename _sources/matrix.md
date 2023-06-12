@@ -2,24 +2,19 @@
 
 
 
-## 4.1 Lernziele
-In diesem Abschnitt lernen wir die folgenden Dinge:
+## 5.1 Lernziele
 
-- 
-- 
-- 
-- 
+In diesem Abschnitt lernen wir die folgenden Dinge:
 
 :::{admonition}  Lernziele
 :class: note
 
-- 
-- 
-- 
-- 
-:::
+- Verständnis der Matrixnotation und des Aufbaus von Matrizen
+- Beherrschung grundlegender Operationen mit Matrizen wie Addition, Subtraktion, Skalare Multiplikation und Transposition.
+- Verständnis der Matrixmultiplikation, einschließlich der Bedingungen für die Durchführung und der Eigenschaften der Matrixmultiplikation.
+::::::
 
-## 4.2 Was ist eine Matrix - z.B. ein Graustufenbild.
+## 5.2 Was ist eine Matrix - z.B. ein Graustufenbild!.
 Eine Matrix ist nichts kompliziertes. Im Wesentlichen handelt es sich um eine tabelleraische Anordnung von Zahlen mit Spalten und Zeilen um die wir runde Klammern machen.
 Das kann so aussehen:
 ```{math}
@@ -41,6 +36,8 @@ So ergibt beispielsweise folgendes Bild:
 Folgende Matrix:
 
 ![](images/matrix_schnupper.png)
+
+
 
 
 **Skalare Multiplikation**
@@ -65,8 +62,10 @@ Wir nehmen nun weiter an, dass beide Bilder und damit auch die zugehörigen Matr
 Wir wollen nun beide Bilder übereinanderlegen. Dies können wir durch Addition der beiden entsprechenden Matrizen schaffen. D.h. in jeder Komponente addieren wir einfach die beiden Zahlen miteinander, so dass eine neue Matrix der gleichen Größe entsteht.
 ![](images/addition_matrix.png)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Iu0lOxCO_nE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## 4.3 Matrixnotation
+
+## 5.3 Matrixnotation
 In diesem Kapitel wollen wir uns mit der Matrixschreibweise bekannt machen und einige Formale Notationen einführen.
 
 ### Matrizen
@@ -102,12 +101,12 @@ Im obigen Beispiel was ist $b_{12}$?
 $b_{12}=3$
 ````
 
-Im nächsten Schritt müssen wir definieren welchen Wertebereich die einzelnen Zahlen in der Matrix haben sollen.
-In der Regel wollen wir dass die Zahlen in $\mathbb{R}$ sind.
+Im nächsten Schritt müssen wir definieren, welchen Wertebereich die einzelnen Zahlen in der Matrix haben sollen.
+In der Regel wollen wir, dass die Zahlen in $\mathbb{R}$ sind.
 
 Wir schreiben dann für die Menge aller Möglichen $m\times n$  Matrizen mit reellen Zahlen
 ```{math}
-\mathbb{R}^{m\times n}
+\mathbb{R}^{m\times n}.
 ```
 
 ### Vektoren
@@ -118,16 +117,17 @@ Wir schreiben statt $\mathbb{R}^{n\times 1}$ einfach nur $\mathbb{R}^n$.
 
 Eine $1\times n$ Matrix nennen wir **Zeilenvektor**.
 Zum Beispiel $v=\begin{pmatrix} 1 & 2 & 3 & 4 \end{pmatrix}$.
+
 Spalten- und Zeilenvektoren bezeichnen wir in der Regel mit einem kleinen lateinischen Buchstaben (z.B. $v,w,u$).
 
 
 ### Skalar
 
-Fall wir im Kontext der Matrizen und Vektorrechnung betonen wollen, dass es sich bei einem Objekt um ein einzige Zahl (z.B. in $\mathbb{R}$) handelt. Wir schreiben, dann häufig einen kleinen griechischen Buchstaben um das zu kennzeichnen (z.B. $\lambda \in \mathbb{R}$)
+Fall wir im Kontext der Matrizen und Vektorrechnung betonen wollen, dass es sich bei einem Objekt um ein einzige Zahl (z.B. in $\mathbb{R}$) handelt, so nennen wir das Objekt ein **Skalar**. Wir schreiben, dann häufig einen kleinen griechischen Buchstaben um das zu kennzeichnen (z.B. $\lambda \in \mathbb{R}$).
 
 ### Besondere Matrizen
 
-Wir wollen noch zwei Besondere Matrizen einführen, die es verdienen eine abkürzende Schreibweise zu bekommen.
+Wir wollen noch zwei besondere Matrizen einführen, die es verdienen eine abkürzende Schreibweise zu bekommen.
 
 Zunächst die sogenannte, **Nullmatrix**.
 $\mathbf{0}_{mn} \in \mathbb{R}^{m\times n} $. Dies bezeichnet eine $m\times n$ Matrix, welche nur aus Nullen besteht. Ist im Kontext klar, welche Dimension $m\times n$ gemeint ist, so schreiben wir abkürzend auch nur $\mathbf{0}$.
@@ -135,7 +135,7 @@ $\mathbf{0}_{mn} \in \mathbb{R}^{m\times n} $. Dies bezeichnet eine $m\times n$ 
 Zum Anderen die sogenannte **Einheitsmatrix**.
 
 ```{math}
-E_n\begin{pmatrix}
+E_n=\begin{pmatrix}
 1 & 0 & \ldots & 0 \\
 0 & 1 & \ldots & 0 \\
 \vdots & \vdots & \ddots & \vdots \\
@@ -144,9 +144,9 @@ E_n\begin{pmatrix}
 ```
 Dies ist eine spezielle Art von Matrix, bei der die Diagonalelemente 1 sind und alle anderen Elemente 0.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hTFhtAyJLpU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-
-## 4.3 Skalare Multiplikation und Matrixaddition
+## 5.4 Skalare Multiplikation und Matrixaddition
 
 Die skalare Multiplikation und die Matrixaddition sind fundamentale Rechenoperationen für Matrizen.
 Wir starten zunächst mit der Matrixaddition.
@@ -156,7 +156,7 @@ Wir starten zunächst mit der Matrixaddition.
 ````{prf:definition}
 Gegeben seien zwei Matrizen $A,B\in \mathbb{R}^{m\times n}$ mit derselben Dimension $m \times n$. Die Addition von $A$ und $B$, dargestellt als $A + B$, ergibt eine neue Matrix $C$ der gleichen Dimension $m \times n$, wobei jedes Element $c_{ij}$ in $C$ definiert ist als:
 ```{math}
-c_{ij} = a_{ij} + b_{ij} \quad \text{ für alle} 1 ≤ i ≤ m \text{ und } 1 ≤ j ≤ n.
+c_{ij} = a_{ij} + b_{ij} \quad \text{ für alle } 1 ≤ i ≤ m \text{ und } 1 ≤ j ≤ n.
 ```
 ````
 Machen wir dazu ein einfaches Beispiel.
@@ -191,7 +191,7 @@ Machen wir dazu ein einfaches Beispiel.
 
 Sei $ A\in \mathbb{R}^{m\times n}$ eine $m \times n$ Matrix ist und $\lambda\in \mathbb{R} $ ein Skalar. Dann ist die skalare Multiplikation $C=\lambda\cdot A$ eine $m \times n$ Matrix, bei der 
 ```{math}
-c_{ij}=\lambda\cdot a_{ij} \quad \text{ für alle} 1 ≤ i ≤ m \text{ und } 1 ≤ j ≤ n.
+c_{ij}=\lambda\cdot a_{ij} \quad \text{ für alle } 1 ≤ i ≤ m \text{ und } 1 ≤ j ≤ n.
 ```
 ````
 Machen wir dazu ein einfaches Beispiel.
@@ -233,8 +233,12 @@ Skalare Multiplikation:
 8. Einheitselement: $1\cdot A = A$
 9. Skalare Multiplikation mit Null: $0\cdot A = \mathbf{0}$
 
-## 4.4 Transposition von Matrizen
-Das Transponieren von Matrizen bedeutet die Spalten und Zeilen zu vertauschen. Das heißt aus einer $m\times n$ Matrix wird eine $n\times m$ Matrix die wir mit $A^T$ bezeichnen.
+
+
+
+
+## 5.5 Transposition von Matrizen
+Das Transponieren von Matrizen bedeutet die Spalten und Zeilen zu vertauschen. Das heißt aus einer $m\times n$ Matrix wird eine $n\times m$ Matrix, die wir mit $A^T$ bezeichnen.
 Genauer definieren wir:
 ````{prf:definition}
 Sei $A\in \mathbb{R}^{m\times n}$. Dann ist $C=A^T$ die $n\times m$ Matrix mit 
@@ -274,10 +278,13 @@ Was ist die doppelte Transposition einer Matrix: $(A^T)^T$?
 $(A^T)^T=A$
 ```
 
-## 4.5 Matrixmultiplikation
-Wir haben bisher die Addition und die skalare Multiplikation von Matrizen kennengelernt. Dabei waren die Definitionen sehr natürlich. Das was wir mit Zahlen normalerweise machen übertragen wir auf Matrizen, in dem wir es komponentenweise durchführen.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/omYzOnZHIsw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-Die Multiplikation von Zwei Matrizen funktioniert aber auf eine andere Art und weise.
+
+## 5.6 Matrixmultiplikation
+Wir haben bisher die Addition und die skalare Multiplikation von Matrizen kennengelernt. Dabei waren die Definitionen sehr natürlich. Das was wir mit Zahlen normalerweise machen, übertragen wir auf Matrizen, in dem wir es komponentenweise durchführen.
+
+Die Multiplikation von zwei Matrizen funktioniert aber auf eine andere Art und Weise.
 
 Wir bauen die Multiplikation schrittweise auf.
 
@@ -291,7 +298,7 @@ $w=\begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix}\in \mathbb{R}^{n\ti
 Dann definieren wir
 
 ```{math}
-v\cdot w=v=\begin{pmatrix} a_1 & a_2 & \dots & a_n \end{pmatrix}\cdot w=\begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix} =a_1\cdot b_1 + a_2\cdot b_2 + \dots + a_n\cdot b_n.
+v\cdot w=v=\begin{pmatrix} a_1 & a_2 & \dots & a_n \end{pmatrix}\cdot\begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix} =a_1\cdot b_1 + a_2\cdot b_2 + \dots + a_n\cdot b_n.
 ```
 
 ````{prf:example}
@@ -313,7 +320,7 @@ Die Situation "Matrix mal Vektor" hatten wir schon im Kapitel Lineare Gleichunge
 
 ![](images/matrix_vector.png)
 
-Wir sehen anhand der obigen Gleichung, dass die Situation Matrix mal Vektor sich so verhält dass ein neuer Vektor entsteht. Die einzelnen Komponenten sind nun die Skalarprodukte der Zeilen der Matrix mit dem Vektor, welcher multipliziert wird.
+Wir sehen anhand der obigen Gleichung, dass die Situation Matrix mal Vektor sich so verhält, dass ein neuer Vektor entsteht. Die einzelnen Komponenten sind nun die Skalarprodukte der Zeilen der Matrix mit dem Vektor, welcher multipliziert wird.
 
 Formal ausgedrückt heißt das:
 
@@ -348,7 +355,7 @@ A = \begin{pmatrix}
 Um die Multiplikation von $A$ und $v$ durchzuführen, multiplizieren wir jede Zeile von $A$ mit dem entsprechenden Element von $v$ und summieren die Produkte. Das Ergebnis ist ein neuer Vektor $w$:
 
 ```{math}
-w=A \cdot B = \begin{pmatrix}
+w=A \cdot v = \begin{pmatrix}
 1 & 2 & 3 \\
 4 & 5 & 6 \\
 \end{pmatrix} \begin{pmatrix}
@@ -386,7 +393,7 @@ Aber wie berechnet man das Produkt von zwei Matrizen:
 
 
 ````{prf:definition}
-Sei $A\in \mathbb{R}^{m\times n}$ und $B\in \mathbb{n\times k}$. Dann ist das Produkt $C=AB$ definiert durch
+Sei $A\in \mathbb{R}^{m\times n}$ und $B\in \mathbb{R}^{n\times k}$. Dann ist das Produkt $C=AB$ definiert durch
 
 ```{math}
 c_{ij}=a_{i*}\cdot b_{*j}=a_{i1}b_{1j}+a_{i2}b_{2j}+\dots + a_{in}b_{nj} 
@@ -423,7 +430,7 @@ Z.B.
 - <a href=https://studyflix.de/mathematik/matrizen-multiplizieren-1521> hier </a>
 
 
-## 4.6 Gesetze der Matrixmultiplikation
+## 5.7 Gesetze der Matrixmultiplikation
 
 Es seien $A,B,C$ Matrizen deren Produkt so definiert ist, dass untere Produkte existieren.
 Sei weiter $\lambda\in \mathbb{R}$.
@@ -446,3 +453,7 @@ AB = BA.
 ```
 
 D.h. es gibt **kein Kommutativgesetz** für Matrizen.
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/riL86_fLnvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

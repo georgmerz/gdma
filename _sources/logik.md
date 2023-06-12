@@ -4,21 +4,12 @@
 ## 2.1 Lernziele
 In diesem Abschnitt lernen wir die folgenden Dinge:
 
-- Syntax/Schreibweise der Aussagenlogik
-- Logische Aussagen interpretieren und herleiten
-- Gesetze der Aussagenlogik
-- Prädikatenlogik und Quantoren formulieren
-- Die Gödelschen Unvollständigkeitssätze
-
-
 :::{admonition}  Lernziele
 :class: note
 
-- Syntaktisch korrekte logische Formeln konstruieren
-- Interpretieren von logischen Ausdrücken 
-- Folgerungen von logischen Aussagen mittels Wahrheitstafeln und Gesetzen der Aussagenlogik
-- Ausdrücke mithilfe von Quantoren formulieren und negieren
-- Verständnis des Gödelschen Unvollständigkeitssatz erlangen
+- Verständnis der Matrixnotation und des Aufbaus von Matrizen
+- Beherrschung grundlegender Operationen mit Matrizen wie Addition, Subtraktion, Skalare Multiplikation und Transposition.
+- Verständnis der Matrixmultiplikation, einschließlich der Bedingungen für die Durchführung und der Eigenschaften der Matrixmultiplikation.
 :::
 
 
