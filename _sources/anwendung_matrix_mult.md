@@ -195,10 +195,10 @@ A=\left(\begin{array}{rr}
 ```
 Und es ergeben sich folgende Bilder:
 
-![](images/transform/ex3_basis.png)
+![](images/transform/ex4_basis.png)
 
 Und nun ein transformiertes Dreieck
-![](images/transform/ex3_triangle.png).
+![](images/transform/ex4_triangle.png).
 
 ````
 
@@ -227,7 +227,7 @@ Hier ist eine Tabelle mit den Wichtigsten Rotationsmatrizen:
 | $270^\circ$      | $\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}$                              | Rotation um $270^\circ$ |
 
 
-## 6.6 Hinterinanderschaultung von Linearen Transformationen
+## 6.6 Hintereinanderschaltung von Linearen Transformationen
 
 Angenommen wir wollen eine Kombination aus den obigen linearen Transformationen machen. Dann stellt sich die Frage, wie wir die zugehörige Matrix bekommen. Wollen wir zum Beispiel erst Rotieren und dann Skalieren.
 
@@ -241,7 +241,7 @@ Dann gilt:
 ```{math}
 T_A\circ T_B = T_{AB}
 ```
-Anders ausgedrückt: die Hinterinanderausführung von zwei linearen Transformationen entspricht auf der Ebene der Matrizen der Matrixmultiplikation.
+Anders ausgedrückt: die Hintereinanderausführung von zwei linearen Transformationen entspricht auf der Ebene der Matrizen der Matrixmultiplikation.
 ````
 
 Auch hierfür wollen wir ein Beispiel betrachten:
@@ -285,7 +285,7 @@ Es ist die Spiegelung um die Winkelhalbierende des ersten Quadranten, oder der G
 ````
 
 
-## Anwendung zur Bearbeitung von Bildern
+## 6.7 Anwendung zur Bearbeitung von Bildern
 
 Wir wollen unsere neuen Fertigkeiten nun nutzen um Bilder zu spiegeln, rotieren oder zu Skalieren.
 Betrachten Sie dafür folgendes Video.
