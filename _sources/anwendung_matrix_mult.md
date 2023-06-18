@@ -29,7 +29,7 @@ Sei $A\in \mathbb{R}^{m\times n}$, so ist die **lineare Transformation** von $A$
 ```{math}
 T_A\colon \mathbb{R}^n \to \mathbb{R}^m \quad v\mapsto A\cdot v.
 ```
-Wir nennen die Matrix zu der linearen Transformation $T_A$ die **Abbildungsmatrix**.
+Wir nennen die Matrix $A$ zu der linearen Transformation $T_A$ die **Abbildungsmatrix**.
 
 Falls $A\in \mathbb{R}^{2\times 2}$, so nennen wir die entsprechende lineare Transformation eine **lineare Transformation in der Ebene**.
 ````
@@ -282,9 +282,14 @@ Sehen Sie wie man die Transformation geometrisch zusammenfassen kann?
 ```{toggle}
 Es ist die Spiegelung um die Winkelhalbierende des ersten Quadranten, oder der Gerade $y=x$.
 ```
-
-
 ````
+
+
+## Anwendung zur Bearbeitung von Bildern
+
+Wir wollen unsere neuen Fertigkeiten nun nutzen um Bilder zu spiegeln, rotieren oder zu Skalieren.
+Betrachten Sie dafür folgendes Video.
+
 
 
 
