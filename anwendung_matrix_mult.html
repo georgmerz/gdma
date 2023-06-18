@@ -1,0 +1,762 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Kapitel 6 - Lineare Transformationen in der Ebene &#8212; Grundlagen der Mathematik</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'anwendung_matrix_mult';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Kapitel 5 - Matrizen" href="matrix.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Grundlagen der Mathematik</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Willkommen im Kurs “Grundlagen der Mathematik”
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="mengenlehre.html">Kapitel 1 - Mengenlehre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logik.html">Kapitel 2 Grundlagen der Logik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relationsAndFunctions.html">Kapitel 3 - Relationen und Funktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gauss.html">Kapitel 4 - Der Gauß-Algorithmus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix.html">Kapitel 5 - Matrizen</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Kapitel 6 - Lineare Transformationen in der Ebene</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/georgmerz/gdma" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/georgmerz/gdma/issues/new?title=Issue%20on%20page%20%2Fanwendung_matrix_mult.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/anwendung_matrix_mult.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Kapitel 6 - Lineare Transformationen in der Ebene</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">6.1 Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einfuhrung">6.2 Einführung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalierung-als-lineare-transformation">6.3 Skalierung als lineare Transformation.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spiegelung-als-lineare-transformation">6.4 Spiegelung als lineare Transformation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotation-als-lineare-transformation">6.5 Rotation als lineare Transformation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hinterinanderschaultung-von-linearen-transformationen">6.6 Hinterinanderschaultung von Linearen Transformationen</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="kapitel-6-lineare-transformationen-in-der-ebene">
+<h1>Kapitel 6 - Lineare Transformationen in der Ebene<a class="headerlink" href="#kapitel-6-lineare-transformationen-in-der-ebene" title="Permalink to this heading">#</a></h1>
+<section id="lernziele">
+<h2>6.1 Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
+<p>In diesem Abschnitt wollen wir lineare Transformationen in der Ebene mittels Matrizen genauer untersuchen.</p>
+<div class="note admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Zusammenhang zwischen einer <span class="math notranslate nohighlight">\(2\times 2\)</span> Matrix und einer geometrischen Transformationen</p></li>
+<li><p>Skalierungsmatrizen interpretieren und anwenden.</p></li>
+<li><p>Spiegelung als Matrixtransformation interpretieren und anwenden.</p></li>
+<li><p>Rotation als Matrixtransformation interpretieren und anwenden.</p></li>
+<li><p>Praxisbeispiel für die Bildbearbeitung in Python kennenlernen</p></li>
+</ul>
+</div>
+</section>
+<section id="einfuhrung">
+<h2>6.2 Einführung<a class="headerlink" href="#einfuhrung" title="Permalink to this heading">#</a></h2>
+<p>Wir konzentrieren uns in diesem Kapitel vor allem auf den <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>. D.h. wir betrachten Transformationen in der Ebene.</p>
+<p>Wir zeigen zunächst wie wir Matrizen <span class="math notranslate nohighlight">\(A\in \mathbb{R}^{2\times 2}\)</span> als geometrische Transformationen interpretieren können.</p>
+<p>Dies geschieht durch folgende Interpretation von Matrizen als Abbildungen.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 48 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(A\in \mathbb{R}^{m\times n}\)</span>, so ist die <strong>lineare Transformation</strong> von <span class="math notranslate nohighlight">\(A\)</span> definiert als die folgende Funktion</p>
+<div class="math notranslate nohighlight">
+\[T_A\colon \mathbb{R}^n \to \mathbb{R}^m \quad v\mapsto A\cdot v.\]</div>
+<p>Wir nennen die Matrix zu der linearen Transformation <span class="math notranslate nohighlight">\(T_A\)</span> die <strong>Abbildungsmatrix</strong>.</p>
+<p>Falls <span class="math notranslate nohighlight">\(A\in \mathbb{R}^{2\times 2}\)</span>, so nennen wir die entsprechende lineare Transformation eine <strong>lineare Transformation in der Ebene</strong>.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-1">
+<p class="admonition-title"><span class="caption-number">Remark 3 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Obige Definition ist wohldefiniert. Dafür betrachten wir einmal kurz die Dimensionen.</p>
+<p>Wenn <span class="math notranslate nohighlight">\(A\in \mathbb{R}^{m\times n}\)</span> und <span class="math notranslate nohighlight">\(v\in \mathbb{R}^n=\mathbb{R}^{n\times 1}\)</span> so gilt nach der Dimensionsformel (<span class="math notranslate nohighlight">\((m\times n)\cdot (n\times 1)\)</span>), dass das Ergebnis die Dimension <span class="math notranslate nohighlight">\((m\times 1)\)</span> besitzt, also ein <span class="math notranslate nohighlight">\(m\)</span>-dimensionaler Spaltenvektor.</p>
+<p>Für <span class="math notranslate nohighlight">\(A\in \mathbb{R}^{2\times 2}\)</span> bedeutet dies, dass wir einen 2-dimensionalen Vektor auf einen 2-dimensionalen Vektor abbilden.</p>
+</section>
+</div><p>Lineare Transformationen (der Ebene) haben die folgende Eigenschaft, die charakteristisch für Linearität steht.</p>
+<div class="proof theorem admonition" id="theorem-2">
+<p class="admonition-title"><span class="caption-number">Theorem 21 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(A\in\mathbb{R}^{2\times 2}\)</span> eine Matrix und <span class="math notranslate nohighlight">\(T_A\)</span> die zugehörige lineare Transformation.</p>
+<ul class="simple">
+<li><p>Der Nullvektor wird wieder auf den Nullvektor abgebildet.</p></li>
+<li><p>Geraden werden wieder auf Geraden abgebildet.</p></li>
+<li><p>Parallel Geraden bleiben Parallel.</p></li>
+</ul>
+</section>
+</div><div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 52 </span></p>
+<section class="example-content" id="proof-content">
+<p>Nach obigem Satz sehen wir, dass die Translation/Verschiebung eines Objektes <strong>keine</strong> lineare Transformation darstellt, da der Nullvektor nicht wieder auf den Nullvektor abgebildet wird.</p>
+<p>Wir werden jedoch sehen, dass die folgenden Transformationen linear Transformationen darstellen:</p>
+<ul class="simple">
+<li><p>Spiegelung</p></li>
+<li><p>Skalierung</p></li>
+<li><p>Rotation</p></li>
+</ul>
+</section>
+</div><div class="proof example admonition" id="example-4">
+<p class="admonition-title"><span class="caption-number">Example 53 </span></p>
+<section class="example-content" id="proof-content">
+<p>Sei <span class="math notranslate nohighlight">\(A=\left(\begin{array}{ll}1 &amp; 2 \\ 2 &amp; 1\end{array}\right)\)</span>.</p>
+<p>Um die Lineare Transformation genauer zu verstehen ist es häufig hilfreich sich zu Visualisieren wie die Vektoren <span class="math notranslate nohighlight">\(e_1=\left(\begin{array}{c} 1 \\ 0 \end{array}\right)\)</span> und <span class="math notranslate nohighlight">\(e_2=\left(\begin{array}{c} 0 \\ 1\end{array}\right)\)</span> transformiert werden. Wie man leicht nachrechnet werden diese auf die Vekotoren <span class="math notranslate nohighlight">\(Ae_1=\left(\begin{array}{c}1\\2\end{array}\right)\)</span> und <span class="math notranslate nohighlight">\(Ae_2=\left(\begin{array}{c}2\\1\end{array}\right)\)</span>, transformiert.
+<img alt="" src="_images/ex1_basis.png" /></p>
+<p>Wir können nun auch betrachten was passiert wenn wir die Punkte eines Dreiecks transformieren:
+<img alt="" src="_images/ex1_triangle.png" />.</p>
+<p>Wir sehen, dass das Dreieck wieder ein Dreieck ist, aber die Längen und Winkel sich unterscheiden.
+Wir sehen, aber auch das beide Dreiecke den Nullpunkt beinhalten.</p>
+</section>
+</div></section>
+<section id="skalierung-als-lineare-transformation">
+<h2>6.3 Skalierung als lineare Transformation.<a class="headerlink" href="#skalierung-als-lineare-transformation" title="Permalink to this heading">#</a></h2>
+<p>Skalierung bedeutet Strecken und Stauchen von geometrischen Objekten.</p>
+<p>Mittels der skalaren Multiplikation mit einem positiven <span class="math notranslate nohighlight">\(lambda&gt;0\)</span> können wir via <span class="math notranslate nohighlight">\( v\mapsto \lambda \cdot v\)</span> eine einfache mathematische Beschreibung von Streckung und Stauchung. Sie ist eine Streckung falls <span class="math notranslate nohighlight">\(\lambda &gt;1\)</span> und eine Stauchung falls <span class="math notranslate nohighlight">\(\lambda &lt;1\)</span></p>
+<p>In Matrixform können wir dies auch so schreiben:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}S(\lambda,\lambda)=\left(\begin{array}{ll}\lambda &amp; 0 \\ 0 &amp; \lambda\end{array}\right).\end{split}\]</div>
+<p>Wollen wir in <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> Richtung mit verschiedenen Streckungsfaktoren arbeiten so können wir allgemein eine Streckungsmatrix via</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}S(\lambda,\mu)=\left(\begin{array}{ll}
+\lambda &amp; 0 \\
+0 &amp; \mu
+\end{array}\right) \text { für } \lambda, \mu&gt;0\end{split}\]</div>
+<p>Machen wir wieder ein Beispiel:</p>
+<div class="proof example admonition" id="example-5">
+<p class="admonition-title"><span class="caption-number">Example 54 </span></p>
+<section class="example-content" id="proof-content">
+<p>Wir betrachten nun die Matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}S(2,3)=
+\left(\begin{array}{ll}
+2 &amp; 0 \\
+0 &amp; 3
+\end{array}\right)\end{split}\]</div>
+<p>Wieder betrachten wir zunächst die transformierten Basisvektoren
+<img alt="" src="_images/ex2_basis.png" /></p>
+<p>Und nun ein transformiertes Dreieck
+<img alt="" src="_images/ex2_triangle.png" /></p>
+<p>Wir sehen, dass die Grundlinie des Dreiecks sich verdoppelt, und die Höhe des Dreiecks sich verdreifacht.</p>
+</section>
+</div></section>
+<section id="spiegelung-als-lineare-transformation">
+<h2>6.4 Spiegelung als lineare Transformation<a class="headerlink" href="#spiegelung-als-lineare-transformation" title="Permalink to this heading">#</a></h2>
+<p>Spiegelung lassen sich auch als lineare Transformationen abbilden. Dabei gibt es drei Möglichkeiten in der Ebene zu spiegeln:</p>
+<ul class="simple">
+<li><p>Punktspiegelung</p></li>
+<li><p>Spiegelung an der <span class="math notranslate nohighlight">\(y\)</span>-Achse</p></li>
+<li><p>Spiegelung an der <span class="math notranslate nohighlight">\(x\)</span>-Achse</p></li>
+</ul>
+<p>Ähnlich wie Dehnung/Streckung lassen sich die Matrizen mit Diagonalmatrizen darstellen. Nur dieses mal erlauben wir auch explizit negative Zahlen.</p>
+<p>Hier ist der Überblick über die Spiegelung:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Matrix</p></th>
+<th class="head"><p>geom. Bedeutung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S(-1, 1)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\begin{pmatrix}-1 &amp; 0 \\ 0 &amp; 1\end{pmatrix}\)</span></p></td>
+<td><p>Spiegelung an der y-Achse</p></td>
+</tr>
+<tr class="row-odd"><td><p>S(1, -1)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\begin{pmatrix}1 &amp; 0 \\ 0 &amp; -1\end{pmatrix}\)</span></p></td>
+<td><p>Spiegelung an der x-Achse</p></td>
+</tr>
+<tr class="row-even"><td><p>S(-1, -1)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\begin{pmatrix}-1 &amp; 0 \\ 0 &amp; -1\end{pmatrix}\)</span></p></td>
+<td><p>Punktspiegelung am Ursprung</p></td>
+</tr>
+</tbody>
+</table>
+<div class="proof example admonition" id="example-6">
+<p class="admonition-title"><span class="caption-number">Example 55 </span></p>
+<section class="example-content" id="proof-content">
+<p>Wir betrachten nun die Matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}S(-1,1)=
+\left(\begin{array}{ll}
+-1 &amp; 0 \\
+0 &amp; 1
+\end{array}\right)\end{split}\]</div>
+<p>Also die Spiegelung an der <span class="math notranslate nohighlight">\(y\)</span>-Achse
+Wieder betrachten wir zunächst die transformierten Basisvektoren
+<img alt="" src="_images/ex3_basis.png" /></p>
+<p>Und nun ein transformiertes Dreieck
+<img alt="" src="_images/ex3_triangle.png" /></p>
+<p>Wir sehen, dass das transformierte Dreieck identisch mit dem ursprünglichen Dreieck ist, da es Achsensymmetrisch zur <span class="math notranslate nohighlight">\(y\)</span>-Achse ist.</p>
+<p>Wir können zum Beispiel den unteren Punkt nehmen und dies nachvollziehen:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left(\begin{array}{rr}
+-1 &amp; 0 \\
+0 &amp; 1
+\end{array}\right)\left(\begin{array}{c}
+0 \\
+-1
+\end{array}\right)=\left(\begin{array}{c}
+0 \\
+-1
+\end{array}\right)
+\end{split}\]</div>
+<p>D.h. der Punkt bleibt wo er ist.</p>
+<p>Es kann nun leicht nachgerechnet werden, dass die beiden anderen Punkte miteinander tauschen.</p>
+</section>
+</div></section>
+<section id="rotation-als-lineare-transformation">
+<h2>6.5 Rotation als lineare Transformation<a class="headerlink" href="#rotation-als-lineare-transformation" title="Permalink to this heading">#</a></h2>
+<p>Die Rotation ist die Komplizierteste Variante der linearen Transformation.
+Dabei stellt sich zunächst die Frage in Welche Richtung und welchen Winkel. Dabei ist wichtig, dass Mathematisch positive Richtung immer gegen den Uhrzeigersinn darstellt. Wenn wir also von einer Drehung um 90° sprechen, dann meinen wir eine Drehung um 90° gegen den Uhrzeigersinn.</p>
+<p>Wir betrachten zunächst ein Beispiel.</p>
+<div class="proof example admonition" id="example-7">
+<p class="admonition-title"><span class="caption-number">Example 56 </span></p>
+<section class="example-content" id="proof-content">
+<p>Wir wollen die 90°-Drehung als Matrix darstellen. Dafür müssen wir überlegen auf welche Vektoren wir die beiden Basisvektoren <span class="math notranslate nohighlight">\(e_1=\left(\begin{array}{c} 1 \\ 0 \end{array}\right)\)</span> und <span class="math notranslate nohighlight">\(e_2=\left(\begin{array}{c} 0 \\ 1 \end{array}\right)\)</span> abgebildet werden. <span class="math notranslate nohighlight">\(e_1\)</span> muss auf den Vektor <span class="math notranslate nohighlight">\(\left(\begin{array}{c} 0 \\ 1 \end{array}\right)\)</span> abgebildet werden und <span class="math notranslate nohighlight">\(e_2\)</span> auf <span class="math notranslate nohighlight">\(\left(\begin{array}{c} 0 \\ -1 \end{array}\right)\)</span>.</p>
+<p>Damit ergibt sich folgende Matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A=\left(\begin{array}{rr}
+0 &amp; -1 \\
+1 &amp; 0
+\end{array}\right)\end{split}\]</div>
+<p>Und es ergeben sich folgende Bilder:</p>
+<p><img alt="" src="_images/ex3_basis.png" /></p>
+<p>Und nun ein transformiertes Dreieck
+<img alt="" src="_images/ex3_triangle.png" />.</p>
+</section>
+</div><p>Wir haben nun die Rotation für 90° gesehen. Doch was ist die Allgemeine Formel.</p>
+<p>Diese fassen wir im folgenden Satz zusammen.</p>
+<div class="proof theorem admonition" id="theorem-8">
+<p class="admonition-title"><span class="caption-number">Theorem 22 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Der Ausdruck <span class="math notranslate nohighlight">\(R(\varphi)\)</span> bezeichnet eine Rotation um den Winkel <span class="math notranslate nohighlight">\(\varphi\)</span> mit dem Ursprung als Rotationszentrum. Sie lässt sich durch folgende Matrix darstellen.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}R(\varphi)=\left(\begin{array}{cc}
+\cos \varphi &amp; -\sin \varphi \\
+\sin \varphi &amp; \cos \varphi
+\end{array}\right)\end{split}\]</div>
+</section>
+</div><p>Hier ist eine Tabelle mit den Wichtigsten Rotationsmatrizen:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Winkel (<span class="math notranslate nohighlight">\(\theta\)</span>)</p></th>
+<th class="head"><p>Rotationsmatrix (<span class="math notranslate nohighlight">\(R(\theta)\)</span>)</p></th>
+<th class="head"><p>geom. Bedeutung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0^\circ\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\)</span></p></td>
+<td><p>Keine Rotation (Identitätsmatrix)</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(90^\circ\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}\)</span></p></td>
+<td><p>Rotation um <span class="math notranslate nohighlight">\(90^\circ\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(180^\circ\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\begin{pmatrix} -1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}\)</span></p></td>
+<td><p>Rotation um <span class="math notranslate nohighlight">\(180^\circ\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(270^\circ\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}\)</span></p></td>
+<td><p>Rotation um <span class="math notranslate nohighlight">\(270^\circ\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="hinterinanderschaultung-von-linearen-transformationen">
+<h2>6.6 Hinterinanderschaultung von Linearen Transformationen<a class="headerlink" href="#hinterinanderschaultung-von-linearen-transformationen" title="Permalink to this heading">#</a></h2>
+<p>Angenommen wir wollen eine Kombination aus den obigen linearen Transformationen machen. Dann stellt sich die Frage, wie wir die zugehörige Matrix bekommen. Wollen wir zum Beispiel erst Rotieren und dann Skalieren.</p>
+<p>Der folgende Satz liefert dafür die entsprechende Antwort.</p>
+<div class="proof theorem admonition" id="theorem-9">
+<p class="admonition-title"><span class="caption-number">Theorem 23 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Seien <span class="math notranslate nohighlight">\(A,B\in \mathbb{R}^{2\times2}\)</span>. Seien <span class="math notranslate nohighlight">\(T_A\)</span> und <span class="math notranslate nohighlight">\(T_B\)</span> die entsprechenden linearen Transformationen.
+Sei weiter <span class="math notranslate nohighlight">\(A\cdot B\)</span> das Produkt der beiden Matrizen und <span class="math notranslate nohighlight">\(T_{A\cdot B}\)</span> die entsprechende lineare Transformation.
+Dann gilt:</p>
+<div class="math notranslate nohighlight">
+\[T_A\circ T_B = T_{AB}\]</div>
+<p>Anders ausgedrückt: die Hinterinanderausführung von zwei linearen Transformationen entspricht auf der Ebene der Matrizen der Matrixmultiplikation.</p>
+</section>
+</div><p>Auch hierfür wollen wir ein Beispiel betrachten:</p>
+<div class="proof example admonition" id="example-10">
+<p class="admonition-title"><span class="caption-number">Example 57 </span></p>
+<section class="example-content" id="proof-content">
+<p>Wir wollen in diesem Beispiel zunächst um 90° Drehen und dann an der <span class="math notranslate nohighlight">\(y\)</span>-Achse spiegeln.
+Die entsprechende Matrix ist dann laut obigem Satz:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}S(-1,1)\cdot R(90°) = \left(\begin{array}{cc}
+-1 &amp; 0 \\
+0 &amp; 1
+\end{array}\right)\left(\begin{array}{rr}
+0 &amp; -1 \\
+1 &amp; 0
+\end{array}\right)
+= \left(\begin{array}{rr}
+0 &amp; 1 \\
+1 &amp; 0
+\end{array}\right)
+\end{split}\]</div>
+<p>Beachte auch hier dass wir von rechts nach links lesen. rechts steht die Rotation, weil wir diese als erste ausführen.</p>
+<p>Schauen wir uns nun die entsprechenden Bilder an</p>
+<p>Zunächst die Transformation auf den Basisvektoren:
+<img alt="" src="_images/ex5_basis.png" /></p>
+<p>Und nun auf unser Standard Dreieck:
+<img alt="" src="_images/ex5_triangle.png" />
+Auf dem ersten Blick sieht das nun so aus wie eine Drehung um 90° in mathematisch negativer Richtung oder im Uhrzeigersinn. Dies liegt aber an der Symmetrie des Dreiecks.
+Betrachten wir ein weiteres Dreieck:
+<img alt="" src="_images/ex5_triangle2.png" />
+Hier sehen wir, dass es keine Rotation ist.</p>
+<p>Sehen Sie wie man die Transformation geometrisch zusammenfassen kann?
+<strong>Antwort:</strong></p>
+<div class="toggle docutils container">
+<p>Es ist die Spiegelung um die Winkelhalbierende des ersten Quadranten, oder der Gerade <span class="math notranslate nohighlight">\(y=x\)</span>.</p>
+</div>
+</section>
+</div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="matrix.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Kapitel 5 - Matrizen</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">6.1 Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einfuhrung">6.2 Einführung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalierung-als-lineare-transformation">6.3 Skalierung als lineare Transformation.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spiegelung-als-lineare-transformation">6.4 Spiegelung als lineare Transformation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotation-als-lineare-transformation">6.5 Rotation als lineare Transformation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hinterinanderschaultung-von-linearen-transformationen">6.6 Hinterinanderschaultung von Linearen Transformationen</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Prof. Dr. Georg Merz
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
