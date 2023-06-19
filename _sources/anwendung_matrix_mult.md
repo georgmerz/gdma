@@ -287,7 +287,7 @@ Sehen Sie wie man die Transformation geometrisch zusammenfassen kann?
 Es ist die Spiegelung um die Winkelhalbierende des ersten Quadranten, oder der Gerade $y=x$.
 ```
 ````
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vYi1B_W-yFc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## 6.7 Anwendung zur Bearbeitung von Bildern
 
