@@ -74,7 +74,7 @@ Wir können nun auch betrachten was passiert wenn wir die Punkte eines Dreiecks 
 Wir sehen, dass das Dreieck wieder ein Dreieck ist, aber die Längen und Winkel sich unterscheiden. 
 Wir sehen, aber auch das beide Dreiecke den Nullpunkt beinhalten.
 ```
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6b6mIPbqgeA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## 6.3 Skalierung als lineare Transformation.
 
@@ -117,6 +117,7 @@ Und nun ein transformiertes Dreieck
 Wir sehen, dass die Grundlinie des Dreiecks sich verdoppelt, und die Höhe des Dreiecks sich verdreifacht.
 
 ````
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HbazCqgISrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## 6.4 Spiegelung als lineare Transformation
 
@@ -173,6 +174,8 @@ D.h. der Punkt bleibt wo er ist.
 
 Es kann nun leicht nachgerechnet werden, dass die beiden anderen Punkte miteinander tauschen.
 ````
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4Gc-W18sqNs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 ## 6.5 Rotation als lineare Transformation
 
@@ -226,6 +229,7 @@ Hier ist eine Tabelle mit den Wichtigsten Rotationsmatrizen:
 | $180^\circ$      | $\begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix}$                             | Rotation um $180^\circ$                |
 | $270^\circ$      | $\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}$                              | Rotation um $270^\circ$ |
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/h4LZVnkkpl4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## 6.6 Hintereinanderschaltung von Linearen Transformationen
 
@@ -290,7 +294,7 @@ Es ist die Spiegelung um die Winkelhalbierende des ersten Quadranten, oder der G
 Wir wollen unsere neuen Fertigkeiten nun nutzen um Bilder zu spiegeln, rotieren oder zu Skalieren.
 Betrachten Sie dafür folgendes Video.
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uouSF5-eSBw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 
