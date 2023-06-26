@@ -159,7 +159,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="relationsAndFunctions.html">Kapitel 3 - Relationen und Funktionen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gauss.html">Kapitel 4 - Der Gauß-Algorithmus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matrix.html">Kapitel 5 - Matrizen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="anwendung_matrix_mult.html">Kapitel 6 - Geometrische Transformationen in der Ebene mittels Matrizen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anwendung_matrix_mult.html">Kapitel 6 - Lineare Transformationen in der Ebene</a></li>
 </ul>
 
     </div>
@@ -411,12 +411,21 @@ document.write(`
 <section id="lernziele">
 <h2>2.1 Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
 <p>In diesem Abschnitt lernen wir die folgenden Dinge:</p>
+<ul class="simple">
+<li><p>Syntax/Schreibweise der Aussagenlogik</p></li>
+<li><p>Logische Aussagen interpretieren und herleiten</p></li>
+<li><p>Gesetze der Aussagenlogik</p></li>
+<li><p>Prädikatenlogik und Quantoren formulieren</p></li>
+<li><p>Die Gödelschen Unvollständigkeitssätze</p></li>
+</ul>
 <div class="note admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Verständnis der Matrixnotation und des Aufbaus von Matrizen</p></li>
-<li><p>Beherrschung grundlegender Operationen mit Matrizen wie Addition, Subtraktion, Skalare Multiplikation und Transposition.</p></li>
-<li><p>Verständnis der Matrixmultiplikation, einschließlich der Bedingungen für die Durchführung und der Eigenschaften der Matrixmultiplikation.</p></li>
+<li><p>Syntaktisch korrekte logische Formeln konstruieren</p></li>
+<li><p>Interpretieren von logischen Ausdrücken</p></li>
+<li><p>Folgerungen von logischen Aussagen mittels Wahrheitstafeln und Gesetzen der Aussagenlogik</p></li>
+<li><p>Ausdrücke mithilfe von Quantoren formulieren und negieren</p></li>
+<li><p>Verständnis des Gödelschen Unvollständigkeitssatz erlangen</p></li>
 </ul>
 </div>
 </section>
@@ -949,7 +958,7 @@ Nehmen wir an wir haben</p>
 <section class="theorem-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine  Aussagenvariable dann gilt</p>
 <div class="math notranslate nohighlight">
-\[A\land 0 \equiv A \quad \text{ and } A\lor 1  \equiv 1.\]</div>
+\[A\land 0 \equiv 1 \quad \text{ and } A\lor 1  \equiv 1.\]</div>
 </section>
 </div><p><strong>Erinnerung:</strong></p>
 <ul class="simple">
@@ -985,7 +994,7 @@ Nehmen wir an wir haben</p>
 <p><strong>Neutralitätsgesetz(5)</strong></p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(A\lor 0 \equiv A \)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(A\land  1 \equiv 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A\land  1 \equiv A\)</span></p></li>
 </ul>
 <p><strong>Distributivgesetz(6)</strong></p>
 <ul class="simple">

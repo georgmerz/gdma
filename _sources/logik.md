@@ -4,12 +4,21 @@
 ## 2.1 Lernziele
 In diesem Abschnitt lernen wir die folgenden Dinge:
 
+- Syntax/Schreibweise der Aussagenlogik
+- Logische Aussagen interpretieren und herleiten
+- Gesetze der Aussagenlogik
+- Prädikatenlogik und Quantoren formulieren
+- Die Gödelschen Unvollständigkeitssätze
+
+
 :::{admonition}  Lernziele
 :class: note
 
-- Verständnis der Matrixnotation und des Aufbaus von Matrizen
-- Beherrschung grundlegender Operationen mit Matrizen wie Addition, Subtraktion, Skalare Multiplikation und Transposition.
-- Verständnis der Matrixmultiplikation, einschließlich der Bedingungen für die Durchführung und der Eigenschaften der Matrixmultiplikation.
+- Syntaktisch korrekte logische Formeln konstruieren
+- Interpretieren von logischen Ausdrücken 
+- Folgerungen von logischen Aussagen mittels Wahrheitstafeln und Gesetzen der Aussagenlogik
+- Ausdrücke mithilfe von Quantoren formulieren und negieren
+- Verständnis des Gödelschen Unvollständigkeitssatz erlangen
 :::
 
 
@@ -707,7 +716,7 @@ Falls aber $B$ Wahr ist, so ist $A\land B$ wahr genau dann wenn $A$ wahr ist. Al
 ````{prf:theorem}
 Sei $A$ eine  Aussagenvariable dann gilt
 ```{math}
-A\land 0 \equiv A \quad \text{ and } A\lor 1  \equiv 1.
+A\land 0 \equiv 1 \quad \text{ and } A\lor 1  \equiv 1.
 ```
 ````
 
@@ -755,7 +764,7 @@ Für einen besseren Überblick sind hier die wichtigsten Logischen Formeln nochm
 **Neutralitätsgesetz(5)**
 
 - $A\lor 0 \equiv A $
-- $A\land  1 \equiv 1$
+- $A\land  1 \equiv A$
 
 **Distributivgesetz(6)**
 

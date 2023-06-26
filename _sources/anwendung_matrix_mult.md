@@ -291,7 +291,7 @@ Es ist die Spiegelung um die Winkelhalbierende des ersten Quadranten, oder der G
 
 ## 6.7 Anwendung zur Bearbeitung von Bildern
 
-Wir wollen unsere neuen Fertigkeiten nun nutzen um Bilder zu spiegeln, rotieren oder zu Skalieren.
+Wir wollen unsere neuen Fertigkeiten nun nutzen um Bilder zu spiegeln, rotieren oder zu skalieren.
 Betrachten Sie dafür folgendes Video.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uouSF5-eSBw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
