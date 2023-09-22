@@ -5,37 +5,36 @@
 ## 1. 0 Lernziele
 In diesem Kurs lernen wir die folgenden Dinge:
 
-- Schreibweise/Syntax in der Mengenlehre
-- Beschreibung von Mengen und die wichtigsten Zahlenmengen 
-- Mengenoperationen (Schnitt, Vereinigung, kartesisches Produkt, Potenzmenge)
-- Mächtigkeit/Kardinalität einer Menge
-- Wie man Zahlen nur mithilfe von Mengen beschreiben kann
-- Das Prinzip der Vollständigen Induktion
-- Was die Grundlagenkrise der Mathematik ist
-
-
 :::{admonition}  Lernziele
 :class: note
 
-- Sie haben ein Verständnis für den Begriff der Menge und können diesen intuitiv verstehen.
-- Sie können sicher mit den Grundoperatoren der Mengenlehre umgehen und können aus bekannten Mengen mittels Mathematischer Sprache neue Mengen konstruieren.
-- Sie können den Aufbau der Natürlichen Zahlen als Mengen nachvollziehen
-- Sie können selbstständig Beweise mit dem Prinzip der vollständigen Induktion durchführen.
-- Sie haben ein Verständnis für die Paradoxien der naiven Mengenlehre und können dies mit den Zermelo Fraenkl Axiomen in Verbindung bringen
+- **Mengenlehre-Grundlagen:** Sie verstehen die Schreibweise, Terminologie und die wichtigsten Zahlenmengen in der Mengenlehre.
+  
+- **Mengenoperationen:** Sie beherrschen die grundlegenden Mengenoperationen wie Schnitt, Vereinigung, kartesisches Produkt und Potenzmenge.
+  
+- **Mächtigkeit und Zahlenbeschreibung:** Sie können die Mächtigkeit von Mengen bestimmen und Zahlen mithilfe von Mengen darstellen.
+  
+- **Prinzip der Vollständigen Induktion:** Sie können selbstständig Beweise mit dem Prinzip der vollständigen Induktion durchführen.
+  
+- **Grundlagenkrise und Paradoxien:** Sie verstehen die historischen Herausforderungen in der Mathematik, insbesondere die Paradoxien in der Mengenlehre, und können diese mit den Zermelo-Fraenkel-Axiomen in Verbindung bringen.
+  
+- **Selbstständiges Arbeiten:** Sie haben die Fähigkeit, selbstständig Beweise durchzuführen und ein tiefes, intuitives Verständnis für Mengen und ihre Operationen zu entwickeln.
+
 :::
+
 
 
 
 
 ## 1.1 Definition einer Menge
 
-Zu erklären was eine Menge denn wirklich ist, ist garnicht so einfach. Das gilt vor allem wenn man es exakt mathematisch definieren will. Intuitiv ist es gar nicht so  schwer.
-So gibt es beispielsweise folgende Definition von *Georg Cantor*.
 
+Zu erklären, was eine Menge wirklich ist, ist gar nicht so einfach, besonders wenn man es exakt mathematisch definieren will. Intuitiv ist es jedoch verständlicher. Eine bekannte Definition stammt von *Georg Cantor*, dem Begründer der Mengenlehre.
 
 ````{prf:definition}
 :label: my-definition2
 "Eine Menge ist eine Zusammenfassung bestimmter wohlunterschiedener Objekte unserer Anschauung oder unseres Denkens - (welche die Elemente der Menge genannt werden) - zu einem Ganzen."            
+
 
 ````
 
@@ -119,20 +118,20 @@ Wir schreiben $x\not\in M$ falls $x$ kein Element von $M$ ist.
 
 ````{prf:example}
 :label: elementbsp
-Betrachten wir unsere Beispielmengen
+Betrachten wir die folgenden Beispielmengen:
 - $A:=\{0,1,2,3,4\}$
 - $B:=\{a,b,c,d,e,f,g\} $
 - $C:=\{ 👍, 👮 , 🔨\}  $
 - $D:=\{ \{0,1\} ,\{2,3,4\}\} $
 - $E:=\{\{ 0,1,2,3,4 \} \} $
 
-Dann gilt z.B.:
+Zur Zugehörigkeit von Elementen zu Mengen gilt:
 
-- $0 \in A$
-- $5 \notin A$.
-- $a\in B$
-- $\{ 0,1,2,3,4 \} \in E$
-- $\{0,1\}$
+- $0 \in A$, da die Zahl 0 in der Menge $A$ enthalten ist.
+- $5 \notin A$, da die Zahl 5 nicht in der Menge $A$ enthalten ist.
+- $a\in B$, da der Buchstabe a in der Menge $B$ enthalten ist.
+- $\{ 0,1,2,3,4 \} \in E$, da die Menge $\{ 0,1,2,3,4 \}$ als Element in der Menge $E$ enthalten ist.
+- $\{0,1\} \in D$, da die Menge $\{0,1\}$ als Element in der Menge $D$ enthalten ist.
 
 ````
 
@@ -268,7 +267,7 @@ M= \{ n\in \mathbb{N} \  \vert \ n \text{ ist eine Gerade Zahl} \}
 
 ## 1.4 Zahlenmengen
 
-Sie kennen vermutlich alle die Symbole $\mathbb{N}, \mathbb{Z},\mathbb{Q}, \mathbb{R}$ und vielleicht sogar $\mathbb{C}$. Dabei handelt es sich um Mengen. Da diese einen so wichtigen Stellenwert in der Mathematik einnehmen, wollen wir diese Zahlenmengen kurz wiederholen.
+In der Mathematik begegnen uns ständig verschiedene Arten von Zahlen, die jeweils ihre eigenen Eigenschaften und Anwendungen haben. Diese Zahlen werden in speziellen Mengen kategorisiert, die uns helfen, ihre Beziehungen zueinander zu verstehen und sie effektiv in verschiedenen mathematischen Kontexten zu verwenden. Die Symbole $\mathbb{N}, \mathbb{Z},\mathbb{Q}, \mathbb{R}$ und $\mathbb{C}$ repräsentieren einige der wichtigsten dieser Mengen. Jede dieser Mengen hat ihre eigene Geschichte, ihre eigenen Charakteristika und spielt eine zentrale Rolle in verschiedenen Bereichen der Mathematik, von der Grundlagenforschung bis hin zu fortgeschrittenen Anwendungen. In diesem Kapitel werden wir uns einen Überblick über diese grundlegenden Zahlenmengen verschaffen und ihre Bedeutung in der Mathematik verstehen.
 
 ### Die natürlichen Zahlen $\mathbb{N}$
 
@@ -279,7 +278,9 @@ Die natürlichen Zahlen sind die Menge der positiven ganzen Zahlen. Die Elemente
 
 Ob die $0$ in der Menge der natürlichen Zahlen enthalten sind, hängt vom Geschmack der einzelnen Person ab. In meiner Vorlesung wird die $0$  **enthalten** sein.
 
-Manchmal schreibt  man auch $\mathbb{N}_0$ für die Menge der natürlichen Zahlen mit $0$ um zu betonen, dass die $0$ enthalten ist.
+Um Klarheit zu schaffen, insbesondere wenn es wichtig ist zu betonen, dass die 
+0 enthalten ist, verwendet man manchmal die Bezeichnung $\mathbb{N}_0$ für die Menge der natürlichen Zahlen einschließlich der 
+0.
 
 ### Die ganzen Zahlen $\mathbb{Z}$
 
@@ -290,13 +291,13 @@ Die Menge der ganzen Zahlen sind wohl selbsterklärend. Die Elemente von $\mathb
 Die Menge der rationalen Zahlen sind alle diejenigen Zahlen, die als Bruch zweier ganzer Zahlen dargestellt werden können. Also von der Form $n/m$ mit $n,m \in \mathbb{Z}$ mit $m\neq 0$. 
 
 ### Die reellen Zahlen $\mathbb{R}$
-
-Was genau die reellen Zahlen sind, ist gar nicht so einfach zu sagen. Zunächst einmal hat man lange Zeit gedacht, es gibt sie gar nicht. So glaubten die Pythagorärer, dass jede Zahl als Bruch oder ganze Zahl darstellbar ist. Wie wir heute wissen, gilt das für Zahlen wie $\sqrt{5}$ oder $\pi$ nicht. Doch was genau sind irrationale Zahlen. 
+Die reellen Zahlen sind eine Erweiterung der rationalen Zahlen und umfassen sowohl rationale als auch irrationale Zahlen. Irrationale Zahlen sind solche, die nicht als Bruch zweier ganzer Zahlen dargestellt werden können. Zunächst einmal hat man lange Zeit gedacht, es gibt sie gar nicht. So glaubten die Pythagorärer, dass jede Zahl als Bruch oder ganze Zahl darstellbar ist. Wie wir heute wissen, gilt das für Zahlen wie $\sqrt{5}$ oder $\pi$ nicht. Doch was genau sind reelle Zahlen. 
 Wir werden in diesem Kurs keine genaue Definition geben können, sondern lediglich eine Intuition.
 
 **Intuition**:
-- Sie können sich die reellen Zahlen als Punkte auf einem Zahlenstrahl vorstellen.
-- Sie können sich die reellen Zahlen als alle möglichen unendlichen Varianten von Dezimalzahlen vorstellen.
+1. **Zahlenstrahl**: Die reellen Zahlen können als Punkte auf einem unendlich ausgedehnten Zahlenstrahl visualisiert werden. Jeder Punkt auf diesem Strahl entspricht einer eindeutigen reellen Zahl.
+2. **Dezimalzahlen**: Reelle Zahlen können als endliche oder unendliche Dezimalzahlen dargestellt werden. Während rationale Zahlen immer eine wiederkehrende Dezimaldarstellung haben, haben irrationale Zahlen eine nicht wiederkehrende, unendliche Dezimaldarstellung.
+
 
 
 ### Zusammenhang zwischen den verschiedenen Zahlenmengen

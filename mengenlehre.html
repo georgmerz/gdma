@@ -159,7 +159,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="relationsAndFunctions.html">Kapitel 3 - Relationen und Funktionen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gauss.html">Kapitel 4 - Der Gauß-Algorithmus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matrix.html">Kapitel 5 - Matrizen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="anwendung_matrix_mult.html">Kapitel 6 - Geometrische Transformationen in der Ebene mittels Matrizen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anwendung_matrix_mult.html">Kapitel 6 - Lineare Transformationen in der Ebene</a></li>
 </ul>
 
     </div>
@@ -421,30 +421,21 @@ document.write(`
 <section id="lernziele">
 <h2>1. 0 Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
 <p>In diesem Kurs lernen wir die folgenden Dinge:</p>
-<ul class="simple">
-<li><p>Schreibweise/Syntax in der Mengenlehre</p></li>
-<li><p>Beschreibung von Mengen und die wichtigsten Zahlenmengen</p></li>
-<li><p>Mengenoperationen (Schnitt, Vereinigung, kartesisches Produkt, Potenzmenge)</p></li>
-<li><p>Mächtigkeit/Kardinalität einer Menge</p></li>
-<li><p>Wie man Zahlen nur mithilfe von Mengen beschreiben kann</p></li>
-<li><p>Das Prinzip der Vollständigen Induktion</p></li>
-<li><p>Was die Grundlagenkrise der Mathematik ist</p></li>
-</ul>
 <div class="note admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie haben ein Verständnis für den Begriff der Menge und können diesen intuitiv verstehen.</p></li>
-<li><p>Sie können sicher mit den Grundoperatoren der Mengenlehre umgehen und können aus bekannten Mengen mittels Mathematischer Sprache neue Mengen konstruieren.</p></li>
-<li><p>Sie können den Aufbau der Natürlichen Zahlen als Mengen nachvollziehen</p></li>
-<li><p>Sie können selbstständig Beweise mit dem Prinzip der vollständigen Induktion durchführen.</p></li>
-<li><p>Sie haben ein Verständnis für die Paradoxien der naiven Mengenlehre und können dies mit den Zermelo Fraenkl Axiomen in Verbindung bringen</p></li>
+<li><p><strong>Mengenlehre-Grundlagen:</strong> Sie verstehen die Schreibweise, Terminologie und die wichtigsten Zahlenmengen in der Mengenlehre.</p></li>
+<li><p><strong>Mengenoperationen:</strong> Sie beherrschen die grundlegenden Mengenoperationen wie Schnitt, Vereinigung, kartesisches Produkt und Potenzmenge.</p></li>
+<li><p><strong>Mächtigkeit und Zahlenbeschreibung:</strong> Sie können die Mächtigkeit von Mengen bestimmen und Zahlen mithilfe von Mengen darstellen.</p></li>
+<li><p><strong>Prinzip der Vollständigen Induktion:</strong> Sie können selbstständig Beweise mit dem Prinzip der vollständigen Induktion durchführen.</p></li>
+<li><p><strong>Grundlagenkrise und Paradoxien:</strong> Sie verstehen die historischen Herausforderungen in der Mathematik, insbesondere die Paradoxien in der Mengenlehre, und können diese mit den Zermelo-Fraenkel-Axiomen in Verbindung bringen.</p></li>
+<li><p><strong>Selbstständiges Arbeiten:</strong> Sie haben die Fähigkeit, selbstständig Beweise durchzuführen und ein tiefes, intuitives Verständnis für Mengen und ihre Operationen zu entwickeln.</p></li>
 </ul>
 </div>
 </section>
 <section id="definition-einer-menge">
 <h2>1.1 Definition einer Menge<a class="headerlink" href="#definition-einer-menge" title="Permalink to this heading">#</a></h2>
-<p>Zu erklären was eine Menge denn wirklich ist, ist garnicht so einfach. Das gilt vor allem wenn man es exakt mathematisch definieren will. Intuitiv ist es gar nicht so  schwer.
-So gibt es beispielsweise folgende Definition von <em>Georg Cantor</em>.</p>
+<p>Zu erklären, was eine Menge wirklich ist, ist gar nicht so einfach, besonders wenn man es exakt mathematisch definieren will. Intuitiv ist es jedoch verständlicher. Eine bekannte Definition stammt von <em>Georg Cantor</em>, dem Begründer der Mengenlehre.</p>
 <div class="proof definition admonition" id="my-definition2">
 <p class="admonition-title"><span class="caption-number">Definition 1 </span></p>
 <section class="definition-content" id="proof-content">
@@ -519,7 +510,7 @@ Wir schreiben <span class="math notranslate nohighlight">\(x\not\in M\)</span> f
 </div><div class="proof example admonition" id="elementbsp">
 <p class="admonition-title"><span class="caption-number">Example 4 </span></p>
 <section class="example-content" id="proof-content">
-<p>Betrachten wir unsere Beispielmengen</p>
+<p>Betrachten wir die folgenden Beispielmengen:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(A:=\{0,1,2,3,4\}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(B:=\{a,b,c,d,e,f,g\} \)</span></p></li>
@@ -527,13 +518,13 @@ Wir schreiben <span class="math notranslate nohighlight">\(x\not\in M\)</span> f
 <li><p><span class="math notranslate nohighlight">\(D:=\{ \{0,1\} ,\{2,3,4\}\} \)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(E:=\{\{ 0,1,2,3,4 \} \} \)</span></p></li>
 </ul>
-<p>Dann gilt z.B.:</p>
+<p>Zur Zugehörigkeit von Elementen zu Mengen gilt:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(0 \in A\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(5 \notin A\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(a\in B\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\{ 0,1,2,3,4 \} \in E\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\{0,1\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 \in A\)</span>, da die Zahl 0 in der Menge <span class="math notranslate nohighlight">\(A\)</span> enthalten ist.</p></li>
+<li><p><span class="math notranslate nohighlight">\(5 \notin A\)</span>, da die Zahl 5 nicht in der Menge <span class="math notranslate nohighlight">\(A\)</span> enthalten ist.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a\in B\)</span>, da der Buchstabe a in der Menge <span class="math notranslate nohighlight">\(B\)</span> enthalten ist.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\{ 0,1,2,3,4 \} \in E\)</span>, da die Menge <span class="math notranslate nohighlight">\(\{ 0,1,2,3,4 \}\)</span> als Element in der Menge <span class="math notranslate nohighlight">\(E\)</span> enthalten ist.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\{0,1\} \in D\)</span>, da die Menge <span class="math notranslate nohighlight">\(\{0,1\}\)</span> als Element in der Menge <span class="math notranslate nohighlight">\(D\)</span> enthalten ist.</p></li>
 </ul>
 </section>
 </div><p>Im obigen Beispiel sehen wir, dass die Klammern <span class="math notranslate nohighlight">\(\{ \}\)</span> eine große Rolle Spielen. Elemente einer Menge sind eben nur diejenigen Objekte die genaue eine Hierarchieebene unterhalb der Menge sind.</p>
@@ -652,14 +643,16 @@ Wir schreiben</p>
 </section>
 <section id="zahlenmengen">
 <h2>1.4 Zahlenmengen<a class="headerlink" href="#zahlenmengen" title="Permalink to this heading">#</a></h2>
-<p>Sie kennen vermutlich alle die Symbole <span class="math notranslate nohighlight">\(\mathbb{N}, \mathbb{Z},\mathbb{Q}, \mathbb{R}\)</span> und vielleicht sogar <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>. Dabei handelt es sich um Mengen. Da diese einen so wichtigen Stellenwert in der Mathematik einnehmen, wollen wir diese Zahlenmengen kurz wiederholen.</p>
+<p>In der Mathematik begegnen uns ständig verschiedene Arten von Zahlen, die jeweils ihre eigenen Eigenschaften und Anwendungen haben. Diese Zahlen werden in speziellen Mengen kategorisiert, die uns helfen, ihre Beziehungen zueinander zu verstehen und sie effektiv in verschiedenen mathematischen Kontexten zu verwenden. Die Symbole <span class="math notranslate nohighlight">\(\mathbb{N}, \mathbb{Z},\mathbb{Q}, \mathbb{R}\)</span> und <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> repräsentieren einige der wichtigsten dieser Mengen. Jede dieser Mengen hat ihre eigene Geschichte, ihre eigenen Charakteristika und spielt eine zentrale Rolle in verschiedenen Bereichen der Mathematik, von der Grundlagenforschung bis hin zu fortgeschrittenen Anwendungen. In diesem Kapitel werden wir uns einen Überblick über diese grundlegenden Zahlenmengen verschaffen und ihre Bedeutung in der Mathematik verstehen.</p>
 <section id="die-naturlichen-zahlen-mathbb-n">
 <h3>Die natürlichen Zahlen <span class="math notranslate nohighlight">\(\mathbb{N}\)</span><a class="headerlink" href="#die-naturlichen-zahlen-mathbb-n" title="Permalink to this heading">#</a></h3>
 <p>Die natürlichen Zahlen sind die Menge der positiven ganzen Zahlen. Die Elemente sind also:</p>
 <div class="math notranslate nohighlight">
 \[0, 1,2,3,4,\dots .\]</div>
 <p>Ob die <span class="math notranslate nohighlight">\(0\)</span> in der Menge der natürlichen Zahlen enthalten sind, hängt vom Geschmack der einzelnen Person ab. In meiner Vorlesung wird die <span class="math notranslate nohighlight">\(0\)</span>  <strong>enthalten</strong> sein.</p>
-<p>Manchmal schreibt  man auch <span class="math notranslate nohighlight">\(\mathbb{N}_0\)</span> für die Menge der natürlichen Zahlen mit <span class="math notranslate nohighlight">\(0\)</span> um zu betonen, dass die <span class="math notranslate nohighlight">\(0\)</span> enthalten ist.</p>
+<p>Um Klarheit zu schaffen, insbesondere wenn es wichtig ist zu betonen, dass die
+0 enthalten ist, verwendet man manchmal die Bezeichnung <span class="math notranslate nohighlight">\(\mathbb{N}_0\)</span> für die Menge der natürlichen Zahlen einschließlich der
+0.</p>
 </section>
 <section id="die-ganzen-zahlen-mathbb-z">
 <h3>Die ganzen Zahlen <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span><a class="headerlink" href="#die-ganzen-zahlen-mathbb-z" title="Permalink to this heading">#</a></h3>
@@ -671,13 +664,13 @@ Wir schreiben</p>
 </section>
 <section id="die-reellen-zahlen-mathbb-r">
 <h3>Die reellen Zahlen <span class="math notranslate nohighlight">\(\mathbb{R}\)</span><a class="headerlink" href="#die-reellen-zahlen-mathbb-r" title="Permalink to this heading">#</a></h3>
-<p>Was genau die reellen Zahlen sind, ist gar nicht so einfach zu sagen. Zunächst einmal hat man lange Zeit gedacht, es gibt sie gar nicht. So glaubten die Pythagorärer, dass jede Zahl als Bruch oder ganze Zahl darstellbar ist. Wie wir heute wissen, gilt das für Zahlen wie <span class="math notranslate nohighlight">\(\sqrt{5}\)</span> oder <span class="math notranslate nohighlight">\(\pi\)</span> nicht. Doch was genau sind irrationale Zahlen.
+<p>Die reellen Zahlen sind eine Erweiterung der rationalen Zahlen und umfassen sowohl rationale als auch irrationale Zahlen. Irrationale Zahlen sind solche, die nicht als Bruch zweier ganzer Zahlen dargestellt werden können. Zunächst einmal hat man lange Zeit gedacht, es gibt sie gar nicht. So glaubten die Pythagorärer, dass jede Zahl als Bruch oder ganze Zahl darstellbar ist. Wie wir heute wissen, gilt das für Zahlen wie <span class="math notranslate nohighlight">\(\sqrt{5}\)</span> oder <span class="math notranslate nohighlight">\(\pi\)</span> nicht. Doch was genau sind reelle Zahlen.
 Wir werden in diesem Kurs keine genaue Definition geben können, sondern lediglich eine Intuition.</p>
 <p><strong>Intuition</strong>:</p>
-<ul class="simple">
-<li><p>Sie können sich die reellen Zahlen als Punkte auf einem Zahlenstrahl vorstellen.</p></li>
-<li><p>Sie können sich die reellen Zahlen als alle möglichen unendlichen Varianten von Dezimalzahlen vorstellen.</p></li>
-</ul>
+<ol class="arabic simple">
+<li><p><strong>Zahlenstrahl</strong>: Die reellen Zahlen können als Punkte auf einem unendlich ausgedehnten Zahlenstrahl visualisiert werden. Jeder Punkt auf diesem Strahl entspricht einer eindeutigen reellen Zahl.</p></li>
+<li><p><strong>Dezimalzahlen</strong>: Reelle Zahlen können als endliche oder unendliche Dezimalzahlen dargestellt werden. Während rationale Zahlen immer eine wiederkehrende Dezimaldarstellung haben, haben irrationale Zahlen eine nicht wiederkehrende, unendliche Dezimaldarstellung.</p></li>
+</ol>
 </section>
 <section id="zusammenhang-zwischen-den-verschiedenen-zahlenmengen">
 <h3>Zusammenhang zwischen den verschiedenen Zahlenmengen<a class="headerlink" href="#zusammenhang-zwischen-den-verschiedenen-zahlenmengen" title="Permalink to this heading">#</a></h3>
