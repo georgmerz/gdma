@@ -341,7 +341,7 @@ Seien also im Folgenden $a,b\in \mathbb{R}$. Dann definieren wir die folgenden M
 
 ## 1.5 Mengenoperationen 
 
-Wir kennen nun schon ein paar Mengen und wir wissen wie wir mit Hilfe von Regeln weitere Mengen konstruieren können. In diesem Abschnitt wollen wir lernen wie wir zwei oder mehrere Mengen miteinander kombinieren können um so weitere Mengen zu erhalten.
+Wir kennen nun schon ein paar Mengen und wir wissen, wie wir mit Hilfe von Regeln weitere Mengen konstruieren können. In diesem Abschnitt wollen wir lernen, wie wir zwei oder mehrere Mengen miteinander kombinieren können, um so weitere Mengen zu erhalten.
 
 ### Die Schnittmenge
 
@@ -367,6 +367,7 @@ A\cap B= \{3,4\}
 ```
 
 ````
+
 
 **Frage:**
 
@@ -403,14 +404,14 @@ A\cup B= \{0,1,2,3,4,5,6\}
 ```
 
 ````
-
+````{prf:example}
 
 **Frage:**
 
 Sei 
 - $D:=\{ \{0,1\} ,\{2,3,4\}\} $
 - $E:=\{\{ 0,1,2,3,4 \} \} $
-Was ist $E \cap D$
+Was ist $E \cup D$
 
 **Antwort:**
 ```{toggle}
@@ -779,7 +780,7 @@ Damit ist $M$ induktiv und damit ist nach {prf:ref}`induktion` $M=\mathbb{N}$ un
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iRmJp1FGPgQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## 1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre
+## 1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre (Nicht Klausurrelevant)
 
 
 Nachdem Frege sein Hauptwerk [Grundgesetze der Arithmetik](https://de.wikipedia.org/wiki/Grundgesetze_der_Arithmetik) 1893 veröffentlicht hat, war er der Meinung, er hat die Mathematik auf eine objektiv Grundlage gestellt und alle Mathematischen Formeln konnten nun aus der Mengenlehre und der Logik abgeleitet werden.

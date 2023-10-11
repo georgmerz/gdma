@@ -392,7 +392,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-vollstandige-induktion">1.7 Die vollständige Induktion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre">1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre-nicht-klausurrelevant">1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre (Nicht Klausurrelevant)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#russelsche-antinomie">Russelsche Antinomie</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auflosung-der-russelschen-antinomie">Auflösung der Russelschen Antinomie</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#russels-typentheorie">Russels Typentheorie</a></li>
@@ -699,7 +699,7 @@ Wir werden in diesem Kurs keine genaue Definition geben können, sondern ledigli
 </section>
 <section id="mengenoperationen">
 <h2>1.5 Mengenoperationen<a class="headerlink" href="#mengenoperationen" title="Permalink to this heading">#</a></h2>
-<p>Wir kennen nun schon ein paar Mengen und wir wissen wie wir mit Hilfe von Regeln weitere Mengen konstruieren können. In diesem Abschnitt wollen wir lernen wie wir zwei oder mehrere Mengen miteinander kombinieren können um so weitere Mengen zu erhalten.</p>
+<p>Wir kennen nun schon ein paar Mengen und wir wissen, wie wir mit Hilfe von Regeln weitere Mengen konstruieren können. In diesem Abschnitt wollen wir lernen, wie wir zwei oder mehrere Mengen miteinander kombinieren können, um so weitere Mengen zu erhalten.</p>
 <section id="die-schnittmenge">
 <h3>Die Schnittmenge<a class="headerlink" href="#die-schnittmenge" title="Permalink to this heading">#</a></h3>
 <p>Die Schnittmenge von zwei Mengen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> ist diejenige Menge, die sowohl die Elemente von <span class="math notranslate nohighlight">\(A\)</span> als auch die von <span class="math notranslate nohighlight">\(B\)</span> enthält.</p>
@@ -748,30 +748,34 @@ Was ist <span class="math notranslate nohighlight">\(E\cap D\)</span>?</p></li>
 <div class="math notranslate nohighlight">
 \[A\cup B= \{0,1,2,3,4,5,6\}\]</div>
 </section>
-</div><p><strong>Frage:</strong></p>
+</div><div class="proof example admonition" id="example-16">
+<p class="admonition-title"><span class="caption-number">Example 9 </span></p>
+<section class="example-content" id="proof-content">
+<p><strong>Frage:</strong></p>
 <p>Sei</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(D:=\{ \{0,1\} ,\{2,3,4\}\} \)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(E:=\{\{ 0,1,2,3,4 \} \} \)</span>
-Was ist <span class="math notranslate nohighlight">\(E \cap D\)</span></p></li>
+Was ist <span class="math notranslate nohighlight">\(E \cup D\)</span></p></li>
 </ul>
 <p><strong>Antwort:</strong></p>
 <div class="toggle docutils container">
 <p><span class="math notranslate nohighlight">\(D\cup E =\{ \{0,1\} ,\{2,3,4\},\{ 0,1,2,3,4 \} \}\)</span></p>
 </div>
 </section>
+</div></section>
 <section id="differenz">
 <h3>Differenz<a class="headerlink" href="#differenz" title="Permalink to this heading">#</a></h3>
 <p>Wir können die Differenz von zwei Mengen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> bilden. Also diejenige Menge, die nur Elemente aus A enthält, die nicht in <span class="math notranslate nohighlight">\(B\)</span> enthalten sind.</p>
-<div class="proof definition admonition" id="definition-16">
+<div class="proof definition admonition" id="definition-17">
 <p class="admonition-title"><span class="caption-number">Definition 9 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Seien <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> zwei Mengen so definieren wir <span class="math notranslate nohighlight">\(A\setminus B\)</span> durch folgende Eigenschaft:</p>
 <div class="math notranslate nohighlight">
 \[A \setminus B:=\{a\in A \ \vert \ a\notin B\}\]</div>
 </section>
-</div><div class="proof example admonition" id="example-17">
-<p class="admonition-title"><span class="caption-number">Example 9 </span></p>
+</div><div class="proof example admonition" id="example-18">
+<p class="admonition-title"><span class="caption-number">Example 10 </span></p>
 <section class="example-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A=\{0,1,2,3,4\}\)</span> und <span class="math notranslate nohighlight">\(B=\{3,4,5,6 \}\)</span>. Dann gilt</p>
 <div class="math notranslate nohighlight">
@@ -782,7 +786,7 @@ Was ist <span class="math notranslate nohighlight">\(E \cap D\)</span></p></li>
 <h3>Das Kartesische Produkt<a class="headerlink" href="#das-kartesische-produkt" title="Permalink to this heading">#</a></h3>
 <p>Wir können auch das Produkt von zwei Mengen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> definieren als die  Menge aller geordneten Paare von  <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span>.</p>
 <p>Genauer definieren wir:</p>
-<div class="proof definition admonition" id="definition-18">
+<div class="proof definition admonition" id="definition-19">
 <p class="admonition-title"><span class="caption-number">Definition 10 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Seien <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> zwei Mengen so definieren wir das kartesische Produkt <span class="math notranslate nohighlight">\(A\times B\)</span> wie folgt:</p>
@@ -805,15 +809,15 @@ Was ist <span class="math notranslate nohighlight">\(E \cap D\)</span></p></li>
 <section id="potenzmenge">
 <h3>Potenzmenge<a class="headerlink" href="#potenzmenge" title="Permalink to this heading">#</a></h3>
 <p>Die Potenzmenge einer Menge ist die Menge aller Teilmengen. Genauer können wir auch hier die Potenzmenge wie folgt definieren.</p>
-<div class="proof definition admonition" id="definition-19">
+<div class="proof definition admonition" id="definition-20">
 <p class="admonition-title"><span class="caption-number">Definition 11 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine Menge so definieren wir die  Potenzmenge <span class="math notranslate nohighlight">\(\mathcal{P}(A)\)</span> wie folgt:</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{P}(A) = \{U \ \vert \ U\subset A \}.\]</div>
 </section>
-</div><div class="proof example admonition" id="example-20">
-<p class="admonition-title"><span class="caption-number">Example 10 </span></p>
+</div><div class="proof example admonition" id="example-21">
+<p class="admonition-title"><span class="caption-number">Example 11 </span></p>
 <section class="example-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A:=\{0,1,2,3,4\}\)</span>. Was ist nun <span class="math notranslate nohighlight">\(\mathcal{P}(A)\)</span>?</p>
 <p>Nun zunächst einmal gibt es die Teilmengen mit nur einem Element:</p>
@@ -853,7 +857,7 @@ In der Tat es gibt noch die Teilmenge mit null Elementen:
 <p>Aber <span class="math notranslate nohighlight">\(32=2^5\)</span> und <span class="math notranslate nohighlight">\(A\)</span> besitzt genau <span class="math notranslate nohighlight">\(5\)</span> Elemente.</p>
 <p>Ist das ein Zufall? Vermutlich nicht.</p>
 </div>
-<div class="proof theorem admonition" id="theorem-21">
+<div class="proof theorem admonition" id="theorem-22">
 <p class="admonition-title"><span class="caption-number">Theorem 1 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine endliche Menge. Dann gilt für die Kardinalität der Potenzmenge folgende Formel</p>
@@ -959,7 +963,7 @@ Die vollständige Induktion kann immer dann verwendet werden, wenn wir eine Auss
 <li><p><span class="math notranslate nohighlight">\(1+3+5+7+\dots + (2n+1) =(n+1)^2\)</span> für alle <span class="math notranslate nohighlight">\(n\in \mathbb{n}\)</span></p></li>
 </ul>
 <p>Wir brauchen zunächst folgende Definition:</p>
-<div class="proof definition admonition" id="definition-22">
+<div class="proof definition admonition" id="definition-23">
 <p class="admonition-title"><span class="caption-number">Definition 12 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Wir sagen eine Menge <span class="math notranslate nohighlight">\(M\)</span> ist induktiv falls  gilt:</p>
@@ -977,7 +981,7 @@ Die vollständige Induktion kann immer dann verwendet werden, wenn wir eine Auss
 <p>Die Menge <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> ist die kleinste induktive Menge. D.h. falls <span class="math notranslate nohighlight">\(M\subset \mathbb{N}\)</span> und <span class="math notranslate nohighlight">\(M\)</span> induktiv dann ist <span class="math notranslate nohighlight">\(M=\mathbb{N}\)</span>.</p>
 </section>
 </div><p>Wir versuchen nun mit diesem Satz die folgende Aussage zu beweisen:</p>
-<div class="proof theorem admonition" id="theorem-24">
+<div class="proof theorem admonition" id="theorem-25">
 <p class="admonition-title"><span class="caption-number">Theorem 3 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Sei <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span> dann gilt</p>
@@ -1018,8 +1022,8 @@ Das heißt wir müssen noch die beiden Eigenschaften für induktive Mengen zeige
 </ul>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iRmJp1FGPgQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
-<section id="grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre">
-<h2>1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre<a class="headerlink" href="#grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre" title="Permalink to this heading">#</a></h2>
+<section id="grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre-nicht-klausurrelevant">
+<h2>1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre (Nicht Klausurrelevant)<a class="headerlink" href="#grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre-nicht-klausurrelevant" title="Permalink to this heading">#</a></h2>
 <p>Nachdem Frege sein Hauptwerk <a class="reference external" href="https://de.wikipedia.org/wiki/Grundgesetze_der_Arithmetik">Grundgesetze der Arithmetik</a> 1893 veröffentlicht hat, war er der Meinung, er hat die Mathematik auf eine objektiv Grundlage gestellt und alle Mathematischen Formeln konnten nun aus der Mengenlehre und der Logik abgeleitet werden.</p>
 <p>Leider machte ihm Russel einen Strich durch die Rechnung.
 Russel fand einen Widerspruch in der Mengenlehre und berichtet seinem Kollegen in einem Brief 1902 davon.
@@ -1181,7 +1185,7 @@ Obige Menge <span class="math notranslate nohighlight">\(M\)</span> kann also ni
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-vollstandige-induktion">1.7 Die vollständige Induktion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre">1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre-nicht-klausurrelevant">1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre (Nicht Klausurrelevant)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#russelsche-antinomie">Russelsche Antinomie</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auflosung-der-russelschen-antinomie">Auflösung der Russelschen Antinomie</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#russels-typentheorie">Russels Typentheorie</a></li>
