@@ -735,7 +735,7 @@ Wir müssen beweisen, dass obige Aussage für alle $n\in \mathbb{N}$ gilt, d.h. 
 Dafür können wir aber  {prf:ref}`induktion` verwenden.
 
 Es ist aufgrund der Definition $M\subset \mathbb{N}$. 
-Wir wollen zeigen, dass $M$ induktiv ist. DAnn gilt nämlich miitels {prf:ref}`induktion` das $M=\mathbb{N}$. Was nichts anderes bedeutet als das der Satz für alle $n\in mathbb{N}$ gilt.
+Wir wollen zeigen, dass $M$ induktiv ist. DAnn gilt nämlich mittels {prf:ref}`induktion` das $M=\mathbb{N}$. Was nichts anderes bedeutet als das der Satz für alle $n\in \mathbb{N}$ gilt.
 Das heißt wir müssen noch die beiden Eigenschaften für induktive Mengen zeigen um den Beweis zu schließen.
 
 **Induktionsanfang $(n=0)$**
@@ -773,7 +773,7 @@ Damit ist $M$ induktiv und damit ist nach {prf:ref}`induktion` $M=\mathbb{N}$ un
 
 - **Induktionsanfang**: Wir zeigen, dass $A(0)$ gilt.
 
-- **Induktionsannahme**: Wir nehmen an, dass $A(n)$ gilt.
+- **Induktionsannahme/Induktionsvorraussetzung**: Wir nehmen an, dass $A(n)$ gilt.
 
 - **Induktionsschritt**: Wir zeigen, dass $A(n+1)$ gilt unter der Verwendung von $A(n)$.
 
