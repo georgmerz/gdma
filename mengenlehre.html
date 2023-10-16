@@ -958,9 +958,9 @@ Wir können die Menge, die die leere Menge enthält bilden:</p>
 Die vollständige Induktion kann immer dann verwendet werden, wenn wir eine Aussage über natürliche Zahlen beweisen müssen.</p>
 <p>Beispiele für den Beweis sind folgende:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\( 1+2+3+\dots + n = \frac{n(n+1)}{2}\)</span> für alle <span class="math notranslate nohighlight">\(n\in \mathbb{n}\)</span>
+<li><p><span class="math notranslate nohighlight">\( 1+2+3+\dots + n = \frac{n(n+1)}{2}\)</span> für alle <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span>
 ´</p></li>
-<li><p><span class="math notranslate nohighlight">\(1+3+5+7+\dots + (2n+1) =(n+1)^2\)</span> für alle <span class="math notranslate nohighlight">\(n\in \mathbb{n}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1+3+5+7+\dots + (2n+1) =(n+1)^2\)</span> für alle <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span></p></li>
 </ul>
 <p>Wir brauchen zunächst folgende Definition:</p>
 <div class="proof definition admonition" id="definition-23">
@@ -1005,7 +1005,7 @@ Das heißt wir müssen noch die beiden Eigenschaften für induktive Mengen zeige
 <p><strong>Induktionsschritt <span class="math notranslate nohighlight">\((n\to n+1)\)</span>:</strong></p>
 <p>Nun müssen wir zeigen, dass falls <span class="math notranslate nohighlight">\(m\in M\)</span> dann gilt auch <span class="math notranslate nohighlight">\(m\cap \{m\}\in M\)</span>.
 Übersetzt in natürliche Zahlen heißt das, dass falls <span class="math notranslate nohighlight">\(n\in M\)</span> dann ist auch <span class="math notranslate nohighlight">\(n+1\in M\)</span>.</p>
-<p>Nehmen wir allso an, wir wissen, dass <span class="math notranslate nohighlight">\(n\in M\)</span>, d.h. <span class="math notranslate nohighlight">\(P(n)=\frac{(n(n+1)}{2}\)</span>.  Wir müssen zeigen, dass <span class="math notranslate nohighlight">\(P(n+1)=\frac{(n+1)(n+2)}{2}\)</span>.</p>
+<p>Nehmen wir allso an, wir wissen, dass <span class="math notranslate nohighlight">\(n\in M\)</span>, d.h. <span class="math notranslate nohighlight">\(P(n)=\frac{n(n+1)}{2}\)</span>.  Wir müssen zeigen, dass <span class="math notranslate nohighlight">\(P(n+1)=\frac{(n+1)(n+2)}{2}\)</span>.</p>
 <p>Es gilt aber nun</p>
 <div class="math notranslate nohighlight">
 \[\frac{(n+1)(n+2)}{2}=\frac{(n+1)(n)}{2}+\frac{(n+1)\cdot 2}{2}=\frac{(n+1)(n)}{2}+(n+1)=P(n)+(n+1)=P(n+1)\]</div>

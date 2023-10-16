@@ -684,9 +684,9 @@ Die vollständige Induktion kann immer dann verwendet werden, wenn wir eine Auss
 
 Beispiele für den Beweis sind folgende:
 
-- $ 1+2+3+\dots + n = \frac{n(n+1)}{2}$ für alle $n\in \mathbb{n}$
+- $ 1+2+3+\dots + n = \frac{n(n+1)}{2}$ für alle $n\in \mathbb{N}$
 ´
-- $1+3+5+7+\dots + (2n+1) =(n+1)^2$ für alle $n\in \mathbb{n}$
+- $1+3+5+7+\dots + (2n+1) =(n+1)^2$ für alle $n\in \mathbb{N}$
 
 
 Wir brauchen zunächst folgende Definition:
@@ -751,7 +751,7 @@ Das gilt aber, weil $P(0)=0$.
 Nun müssen wir zeigen, dass falls $m\in M$ dann gilt auch $m\cap \{m\}\in M$.
 Übersetzt in natürliche Zahlen heißt das, dass falls $n\in M$ dann ist auch $n+1\in M$.
 
-Nehmen wir allso an, wir wissen, dass $n\in M$, d.h. $P(n)=\frac{(n(n+1)}{2}$.  Wir müssen zeigen, dass $P(n+1)=\frac{(n+1)(n+2)}{2}$.
+Nehmen wir allso an, wir wissen, dass $n\in M$, d.h. $P(n)=\frac{n(n+1)}{2}$.  Wir müssen zeigen, dass $P(n+1)=\frac{(n+1)(n+2)}{2}$.
 
 
 Es gilt aber nun 
