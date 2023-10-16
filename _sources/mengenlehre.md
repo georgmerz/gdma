@@ -769,7 +769,7 @@ Damit ist $M$ induktiv und damit ist nach {prf:ref}`induktion` $M=\mathbb{N}$ un
 
 **Zusammenfassung des Prinzips der Vollständigen Induktion**
 
-- **Voraussetzung**: Wir müssen eine Aussage $A(n)$ für alle $n\in \mathbb{N}$ beweisen.
+- **Behauptung**: Wir müssen eine Aussage $A(n)$ für alle $n\in \mathbb{N}$ beweisen.
 
 - **Induktionsanfang**: Wir zeigen, dass $A(0)$ gilt.
 
