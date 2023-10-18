@@ -229,7 +229,7 @@ Am einfachsten illustrieren wir dieses Konzept mit einem Beispiel und dem $\wedg
 Dafür betrachten wir nun die Formel $F=A\lor B$.
 
 
-**Schrittt 1:**
+**Schritt 1:**
 Zunächst einmal schreiben wir eine Tabelle mit den Aussagen und der Formel
 
 
@@ -280,7 +280,7 @@ Wir bekommen also folgende Wahrheitstafel.
 % and between the second and the third columns.
 % The letter ’c’ means the value will be centered within the column,
 % letter ’l’, left-aligned, and ’r’, right-aligned.
-A & B & A \land B\\ % Use & to separate the columns
+A & B & A \lor B\\ % Use & to separate the columns
 \hline  % Put a horizontal line between the table header and the rest.
 T & T & T\\
 T & F & T\\
