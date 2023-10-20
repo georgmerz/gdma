@@ -884,7 +884,7 @@ Dann folgt mittels Kommutativgesetz(2), dass $R\equiv L$.
 ````
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-totTQPSx3U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## 2.3 Prädikatenlogik - Quantoren
+## 2.4 Prädikatenlogik - Quantoren
 Die Aussagenlogik ist eine wichtige Grundlage der Logik. Wir haben im letzten Abschnitt gelernt, wie wir allerhand Formel kreieren können und wie wir diese interpretieren können. 
 
 Die Aussagenlogik reicht jedoch häufig in der Mathematik nicht aus um Aussagen formulieren zu können.
