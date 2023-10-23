@@ -828,7 +828,7 @@ F\equiv\neg (A\land B) \lor (A\lor B).
 Weiter können wir nun für die erste Klammer de Morgan (8) nutzen. Damit ergibt sich:
 
 ```{math}
-F\equiv (\neg A\lor B) \lor (A\lor B).
+F\equiv (\neg A\lor \neg B) \lor (A\lor B).
 ```
 
 
@@ -1070,7 +1070,7 @@ Um eine Formel mit Quantoren zu negieren, geht man also wie folgt vor:
 ````
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MfOo0pwpBN0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## 2.5 Gödelscher Unvollständigkeitssatz
+## 2.5 Gödelscher Unvollständigkeitssatz (optional)
 
 Im letzten Abschnitt hatten wir folgende Bemerkung gemacht:
 
