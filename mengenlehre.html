@@ -943,12 +943,15 @@ Wir können die Menge, die die leere Menge enthält bilden:</p>
 </section>
 <section id="rechnen-mit-naturlichen-zahlen">
 <h3>Rechnen mit natürlichen Zahlen<a class="headerlink" href="#rechnen-mit-naturlichen-zahlen" title="Permalink to this heading">#</a></h3>
-<p>Zahlen sind nun aber vor allem darin charakterisiert, dass man mit ihnen rechnen kann.</p>
-<p>Wie können wir nun die Addition dieser Mengen definieren. Die Idee ist, dass wir definieren was wir mit <span class="math notranslate nohighlight">\( \_ + 1\)</span> meinen. Wir nennen diese Funktion <span class="math notranslate nohighlight">\(S(n)\)</span> oder auch Nachfolgerfunktion</p>
+<p>Zahlen sind nun aber vor allem dadurch charakterisiert, dass man mit ihnen rechnen kann.
+Es stellt sich also die Frage,
+wie  wir nun die Addition dieser Mengen definieren können. Die Idee ist, dass wir definieren was wir mit <span class="math notranslate nohighlight">\( \_ + 1\)</span> meinen. Wir nennen diese Funktion <span class="math notranslate nohighlight">\(S(n)\)</span> oder auch Nachfolgerfunktion</p>
 <p>Wir definieren</p>
 <div class="math notranslate nohighlight">
 \[S(n):= n \cup \{n\}.\]</div>
-<p>Dann können wir <span class="math notranslate nohighlight">\(n+2\)</span> als <span class="math notranslate nohighlight">\(S(S(n))\)</span> definieren und so weiter.</p>
+<p>Diese Definition stimmt auch mit obiger Konstruktion der natürlichen Zahlen überein.</p>
+<p>Wir können nun uach <span class="math notranslate nohighlight">\(n+2\)</span> als <span class="math notranslate nohighlight">\(S(S(n))\)</span> definieren und so weiter.
+Insgesamt sind wir mit dieser Konstruktion in der Lage beliebige Addition durchzuführen.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jZ65h6FwfoU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 </section>
@@ -956,12 +959,13 @@ Wir können die Menge, die die leere Menge enthält bilden:</p>
 <h2>1.7 Die vollständige Induktion<a class="headerlink" href="#die-vollstandige-induktion" title="Permalink to this heading">#</a></h2>
 <p>Die vollständige Induktion ist eines der wichtigsten Beweistechniken der Mathematik.
 Die vollständige Induktion kann immer dann verwendet werden, wenn wir eine Aussage über natürliche Zahlen beweisen müssen.</p>
-<p>Beispiele für den Beweis sind folgende:</p>
+<p>Beispiele für solche Aussagen sind folgende:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\( 1+2+3+\dots + n = \frac{n(n+1)}{2}\)</span> für alle <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span>
 ´</p></li>
 <li><p><span class="math notranslate nohighlight">\(1+3+5+7+\dots + (2n+1) =(n+1)^2\)</span> für alle <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span></p></li>
 </ul>
+<p>Das Induktionsverfahren ist ein Allgemeines Prinzip, dass wir im folgenden beschreiben.</p>
 <p>Wir brauchen zunächst folgende Definition:</p>
 <div class="proof definition admonition" id="definition-23">
 <p class="admonition-title"><span class="caption-number">Definition 12 </span></p>
@@ -973,14 +977,16 @@ Die vollständige Induktion kann immer dann verwendet werden, wenn wir eine Auss
 </ul>
 </section>
 </div><p><strong>Bemerkung</strong></p>
-<p>Die Menge <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> wurde genau so konstruiert, dass Sie Induktiv ist.</p>
-<p>Der Nächste Satz ist eigentlich eher eine Beobachtung, dennoch ist er so zentral für das Prinzip vollständige Induktion, dass wir in als Theorem formulieren.</p>
+<p>Die Menge <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> wurde genau so konstruiert, dass Sie Induktiv ist, denn es ist <span class="math notranslate nohighlight">\(0=\emptyset \in \mathbb{N}\)</span> und
+für <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span> ist ja <span class="math notranslate nohighlight">\(n\cup \{n\}=n+1 \in\mathbb{N}\)</span>. Also sind beide obigen Punkte für <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> erfüllt.</p>
+<p>Der Nächste Satz ist das Prinzip der Vollständigen Induktion.</p>
 <div class="proof theorem admonition" id="induktion">
 <p class="admonition-title"><span class="caption-number">Theorem 2 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Die Menge <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> ist die kleinste induktive Menge. D.h. falls <span class="math notranslate nohighlight">\(M\subset \mathbb{N}\)</span> und <span class="math notranslate nohighlight">\(M\)</span> induktiv dann ist <span class="math notranslate nohighlight">\(M=\mathbb{N}\)</span>.</p>
 </section>
-</div><p>Wir versuchen nun mit diesem Satz die folgende Aussage zu beweisen:</p>
+</div><p>Versuchen wir nochmal kurz zu verstehen, was dieser Satz besagt. Er sagt im Wesentlichen das Folgende: Wenn <span class="math notranslate nohighlight">\(0=\emptyset\)</span> in einer Menge enthalten ist und wenn für jedes Element <span class="math notranslate nohighlight">\(m\in M\)</span> auch der Nachfolger als “m+1” in <span class="math notranslate nohighlight">\(M\)</span> enthalten ist, dann besteht <span class="math notranslate nohighlight">\(M\)</span> genau aus allen natürlichen Zahlen.</p>
+<p>Wir versuchen nun mit diesem Satz die folgende Aussage zu beweisen:</p>
 <div class="proof theorem admonition" id="theorem-25">
 <p class="admonition-title"><span class="caption-number">Theorem 3 </span></p>
 <section class="theorem-content" id="proof-content">
@@ -1005,7 +1011,7 @@ Das heißt wir müssen noch die beiden Eigenschaften für induktive Mengen zeige
 <p><strong>Induktionsschritt <span class="math notranslate nohighlight">\((n\to n+1)\)</span>:</strong></p>
 <p>Nun müssen wir zeigen, dass falls <span class="math notranslate nohighlight">\(m\in M\)</span> dann gilt auch <span class="math notranslate nohighlight">\(m\cap \{m\}\in M\)</span>.
 Übersetzt in natürliche Zahlen heißt das, dass falls <span class="math notranslate nohighlight">\(n\in M\)</span> dann ist auch <span class="math notranslate nohighlight">\(n+1\in M\)</span>.</p>
-<p>Nehmen wir allso an, wir wissen, dass <span class="math notranslate nohighlight">\(n\in M\)</span>, d.h. <span class="math notranslate nohighlight">\(P(n)=\frac{n(n+1)}{2}\)</span>.  Wir müssen zeigen, dass <span class="math notranslate nohighlight">\(P(n+1)=\frac{(n+1)(n+2)}{2}\)</span>.</p>
+<p>Nehmen wir allso an, wir wissen, dass <span class="math notranslate nohighlight">\(n\in M\)</span>, d.h. <span class="math notranslate nohighlight">\(P(n)=\frac{n(n+1)}{2}\)</span> (Induktionsannahme).  Wir müssen zeigen, dass <span class="math notranslate nohighlight">\(P(n+1)=\frac{(n+1)(n+2)}{2}\)</span>.</p>
 <p>Es gilt aber nun</p>
 <div class="math notranslate nohighlight">
 \[\frac{(n+1)(n+2)}{2}=\frac{(n+1)(n)}{2}+\frac{(n+1)\cdot 2}{2}=\frac{(n+1)(n)}{2}+(n+1)=P(n)+(n+1)=P(n+1)\]</div>

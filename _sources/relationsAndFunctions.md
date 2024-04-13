@@ -682,10 +682,10 @@ Sei $f\colon \mathbb{R}\setminus \{0\} \to \mathbb{R}, \quad x \mapsto \frac{1}{
 $g\colon \mathbb{R} \to \mathbb{R}, \quad x \mapsto x^2$.
 Dann ist
 ```{math}
-(f\circ g) \colon \mathbb{R}&\to \mathbb{R}\\
+(g\circ f) \colon \mathbb{R}\setminus \{0\}&\to \mathbb{R}\setminus \{0\}\\
 x&\mapsto \frac{1}{x^2}.
 ```
-Die Funktion $f\circ g$ kann nicht definiert werden, denn $g(\mathbb{R})\not \subset\mathbb{R}\setminus \{0\}$.
+Die Funktion $f\circ g$ kann nicht definiert werden, denn $f(\mathbb{R})\not \subset\mathbb{R}\setminus \{0\}$.
 (Übung: Warum?)
 ````
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_IkjdJ-tYAc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -663,17 +663,20 @@ D.h. die Elemente der Menge $n$ sind die Mengen $1,\dots,n-1$.
 
 ### Rechnen mit natürlichen Zahlen
 
-Zahlen sind nun aber vor allem darin charakterisiert, dass man mit ihnen rechnen kann.
-
-Wie können wir nun die Addition dieser Mengen definieren. Die Idee ist, dass wir definieren was wir mit $ \_ + 1$ meinen. Wir nennen diese Funktion $S(n)$ oder auch Nachfolgerfunktion
+Zahlen sind nun aber vor allem dadurch charakterisiert, dass man mit ihnen rechnen kann.
+Es stellt sich also die Frage,
+wie  wir nun die Addition dieser Mengen definieren können. Die Idee ist, dass wir definieren was wir mit $ \_ + 1$ meinen. Wir nennen diese Funktion $S(n)$ oder auch Nachfolgerfunktion
 
 
 Wir definieren
 ```{math}
 S(n):= n \cup \{n\}.
 ```
+Diese Definition stimmt auch mit obiger Konstruktion der natürlichen Zahlen überein.
 
-Dann können wir $n+2$ als $S(S(n))$ definieren und so weiter.
+
+Wir können nun uach $n+2$ als $S(S(n))$ definieren und so weiter.
+Insgesamt sind wir mit dieser Konstruktion in der Lage beliebige Addition durchzuführen.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jZ65h6FwfoU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -682,12 +685,13 @@ Dann können wir $n+2$ als $S(S(n))$ definieren und so weiter.
 Die vollständige Induktion ist eines der wichtigsten Beweistechniken der Mathematik. 
 Die vollständige Induktion kann immer dann verwendet werden, wenn wir eine Aussage über natürliche Zahlen beweisen müssen.
 
-Beispiele für den Beweis sind folgende:
+Beispiele für solche Aussagen sind folgende:
 
 - $ 1+2+3+\dots + n = \frac{n(n+1)}{2}$ für alle $n\in \mathbb{N}$
 ´
 - $1+3+5+7+\dots + (2n+1) =(n+1)^2$ für alle $n\in \mathbb{N}$
 
+Das Induktionsverfahren ist ein Allgemeines Prinzip, dass wir im folgenden beschreiben.
 
 Wir brauchen zunächst folgende Definition:
 
@@ -701,16 +705,20 @@ Wir sagen eine Menge $M$ ist induktiv falls  gilt:
 
 **Bemerkung**
 
-Die Menge $\mathbb{N}$ wurde genau so konstruiert, dass Sie Induktiv ist.
+Die Menge $\mathbb{N}$ wurde genau so konstruiert, dass Sie Induktiv ist, denn es ist $0=\emptyset \in \mathbb{N}$ und
+für $n\in \mathbb{N}$ ist ja $n\cup \{n\}=n+1 \in\mathbb{N}$. Also sind beide obigen Punkte für $\mathbb{N}$ erfüllt.
 
 
-Der Nächste Satz ist eigentlich eher eine Beobachtung, dennoch ist er so zentral für das Prinzip vollständige Induktion, dass wir in als Theorem formulieren.
-
+Der Nächste Satz ist das Prinzip der Vollständigen Induktion.
 ````{prf:theorem}
 :label: induktion 
 
 Die Menge $\mathbb{N}$ ist die kleinste induktive Menge. D.h. falls $M\subset \mathbb{N}$ und $M$ induktiv dann ist $M=\mathbb{N}$.
 ````
+Versuchen wir nochmal kurz zu verstehen, was dieser Satz besagt. Er sagt im Wesentlichen das Folgende: Wenn $0=\emptyset$ in einer Menge enthalten ist und wenn für jedes Element $m\in M$ auch der Nachfolger als "m+1" in $M$ enthalten ist, dann besteht $M$ genau aus allen natürlichen Zahlen.
+
+
+
 
 
 Wir versuchen nun mit diesem Satz die folgende Aussage zu beweisen:
@@ -751,7 +759,7 @@ Das gilt aber, weil $P(0)=0$.
 Nun müssen wir zeigen, dass falls $m\in M$ dann gilt auch $m\cap \{m\}\in M$.
 Übersetzt in natürliche Zahlen heißt das, dass falls $n\in M$ dann ist auch $n+1\in M$.
 
-Nehmen wir allso an, wir wissen, dass $n\in M$, d.h. $P(n)=\frac{n(n+1)}{2}$.  Wir müssen zeigen, dass $P(n+1)=\frac{(n+1)(n+2)}{2}$.
+Nehmen wir allso an, wir wissen, dass $n\in M$, d.h. $P(n)=\frac{n(n+1)}{2}$ (Induktionsannahme).  Wir müssen zeigen, dass $P(n+1)=\frac{(n+1)(n+2)}{2}$.
 
 
 Es gilt aber nun 
