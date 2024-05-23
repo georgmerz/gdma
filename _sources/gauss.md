@@ -242,13 +242,13 @@ Sei $(A,b)=\left( \begin{array}{ccc|c} a_{11} & \dots & a_{1n} & b_1 \\ \vdots &
 
 Wir nennen die folgenden Operationen auf der erweiterten Koeffizientenmatrix eine **elementare Zeilenumformung**:
 1) Vertauschung zweier Zeilen
-2) Addition des 𝜆- fachen Einer Zeile einer Zeile zu einer anderen Zeile ($\lambda\in \mathbb{R}$).
+2) Addition des 𝜆- fachen einer Zeile einer Zeile zu einer anderen Zeile ($\lambda\in \mathbb{R}$).
 
 ````
 
-In form von Gleichungen bedeutet 1) einfache nur die Reihenfolge der Gleichungen zu tauschen und 2) Bedeutet, dass wir zwei Gleichungen addieren und eine neue Gleichung dadurch entsteht. 
+In Form von Gleichungen bedeutet 1) einfache nur die Reihenfolge der Gleichungen zu tauschen und 2) bedeutet, dass wir zwei Gleichungen addieren und eine neue Gleichung dadurch entsteht. 
 
-Die Wichtige Erkenntnis ist nun, das beide Umformungen die Lösungsmenge des Systems nicht ändern.
+Die Wichtige Erkenntnis ist nun, dass beide Umformungen die Lösungsmenge des Systems nicht ändern.
 
 Wir haben daher folgenden Satz:
 
@@ -380,7 +380,7 @@ wobei die $a_{ii}\neq 0$.
 Jede obere Dreiecksmatrix ist insbesondere eine Matrix in Zeilenstufenform
 `````
 
-Wir sind nun in der Lage einen Allgemeinen Satz zu formulieren welches Ergebnis der Gauß-Algorithmus in jedem Fall liefert.
+Wir sind nun in der Lage einen allgemeinen Satz zu formulieren welches Ergebnis der Gauß-Algorithmus in jedem Fall liefert.
 
 ```{prf:theorem}
 Sei $(𝐴,𝑏)$ die erweiterte Koeffizientenmatrix eines linearen Gleichungssystems.
@@ -395,7 +395,7 @@ Nehmen wir an wir haben ein erweiterte Koeffizientenmatrix $(A,b)$, wobei $A$ Ze
 
 ![](images/zeilenstufenerw.png).
 
-Wir habenn nun mehrere Fälle, die wir unterscheiden:
+Wir haben nun mehrere Fälle, die wir unterscheiden:
 
 **Fall 1**
 $A$ ist eine obere Dreiecksmatrix. Dann besteht die Lösungsmenge aus **einer Lösung**
@@ -405,7 +405,37 @@ $A$ ist **keine** obere Dreicksmatrix und eine der Zahlen $b_{r+1},\dots , b_m \
 Dann gibt es **keine Lösung**,da dann die Gleichung niemals erfüllt sein kann.
 
 **Fall 2.2**
-$A$ ist **keine** obere Dreicksmatrix und $b_{r+1}=b_{r+2}=\dots = b_m=0$ so sind die Gleichung stets erfüllt und wir erhalten **unendlich viele Lösungen**.
+$A$ ist **keine** obere Dreicksmatrix und $b_{r+1}=b_{r+2}=\dots = b_m=0$ so sind die Gleichung stets erfüllt und wir erhalten **unendlich viele Lösungen** oder **genau eine Lösung**.
+
+**Frage:**
+Überlegen Sie sich für den Fall 2.2, eine Situation in der es genau eine Lösung gibt.
+**Antwort:**
+````{toggle}
+Betrachten Sie zum Beispiel das Gleichungssystem mit :
+```{math}
+\begin{cases}
+2x_1 - x_2 + 3x_3 = 5 \\
+3x_2 - 4x_3 = 6 \\
+2x_3 = 1 \\
+2x_1 - x_2 + 3x_3 = 5 \\
+\end{cases}
+```
+
+Dies führt mittels Gauß (letzte Gleichung ist gleich der ersten Gleichung) zu folgender Koeffizientenmatrix:
+```{math}
+\left(\begin{array}{ccc|c}
+2 & -1 & 3 &  5 \\
+0 & 3  &-4  & 6 \\
+0 & 0& 2  & 1 \\
+0 & 0 & 0  & 0 \\
+\end{array}\right)
+```
+Dieses Gleichungssystem entspricht aber einem Gleichungssystem in oberer Dreiecksform mit 3 Gleichungen und 3 Unbekannten und ist daher eindeutig lösbar.
+
+
+
+
+````
 
 
 
@@ -416,7 +446,7 @@ Insgesamt ergibt sich der folgende Satz.
 Gegeben sein ein lineares Gleichungssystem mit $m$ Gleichungen und $n$ Unbekannten mit einer erweiterten Koeffizientenmatrix $B=(A,b)$, wobei $A$ die Matrix des Systems ist. Dann gibt es die folgenden Fälle:
 - Fall 1: $A$ ist eine obere Dreiecksmatrix: In diesem Fall besteht die Lösungsmenge aus genau einem Element.
 - Fall 2.1 $A$ ist keine obere Dreiecksmatrix, es gilt $r<m$ und es gibt ein $b_k\neq 0$ für ein $k\in \left\{r+1,\dots , m\right\}$. Dann gibt es keine Lösung.
-- Fall 2.2 $A$ ist keine obere Dreiecksmatrix und es gilt entweder $r=m$ oder $b_{r+1}=b_{r+2}=\dots = b_m=0$. Dann gibt es unendlich viele Lösungen.
+- Fall 2.2 $A$ ist keine obere Dreiecksmatrix und es gilt entweder $r=m$ oder $b_{r+1}=b_{r+2}=\dots = b_m=0$. Dann gibt es unendlich viele Lösungen oder genau eine Lösung.
 
 ````
 

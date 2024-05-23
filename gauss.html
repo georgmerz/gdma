@@ -568,11 +568,11 @@ Dafür schreiben wir die beiden Gleichungen in Spaltenform um:</p>
 <p>Wir nennen die folgenden Operationen auf der erweiterten Koeffizientenmatrix eine <strong>elementare Zeilenumformung</strong>:</p>
 <ol class="arabic simple">
 <li><p>Vertauschung zweier Zeilen</p></li>
-<li><p>Addition des 𝜆- fachen Einer Zeile einer Zeile zu einer anderen Zeile (<span class="math notranslate nohighlight">\(\lambda\in \mathbb{R}\)</span>).</p></li>
+<li><p>Addition des 𝜆- fachen einer Zeile einer Zeile zu einer anderen Zeile (<span class="math notranslate nohighlight">\(\lambda\in \mathbb{R}\)</span>).</p></li>
 </ol>
 </section>
-</div><p>In form von Gleichungen bedeutet 1) einfache nur die Reihenfolge der Gleichungen zu tauschen und 2) Bedeutet, dass wir zwei Gleichungen addieren und eine neue Gleichung dadurch entsteht.</p>
-<p>Die Wichtige Erkenntnis ist nun, das beide Umformungen die Lösungsmenge des Systems nicht ändern.</p>
+</div><p>In Form von Gleichungen bedeutet 1) einfache nur die Reihenfolge der Gleichungen zu tauschen und 2) bedeutet, dass wir zwei Gleichungen addieren und eine neue Gleichung dadurch entsteht.</p>
+<p>Die Wichtige Erkenntnis ist nun, dass beide Umformungen die Lösungsmenge des Systems nicht ändern.</p>
 <p>Wir haben daher folgenden Satz:</p>
 <div class="proof theorem admonition" id="theorem-5">
 <p class="admonition-title"><span class="caption-number">Theorem 18 </span></p>
@@ -684,7 +684,7 @@ a a_{1,1} &amp; a_{1,2} &amp; a_{1,3} &amp; \dots &amp; a_{1,n-1} &amp; a_{1,n} 
 <section class="remark-content" id="proof-content">
 <p>Jede obere Dreiecksmatrix ist insbesondere eine Matrix in Zeilenstufenform</p>
 </section>
-</div><p>Wir sind nun in der Lage einen Allgemeinen Satz zu formulieren welches Ergebnis der Gauß-Algorithmus in jedem Fall liefert.</p>
+</div><p>Wir sind nun in der Lage einen allgemeinen Satz zu formulieren welches Ergebnis der Gauß-Algorithmus in jedem Fall liefert.</p>
 <div class="proof theorem admonition" id="theorem-13">
 <p class="admonition-title"><span class="caption-number">Theorem 19 </span></p>
 <section class="theorem-content" id="proof-content">
@@ -695,14 +695,36 @@ Dann existiert eine endliche Kette von elementaren Zeilenumformungen, so dass da
 <p>Nun können wir den allgemeinen Fall beschreiben:</p>
 <p>Nehmen wir an wir haben ein erweiterte Koeffizientenmatrix <span class="math notranslate nohighlight">\((A,b)\)</span>, wobei <span class="math notranslate nohighlight">\(A\)</span> Zeilenstufenform besitzt. Dann haben wir die folgende Situation</p>
 <p><img alt="" src="_images/zeilenstufenerw.png" />.</p>
-<p>Wir habenn nun mehrere Fälle, die wir unterscheiden:</p>
+<p>Wir haben nun mehrere Fälle, die wir unterscheiden:</p>
 <p><strong>Fall 1</strong>
 <span class="math notranslate nohighlight">\(A\)</span> ist eine obere Dreiecksmatrix. Dann besteht die Lösungsmenge aus <strong>einer Lösung</strong></p>
 <p><strong>Fall 2.1</strong>
 <span class="math notranslate nohighlight">\(A\)</span> ist <strong>keine</strong> obere Dreicksmatrix und eine der Zahlen <span class="math notranslate nohighlight">\(b_{r+1},\dots , b_m \neq 0\)</span>.
 Dann gibt es <strong>keine Lösung</strong>,da dann die Gleichung niemals erfüllt sein kann.</p>
 <p><strong>Fall 2.2</strong>
-<span class="math notranslate nohighlight">\(A\)</span> ist <strong>keine</strong> obere Dreicksmatrix und <span class="math notranslate nohighlight">\(b_{r+1}=b_{r+2}=\dots = b_m=0\)</span> so sind die Gleichung stets erfüllt und wir erhalten <strong>unendlich viele Lösungen</strong>.</p>
+<span class="math notranslate nohighlight">\(A\)</span> ist <strong>keine</strong> obere Dreicksmatrix und <span class="math notranslate nohighlight">\(b_{r+1}=b_{r+2}=\dots = b_m=0\)</span> so sind die Gleichung stets erfüllt und wir erhalten <strong>unendlich viele Lösungen</strong> oder <strong>genau eine Lösung</strong>.</p>
+<p><strong>Frage:</strong>
+Überlegen Sie sich für den Fall 2.2, eine Situation in der es genau eine Lösung gibt.
+<strong>Antwort:</strong></p>
+<div class="toggle docutils container">
+<p>Betrachten Sie zum Beispiel das Gleichungssystem mit :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+2x_1 - x_2 + 3x_3 = 5 \\
+3x_2 - 4x_3 = 6 \\
+2x_3 = 1 \\
+2x_1 - x_2 + 3x_3 = 5 \\
+\end{cases}\end{split}\]</div>
+<p>Dies führt mittels Gauß (letzte Gleichung ist gleich der ersten Gleichung) zu folgender Koeffizientenmatrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left(\begin{array}{ccc|c}
+2 &amp; -1 &amp; 3 &amp;  5 \\
+0 &amp; 3  &amp;-4  &amp; 6 \\
+0 &amp; 0&amp; 2  &amp; 1 \\
+0 &amp; 0 &amp; 0  &amp; 0 \\
+\end{array}\right)\end{split}\]</div>
+<p>Dieses Gleichungssystem entspricht aber einem Gleichungssystem in oberer Dreiecksform mit 3 Gleichungen und 3 Unbekannten und ist daher eindeutig lösbar.</p>
+</div>
 <p>Insgesamt ergibt sich der folgende Satz.</p>
 <div class="proof theorem admonition" id="theorem-14">
 <p class="admonition-title"><span class="caption-number">Theorem 20 </span></p>
@@ -711,7 +733,7 @@ Dann gibt es <strong>keine Lösung</strong>,da dann die Gleichung niemals erfül
 <ul class="simple">
 <li><p>Fall 1: <span class="math notranslate nohighlight">\(A\)</span> ist eine obere Dreiecksmatrix: In diesem Fall besteht die Lösungsmenge aus genau einem Element.</p></li>
 <li><p>Fall 2.1 <span class="math notranslate nohighlight">\(A\)</span> ist keine obere Dreiecksmatrix, es gilt <span class="math notranslate nohighlight">\(r&lt;m\)</span> und es gibt ein <span class="math notranslate nohighlight">\(b_k\neq 0\)</span> für ein <span class="math notranslate nohighlight">\(k\in \left\{r+1,\dots , m\right\}\)</span>. Dann gibt es keine Lösung.</p></li>
-<li><p>Fall 2.2 <span class="math notranslate nohighlight">\(A\)</span> ist keine obere Dreiecksmatrix und es gilt entweder <span class="math notranslate nohighlight">\(r=m\)</span> oder <span class="math notranslate nohighlight">\(b_{r+1}=b_{r+2}=\dots = b_m=0\)</span>. Dann gibt es unendlich viele Lösungen.</p></li>
+<li><p>Fall 2.2 <span class="math notranslate nohighlight">\(A\)</span> ist keine obere Dreiecksmatrix und es gilt entweder <span class="math notranslate nohighlight">\(r=m\)</span> oder <span class="math notranslate nohighlight">\(b_{r+1}=b_{r+2}=\dots = b_m=0\)</span>. Dann gibt es unendlich viele Lösungen oder genau eine Lösung.</p></li>
 </ul>
 </section>
 </div><p>Das ganze wollen wir nun noch an zwei Beispielen illustrieren.</p>
