@@ -391,7 +391,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rechnen-mit-naturlichen-zahlen">Rechnen mit natürlichen Zahlen</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-vollstandige-induktion">1.7 Die vollständige Induktion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-vollstandige-induktion">1.7 Die vollständige Induktion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prinzip-der-vollstandigen-induktion">Prinzip der vollständigen Induktion</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre-nicht-klausurrelevant">1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre (Nicht Klausurrelevant)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#russelsche-antinomie">Russelsche Antinomie</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auflosung-der-russelschen-antinomie">Auflösung der Russelschen Antinomie</a><ul class="nav section-nav flex-column">
@@ -441,7 +444,7 @@ document.write(`
 <section class="definition-content" id="proof-content">
 <p>“Eine Menge ist eine Zusammenfassung bestimmter wohlunterschiedener Objekte unserer Anschauung oder unseres Denkens - (welche die Elemente der Menge genannt werden) - zu einem Ganzen.”</p>
 </section>
-</div><p>Das klingt in der Tat nicht sehr Mathematisch Exakt, aber soll uns zu Beginn erstmal reichen.</p>
+</div><p>Das klingt in der Tat nicht sehr mathematisch exakt, aber soll uns zu Beginn erstmal reichen.</p>
 <p>Wichtige Folgerungen aus der obigen Definition sind:</p>
 <ul class="simple">
 <li><p>Die Objekte einer Menge heißen <strong>Elemente</strong></p></li>
@@ -460,14 +463,14 @@ document.write(`
 </section>
 </div><p><strong>Beobachtungen</strong>:</p>
 <ul class="simple">
-<li><p>Wie Sie sehen können Elemente einer Menge ganz unterschiedlicher Natur sein. Sie können Zahlen, Buchstaben oder auch Zeichen sein. Wichtig ist nur, dass sie unterscheidbar sind und eindeutig.</p></li>
+<li><p>Wie Sie sehen, können Elemente einer Menge ganz unterschiedlicher Natur sein. Sie können Zahlen, Buchstaben oder auch Zeichen sein. Wichtig ist nur, dass sie unterscheidbar sind und eindeutig.</p></li>
 <li><p>Um eine Menge aus endlich vielen Elementen hinzuschreiben nutzen wir geschweifte Klammern (<span class="math notranslate nohighlight">\( \{ \} \)</span>).</p></li>
 </ul>
 <p><strong>Frage:</strong></p>
 <p>Kann ein Element einer Menge auch selbst eine Menge sein?</p>
 <p><strong>Antwort:</strong></p>
 <div class="toggle docutils container">
-<p><strong>Ja!</strong> Denn Mengen sind eindeutig und unterscheidbar. Damit können Sie auch selbst Mengen sein. Wir werden am Ende dieses Kapitels sogar sehen, dass wir die komplette Mathematik auf der Grundlagen von Mengen aufbauen können.</p>
+<p><strong>Ja!</strong> Denn Mengen sind eindeutig und unterscheidbar. Damit können Sie auch selbst Mengen sein. Wir werden am Ende dieses Kapitels sogar sehen, dass wir die komplette Mathematik auf der Grundlage von Mengen aufbauen können.</p>
 </div>
 <div class="proof example admonition" id="Mengen von Mengen">
 <p class="admonition-title"><span class="caption-number">Example 2 </span></p>
@@ -504,8 +507,8 @@ document.write(`
 <div class="proof definition admonition" id="element">
 <p class="admonition-title"><span class="caption-number">Definition 6 </span></p>
 <section class="definition-content" id="proof-content">
-<p>Wir schreiben <span class="math notranslate nohighlight">\(x\in M\)</span>. Falls  <span class="math notranslate nohighlight">\(x\)</span> ein Element von <span class="math notranslate nohighlight">\(M\)</span> ist.
-Wir schreiben <span class="math notranslate nohighlight">\(x\not\in M\)</span> falls <span class="math notranslate nohighlight">\(x\)</span> kein Element von <span class="math notranslate nohighlight">\(M\)</span> ist.</p>
+<p>Wir schreiben <span class="math notranslate nohighlight">\(x\in M\)</span>, falls  <span class="math notranslate nohighlight">\(x\)</span> ein Element von <span class="math notranslate nohighlight">\(M\)</span> ist.
+Wir schreiben <span class="math notranslate nohighlight">\(x\not\in M\)</span>, falls <span class="math notranslate nohighlight">\(x\)</span> kein Element von <span class="math notranslate nohighlight">\(M\)</span> ist.</p>
 </section>
 </div><div class="proof example admonition" id="elementbsp">
 <p class="admonition-title"><span class="caption-number">Example 4 </span></p>
@@ -574,7 +577,7 @@ Wir schreiben</p>
 <div class="math notranslate nohighlight">
 \[A  \subset B \text{ und } B\subset A. \]</div>
 </section>
-</div><p>Die obige Definition mag etwas unnatürlich wirken, aber Sie hilft uns die oben Beschriebenen Eigenschaften, dass es bei einer Menge nicht um die Reihenfolge und die dopplung von Elementen geht.</p>
+</div><p>Die obige Definition mag etwas unnatürlich wirken, aber sie hilft uns die oben beschriebenen Eigenschaften, dass es bei einer Menge nicht um die Reihenfolge und die Dopplung von Elementen geht.</p>
 <p><strong>Aufgabe:</strong></p>
 <p>Zeigen Sie auf Grundlage der Definition von Gleichheit, dass</p>
 <div class="math notranslate nohighlight">
@@ -689,8 +692,8 @@ Wir werden in diesem Kurs keine genaue Definition geben können, sondern ledigli
 <li><p><span class="math notranslate nohighlight">\((a,b]:=\{x\in \mathbb{R} \ \vert \ x&gt; a \text{ und } x\leq b\}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\([a,b):=\{x\in \mathbb{R} \ \vert \ x\geq  a \text{ und } x&lt; b\}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\((a,b):=\{x\in \mathbb{R} \ \vert \ x&gt;  a \text{ und } x&lt; b\}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\((\infty,b):=\{x\in \mathbb{R} \ \vert \  x&lt; b\}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\((\infty,b]:=\{x\in \mathbb{R} \ \vert \  x\leq b\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((-\infty,b):=\{x\in \mathbb{R} \ \vert \  x&lt; b\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((-\infty,b]:=\{x\in \mathbb{R} \ \vert \  x\leq b\}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\((a,\infty):=\{x\in \mathbb{R} \ \vert \  x&gt;a\}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\([a,\infty):=\{x\in \mathbb{R} \ \vert \  x\geq a\}\)</span></p></li>
 </ul>
@@ -923,7 +926,7 @@ Das ist eine philosophische Frage, die schon viel diskutiert wurde. Falls Sie si
 <section id="definition-der-naturlichen-zahlen">
 <h3>Definition der natürlichen Zahlen<a class="headerlink" href="#definition-der-naturlichen-zahlen" title="Permalink to this heading">#</a></h3>
 <p>Freges Grundideen für die Konstruktion der natürlichen Zahlen blieben erhalten, doch seine Ideen und die darauffolgende Entdeckung der sogenannten Russel’schen Antinomie führten zu einer Grundlagenkrise der Mathematik (mehr dazu im nächsten Abschnitt)</p>
-<p>Die Grundlegende Idee von Frege ist die, dass Zahlen aus Mengen abgeleitet werden können. Er hält Mengen für objektiver als Zahlen, worüber man sicher auch streiten kann.</p>
+<p>Die grundlegende Idee von Frege ist die, dass Zahlen aus Mengen abgeleitet werden können. Er hält Mengen für objektiver als Zahlen, worüber man sicher auch streiten kann.</p>
 <p>Dennoch die Konstruktion der natürlichen Zahlen aus Mengen hat sich in der Mathematik weitestgehend durchgesetzt.
 Die Standardkonstruktion nutzt die Idee, dass wir sehr viele Mengen nur mit Hilfe der leeren Menge bilden können.</p>
 <p>Zunächst definieren wir</p>
@@ -951,18 +954,16 @@ wie  wir nun die Addition dieser Mengen definieren können. Die Idee ist, dass w
 \[S(n):= n \cup \{n\}.\]</div>
 <p>Diese Definition stimmt auch mit obiger Konstruktion der natürlichen Zahlen überein.</p>
 <p>Wir können nun uach <span class="math notranslate nohighlight">\(n+2\)</span> als <span class="math notranslate nohighlight">\(S(S(n))\)</span> definieren und so weiter.
-Insgesamt sind wir mit dieser Konstruktion in der Lage beliebige Addition durchzuführen.</p>
+Insgesamt sind wir mit dieser Konstruktion in der Lage, beliebige Addition durchzuführen.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jZ65h6FwfoU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 </section>
 <section id="die-vollstandige-induktion">
 <h2>1.7 Die vollständige Induktion<a class="headerlink" href="#die-vollstandige-induktion" title="Permalink to this heading">#</a></h2>
-<p>Die vollständige Induktion ist eines der wichtigsten Beweistechniken der Mathematik.
-Die vollständige Induktion kann immer dann verwendet werden, wenn wir eine Aussage über natürliche Zahlen beweisen müssen.</p>
+<p>Die vollständige Induktion ist eine der wichtigsten Beweistechniken in der Mathematik. Sie wird verwendet, um Aussagen über natürliche Zahlen zu beweisen, indem man von einem Startwert ausgeht und zeigt, dass die Aussage für alle darauf folgenden Zahlen gilt.</p>
 <p>Beispiele für solche Aussagen sind folgende:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\( 1+2+3+\dots + n = \frac{n(n+1)}{2}\)</span> für alle <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span>
-´</p></li>
+<li><p><span class="math notranslate nohighlight">\( 1+2+3+\dots + n = \frac{n(n+1)}{2}\)</span> für alle <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(1+3+5+7+\dots + (2n+1) =(n+1)^2\)</span> für alle <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span></p></li>
 </ul>
 <p>Das Induktionsverfahren ist ein Allgemeines Prinzip, dass wir im folgenden beschreiben.</p>
@@ -986,7 +987,20 @@ für <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span> ist j
 <p>Die Menge <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> ist die kleinste induktive Menge. D.h. falls <span class="math notranslate nohighlight">\(M\subset \mathbb{N}\)</span> und <span class="math notranslate nohighlight">\(M\)</span> induktiv dann ist <span class="math notranslate nohighlight">\(M=\mathbb{N}\)</span>.</p>
 </section>
 </div><p>Versuchen wir nochmal kurz zu verstehen, was dieser Satz besagt. Er sagt im Wesentlichen das Folgende: Wenn <span class="math notranslate nohighlight">\(0=\emptyset\)</span> in einer Menge enthalten ist und wenn für jedes Element <span class="math notranslate nohighlight">\(m\in M\)</span> auch der Nachfolger als “m+1” in <span class="math notranslate nohighlight">\(M\)</span> enthalten ist, dann besteht <span class="math notranslate nohighlight">\(M\)</span> genau aus allen natürlichen Zahlen.</p>
-<p>Wir versuchen nun mit diesem Satz die folgende Aussage zu beweisen:</p>
+<section id="prinzip-der-vollstandigen-induktion">
+<h3>Prinzip der vollständigen Induktion<a class="headerlink" href="#prinzip-der-vollstandigen-induktion" title="Permalink to this heading">#</a></h3>
+<p>Aus dem obigen Satz lässt sich das Prinzip der vollständigen Induktion herleiten.</p>
+<p>Die vollständige Induktion besteht aus drei Schritten und ermöglicht es uns, eine Aussage <span class="math notranslate nohighlight">\(A(n)\)</span> für alle natürlichen Zahlen <span class="math notranslate nohighlight">\(n \geq n_0\)</span> zu beweisen.</p>
+<ol class="arabic simple">
+<li><p><strong>Induktionsanfang:</strong>
+Zeigen Sie, dass die Aussage <span class="math notranslate nohighlight">\(A(n_0)\)</span> für den Startwert <span class="math notranslate nohighlight">\(n_0\)</span> gilt.</p></li>
+<li><p><strong>Induktionsannahme (oder Induktionsvoraussetzung):</strong>
+Nehmen Sie an, die Aussage <span class="math notranslate nohighlight">\(A(n)\)</span> gilt für ein beliebiges, aber festes <span class="math notranslate nohighlight">\(n \geq n_0\)</span> (dies nennt man die Induktionsannahme).</p></li>
+<li><p><strong>Induktionsschritt:</strong>
+Zeigen Sie unter Verwendung der Induktionsannahme, dass <span class="math notranslate nohighlight">\(A(n+1)\)</span> ebenfalls gilt.</p></li>
+</ol>
+<p>Wenn alle drei Schritte erfüllt sind, folgt nach dem Prinzip der vollständigen Induktion, dass <span class="math notranslate nohighlight">\(A(n)\)</span> für alle <span class="math notranslate nohighlight">\(n \geq n_0\)</span> gilt.</p>
+<p>Wir versuchen nun mit diesem Prinzip die folgende Aussage zu beweisen:</p>
 <div class="proof theorem admonition" id="theorem-25">
 <p class="admonition-title"><span class="caption-number">Theorem 3 </span></p>
 <section class="theorem-content" id="proof-content">
@@ -1003,15 +1017,16 @@ Definieren wir nun die folgende Menge</p>
 <p>Wir müssen beweisen, dass obige Aussage für alle <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span> gilt, d.h. <span class="math notranslate nohighlight">\(M=\mathbb{N}\)</span>.</p>
 <p>Dafür können wir aber  <a class="reference internal" href="#induktion">Theorem 2</a> verwenden.</p>
 <p>Es ist aufgrund der Definition <span class="math notranslate nohighlight">\(M\subset \mathbb{N}\)</span>.
-Wir wollen zeigen, dass <span class="math notranslate nohighlight">\(M\)</span> induktiv ist. DAnn gilt nämlich mittels <a class="reference internal" href="#induktion">Theorem 2</a> das <span class="math notranslate nohighlight">\(M=\mathbb{N}\)</span>. Was nichts anderes bedeutet als das der Satz für alle <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span> gilt.
+Wir wollen zeigen, dass <span class="math notranslate nohighlight">\(M\)</span> induktiv ist. Dann gilt nämlich mittels <a class="reference internal" href="#induktion">Theorem 2</a> das <span class="math notranslate nohighlight">\(M=\mathbb{N}\)</span>. Was nichts anderes bedeutet als das der Satz für alle <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span> gilt.
 Das heißt wir müssen noch die beiden Eigenschaften für induktive Mengen zeigen um den Beweis zu schließen.</p>
-<p><strong>Induktionsanfang <span class="math notranslate nohighlight">\((n=0)\)</span></strong></p>
+<p><strong>1. Induktionsanfang <span class="math notranslate nohighlight">\((n_0=0)\)</span></strong></p>
 <p>Zunächst müssen wir zeigen, dass <span class="math notranslate nohighlight">\(\emptyset\in M\)</span>. D.h. dass <span class="math notranslate nohighlight">\(0\in M\)</span>.</p>
 <p>Das gilt aber, weil <span class="math notranslate nohighlight">\(P(0)=0\)</span>.</p>
-<p><strong>Induktionsschritt <span class="math notranslate nohighlight">\((n\to n+1)\)</span>:</strong></p>
-<p>Nun müssen wir zeigen, dass falls <span class="math notranslate nohighlight">\(m\in M\)</span> dann gilt auch <span class="math notranslate nohighlight">\(m\cap \{m\}\in M\)</span>.
-Übersetzt in natürliche Zahlen heißt das, dass falls <span class="math notranslate nohighlight">\(n\in M\)</span> dann ist auch <span class="math notranslate nohighlight">\(n+1\in M\)</span>.</p>
-<p>Nehmen wir allso an, wir wissen, dass <span class="math notranslate nohighlight">\(n\in M\)</span>, d.h. <span class="math notranslate nohighlight">\(P(n)=\frac{n(n+1)}{2}\)</span> (Induktionsannahme).  Wir müssen zeigen, dass <span class="math notranslate nohighlight">\(P(n+1)=\frac{(n+1)(n+2)}{2}\)</span>.</p>
+<p><strong>2. Induktionsannahme:</strong>
+Wir nehmen nun an, dass obige Aussage für ein <span class="math notranslate nohighlight">\(n&gt;n_0\)</span> gibt. D.h. es gilt <span class="math notranslate nohighlight">\(n\in M\)</span>.
+<strong>3. Induktionsschritt <span class="math notranslate nohighlight">\((n\to n+1)\)</span>:</strong></p>
+<p>Nun müssen wir zeigen, dass falls <span class="math notranslate nohighlight">\(n\in M\)</span> dann gilt auch <span class="math notranslate nohighlight">\(n\cap \{n\}\in M\)</span>.
+Da <span class="math notranslate nohighlight">\(n\in M\)</span>, gilt <span class="math notranslate nohighlight">\(P(n)=\frac{n(n+1)}{2}\)</span> (Induktionsannahme).  Wir müssen zeigen, dass <span class="math notranslate nohighlight">\(P(n+1)=\frac{(n+1)(n+2)}{2}\)</span>.</p>
 <p>Es gilt aber nun</p>
 <div class="math notranslate nohighlight">
 \[\frac{(n+1)(n+2)}{2}=\frac{(n+1)(n)}{2}+\frac{(n+1)\cdot 2}{2}=\frac{(n+1)(n)}{2}+(n+1)=P(n)+(n+1)=P(n+1)\]</div>
@@ -1019,14 +1034,10 @@ Das heißt wir müssen noch die beiden Eigenschaften für induktive Mengen zeige
 <p>Wir haben also gezeigt, dass falls <span class="math notranslate nohighlight">\(n\in M\)</span>, so auch <span class="math notranslate nohighlight">\(n+1 \in M.\)</span></p>
 <p>Damit ist <span class="math notranslate nohighlight">\(M\)</span> induktiv und damit ist nach <a class="reference internal" href="#induktion">Theorem 2</a> <span class="math notranslate nohighlight">\(M=\mathbb{N}\)</span> und der Satz ist bewiesen.</p>
 </div>
-<p><strong>Zusammenfassung des Prinzips der Vollständigen Induktion</strong></p>
-<ul class="simple">
-<li><p><strong>Behauptung</strong>: Wir müssen eine Aussage <span class="math notranslate nohighlight">\(A(n)\)</span> für alle <span class="math notranslate nohighlight">\(n\in \mathbb{N}\)</span> beweisen.</p></li>
-<li><p><strong>Induktionsanfang</strong>: Wir zeigen, dass <span class="math notranslate nohighlight">\(A(0)\)</span> gilt.</p></li>
-<li><p><strong>Induktionsannahme/Induktionsvorraussetzung</strong>: Wir nehmen an, dass <span class="math notranslate nohighlight">\(A(n)\)</span> gilt.</p></li>
-<li><p><strong>Induktionsschritt</strong>: Wir zeigen, dass <span class="math notranslate nohighlight">\(A(n+1)\)</span> gilt unter der Verwendung von <span class="math notranslate nohighlight">\(A(n)\)</span>.</p></li>
-</ul>
+<p><strong>Bemerkungen</strong></p>
+<p>In der Praxis müssen Sie für einen Induktionsbeweis nicht die Menge <span class="math notranslate nohighlight">\(M\)</span> eräwhnen. Dies wurde lediglich gemacht um den Zusammenhang mit Satz <a class="reference internal" href="#induktion">Theorem 2</a> darzustellen. Sie können den Beweis immer in Induktionsanfang, Induktionsannahme und Induktionsschritt gliedern.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iRmJp1FGPgQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
 </section>
 <section id="grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre-nicht-klausurrelevant">
 <h2>1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre (Nicht Klausurrelevant)<a class="headerlink" href="#grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre-nicht-klausurrelevant" title="Permalink to this heading">#</a></h2>
@@ -1081,7 +1092,7 @@ Obige Menge <span class="math notranslate nohighlight">\(M\)</span> kann also ni
 </section>
 <section id="fundierungsaxiom">
 <h5>Fundierungsaxiom<a class="headerlink" href="#fundierungsaxiom" title="Permalink to this heading">#</a></h5>
-<p>Das Fundierungsaxiom sagt, dass jede Nichtleere Menge <span class="math notranslate nohighlight">\(M\)</span> eine Element <span class="math notranslate nohighlight">\(m\)</span> enthält, so dass <span class="math notranslate nohighlight">\(M\cap m =  \emptyset\)</span></p>
+<p>Das Fundierungsaxiom sagt, dass jede nichtleere Menge <span class="math notranslate nohighlight">\(M\)</span> ein Element <span class="math notranslate nohighlight">\(m\)</span> enthält, so dass <span class="math notranslate nohighlight">\(M\cap m =  \emptyset\)</span></p>
 <p>Das Fundierungsaxiom mag erst einmal etwas kryptisch wirken. Doch es ist genau die Regel, die besagt, dass keine Menge sich selbst enthalten darf.</p>
 <p>Angenommen es gilt <span class="math notranslate nohighlight">\(A\in A\)</span>. Betrachte nun die Menge <span class="math notranslate nohighlight">\(M=\{A\}\)</span>. Das einzige Element von <span class="math notranslate nohighlight">\(M\)</span> ist <span class="math notranslate nohighlight">\(A\)</span>. Also muss nach dem Fundierungsaxiom gelten, dass <span class="math notranslate nohighlight">\(A\cap \{A\}=\emptyset\)</span>. Das ergibt aber einen Widerspruch mit der Tatsache, dass <span class="math notranslate nohighlight">\(A\in A\cap \{A\}\)</span>.</p>
 <p>Also kann nach dem Fundierungsaxiom keine Menge sich selbst enthalten.</p>
@@ -1190,7 +1201,10 @@ Obige Menge <span class="math notranslate nohighlight">\(M\)</span> kann also ni
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rechnen-mit-naturlichen-zahlen">Rechnen mit natürlichen Zahlen</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-vollstandige-induktion">1.7 Die vollständige Induktion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-vollstandige-induktion">1.7 Die vollständige Induktion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prinzip-der-vollstandigen-induktion">Prinzip der vollständigen Induktion</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlagenkrise-der-mathematik-und-die-zermelo-fraenkel-mengenlehre-nicht-klausurrelevant">1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre (Nicht Klausurrelevant)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#russelsche-antinomie">Russelsche Antinomie</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auflosung-der-russelschen-antinomie">Auflösung der Russelschen Antinomie</a><ul class="nav section-nav flex-column">

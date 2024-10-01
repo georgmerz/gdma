@@ -38,7 +38,7 @@ Zu erklären, was eine Menge wirklich ist, ist gar nicht so einfach, besonders w
 
 ````
 
-Das klingt in der Tat nicht sehr Mathematisch Exakt, aber soll uns zu Beginn erstmal reichen.
+Das klingt in der Tat nicht sehr mathematisch exakt, aber soll uns zu Beginn erstmal reichen.
 
 Wichtige Folgerungen aus der obigen Definition sind:
 
@@ -58,7 +58,7 @@ Folgendes sind Beispiele für Mengen:
 
 **Beobachtungen**:
 
-- Wie Sie sehen können Elemente einer Menge ganz unterschiedlicher Natur sein. Sie können Zahlen, Buchstaben oder auch Zeichen sein. Wichtig ist nur, dass sie unterscheidbar sind und eindeutig.
+- Wie Sie sehen, können Elemente einer Menge ganz unterschiedlicher Natur sein. Sie können Zahlen, Buchstaben oder auch Zeichen sein. Wichtig ist nur, dass sie unterscheidbar sind und eindeutig.
 
 - Um eine Menge aus endlich vielen Elementen hinzuschreiben nutzen wir geschweifte Klammern ($ \{ \} $).
 
@@ -69,7 +69,7 @@ Kann ein Element einer Menge auch selbst eine Menge sein?
 
 **Antwort:**
 ```{toggle}
-**Ja!** Denn Mengen sind eindeutig und unterscheidbar. Damit können Sie auch selbst Mengen sein. Wir werden am Ende dieses Kapitels sogar sehen, dass wir die komplette Mathematik auf der Grundlagen von Mengen aufbauen können.
+**Ja!** Denn Mengen sind eindeutig und unterscheidbar. Damit können Sie auch selbst Mengen sein. Wir werden am Ende dieses Kapitels sogar sehen, dass wir die komplette Mathematik auf der Grundlage von Mengen aufbauen können.
 
 ```
 ````{prf:example}
@@ -110,8 +110,8 @@ Als nächstes führen wir das Symbol $\in $ und $\notin$ ein.
 
 ```{prf:definition}
 :label: element
-Wir schreiben $x\in M$. Falls  $x$ ein Element von $M$ ist.
-Wir schreiben $x\not\in M$ falls $x$ kein Element von $M$ ist.
+Wir schreiben $x\in M$, falls  $x$ ein Element von $M$ ist.
+Wir schreiben $x\not\in M$, falls $x$ kein Element von $M$ ist.
 
 ````
 
@@ -188,7 +188,7 @@ A  \subset B \text{ und } B\subset A.
 ```
 ````
 
-Die obige Definition mag etwas unnatürlich wirken, aber Sie hilft uns die oben Beschriebenen Eigenschaften, dass es bei einer Menge nicht um die Reihenfolge und die dopplung von Elementen geht.
+Die obige Definition mag etwas unnatürlich wirken, aber sie hilft uns die oben beschriebenen Eigenschaften, dass es bei einer Menge nicht um die Reihenfolge und die Dopplung von Elementen geht.
 
 **Aufgabe:**
 
@@ -327,9 +327,9 @@ Seien also im Folgenden $a,b\in \mathbb{R}$. Dann definieren wir die folgenden M
 
 - $(a,b):=\{x\in \mathbb{R} \ \vert \ x>  a \text{ und } x< b\}$
 
-- $(\infty,b):=\{x\in \mathbb{R} \ \vert \  x< b\}$
+- $(-\infty,b):=\{x\in \mathbb{R} \ \vert \  x< b\}$
 
-- $(\infty,b]:=\{x\in \mathbb{R} \ \vert \  x\leq b\}$
+- $(-\infty,b]:=\{x\in \mathbb{R} \ \vert \  x\leq b\}$
 
 - $(a,\infty):=\{x\in \mathbb{R} \ \vert \  x>a\}$
 
@@ -633,7 +633,7 @@ Eine erste zufriedenstellende Antwort auf die Frage, was die Zahlen sind hat Fre
 Freges Grundideen für die Konstruktion der natürlichen Zahlen blieben erhalten, doch seine Ideen und die darauffolgende Entdeckung der sogenannten Russel'schen Antinomie führten zu einer Grundlagenkrise der Mathematik (mehr dazu im nächsten Abschnitt)
 
 
-Die Grundlegende Idee von Frege ist die, dass Zahlen aus Mengen abgeleitet werden können. Er hält Mengen für objektiver als Zahlen, worüber man sicher auch streiten kann.
+Die grundlegende Idee von Frege ist die, dass Zahlen aus Mengen abgeleitet werden können. Er hält Mengen für objektiver als Zahlen, worüber man sicher auch streiten kann.
 
 Dennoch die Konstruktion der natürlichen Zahlen aus Mengen hat sich in der Mathematik weitestgehend durchgesetzt.
 Die Standardkonstruktion nutzt die Idee, dass wir sehr viele Mengen nur mit Hilfe der leeren Menge bilden können.
@@ -676,19 +676,18 @@ Diese Definition stimmt auch mit obiger Konstruktion der natürlichen Zahlen üb
 
 
 Wir können nun uach $n+2$ als $S(S(n))$ definieren und so weiter.
-Insgesamt sind wir mit dieser Konstruktion in der Lage beliebige Addition durchzuführen.
+Insgesamt sind wir mit dieser Konstruktion in der Lage, beliebige Addition durchzuführen.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jZ65h6FwfoU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## 1.7 Die vollständige Induktion
 
-Die vollständige Induktion ist eines der wichtigsten Beweistechniken der Mathematik. 
-Die vollständige Induktion kann immer dann verwendet werden, wenn wir eine Aussage über natürliche Zahlen beweisen müssen.
+Die vollständige Induktion ist eine der wichtigsten Beweistechniken in der Mathematik. Sie wird verwendet, um Aussagen über natürliche Zahlen zu beweisen, indem man von einem Startwert ausgeht und zeigt, dass die Aussage für alle darauf folgenden Zahlen gilt.
+
 
 Beispiele für solche Aussagen sind folgende:
 
 - $ 1+2+3+\dots + n = \frac{n(n+1)}{2}$ für alle $n\in \mathbb{N}$
-´
 - $1+3+5+7+\dots + (2n+1) =(n+1)^2$ für alle $n\in \mathbb{N}$
 
 Das Induktionsverfahren ist ein Allgemeines Prinzip, dass wir im folgenden beschreiben.
@@ -717,11 +716,27 @@ Die Menge $\mathbb{N}$ ist die kleinste induktive Menge. D.h. falls $M\subset \m
 ````
 Versuchen wir nochmal kurz zu verstehen, was dieser Satz besagt. Er sagt im Wesentlichen das Folgende: Wenn $0=\emptyset$ in einer Menge enthalten ist und wenn für jedes Element $m\in M$ auch der Nachfolger als "m+1" in $M$ enthalten ist, dann besteht $M$ genau aus allen natürlichen Zahlen.
 
+### Prinzip der vollständigen Induktion
+Aus dem obigen Satz lässt sich das Prinzip der vollständigen Induktion herleiten.
+
+Die vollständige Induktion besteht aus drei Schritten und ermöglicht es uns, eine Aussage $A(n)$ für alle natürlichen Zahlen $n \geq n_0$ zu beweisen.
+
+1. **Induktionsanfang:**
+   Zeigen Sie, dass die Aussage $A(n_0)$ für den Startwert $n_0$ gilt.
+
+2. **Induktionsannahme (oder Induktionsvoraussetzung):**
+   Nehmen Sie an, die Aussage $A(n)$ gilt für ein beliebiges, aber festes $n \geq n_0$ (dies nennt man die Induktionsannahme).
+
+3. **Induktionsschritt:**
+   Zeigen Sie unter Verwendung der Induktionsannahme, dass $A(n+1)$ ebenfalls gilt.
+
+Wenn alle drei Schritte erfüllt sind, folgt nach dem Prinzip der vollständigen Induktion, dass $A(n)$ für alle $n \geq n_0$ gilt.
 
 
 
 
-Wir versuchen nun mit diesem Satz die folgende Aussage zu beweisen:
+
+Wir versuchen nun mit diesem Prinzip die folgende Aussage zu beweisen:
 
 ````{prf:theorem}
 Sei $n\in \mathbb{N}$ dann gilt
@@ -743,24 +758,21 @@ Wir müssen beweisen, dass obige Aussage für alle $n\in \mathbb{N}$ gilt, d.h. 
 Dafür können wir aber  {prf:ref}`induktion` verwenden.
 
 Es ist aufgrund der Definition $M\subset \mathbb{N}$. 
-Wir wollen zeigen, dass $M$ induktiv ist. DAnn gilt nämlich mittels {prf:ref}`induktion` das $M=\mathbb{N}$. Was nichts anderes bedeutet als das der Satz für alle $n\in \mathbb{N}$ gilt.
+Wir wollen zeigen, dass $M$ induktiv ist. Dann gilt nämlich mittels {prf:ref}`induktion` das $M=\mathbb{N}$. Was nichts anderes bedeutet als das der Satz für alle $n\in \mathbb{N}$ gilt.
 Das heißt wir müssen noch die beiden Eigenschaften für induktive Mengen zeigen um den Beweis zu schließen.
 
-**Induktionsanfang $(n=0)$**
+**1. Induktionsanfang $(n_0=0)$**
 
 Zunächst müssen wir zeigen, dass $\emptyset\in M$. D.h. dass $0\in M$. 
 
 Das gilt aber, weil $P(0)=0$.
 
+**2. Induktionsannahme:**
+Wir nehmen nun an, dass obige Aussage für ein $n>n_0$ gibt. D.h. es gilt $n\in M$.
+**3. Induktionsschritt $(n\to n+1)$:**
 
-
-**Induktionsschritt $(n\to n+1)$:**
-
-Nun müssen wir zeigen, dass falls $m\in M$ dann gilt auch $m\cap \{m\}\in M$.
-Übersetzt in natürliche Zahlen heißt das, dass falls $n\in M$ dann ist auch $n+1\in M$.
-
-Nehmen wir allso an, wir wissen, dass $n\in M$, d.h. $P(n)=\frac{n(n+1)}{2}$ (Induktionsannahme).  Wir müssen zeigen, dass $P(n+1)=\frac{(n+1)(n+2)}{2}$.
-
+Nun müssen wir zeigen, dass falls $n\in M$ dann gilt auch $n\cap \{n\}\in M$.
+Da $n\in M$, gilt $P(n)=\frac{n(n+1)}{2}$ (Induktionsannahme).  Wir müssen zeigen, dass $P(n+1)=\frac{(n+1)(n+2)}{2}$.
 
 Es gilt aber nun 
 ```{math}
@@ -775,18 +787,19 @@ Wir haben also gezeigt, dass falls $n\in M$, so auch $n+1 \in M.$
 Damit ist $M$ induktiv und damit ist nach {prf:ref}`induktion` $M=\mathbb{N}$ und der Satz ist bewiesen.
 ````
 
-**Zusammenfassung des Prinzips der Vollständigen Induktion**
 
-- **Behauptung**: Wir müssen eine Aussage $A(n)$ für alle $n\in \mathbb{N}$ beweisen.
+**Bemerkungen**
 
-- **Induktionsanfang**: Wir zeigen, dass $A(0)$ gilt.
+In der Praxis müssen Sie für einen Induktionsbeweis nicht die Menge $M$ eräwhnen. Dies wurde lediglich gemacht um den Zusammenhang mit Satz {prf:ref}`induktion` darzustellen. Sie können den Beweis immer in Induktionsanfang, Induktionsannahme und Induktionsschritt gliedern.
 
-- **Induktionsannahme/Induktionsvorraussetzung**: Wir nehmen an, dass $A(n)$ gilt.
 
-- **Induktionsschritt**: Wir zeigen, dass $A(n+1)$ gilt unter der Verwendung von $A(n)$.
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iRmJp1FGPgQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+
+
 
 ## 1.8 Grundlagenkrise der Mathematik und die Zermelo-Fraenkel Mengenlehre (Nicht Klausurrelevant)
 
@@ -875,7 +888,7 @@ Obige Menge $M$ kann also nicht in der Zermelo-Fraenkel Mengenlehre konstruiert 
 
 ##### Fundierungsaxiom
 
-Das Fundierungsaxiom sagt, dass jede Nichtleere Menge $M$ eine Element $m$ enthält, so dass $M\cap m =  \emptyset$
+Das Fundierungsaxiom sagt, dass jede nichtleere Menge $M$ ein Element $m$ enthält, so dass $M\cap m =  \emptyset$
 
 Das Fundierungsaxiom mag erst einmal etwas kryptisch wirken. Doch es ist genau die Regel, die besagt, dass keine Menge sich selbst enthalten darf.
 
