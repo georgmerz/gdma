@@ -24,7 +24,7 @@ In diesem Abschnitt lernen wir die folgenden Dinge:
 
 ## 2.2 Einleitung mit Sudoku 
 
-Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge, es ist aber wichtig er einmal fest zu halten, dass wir alle von Natur aus logisch denken können ohne, dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir das was wir natürlicherweise machen hier formalisieren wollen.
+Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge, es ist aber wichtig erst einmal fest zu halten, dass wir alle von Natur aus logisch denken können ohne, dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir das was wir natürlicherweise machen, hier formalisieren wollen.
 
 Um Sie davon zu überzeugen, dass Sie Logik bereits verstehen, will ich Ihnen folgendes Beispiel zeigen.
 
@@ -77,7 +77,7 @@ Damit wissen wir, dass gilt:
 
 *Nicht A und Nicht B und Nicht C.*
 
-Das ist aber das selbe wie
+Das ist aber dasselbe wie
 
 *Nicht (A oder B oder C).*
 
@@ -95,7 +95,7 @@ Zusammen mit dem Ersten Teil: ergibt sich als Ausdruck:
  $(A\vee B\vee C\vee D)\wedge (\neg A \wedge \neg B \wedge \neg C)$
 
 Es soll also A oder B oder C oder D gelten und **nicht** A und  **nicht** B und **nicht** C. Wir alle wissen, dass das nichts anderes heißt, dass $D$ gilt. Also dass die Zahl die 4 sein muss. 
-Aber warum eigentlich? Welche Logischen Gesetze stecken dahinter? Genau das wollen wir in diesem Kapitel genauer untersuchen.
+Aber warum eigentlich? Welche logischen Gesetze stecken dahinter? Genau das wollen wir in diesem Kapitel genauer untersuchen.
 
 
 
@@ -801,7 +801,7 @@ Für einen besseren Überblick sind hier die wichtigsten Logischen Formeln nochm
  - $(A\leftrightarrow B) \equiv (\neg A \lor B) \land (A\lor \neg B)$
 
 
-**Erweiterte Komplementarität**
+**Erweiterte Komplementarität(13)**
 - $A\lor (\neg A\land B)\equiv (A\lor B)$
 - $A\land (\neg A\lor B)\equiv (A\land B)$
 
@@ -1146,7 +1146,7 @@ Der Wohlordnungssatz ist die folgende Aussage:
 
 *Jede nichtleere Menge natürlicher Zahlen enthält eine kleinste Zahl.*
 
-Was meinen Sie gilt dieser Satz oder nicht?
+Was meinen Sie, gilt dieser Satz oder nicht?
 
 Der Satz scheint uns intuitiv richtig oder? Denn $\mathbb{N}$ ist ja nach unten beschränkt und es sollte doch immer eine kleinste Zahl geben.
 

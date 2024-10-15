@@ -828,7 +828,7 @@ Enthält die Menge $M$ sich selbst? Also gilt $M\in M$?
 
 Nehmen wir an die Antwort ist **JA**. Also $M\in M$. Das heißt das $M\notin M$ natürlich nicht wahr ist. Aber dann kann $M$ kein Element von $M$ sein nach der Definition von $M$. Das ist ein Widerspruch.
 
-Ok, also muss wohl $M\notin M$ gelten, oder? Wenn das gilt, so folgt aber aus der Definition von $M$, dass $M\in M$. Ok. Also ist $M\in M$ und gleichzeit $M\notin M$. Das ist auch ein Widerspruch.
+Ok, also muss wohl $M\notin M$ gelten, oder? Wenn das gilt, so folgt aber aus der Definition von $M$, dass $M\in M$. Ok. Also ist $M\in M$ und gleichzeitig $M\notin M$. Das ist auch ein Widerspruch.
 
 
 Damit haben wir gezeigt, dass die Existenz der Menge $M$ die Mathematik in einen Widerspruch verstrickt. Wenn wir nun die Zahlen auf Grundlagen einer widersprüchlichen Theorie aufbauen, so ist die Mathematik voller Widersprüche.

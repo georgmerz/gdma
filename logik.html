@@ -431,7 +431,7 @@ document.write(`
 </section>
 <section id="einleitung-mit-sudoku">
 <h2>2.2 Einleitung mit Sudoku<a class="headerlink" href="#einleitung-mit-sudoku" title="Permalink to this heading">#</a></h2>
-<p>Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge, es ist aber wichtig er einmal fest zu halten, dass wir alle von Natur aus logisch denken können ohne, dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir das was wir natürlicherweise machen hier formalisieren wollen.</p>
+<p>Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge, es ist aber wichtig erst einmal fest zu halten, dass wir alle von Natur aus logisch denken können ohne, dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir das was wir natürlicherweise machen, hier formalisieren wollen.</p>
 <p>Um Sie davon zu überzeugen, dass Sie Logik bereits verstehen, will ich Ihnen folgendes Beispiel zeigen.</p>
 <p>Nehmen wir an wir spielen Soduku. Wir beschränken uns aber hierfür auf Zahlen <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(4\)</span> statt <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(9\)</span>.</p>
 <p>Nehmen wir an wir haben also folgendes Sudoku gegeben:</p>
@@ -458,7 +458,7 @@ document.write(`
 <p>Wir wissen, es darf keine 1 sein, denn diese Zahl ist bereits im Quadranten. Außerdem darf es keine 2 oder 3 sein, denn diese Zahlen sind in der selben Zeile.</p>
 <p>Damit wissen wir, dass gilt:</p>
 <p><em>Nicht A und Nicht B und Nicht C.</em></p>
-<p>Das ist aber das selbe wie</p>
+<p>Das ist aber dasselbe wie</p>
 <p><em>Nicht (A oder B oder C).</em></p>
 <p>Hier haben wir schon ein erstes Gesetz der Aussagenlogik angewendet. Das Gesetz von <strong>de Morgan</strong>.</p>
 <p>Anstatt <strong>nicht</strong> schreiben Mathematiker:innen <span class="math notranslate nohighlight">\(\neg\)</span> und anstatt <strong>und</strong> schreiben sie <span class="math notranslate nohighlight">\(\wedge\)</span>.</p>
@@ -467,7 +467,7 @@ document.write(`
 <p>Zusammen mit dem Ersten Teil: ergibt sich als Ausdruck:</p>
 <p><span class="math notranslate nohighlight">\((A\vee B\vee C\vee D)\wedge (\neg A \wedge \neg B \wedge \neg C)\)</span></p>
 <p>Es soll also A oder B oder C oder D gelten und <strong>nicht</strong> A und  <strong>nicht</strong> B und <strong>nicht</strong> C. Wir alle wissen, dass das nichts anderes heißt, dass <span class="math notranslate nohighlight">\(D\)</span> gilt. Also dass die Zahl die 4 sein muss.
-Aber warum eigentlich? Welche Logischen Gesetze stecken dahinter? Genau das wollen wir in diesem Kapitel genauer untersuchen.</p>
+Aber warum eigentlich? Welche logischen Gesetze stecken dahinter? Genau das wollen wir in diesem Kapitel genauer untersuchen.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xleOtHLj61g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 <section id="aussagenlogik">
@@ -1028,7 +1028,7 @@ Nehmen wir an wir haben</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\((A\leftrightarrow B) \equiv (\neg A \lor B) \land (A\lor \neg B)\)</span></p></li>
 </ul>
-<p><strong>Erweiterte Komplementarität</strong></p>
+<p><strong>Erweiterte Komplementarität(13)</strong></p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(A\lor (\neg A\land B)\equiv (A\lor B)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(A\land (\neg A\lor B)\equiv (A\land B)\)</span></p></li>
@@ -1269,7 +1269,7 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <h3>Der Wohlordnungssatz<a class="headerlink" href="#der-wohlordnungssatz" title="Permalink to this heading">#</a></h3>
 <p>Der Wohlordnungssatz ist die folgende Aussage:</p>
 <p><em>Jede nichtleere Menge natürlicher Zahlen enthält eine kleinste Zahl.</em></p>
-<p>Was meinen Sie gilt dieser Satz oder nicht?</p>
+<p>Was meinen Sie, gilt dieser Satz oder nicht?</p>
 <p>Der Satz scheint uns intuitiv richtig oder? Denn <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> ist ja nach unten beschränkt und es sollte doch immer eine kleinste Zahl geben.</p>
 <p><strong>Frage</strong></p>
 <p>Gilt der Satz auch für <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>?</p>
