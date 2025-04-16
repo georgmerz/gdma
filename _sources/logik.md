@@ -1,6 +1,5 @@
 # Kapitel 2 Grundlagen der Logik
 
-
 ## 2.1 Lernziele
 In diesem Abschnitt lernen wir die folgenden Dinge:
 
@@ -10,7 +9,6 @@ In diesem Abschnitt lernen wir die folgenden Dinge:
 - Prädikatenlogik und Quantoren formulieren
 - Die Gödelschen Unvollständigkeitssätze
 
-
 :::{admonition}  Lernziele
 :class: note
 
@@ -18,22 +16,20 @@ In diesem Abschnitt lernen wir die folgenden Dinge:
 - Interpretieren von logischen Ausdrücken 
 - Folgerungen von logischen Aussagen mittels Wahrheitstafeln und Gesetzen der Aussagenlogik
 - Ausdrücke mithilfe von Quantoren formulieren und negieren
-- Verständnis des Gödelschen Unvollständigkeitssatz erlangen
+- Verständnis des Gödelschen Unvollständigkeitssatzes erlangen
 :::
-
 
 ## 2.2 Einleitung mit Sudoku 
 
-Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge, es ist aber wichtig er einmal fest zu halten, dass wir alle von Natur aus logisch denken können ohne, dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir das was wir natürlicherweise machen hier formalisieren wollen.
+Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge, es ist aber wichtig, erst einmal festzuhalten, dass wir alle von Natur aus logisch denken können, ohne dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir das, was wir natürlicherweise machen, hier formalisieren wollen.
 
 Um Sie davon zu überzeugen, dass Sie Logik bereits verstehen, will ich Ihnen folgendes Beispiel zeigen.
 
-Nehmen wir an wir spielen Soduku. Wir beschränken uns aber hierfür auf Zahlen $1$ bis $4$ statt $1$ bis $9$.
+Nehmen wir an, wir spielen Sudoku. Wir beschränken uns aber hierfür auf Zahlen $1$ bis $4$ statt $1$ bis $9$.
 
-Nehmen wir an wir haben also folgendes Sudoku gegeben:
+Nehmen wir an, wir haben also folgendes Sudoku gegeben:
 
 ![](images/sudoku.png)
-
 
 Wir betrachten das grüne Feld.
 
@@ -41,25 +37,23 @@ Welche Zahl muss hier rein?
 
 Sie werden intuitiv vermutlich 4 sagen. 
 
-Doch wir wollen, das ganze Schritt für Schritt einmal durchgehen:
+Doch wir wollen das Ganze Schritt für Schritt einmal durchgehen:
 
 Dabei kürzen wir folgende Aussagen ab:
 
-- A="Die eins muss in das Kästchen."
+- A="Die Eins muss in das Kästchen."
 
-- B="Die zwei muss in das Kästchen."
+- B="Die Zwei muss in das Kästchen."
 
-- C= "Die Drei muss in das Kästchen."
+- C="Die Drei muss in das Kästchen."
 
-- D= "Die Vier muss in das Kästchen."
-
+- D="Die Vier muss in das Kästchen."
 
 Wir nennen dabei $A,B,C,D$ logische Aussagen.
 
-
 Nun wissen wir aus den Regeln des Spiels, dass eine der Zahlen $1,2,3$ oder $4$ in das Kästchen muss.
 
-Oder mit unseren logischen Ausdrücken ausgedrück:
+Oder mit unseren logischen Ausdrücken ausgedrückt:
 
 *A oder B oder C oder D*
 
@@ -69,19 +63,19 @@ Also gilt:
 
 $ A\vee B\vee C\vee D$
 
-Ok soweit so gut. Was wissen wir noch?
+Ok, soweit so gut. Was wissen wir noch?
 
-Wir wissen, es darf keine 1 sein, denn diese Zahl ist bereits im Quadranten. Außerdem darf es keine 2 oder 3 sein, denn diese Zahlen sind in der selben Zeile.
+Wir wissen, es darf keine 1 sein, denn diese Zahl ist bereits im Quadranten. Außerdem darf es keine 2 oder 3 sein, denn diese Zahlen sind in derselben Zeile.
 
 Damit wissen wir, dass gilt:
 
 *Nicht A und Nicht B und Nicht C.*
 
-Das ist aber das selbe wie
+Das ist aber dasselbe wie
 
 *Nicht (A oder B oder C).*
 
-Hier haben wir schon ein erstes Gesetz der Aussagenlogik angewendet. Das Gesetz von **de Morgan**. 
+Hier haben wir schon ein erstes Gesetz der Aussagenlogik angewendet: das Gesetz von **de Morgan**. 
 
 Anstatt **nicht** schreiben Mathematiker:innen $\neg$ und anstatt **und** schreiben sie $\wedge$.
 
@@ -89,50 +83,51 @@ Damit ergibt sich also:
 
 $ \neg A \wedge  \neg B \wedge \neg C  $.
 
-Zusammen mit dem Ersten Teil: ergibt sich als Ausdruck:
-
+Zusammen mit dem ersten Teil ergibt sich als Ausdruck:
 
  $(A\vee B\vee C\vee D)\wedge (\neg A \wedge \neg B \wedge \neg C)$
 
 Es soll also A oder B oder C oder D gelten und **nicht** A und  **nicht** B und **nicht** C. Wir alle wissen, dass das nichts anderes heißt, dass $D$ gilt. Also dass die Zahl die 4 sein muss. 
-Aber warum eigentlich? Welche Logischen Gesetze stecken dahinter? Genau das wollen wir in diesem Kapitel genauer untersuchen.
-
-
+Aber warum eigentlich? Welche logischen Gesetze stecken dahinter? Genau das wollen wir in diesem Kapitel genauer untersuchen.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xleOtHLj61g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## 2.3 Aussagenlogik
 
-Wie wir in der Einleitung gesehen, haben beschäftigen wir uns im ersten Teil mit der sogenannten Aussagenlogik.
-
+Wie wir in der Einleitung gesehen haben, beschäftigen wir uns im ersten Teil mit der sogenannten Aussagenlogik.
 
 ````{prf:definition}
-Eine Aussage ist ein Satz, der entweder wahr oder nicht wahr(falsch) ist.
+Eine Aussage ist ein Satz, der entweder wahr oder nicht wahr (falsch) ist.
 ````
 
-
 ````{prf:example}
-Folgendes sind Beispiele für Aussagen
-- "Heute hat es geregnet"
-- 3+5=9
-- 4>3
+Folgendes sind Beispiele für Aussagen:
+- "Heute hat es geregnet."
+- $3+5=9$
+- $4>3$
 
 Folgendes sind keine Aussagen:
 
-- " Wie viel ist 3+2?"
-- 3+5
-- x:=2
+- "Wie viel ist 3+2?"
+- $3+5$
+- $x:=2$
 ````
 
 Häufig kürzen wir Aussagen mit Großbuchstaben ab.
 
-Z.B. A="Heute hat es geregnet" oder $B="3+5=9".
+Z.B. $A=$ "Heute hat es geregnet" oder $B=3+5=9$.
 
 Wir nennen dann $A$ und $B$ **Aussagenvariablen**.
 
+### Zusätzliche Beispiele für Aussagenlogik
 
-Wir können nun Aussagen mithilfe von Operatoren  verknüpfen. Dafür haben wir verschiedene Symbole zu Verfügung, die
-man alltagssprachlich wie folgt interpretieren kann:
+- "Die Sonne scheint heute." (Aussage)
+- "Ist es kalt draußen?" (keine Aussage)
+- $2+2=4$ (Aussage)
+- $x+3=5$ (keine Aussage, da $x$ nicht definiert ist)
+
+Wir können nun Aussagen mithilfe von Operatoren verknüpfen. Dafür haben wir verschiedene Symbole zur Verfügung, die
+man alltagssprachlich wie folgt interpretieren können:
 
 - $A\wedge B$ heißt A und B
 
@@ -142,24 +137,23 @@ man alltagssprachlich wie folgt interpretieren kann:
 
 - $A\to B$ heißt A impliziert B
 
-- $A\leftrightarrow B$ A und B sind äquivalent.
+- $A\leftrightarrow B$ heißt A und B sind äquivalent.
 
-
-Wir werden im Kapitel zu Semantik noch genauer verstehen, was diese Operatoren **genau** bedeuten. Das reicht uns aber erstmal
+Wir werden im Kapitel zur Semantik noch genauer verstehen, was diese Operatoren **genau** bedeuten. Das reicht uns aber erstmal
 als Intuition für das nächste Kapitel.
 
 ### Syntax der Aussagenlogik - Formeln
 
-Die Syntax der Aussagenlogik beschäftigt sich nur mit der Schreibweise von verknpüften Aussagen. Also wie können wir aus gegebenen Aussagen neue Aussagen erzeugen.
+Die Syntax der Aussagenlogik beschäftigt sich nur mit der Schreibweise von verknüpften Aussagen. Also wie können wir aus gegebenen Aussagen neue Aussagen erzeugen.
 Dabei ist die Bedeutung der Aussagen erst einmal nicht bedeutend.
 
-Wir nennen zusammengesetzte Aussagen auch Formeln und Sie können wie folgt iterativ erzeugt werden:
+Wir nennen zusammengesetzte Aussagen auch Formeln, und sie können wie folgt iterativ erzeugt werden:
 
 ````{prf:definition}
 Eine Formel ist eine Kombination aus Aussagen und logischen Operatoren und kann wie folgt iterativ erzeugt werden:
 1) Einzelne Aussagen sind Formeln.
 
-2) 0 (die immer Falsche Aussage) und 1 (die immer wahre Aussage) sind Formeln.
+2) 0 (die immer falsche Aussage) und 1 (die immer wahre Aussage) sind Formeln.
 
 3) Wenn $F_1$ und $F_2$ Formeln sind, so sind auch folgende Ausdrücke Formeln:
 
@@ -172,15 +166,11 @@ Eine Formel ist eine Kombination aus Aussagen und logischen Operatoren und kann 
 - $(F_1 \to F_2)$
 
 - $(F_1 \leftrightarrow F_2)$.
-
 ````
 
 **Achtung**
 
-Denken Sie daran Klammern zu setzen um Ausdrücke zu bilden.
-
-
-
+Denken Sie daran, Klammern zu setzen, um Ausdrücke zu bilden.
 
 ````{prf:example}
 Seien $A,B,C$ Aussagen. Dann sind folgende Ausdrücke Formeln:
@@ -191,15 +181,13 @@ Seien $A,B,C$ Aussagen. Dann sind folgende Ausdrücke Formeln:
 
 - $(\neg A) \wedge B \wedge C \to A$
 
-
 - $((\neg A) \leftrightarrow (B \wedge C)) \to A$
-
 
 Folgende Ausdrücke sind **keine** Formeln:
 
 - $ A\neg B$
 
-- $\leftrightarrow B \wedge$ C$
+- $\leftrightarrow B \wedge C$
 
 - $A\neg$.
 
@@ -360,7 +348,7 @@ F & F & T\\
 #### Der $\leftrightarrow$ - Operator
 
 
-Die Aussage $A\leftrightarrow B$ ist das logische "genau dann wenn". Es ist also $A\leftrightarrow B$ genau dann wahr, wenn $A$ und $B$ entweder beide wahr oder beide falsch sind.
+Die Aussage $A\leftrightarrow B$ ist das logische "genau dann, wenn". Es ist also $A\leftrightarrow B$ genau dann wahr, wenn $A$ und $B$ entweder beide wahr oder beide falsch sind.
 
 ```{math}
 \begin{array}{|c c|c|}
@@ -378,6 +366,38 @@ F & F & T\\
 \end{array}
 ```
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vea-kTjWm4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### Zusätzliche Beispiele für Wahrheitstabellen
+
+#### Beispiel: XOR (Exklusives ODER)
+
+Das exklusive ODER (XOR) ist genau dann wahr, wenn entweder $A$ oder $B$ wahr ist, aber nicht beide gleichzeitig.
+
+```{math}
+\begin{array}{|c c|c|}
+A & B & A \oplus B\\
+\hline
+T & T & F\\
+T & F & T\\
+F & T & T\\
+F & F & F\\
+\end{array}
+```
+
+#### Beispiel: NAND (Nicht UND)
+
+Das NAND ist genau dann wahr, wenn $A \wedge B$ **nicht** wahr ist.
+
+```{math}
+\begin{array}{|c c|c c|}
+A & B & A \wedge B & \neg (A \wedge B)\\
+\hline
+T & T & T & F\\
+T & F & F & T\\
+F & T & F & T\\
+F & F & F & T\\
+\end{array}
+```
 
 #### Wahrheitstafeln für allgemeine Formeln
 
@@ -510,7 +530,7 @@ Beispiele für Kontradiktionen:
 **Übung**
 
 Betrachten Sie die Formel $F= (A\to B) \to (\neg B \to \neg A)$.
-Mann kann nun mit Hilfe einer Wahrheitstafel zeigen, dass dies eine Tautologie ist.
+Man kann nun mithilfe einer Wahrheitstafel zeigen, dass dies eine Tautologie ist.
 
 Eine weitere wichtige Definition ist wann zwei Formeln semantisch gesehen gleich sind. D.h. dass sie die selbe Wahrheitstafel haben.
 
@@ -583,7 +603,7 @@ Wie viele Mögliche Belegungen gibt es für eine Formel mit $n$ Aussagenvariable
 Es gibt **$2^n$** Belegungen, denn für jede Aussagenvariable gibt es 2 Möglichkeiten (T oder F). 
 ````
 
-Die Äquivalenz von Formeln kann jedoch auch algebraisch durch Anwendung diversere Gesetze der Aussagenlogik hergeleitet werden. Das bedeutet, dass man mit logischen Formeln auch rechnen kann ähnlich wie mit Zahlen. In diesem Kapitel listen wir die wichtigsten Gesetze der Aussagenlogik und führen ein Beispiel durch.
+Die Äquivalenz von Formeln kann jedoch auch algebraisch durch Anwendung diverser Gesetze der Aussagenlogik hergeleitet werden. Das bedeutet, dass man mit logischen Formeln auch rechnen kann ähnlich wie mit Zahlen. In diesem Kapitel listen wir die wichtigsten Gesetze der Aussagenlogik und führen ein Beispiel durch.
 
 #### Idempotenzgesetz
 
@@ -1133,7 +1153,7 @@ Damit hat er genau den Satz "Ich bin nicht ableitbar konstruiert".
 
 Und jetzt kommt das verwirrende: Damit ist der Satz zwar nicht ableitbar, aber er ist wahr.
 
-Das zu verstehen würde wiederum den Rahmen dieses Kurses sprengen. Dennoch haben Sie damit die Ideen und Konzepte von Gödel kennengelernt.
+Das zu verstehen, würde wiederum den Rahmen dieses Kurses sprengen. Dennoch haben Sie damit die Ideen und Konzepte von Gödel kennengelernt.
 
 Doch gibt es solche Sätze die nicht beweisbar sind wirklich oder sind das nur komische Konstrukte.
 
@@ -1146,7 +1166,7 @@ Der Wohlordnungssatz ist die folgende Aussage:
 
 *Jede nichtleere Menge natürlicher Zahlen enthält eine kleinste Zahl.*
 
-Was meinen Sie gilt dieser Satz oder nicht?
+Was meinen Sie, gilt dieser Satz oder nicht?
 
 Der Satz scheint uns intuitiv richtig oder? Denn $\mathbb{N}$ ist ja nach unten beschränkt und es sollte doch immer eine kleinste Zahl geben.
 
@@ -1170,13 +1190,13 @@ Daher nehmen fast alle Mathematiker:innen den Wohlordnungssatz als Wahr an.
 
 Doch es gibt auch Kritiker:innen, die sagen, dass der Wohlordnungssatz sehr unintuitive Folgen hat. 
 
-Man kann Zeigen, dass man mithilfe des Wohlordnungssatz und den Axiomen der Mengenlehre folgenden paradoxen Satz zeigen kann.
+Man kann zeigen, dass man mithilfe des Wohlordnungssatzes und der Axiome der Mengenlehre folgenden paradoxen Satz beweisen kann.
 
 Grob gesagt besagt das Banach-Tarski Paradoxon das Folgende:
 ````{prf:theorem}
 Eine Kugel in drei oder mehr Dimensionen kann derart in Teilmengen zerleget werden, dass sich ihre Teile wieder zu zwei lückenlosen Kugeln zusammenfügen lassen, von denen jede denselben Durchmesser hat wie die ursprüngliche.
 ````
 
-Ok mit diesem Satz können wir aus eins zwei machen. Das klingt extrem unintuitiv. Viele Mathematiker:innen glauben aber wie gesagt an den Wohlordnungssatz und nehmen deshalb auch an, dass das Banach-Tarski Paradoxon stimmt.
+Okay, mit diesem Satz können wir aus eins zwei machen. Das klingt extrem unintuitiv. Viele Mathematiker:innen glauben aber wie gesagt an den Wohlordnungssatz und nehmen deshalb auch an, dass das Banach-Tarski Paradoxon stimmt.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WJGEnfu02cc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

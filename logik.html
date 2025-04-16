@@ -356,6 +356,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">2.1 Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einleitung-mit-sudoku">2.2 Einleitung mit Sudoku</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aussagenlogik">2.3 Aussagenlogik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zusatzliche-beispiele-fur-aussagenlogik">Zusätzliche Beispiele für Aussagenlogik</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-der-aussagenlogik-formeln">Syntax der Aussagenlogik - Formeln</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semantik-der-aussagenlogik-wahrheitstafeln">Semantik der Aussagenlogik - Wahrheitstafeln</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wahrheitstafeln">Wahrheitstafeln</a></li>
@@ -364,6 +365,11 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#der-neg-operator">Der <span class="math notranslate nohighlight">\(\neg\)</span> - Operator</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#der-to-operator">Der <span class="math notranslate nohighlight">\(\to\)</span> - Operator</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#der-leftrightarrow-operator">Der <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> - Operator</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zusatzliche-beispiele-fur-wahrheitstabellen">Zusätzliche Beispiele für Wahrheitstabellen</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-xor-exklusives-oder">Beispiel: XOR (Exklusives ODER)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-nand-nicht-und">Beispiel: NAND (Nicht UND)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wahrheitstafeln-fur-allgemeine-formeln">Wahrheitstafeln für allgemeine Formeln</a></li>
 </ul>
 </li>
@@ -425,101 +431,110 @@ document.write(`
 <li><p>Interpretieren von logischen Ausdrücken</p></li>
 <li><p>Folgerungen von logischen Aussagen mittels Wahrheitstafeln und Gesetzen der Aussagenlogik</p></li>
 <li><p>Ausdrücke mithilfe von Quantoren formulieren und negieren</p></li>
-<li><p>Verständnis des Gödelschen Unvollständigkeitssatz erlangen</p></li>
+<li><p>Verständnis des Gödelschen Unvollständigkeitssatzes erlangen</p></li>
 </ul>
 </div>
 </section>
 <section id="einleitung-mit-sudoku">
 <h2>2.2 Einleitung mit Sudoku<a class="headerlink" href="#einleitung-mit-sudoku" title="Permalink to this heading">#</a></h2>
-<p>Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge, es ist aber wichtig er einmal fest zu halten, dass wir alle von Natur aus logisch denken können ohne, dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir das was wir natürlicherweise machen hier formalisieren wollen.</p>
+<p>Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge, es ist aber wichtig, erst einmal festzuhalten, dass wir alle von Natur aus logisch denken können, ohne dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir das, was wir natürlicherweise machen, hier formalisieren wollen.</p>
 <p>Um Sie davon zu überzeugen, dass Sie Logik bereits verstehen, will ich Ihnen folgendes Beispiel zeigen.</p>
-<p>Nehmen wir an wir spielen Soduku. Wir beschränken uns aber hierfür auf Zahlen <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(4\)</span> statt <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(9\)</span>.</p>
-<p>Nehmen wir an wir haben also folgendes Sudoku gegeben:</p>
+<p>Nehmen wir an, wir spielen Sudoku. Wir beschränken uns aber hierfür auf Zahlen <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(4\)</span> statt <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(9\)</span>.</p>
+<p>Nehmen wir an, wir haben also folgendes Sudoku gegeben:</p>
 <p><img alt="" src="_images/sudoku.png" /></p>
 <p>Wir betrachten das grüne Feld.</p>
 <p>Welche Zahl muss hier rein?</p>
 <p>Sie werden intuitiv vermutlich 4 sagen.</p>
-<p>Doch wir wollen, das ganze Schritt für Schritt einmal durchgehen:</p>
+<p>Doch wir wollen das Ganze Schritt für Schritt einmal durchgehen:</p>
 <p>Dabei kürzen wir folgende Aussagen ab:</p>
 <ul class="simple">
-<li><p>A=”Die eins muss in das Kästchen.”</p></li>
-<li><p>B=”Die zwei muss in das Kästchen.”</p></li>
-<li><p>C= “Die Drei muss in das Kästchen.”</p></li>
-<li><p>D= “Die Vier muss in das Kästchen.”</p></li>
+<li><p>A=”Die Eins muss in das Kästchen.”</p></li>
+<li><p>B=”Die Zwei muss in das Kästchen.”</p></li>
+<li><p>C=”Die Drei muss in das Kästchen.”</p></li>
+<li><p>D=”Die Vier muss in das Kästchen.”</p></li>
 </ul>
 <p>Wir nennen dabei <span class="math notranslate nohighlight">\(A,B,C,D\)</span> logische Aussagen.</p>
 <p>Nun wissen wir aus den Regeln des Spiels, dass eine der Zahlen <span class="math notranslate nohighlight">\(1,2,3\)</span> oder <span class="math notranslate nohighlight">\(4\)</span> in das Kästchen muss.</p>
-<p>Oder mit unseren logischen Ausdrücken ausgedrück:</p>
+<p>Oder mit unseren logischen Ausdrücken ausgedrückt:</p>
 <p><em>A oder B oder C oder D</em></p>
 <p>In der Logik schreibt man nun statt “oder” auch <span class="math notranslate nohighlight">\(\vee \)</span>.</p>
 <p>Also gilt:</p>
 <p><span class="math notranslate nohighlight">\( A\vee B\vee C\vee D\)</span></p>
-<p>Ok soweit so gut. Was wissen wir noch?</p>
-<p>Wir wissen, es darf keine 1 sein, denn diese Zahl ist bereits im Quadranten. Außerdem darf es keine 2 oder 3 sein, denn diese Zahlen sind in der selben Zeile.</p>
+<p>Ok, soweit so gut. Was wissen wir noch?</p>
+<p>Wir wissen, es darf keine 1 sein, denn diese Zahl ist bereits im Quadranten. Außerdem darf es keine 2 oder 3 sein, denn diese Zahlen sind in derselben Zeile.</p>
 <p>Damit wissen wir, dass gilt:</p>
 <p><em>Nicht A und Nicht B und Nicht C.</em></p>
-<p>Das ist aber das selbe wie</p>
+<p>Das ist aber dasselbe wie</p>
 <p><em>Nicht (A oder B oder C).</em></p>
-<p>Hier haben wir schon ein erstes Gesetz der Aussagenlogik angewendet. Das Gesetz von <strong>de Morgan</strong>.</p>
+<p>Hier haben wir schon ein erstes Gesetz der Aussagenlogik angewendet: das Gesetz von <strong>de Morgan</strong>.</p>
 <p>Anstatt <strong>nicht</strong> schreiben Mathematiker:innen <span class="math notranslate nohighlight">\(\neg\)</span> und anstatt <strong>und</strong> schreiben sie <span class="math notranslate nohighlight">\(\wedge\)</span>.</p>
 <p>Damit ergibt sich also:</p>
 <p><span class="math notranslate nohighlight">\( \neg A \wedge  \neg B \wedge \neg C  \)</span>.</p>
-<p>Zusammen mit dem Ersten Teil: ergibt sich als Ausdruck:</p>
+<p>Zusammen mit dem ersten Teil ergibt sich als Ausdruck:</p>
 <p><span class="math notranslate nohighlight">\((A\vee B\vee C\vee D)\wedge (\neg A \wedge \neg B \wedge \neg C)\)</span></p>
 <p>Es soll also A oder B oder C oder D gelten und <strong>nicht</strong> A und  <strong>nicht</strong> B und <strong>nicht</strong> C. Wir alle wissen, dass das nichts anderes heißt, dass <span class="math notranslate nohighlight">\(D\)</span> gilt. Also dass die Zahl die 4 sein muss.
-Aber warum eigentlich? Welche Logischen Gesetze stecken dahinter? Genau das wollen wir in diesem Kapitel genauer untersuchen.</p>
+Aber warum eigentlich? Welche logischen Gesetze stecken dahinter? Genau das wollen wir in diesem Kapitel genauer untersuchen.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xleOtHLj61g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 <section id="aussagenlogik">
 <h2>2.3 Aussagenlogik<a class="headerlink" href="#aussagenlogik" title="Permalink to this heading">#</a></h2>
-<p>Wie wir in der Einleitung gesehen, haben beschäftigen wir uns im ersten Teil mit der sogenannten Aussagenlogik.</p>
+<p>Wie wir in der Einleitung gesehen haben, beschäftigen wir uns im ersten Teil mit der sogenannten Aussagenlogik.</p>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 13 </span></p>
 <section class="definition-content" id="proof-content">
-<p>Eine Aussage ist ein Satz, der entweder wahr oder nicht wahr(falsch) ist.</p>
+<p>Eine Aussage ist ein Satz, der entweder wahr oder nicht wahr (falsch) ist.</p>
 </section>
 </div><div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 12 </span></p>
 <section class="example-content" id="proof-content">
-<p>Folgendes sind Beispiele für Aussagen</p>
+<p>Folgendes sind Beispiele für Aussagen:</p>
 <ul class="simple">
-<li><p>“Heute hat es geregnet”</p></li>
-<li><p>3+5=9</p></li>
-<li><p>4&gt;3</p></li>
+<li><p>“Heute hat es geregnet.”</p></li>
+<li><p><span class="math notranslate nohighlight">\(3+5=9\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(4&gt;3\)</span></p></li>
 </ul>
 <p>Folgendes sind keine Aussagen:</p>
 <ul class="simple">
-<li><p>” Wie viel ist 3+2?”</p></li>
-<li><p>3+5</p></li>
-<li><p>x:=2</p></li>
+<li><p>“Wie viel ist 3+2?”</p></li>
+<li><p><span class="math notranslate nohighlight">\(3+5\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x:=2\)</span></p></li>
 </ul>
 </section>
 </div><p>Häufig kürzen wir Aussagen mit Großbuchstaben ab.</p>
-<p>Z.B. A=”Heute hat es geregnet” oder $B=”3+5=9”.</p>
+<p>Z.B. <span class="math notranslate nohighlight">\(A=\)</span> “Heute hat es geregnet” oder <span class="math notranslate nohighlight">\(B=3+5=9\)</span>.</p>
 <p>Wir nennen dann <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> <strong>Aussagenvariablen</strong>.</p>
-<p>Wir können nun Aussagen mithilfe von Operatoren  verknüpfen. Dafür haben wir verschiedene Symbole zu Verfügung, die
-man alltagssprachlich wie folgt interpretieren kann:</p>
+<section id="zusatzliche-beispiele-fur-aussagenlogik">
+<h3>Zusätzliche Beispiele für Aussagenlogik<a class="headerlink" href="#zusatzliche-beispiele-fur-aussagenlogik" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>“Die Sonne scheint heute.” (Aussage)</p></li>
+<li><p>“Ist es kalt draußen?” (keine Aussage)</p></li>
+<li><p><span class="math notranslate nohighlight">\(2+2=4\)</span> (Aussage)</p></li>
+<li><p><span class="math notranslate nohighlight">\(x+3=5\)</span> (keine Aussage, da <span class="math notranslate nohighlight">\(x\)</span> nicht definiert ist)</p></li>
+</ul>
+<p>Wir können nun Aussagen mithilfe von Operatoren verknüpfen. Dafür haben wir verschiedene Symbole zur Verfügung, die
+man alltagssprachlich wie folgt interpretieren können:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(A\wedge B\)</span> heißt A und B</p></li>
 <li><p><span class="math notranslate nohighlight">\(A\vee B\)</span> heißt A oder B</p></li>
 <li><p><span class="math notranslate nohighlight">\(\neg A\)</span> heißt nicht A</p></li>
 <li><p><span class="math notranslate nohighlight">\(A\to B\)</span> heißt A impliziert B</p></li>
-<li><p><span class="math notranslate nohighlight">\(A\leftrightarrow B\)</span> A und B sind äquivalent.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\leftrightarrow B\)</span> heißt A und B sind äquivalent.</p></li>
 </ul>
-<p>Wir werden im Kapitel zu Semantik noch genauer verstehen, was diese Operatoren <strong>genau</strong> bedeuten. Das reicht uns aber erstmal
+<p>Wir werden im Kapitel zur Semantik noch genauer verstehen, was diese Operatoren <strong>genau</strong> bedeuten. Das reicht uns aber erstmal
 als Intuition für das nächste Kapitel.</p>
+</section>
 <section id="syntax-der-aussagenlogik-formeln">
 <h3>Syntax der Aussagenlogik - Formeln<a class="headerlink" href="#syntax-der-aussagenlogik-formeln" title="Permalink to this heading">#</a></h3>
-<p>Die Syntax der Aussagenlogik beschäftigt sich nur mit der Schreibweise von verknpüften Aussagen. Also wie können wir aus gegebenen Aussagen neue Aussagen erzeugen.
+<p>Die Syntax der Aussagenlogik beschäftigt sich nur mit der Schreibweise von verknüpften Aussagen. Also wie können wir aus gegebenen Aussagen neue Aussagen erzeugen.
 Dabei ist die Bedeutung der Aussagen erst einmal nicht bedeutend.</p>
-<p>Wir nennen zusammengesetzte Aussagen auch Formeln und Sie können wie folgt iterativ erzeugt werden:</p>
+<p>Wir nennen zusammengesetzte Aussagen auch Formeln, und sie können wie folgt iterativ erzeugt werden:</p>
 <div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 14 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Eine Formel ist eine Kombination aus Aussagen und logischen Operatoren und kann wie folgt iterativ erzeugt werden:</p>
 <ol class="arabic simple">
 <li><p>Einzelne Aussagen sind Formeln.</p></li>
-<li><p>0 (die immer Falsche Aussage) und 1 (die immer wahre Aussage) sind Formeln.</p></li>
+<li><p>0 (die immer falsche Aussage) und 1 (die immer wahre Aussage) sind Formeln.</p></li>
 <li><p>Wenn <span class="math notranslate nohighlight">\(F_1\)</span> und <span class="math notranslate nohighlight">\(F_2\)</span> Formeln sind, so sind auch folgende Ausdrücke Formeln:</p></li>
 </ol>
 <ul class="simple">
@@ -531,7 +546,7 @@ Dabei ist die Bedeutung der Aussagen erst einmal nicht bedeutend.</p>
 </ul>
 </section>
 </div><p><strong>Achtung</strong></p>
-<p>Denken Sie daran Klammern zu setzen um Ausdrücke zu bilden.</p>
+<p>Denken Sie daran, Klammern zu setzen, um Ausdrücke zu bilden.</p>
 <div class="proof example admonition" id="example-3">
 <p class="admonition-title"><span class="caption-number">Example 13 </span></p>
 <section class="example-content" id="proof-content">
@@ -545,7 +560,7 @@ Dabei ist die Bedeutung der Aussagen erst einmal nicht bedeutend.</p>
 <p>Folgende Ausdrücke sind <strong>keine</strong> Formeln:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\( A\neg B\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\leftrightarrow B \wedge\)</span> C$</p></li>
+<li><p><span class="math notranslate nohighlight">\(\leftrightarrow B \wedge C\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(A\neg\)</span>.</p></li>
 </ul>
 </section>
@@ -672,7 +687,7 @@ F &amp; F &amp; T\\
 </section>
 <section id="der-leftrightarrow-operator">
 <h4>Der <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> - Operator<a class="headerlink" href="#der-leftrightarrow-operator" title="Permalink to this heading">#</a></h4>
-<p>Die Aussage <span class="math notranslate nohighlight">\(A\leftrightarrow B\)</span> ist das logische “genau dann wenn”. Es ist also <span class="math notranslate nohighlight">\(A\leftrightarrow B\)</span> genau dann wahr, wenn <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> entweder beide wahr oder beide falsch sind.</p>
+<p>Die Aussage <span class="math notranslate nohighlight">\(A\leftrightarrow B\)</span> ist das logische “genau dann, wenn”. Es ist also <span class="math notranslate nohighlight">\(A\leftrightarrow B\)</span> genau dann wahr, wenn <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> entweder beide wahr oder beide falsch sind.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{|c c|c|}
 % |c c|c| means that there are three columns in the table and
@@ -688,6 +703,35 @@ F &amp; T &amp; F\\
 F &amp; F &amp; T\\
 \end{array}\end{split}\]</div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vea-kTjWm4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
+</section>
+<section id="zusatzliche-beispiele-fur-wahrheitstabellen">
+<h3>Zusätzliche Beispiele für Wahrheitstabellen<a class="headerlink" href="#zusatzliche-beispiele-fur-wahrheitstabellen" title="Permalink to this heading">#</a></h3>
+<section id="beispiel-xor-exklusives-oder">
+<h4>Beispiel: XOR (Exklusives ODER)<a class="headerlink" href="#beispiel-xor-exklusives-oder" title="Permalink to this heading">#</a></h4>
+<p>Das exklusive ODER (XOR) ist genau dann wahr, wenn entweder <span class="math notranslate nohighlight">\(A\)</span> oder <span class="math notranslate nohighlight">\(B\)</span> wahr ist, aber nicht beide gleichzeitig.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{|c c|c|}
+A &amp; B &amp; A \oplus B\\
+\hline
+T &amp; T &amp; F\\
+T &amp; F &amp; T\\
+F &amp; T &amp; T\\
+F &amp; F &amp; F\\
+\end{array}\end{split}\]</div>
+</section>
+<section id="beispiel-nand-nicht-und">
+<h4>Beispiel: NAND (Nicht UND)<a class="headerlink" href="#beispiel-nand-nicht-und" title="Permalink to this heading">#</a></h4>
+<p>Das NAND ist genau dann wahr, wenn <span class="math notranslate nohighlight">\(A \wedge B\)</span> <strong>nicht</strong> wahr ist.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{|c c|c c|}
+A &amp; B &amp; A \wedge B &amp; \neg (A \wedge B)\\
+\hline
+T &amp; T &amp; T &amp; F\\
+T &amp; F &amp; F &amp; T\\
+F &amp; T &amp; F &amp; T\\
+F &amp; F &amp; F &amp; T\\
+\end{array}\end{split}\]</div>
 </section>
 <section id="wahrheitstafeln-fur-allgemeine-formeln">
 <h4>Wahrheitstafeln für allgemeine Formeln<a class="headerlink" href="#wahrheitstafeln-fur-allgemeine-formeln" title="Permalink to this heading">#</a></h4>
@@ -796,7 +840,7 @@ T&amp;T &amp;T &amp;T &amp;T &amp;T
 </section>
 </div><p><strong>Übung</strong></p>
 <p>Betrachten Sie die Formel <span class="math notranslate nohighlight">\(F= (A\to B) \to (\neg B \to \neg A)\)</span>.
-Mann kann nun mit Hilfe einer Wahrheitstafel zeigen, dass dies eine Tautologie ist.</p>
+Man kann nun mithilfe einer Wahrheitstafel zeigen, dass dies eine Tautologie ist.</p>
 <p>Eine weitere wichtige Definition ist wann zwei Formeln semantisch gesehen gleich sind. D.h. dass sie die selbe Wahrheitstafel haben.</p>
 <div class="proof definition admonition" id="definition-6">
 <p class="admonition-title"><span class="caption-number">Definition 16 </span></p>
@@ -844,7 +888,7 @@ F &amp; F &amp; T &amp; T\\
 <div class="toggle docutils container">
 <p>Es gibt <strong><span class="math notranslate nohighlight">\(2^n\)</span></strong> Belegungen, denn für jede Aussagenvariable gibt es 2 Möglichkeiten (T oder F).</p>
 </div>
-<p>Die Äquivalenz von Formeln kann jedoch auch algebraisch durch Anwendung diversere Gesetze der Aussagenlogik hergeleitet werden. Das bedeutet, dass man mit logischen Formeln auch rechnen kann ähnlich wie mit Zahlen. In diesem Kapitel listen wir die wichtigsten Gesetze der Aussagenlogik und führen ein Beispiel durch.</p>
+<p>Die Äquivalenz von Formeln kann jedoch auch algebraisch durch Anwendung diverser Gesetze der Aussagenlogik hergeleitet werden. Das bedeutet, dass man mit logischen Formeln auch rechnen kann ähnlich wie mit Zahlen. In diesem Kapitel listen wir die wichtigsten Gesetze der Aussagenlogik und führen ein Beispiel durch.</p>
 <section id="idempotenzgesetz">
 <h4>Idempotenzgesetz<a class="headerlink" href="#idempotenzgesetz" title="Permalink to this heading">#</a></h4>
 <div class="proof theorem admonition" id="theorem-8">
@@ -1261,7 +1305,7 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <p>Damit hat er genau den Satz “Ich bin nicht ableitbar konstruiert”.</p>
 <p>Ähnlich wie in der Russel’schen Antinomie können wir durch ein Widerspruchsargument zeigen, dass er nicht ableitbar ist.</p>
 <p>Und jetzt kommt das verwirrende: Damit ist der Satz zwar nicht ableitbar, aber er ist wahr.</p>
-<p>Das zu verstehen würde wiederum den Rahmen dieses Kurses sprengen. Dennoch haben Sie damit die Ideen und Konzepte von Gödel kennengelernt.</p>
+<p>Das zu verstehen, würde wiederum den Rahmen dieses Kurses sprengen. Dennoch haben Sie damit die Ideen und Konzepte von Gödel kennengelernt.</p>
 <p>Doch gibt es solche Sätze die nicht beweisbar sind wirklich oder sind das nur komische Konstrukte.</p>
 <p>Das sehen wir im nächsten Kapitel.</p>
 </section>
@@ -1269,7 +1313,7 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <h3>Der Wohlordnungssatz<a class="headerlink" href="#der-wohlordnungssatz" title="Permalink to this heading">#</a></h3>
 <p>Der Wohlordnungssatz ist die folgende Aussage:</p>
 <p><em>Jede nichtleere Menge natürlicher Zahlen enthält eine kleinste Zahl.</em></p>
-<p>Was meinen Sie gilt dieser Satz oder nicht?</p>
+<p>Was meinen Sie, gilt dieser Satz oder nicht?</p>
 <p>Der Satz scheint uns intuitiv richtig oder? Denn <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> ist ja nach unten beschränkt und es sollte doch immer eine kleinste Zahl geben.</p>
 <p><strong>Frage</strong></p>
 <p>Gilt der Satz auch für <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>?</p>
@@ -1281,14 +1325,14 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <p>Wir können diesen Satz als Axiom für die natürlichen Zahlen hinzufügen oder nicht. Falls die Mengenlehre Widersprüche enthält so enthält sie diese unabhängig vom Wohlordnungssatz.</p>
 <p>Daher nehmen fast alle Mathematiker:innen den Wohlordnungssatz als Wahr an.</p>
 <p>Doch es gibt auch Kritiker:innen, die sagen, dass der Wohlordnungssatz sehr unintuitive Folgen hat.</p>
-<p>Man kann Zeigen, dass man mithilfe des Wohlordnungssatz und den Axiomen der Mengenlehre folgenden paradoxen Satz zeigen kann.</p>
+<p>Man kann zeigen, dass man mithilfe des Wohlordnungssatzes und der Axiome der Mengenlehre folgenden paradoxen Satz beweisen kann.</p>
 <p>Grob gesagt besagt das Banach-Tarski Paradoxon das Folgende:</p>
 <div class="proof theorem admonition" id="theorem-30">
 <p class="admonition-title"><span class="caption-number">Theorem 15 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Eine Kugel in drei oder mehr Dimensionen kann derart in Teilmengen zerleget werden, dass sich ihre Teile wieder zu zwei lückenlosen Kugeln zusammenfügen lassen, von denen jede denselben Durchmesser hat wie die ursprüngliche.</p>
 </section>
-</div><p>Ok mit diesem Satz können wir aus eins zwei machen. Das klingt extrem unintuitiv. Viele Mathematiker:innen glauben aber wie gesagt an den Wohlordnungssatz und nehmen deshalb auch an, dass das Banach-Tarski Paradoxon stimmt.</p>
+</div><p>Okay, mit diesem Satz können wir aus eins zwei machen. Das klingt extrem unintuitiv. Viele Mathematiker:innen glauben aber wie gesagt an den Wohlordnungssatz und nehmen deshalb auch an, dass das Banach-Tarski Paradoxon stimmt.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WJGEnfu02cc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
 </section>
 </section>
@@ -1357,6 +1401,7 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">2.1 Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einleitung-mit-sudoku">2.2 Einleitung mit Sudoku</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aussagenlogik">2.3 Aussagenlogik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zusatzliche-beispiele-fur-aussagenlogik">Zusätzliche Beispiele für Aussagenlogik</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-der-aussagenlogik-formeln">Syntax der Aussagenlogik - Formeln</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semantik-der-aussagenlogik-wahrheitstafeln">Semantik der Aussagenlogik - Wahrheitstafeln</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wahrheitstafeln">Wahrheitstafeln</a></li>
@@ -1365,6 +1410,11 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#der-neg-operator">Der <span class="math notranslate nohighlight">\(\neg\)</span> - Operator</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#der-to-operator">Der <span class="math notranslate nohighlight">\(\to\)</span> - Operator</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#der-leftrightarrow-operator">Der <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> - Operator</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zusatzliche-beispiele-fur-wahrheitstabellen">Zusätzliche Beispiele für Wahrheitstabellen</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-xor-exklusives-oder">Beispiel: XOR (Exklusives ODER)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-nand-nicht-und">Beispiel: NAND (Nicht UND)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wahrheitstafeln-fur-allgemeine-formeln">Wahrheitstafeln für allgemeine Formeln</a></li>
 </ul>
 </li>
