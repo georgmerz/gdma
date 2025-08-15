@@ -21,7 +21,7 @@ In diesem Abschnitt lernen wir die folgenden Dinge:
 
 ## 2.2 Einleitung mit Sudoku 
 
-Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge, es ist aber wichtig, erst einmal festzuhalten, dass wir alle von Natur aus logisch denken können, ohne dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir das, was wir natürlicherweise machen, hier formalisieren wollen.
+Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge, es ist aber wichtig, erst einmal festzuhalten, dass wir alle von Natur aus logisch denken können, ohne dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir das, was wir natürlicherweise machen, formal ausdrücken wollen.
 
 Um Sie davon zu überzeugen, dass Sie Logik bereits verstehen, will ich Ihnen folgendes Beispiel zeigen.
 
@@ -61,7 +61,7 @@ In der Logik schreibt man nun statt "oder" auch $\vee $.
 
 Also gilt:
 
-$ A\vee B\vee C\vee D$
+$A\vee B\vee C\vee D$
 
 Ok, soweit so gut. Was wissen wir noch?
 
@@ -75,19 +75,19 @@ Das ist aber dasselbe wie
 
 *Nicht (A oder B oder C).*
 
-Hier haben wir schon ein erstes Gesetz der Aussagenlogik angewendet: das Gesetz von **de Morgan**. 
+Hier haben wir schon ein erstes Gesetz der Aussagenlogik angewendet: die **de Morganschen Regeln**. 
 
 Anstatt **nicht** schreiben Mathematiker:innen $\neg$ und anstatt **und** schreiben sie $\wedge$.
 
 Damit ergibt sich also:
 
-$ \neg A \wedge  \neg B \wedge \neg C  $.
+$\neg A\wedge \neg B\wedge \neg C$.
 
 Zusammen mit dem ersten Teil ergibt sich als Ausdruck:
 
- $(A\vee B\vee C\vee D)\wedge (\neg A \wedge \neg B \wedge \neg C)$
+$(A\vee B\vee C\vee D)\wedge (\neg A\wedge \neg B\wedge \neg C)$
 
-Es soll also A oder B oder C oder D gelten und **nicht** A und  **nicht** B und **nicht** C. Wir alle wissen, dass das nichts anderes heißt, dass $D$ gilt. Also dass die Zahl die 4 sein muss. 
+Es soll also A oder B oder C oder D gelten und **nicht** A und **nicht** B und **nicht** C. Wir alle wissen, dass das nichts anderes heißt, dass $D$ gilt. Also dass die Zahl die 4 sein muss. 
 Aber warum eigentlich? Welche logischen Gesetze stecken dahinter? Genau das wollen wir in diesem Kapitel genauer untersuchen.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xleOtHLj61g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -97,7 +97,7 @@ Aber warum eigentlich? Welche logischen Gesetze stecken dahinter? Genau das woll
 Wie wir in der Einleitung gesehen haben, beschäftigen wir uns im ersten Teil mit der sogenannten Aussagenlogik.
 
 ````{prf:definition}
-Eine Aussage ist ein Satz, der entweder wahr oder nicht wahr (falsch) ist.
+Eine Aussage ist ein Satz, der entweder wahr oder falsch ist.
 ````
 
 ````{prf:example}
@@ -117,40 +117,40 @@ Häufig kürzen wir Aussagen mit Großbuchstaben ab.
 
 Z.B. $A=$ "Heute hat es geregnet" oder $B=3+5=9$.
 
-Wir nennen dann $A$ und $B$ **Aussagenvariablen**.
+Wir nennen $A$ und $B$ **Aussagenvariablen**.
 
 ### Zusätzliche Beispiele für Aussagenlogik
 
 - "Die Sonne scheint heute." (Aussage)
 - "Ist es kalt draußen?" (keine Aussage)
 - $2+2=4$ (Aussage)
-- $x+3=5$ (keine Aussage, da $x$ nicht definiert ist)
+- $x+3=5$ (keine Aussage, da $x$ nicht definiert ist).
 
-Wir können nun Aussagen mithilfe von Operatoren verknüpfen. Dafür haben wir verschiedene Symbole zur Verfügung, die
-man alltagssprachlich wie folgt interpretieren können:
+Wir können nun Aussagen mithilfe von Operatoren verknüpfen. Dafür stehen uns verschiedene Symbole zur Verfügung, die
+alltagssprachlich wie folgt interpretiert werden können:
 
-- $A\wedge B$ heißt A und B
+- $A\wedge B$ bedeutet A und B.
 
-- $A\vee B$ heißt A oder B
+- $A\vee B$ bedeutet A oder B.
 
-- $\neg A$ heißt nicht A
+- $\neg A$ bedeutet nicht A.
 
-- $A\to B$ heißt A impliziert B
+- $A\to B$ bedeutet „wenn A, dann B“.
 
-- $A\leftrightarrow B$ heißt A und B sind äquivalent.
+- $A\leftrightarrow B$ bedeutet A und B sind äquivalent.
 
-Wir werden im Kapitel zur Semantik noch genauer verstehen, was diese Operatoren **genau** bedeuten. Das reicht uns aber erstmal
+Wir werden im Kapitel zur Semantik noch genauer verstehen, was diese Operatoren **genau** bedeuten. Das reicht uns aber erst einmal
 als Intuition für das nächste Kapitel.
 
 ### Syntax der Aussagenlogik - Formeln
 
-Die Syntax der Aussagenlogik beschäftigt sich nur mit der Schreibweise von verknüpften Aussagen. Also wie können wir aus gegebenen Aussagen neue Aussagen erzeugen.
-Dabei ist die Bedeutung der Aussagen erst einmal nicht bedeutend.
+Die Syntax der Aussagenlogik beschäftigt sich nur mit der Schreibweise von verknüpften Aussagen. Also, wie können wir aus gegebenen Aussagen neue Aussagen erzeugen?
+Dabei ist die Bedeutung der Aussagen zunächst nicht relevant.
 
 Wir nennen zusammengesetzte Aussagen auch Formeln, und sie können wie folgt iterativ erzeugt werden:
 
 ````{prf:definition}
-Eine Formel ist eine Kombination aus Aussagen und logischen Operatoren und kann wie folgt iterativ erzeugt werden:
+Eine Formel ist eine Kombination aus Aussagenvariablen und logischen Operatoren und kann wie folgt iterativ erzeugt werden:
 1) Einzelne Aussagen sind Formeln.
 
 2) 0 (die immer falsche Aussage) und 1 (die immer wahre Aussage) sind Formeln.
@@ -175,13 +175,13 @@ Denken Sie daran, Klammern zu setzen, um Ausdrücke zu bilden.
 ````{prf:example}
 Seien $A,B,C$ Aussagen. Dann sind folgende Ausdrücke Formeln:
 
-- $(\neg A) \wedge B \wedge C$
+- $(\neg A)\wedge B\wedge C$
 
-- $(\neg A) \wedge B \vee (B\wedge C)$
+- $(\neg A)\wedge B\vee (B\wedge C)$
 
-- $(\neg A) \wedge B \wedge C \to A$
+- $(\neg A)\wedge B\wedge C \to A$
 
-- $((\neg A) \leftrightarrow (B \wedge C)) \to A$
+- $((\neg A) \leftrightarrow (B\wedge C)) \to A$
 
 Folgende Ausdrücke sind **keine** Formeln:
 
@@ -208,11 +208,11 @@ Das wichtigste Werkzeug hierfür sind sogenannte Wahrheitstafeln.
 
 Nehmen wir an wir haben eine Formel $F$, die aus den Aussagenvariablen $A,B,C,\dots, $ formuliert wurde. Dann beantwortet die Wahrheitstafel folgende Fragestellung:
 
-Unter welcher Belegung der Aussagen $A,B, \dots $ ist die Formel $F$ wahr oder Falsch.
+Unter welcher Belegung der Aussagenvariablen $A,B,\dots$ ist die Formel $F$ wahr oder falsch?
 
 
 #### Der $\lor$ - Operator
-Am einfachsten illustrieren wir dieses Konzept mit einem Beispiel und dem $\wedge$- Operator.
+Am besten illustrieren wir dieses Konzept mit einem Beispiel und dem $\lor$-Operator.
 
 Dafür betrachten wir nun die Formel $F=A\lor B$.
 
@@ -238,7 +238,7 @@ A & B & A \lor B\\ % Use & to separate the columns
 ```
 **Schritt 2**
 
-Nun tragen wir alle Kombinationen aus wahr (T) oder falsch(F) für die Aussagenvariablen $A$ und $B$ ein.
+Nun tragen wir alle Belegungen mit Wahrheitswerten für die Aussagenvariablen $A$ und $B$ ein.
 ```{math}
 \begin{array}{|c c|c|}
 % |c c|c| means that there are three columns in the table and
@@ -257,7 +257,7 @@ F & F & \\
 
 **Schritt 3**
 
-Nun tragen wir die Wahrheitswerte für die Formel $F$ ein unter der Berücksichtigung der Wahrheitswerte von $A$ und $B$. Denken Sie hierbei daran  dass $A\vee B$  genau dann wahr ist wenn mind. eine Aussagen wahr ist.
+Nun tragen wir die Wahrheitswerte für die Formel $F$ ein unter der Berücksichtigung der Wahrheitswerte von $A$ und $B$. Denken Sie daran, dass $A\vee B$ genau dann wahr ist, wenn mindestens eine der beiden Aussagen wahr ist.
 
 Wir bekommen also folgende Wahrheitstafel.
 
@@ -281,7 +281,7 @@ F & F & F\\
 
 #### Der $\land$ - Operator
 
-Die Aussage $A\land B$ ist genau dann wahr wenn beide Aussagen wahr sind.
+Die Aussage $A\land B$ ist genau dann wahr, wenn beide Aussagen wahr sind.
 
 Wir erhalten folgende Wahrheitstafel
 
@@ -323,7 +323,7 @@ $A\to B$ ist wahr falls:
 
 - $A$ falsch ist.
 
-Intuitiv bedeutet dies, dass aus einer Falschen Aussage alles folgen kann.
+Anschaulich bedeutet dies, dass aus einer falschen Voraussetzung alles folgen kann.
 
 Als Wahrheitstafel:
 
@@ -422,7 +422,7 @@ A & B & C & A\land B & A \lor C & (A \land B) \to (A\lor C)\\
 
 **Schritt 2**
 
-Wir tragen nun alle Varianten von wahrheitswerten für die Aussagen $A,B,C$ ein.
+Wir tragen nun alle Belegungen mit Wahrheitswerten für die Aussagen $A,B,C$ ein.
 ```{math}
 \begin{array}{|c  c c|c|c|c|}
 A & B & C & A\land B & A \lor C & (A \land B) \to (A\lor C)\\
@@ -493,7 +493,7 @@ T&T &T &T &T &T
 ```
 
 
-Wir sehen also, dass die Formel $F$ immer wahr ist. Wir nennen $F$ in diesem Fall eine **Tautologie**.
+Die Formel $F$ ist damit eine **Tautologie**.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kvJrGAIrdDk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Wichtige Definitionen mit Hilfe von Wahrheitstafeln
@@ -513,7 +513,7 @@ Wir sehen also, dass unser vorheriges Beispiel $F= (A \land B) \to (A\lor C)$ er
 
 
 ```{prf:example}
-Einfache Beispiele für Tautologien:
+Beispiele für Tautologien:
 
 - $A\to A$
 - $A\lor \neg A$
@@ -530,12 +530,12 @@ Beispiele für Kontradiktionen:
 **Übung**
 
 Betrachten Sie die Formel $F= (A\to B) \to (\neg B \to \neg A)$.
-Man kann nun mithilfe einer Wahrheitstafel zeigen, dass dies eine Tautologie ist.
+Man kann mithilfe einer Wahrheitstafel zeigen, dass dies eine Tautologie ist.
 
-Eine weitere wichtige Definition ist wann zwei Formeln semantisch gesehen gleich sind. D.h. dass sie die selbe Wahrheitstafel haben.
+Eine weitere wichtige Definition ist wann zwei Formeln semantisch gesehen gleich sind. D.h. dass sie dieselbe Wahrheitstafel haben.
 
 ```{prf:definition}
-Zwei Formeln $F_1$ und $F_2$ heißen **logisch Äquivalent**, falls beide Formeln für jede Belegung von Wahrheitswerten der Aussagenvariablen die selben Wahrheitswerte besitzen.
+Zwei Formeln $F_1$ und $F_2$ heißen **logisch Äquivalent**, falls beide Formeln für jede Belegung von Wahrheitswerten der Aussagenvariablen dieselben Wahrheitswerte besitzen.
 
 Wir schreiben dann $F_1 \equiv F_2$.
 
@@ -575,7 +575,7 @@ F & F & T & T\\
 \end{array}
 ```
 
-Wie wir sehen, dass die letzte Spalte identisch ist und damit müssen beide Formeln logisch äquivalent sein.
+Wie wir sehen, ist die letzte Spalte identisch und damit müssen beide Formeln logisch äquivalent sein.
 
 
 ````
@@ -588,7 +588,7 @@ Wie wir sehen, dass die letzte Spalte identisch ist und damit müssen beide Form
 
 
 ### Gesetze der Aussagenlogik
-Wahrheitstafeln sind ein extrem nützliches Werkzeug um zu zeigen, dass etwas eine Tautologie ist oder die logische Äquivalenz  von Formeln zu beweisen. Wenn die Anzahl der Aussagenvariablen jedoch groß ist, so ist auch die Anzahl der Möglichen Belegungen hoch.
+Wahrheitstafeln sind ein wichtiges Werkzeug, um zu zeigen, dass etwas eine Tautologie ist oder die logische Äquivalenz von Formeln zu beweisen. Wenn die Anzahl der Aussagenvariablen jedoch groß ist, so ist auch die Anzahl der möglichen Belegungen hoch.
 
 
 
@@ -596,7 +596,7 @@ Wahrheitstafeln sind ein extrem nützliches Werkzeug um zu zeigen, dass etwas ei
 
 **Frage**
 
-Wie viele Mögliche Belegungen gibt es für eine Formel mit $n$ Aussagenvariablen?
+Wie viele mögliche Belegungen gibt es für eine Formel mit $n$ Aussagenvariablen?
 
 **Antwort:**
 ```{toggle}
@@ -608,8 +608,7 @@ Die Äquivalenz von Formeln kann jedoch auch algebraisch durch Anwendung diverse
 #### Idempotenzgesetz
 
 ````{prf:theorem}
-Sei $A$ eine Aussagenvariable dann gilt
-
+Sei $A$ eine Aussagenvariable. Dann gilt:
 ```{math}
 A\land A\equiv A \quad \text{ und } A\lor A\equiv A.
 ```
@@ -620,8 +619,7 @@ Diese Identität hilft dabei Formeln mit dem doppelten Vorkommen von Aussagenvar
 #### Kommutativgesetz
 
 ````{prf:theorem}
-Seien $A$ und $B$  Aussagenvariablen dann gilt
-
+Seien $A$ und $B$ Aussagenvariablen. Dann gilt:
 ```{math}
 A\land B\equiv B\land A \quad \text{ und } A\lor B\equiv B\lor A.
 ```
@@ -633,8 +631,7 @@ Wir können also mit $\land$ und $\lor$ "rechnen" wie mit Zahlen, für die diese
 #### Assoziativgesetz
 
 ````{prf:theorem}
-Seien $A,B$ und $C$  Aussagenvariablen dann gilt
-
+Seien $A,B,C$ Aussagenvariablen. Dann gilt:
 ```{math}
 A\land (B \land C )\equiv (A\land B)\land C \quad \text{ und } A\lor (B\lor C)\equiv (A\lor B)\lor C.
 ```
@@ -642,7 +639,7 @@ A\land (B \land C )\equiv (A\land B)\land C \quad \text{ und } A\lor (B\lor C)\e
 Aufgrund des Assoziativgesetzes können wir also bei reinen $\land$ oder $\lor$ Termen Klammern, wie wir wollen. Wir können deshalb auch die Klammern gleich ganz weglassen und schreiben einfach $A\land B \land C$.
 
 
-````{prf:Example}
+````{prf:example}
 Mit Hilfe der bisherigen Formeln können wir bereits ein bisschen rechnen.
 Nehmen wir an wir haben 
 ```{math}
@@ -659,7 +656,7 @@ Wir können nun das Assoziativgesetz anwenden und erhalten:
 F\equiv (A\lor A)\lor B.
 ```
 
-Zu guter Letzt können wir das Idempotenzgesetz anwenden und erhalten letztenendes:
+Abschließend können wir das Idempotenzgesetz anwenden und erhalten letzten Endes:
 
 ```{math}
 F\equiv A\lor B.
@@ -677,8 +674,7 @@ A\lor (B\lor A)\equiv A\lor B.
 Bisher haben wir uns vor allem reine $\lor$ oder $\land$ Terme angeschaut. Welche Regeln gibt es nun für gemischt Terme? Sie kennen die Regel von den Zahlen. Die Regel besagt, dass man  ausmultiplizieren oder eben ausklammern kann und nennt sich Distributivgesetz.
 
 ````{prf:theorem}
-Seien $A,B$ und $C$  Aussagenvariablen dann gilt
-
+Seien $A,B,C$ Aussagenvariablen. Dann gilt:
 ```{math}
 A\lor (B \land C )\equiv (A\lor B) \land (A\lor C) \quad \text{ und } A\land (B\lor C)\equiv (A\land B) \lor (A\land C).
 ```
@@ -686,10 +682,9 @@ A\lor (B \land C )\equiv (A\lor B) \land (A\lor C) \quad \text{ und } A\land (B\
 
 #### Doppelte Negation
 
-Die doppelte Negation verstehen wir sehr intuitiv. Wenn etwas nicht nicht gilt. So gilt es.
+Die doppelte Negation ist intuitiv: „Nicht nicht A“ ist gleich „A“.
 ````{prf:theorem}
-Sei $A$ eine Aussagenvariable dann gilt
-
+Sei $A$ eine Aussagenvariable. Dann gilt:
 ```{math}
 \neg(\neg A)\equiv A.
 ```
@@ -699,13 +694,12 @@ Sei $A$ eine Aussagenvariable dann gilt
 
 #### De Morgan'sche Regeln
 
-Die de Morgan'sche Regeln besagt, wie wir mit den Symbolen $\land$ und $\lor$ bei Negation umgehen sollen.
+Die de Morganschen Regeln besagen, wie wir mit den Symbolen $\land$ und $\lor$ bei Negation umgehen sollen.
 
 Die Regeln lauten wie folgt
 
 ````{prf:theorem}
-Seien $A,B$   Aussagenvariablen dann gilt
-
+Seien $A,B$ Aussagenvariablen. Dann gilt:
 ```{math}
 \neg (A\land B)\equiv \neg A \lor \neg B \quad \text{ und } \neg (A\lor B)\equiv \neg A \land \neg B.
 ```
@@ -714,7 +708,7 @@ Seien $A,B$   Aussagenvariablen dann gilt
 Auch diese Regeln verstehen wir intuitiv. 
 
 ````{prf:example}
-Sagen wir A="Milch im Kaffee" und B="Zucker im Kaffee". Wenn dann in meinem Kaffer nicht Milch und Zucker drin ist ($\neg (A\land B)$). Dann ist dort nicht Milch oder nicht Zucker drin oder eben beides nicht ($\neg A \lor \neg B$).
+Sagen wir A="Milch im Kaffee" und B="Zucker im Kaffee". Wenn dann in meinem Kaffee nicht Milch und Zucker drin ist ($\neg (A\land B)$). Dann ist dort nicht Milch oder nicht Zucker drin oder eben beides nicht ($\neg A \lor \neg B$).
 ````
 
 
@@ -722,21 +716,21 @@ Sagen wir A="Milch im Kaffee" und B="Zucker im Kaffee". Wenn dann in meinem Kaff
 
 
 ````{prf:theorem}
-Seien $A,B$   Aussagenvariablen dann gilt
+Seien $A,B$ Aussagenvariablen. Dann gilt:
 ```{math}
 A\land (A\lor B)\equiv A \quad \text{und }A\lor (A\land B)\equiv A.
 ```
 ````
-Auch das Absorptionsgesetz ist intuitiv klar. Denn es ist völlig irrelevant ob $B$ Falsch oder wahr ist. Falls $B$ Falsch ist, so ist sicher $A\land B$ falsch und der Ausdruck hängt nur vom ersten $A$ ab.
+Auch das Absorptionsgesetz ist intuitiv klar. Denn es ist völlig irrelevant ob $B$ falsch oder wahr ist. Falls $B$ falsch ist, so ist sicher $A\land B$ falsch und der Ausdruck hängt nur vom ersten $A$ ab.
 
-Falls aber $B$ Wahr ist, so ist $A\land B$ wahr genau dann wenn $A$ wahr ist. Also in beiden Fällen hängt der Wahrheitswert der Formel nur von $A$ ab.
+Falls aber $B$ wahr ist, so ist $A\land B$ wahr genau dann wenn $A$ wahr ist. Also in beiden Fällen hängt der Wahrheitswert der Formel nur von $A$ ab.
 
 
 #### Neutralitätsgesetz
 ````{prf:theorem}
-Sei $A$ eine  Aussagenvariable dann gilt
+Sei $A$ eine Aussagenvariable. Dann gilt:
 ```{math}
-A\land 1 \equiv A \quad \text{ and } A\lor 0  \equiv A.
+A\land 1\equiv A \quad \text{ und } A\lor 0\equiv A.
 ```
 ````
 
@@ -752,7 +746,7 @@ Machen Sie sich die obige Formel intuitiv klar.
 
 
 
-#### Formelsammlung
+#### Formelsammlung (Überblick)
 
 Für einen besseren Überblick sind hier die wichtigsten Logischen Formeln nochmal aufgelistet:
 
@@ -821,7 +815,7 @@ Für einen besseren Überblick sind hier die wichtigsten Logischen Formeln nochm
  - $(A\leftrightarrow B) \equiv (\neg A \lor B) \land (A\lor \neg B)$
 
 
-**Erweiterte Komplementarität**
+**Erweiterte Komplementarität(13)**
 - $A\lor (\neg A\land B)\equiv (A\lor B)$
 - $A\land (\neg A\lor B)\equiv (A\land B)$
 
@@ -863,7 +857,7 @@ Nun können wir das Komplementaritätsgesetz(7) anwenden und erhalten
 F\equiv1\lor 1
 ```
 
-und mit dem Idempotenzgesetz(1) letztenendes
+und mit dem Idempotenzgesetz(1) letzten Endes
 
 ```{math}
 F\equiv 1
@@ -877,18 +871,18 @@ Wir können mittels den Gesetzen der Aussagenlogik auch logische Äquivalenzen b
 Im ersten Schritt vereinfachen wir den linken Teil einer Identität so weit wie wir können und danach die rechte Seite und versuchen eine Formel zu finden die beide Seiten vereinfacht.
 
 ````{prf:example}
-Beweisen Sie dass Prinzip der Kontraposition
+Beweisen Sie das Prinzip der Kontraposition
 
 ```{math}
 A\to B \equiv \neg B \to \neg A.
 ```
-Dafür vereinfachen wir zunächst die inke Seite die wir mit $L$ bezeichnen unter Verwendung von (11):
+Dafür vereinfachen wir zunächst die linke Seite, die wir mit $L$ bezeichnen, unter Verwendung von (11):
 
 ```{math}
 L:=A\to B \equiv \neg A \lor B
 ```
 
-Nun vereinfachen wir die Rechte Seite ebenfalls zunächst mit (11):
+Nun vereinfachen wir die rechte Seite ebenfalls zunächst mit (11):
 
 ```{math}
 R:=\neg B\to \neg A \equiv \neg (\neg B) \lor \neg A
@@ -902,6 +896,7 @@ R\equiv B\lor \neg A.
 Dann folgt mittels Kommutativgesetz(2), dass $R\equiv L$.
 
 ````
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-totTQPSx3U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## 2.4 Prädikatenlogik - Quantoren
@@ -924,10 +919,9 @@ Beides werden wir mit der Prädikatenlogik einführen.
 
 ### Prädikate
 
-Eine mathematisch exakte Definition von Prädikaten würde den Rahmen dieses Kurses sprengen. Deshalb werden wir Prädikate nur ungefähr definieren. 
-
+Eine mathematisch exakte Definition von Prädikaten würde den Rahmen dieses Kurses sprengen. Deshalb werden wir Prädikate nur ungefähr definieren.
 ````{prf:definition}
-Seien $x,y,z,x_1,x_2,\dots,$ Variablen einer Grundmenge $M$ (z.B. $M=\mathbb{N}$)). Dann ist $P(x,y,z,x_1,\dots)$ ein **Prädikat** wenn durch einsetzen von beliebigen elementen aus der Grundmenge $M$ in die Variablen eine Aussage entsteht.
+Seien $x,y,z,x_1,x_2,\dots,$ Variablen einer Grundmenge $M$ (z.B. $M=\mathbb{N}$)). Dann ist $P(x,y,z,x_1,\dots)$ ein **Prädikat** wenn durch Einsetzen von beliebigen Elementen aus der Grundmenge $M$ in die Variablen eine Aussage entsteht.
 ````
 
 ````{prf:example}
@@ -966,14 +960,14 @@ Der Allquantor wird mit $\forall$ abgekürzt und bedeutet ausgesprochen: "für a
 \forall n\in \mathbb{N}:1+2+3+\dots + n = \frac{n(n+1)}{2}.
 ```
 
-Falls klar ist, dass die Grundmenge $\mathbb{N}$ ist schreiben wir auch einfach abgekürzt:
+Falls klar ist, dass die Grundmenge $\mathbb{N}$ ist, schreiben wir auch einfach abgekürzt:
 ```{math}
 \forall n : P(n)
 ```
 
 **2. Der Existenzquantor**
 
-Der Existenzquantor wird mit $\exists$ abekürzt und bedeutet ausgesprochen: "es existiert mindestens ein".
+Der Existenzquantor wird mit $\exists$ abgekürzt und bedeutet ausgesprochen: "es existiert mindestens ein".
 
 Damit bedeutet die Aussage
 ```{math}
@@ -991,12 +985,12 @@ Die Menge der **prädikatenlogischen Formeln** ist gegeben durch
 
 - Sind $F(x)$ und $G(x)$ prädikatenlogische Formeln, dann auch $\neg F(x), (F(x)\land G(x))$ sowie $(F(x)\lor G(x))$.
 
-- Ist $F(x)$ eine prädikatenlogische Formel so auch $\forall x:F(x)$ und $\exists x : F(x)$
+- Ist $F(x)$ eine prädikatenlogische Formel, so auch $\forall x:F(x)$ und $\exists x : F(x)$
 ````
 
 ````{prf:definition}
 Variablen, die sich im Wirkungsbereich eines Quantors befinden, heißen **gebunden**, nicht gebundene Variablen heißen **frei**.
-Eine Formel heißt **geschlossen** falls alle Variablen gebunden sind.
+Eine Formel heißt **geschlossen**, falls alle Variablen gebunden sind.
 `````
 ````{prf:remark}
 Falls $F(x,y,z)$ eine geschlossene Formel ist, so kann $F$ einen Wahrheitswert besitzen, je nachdem ob die Aussage richtig oder falsch ist.
@@ -1012,29 +1006,29 @@ Betrachte folgende Formel:
 
 Die Variablen $x,z$ sind dabei gebunden und die Variable $y$ ist frei. Also ist die Formel nicht geschlossen.
 
-Wenn wir für $y$ einen weiteren Quantor einführen erhalten wir eine geschlossene Formel:
+Wenn wir für $y$ einen weiteren Quantor einführen, erhalten wir eine geschlossene Formel:
 ```{math}
 F(x,y,z)=\exists y \forall x\exists z : x^2+y^2=z^2
 ```
-Wir können nun fragen ob $F(x,y,z)$ wahr oder falsch ist?
+Wir können nun fragen, ob $F(x,y,z)$ wahr oder falsch ist?
 
 Dafür schreiben wir $F(x,y,z)$ einmal mit Worten:
 
-"Es gibt ein y, so dass für alle x ein z existiert so dass $x^2+y^2=z^2$."
+"Es gibt ein y, so dass für alle x ein z existiert, so dass $x^2+y^2=z^2$."
 
 
 Wie können wir herausfinden, ob das wahr oder falsch ist?
 
 
-Wir lesen von links nach rechts. Der erste Quantor ist $\exists y$. Ok nehmen wir einfach mal $y=0$ und hoffen, dass wir Glück haben.
+Wir lesen von links nach rechts. Der erste Quantor ist $\exists y$. Wir wählen beispielsweise $y=0$ und hoffen, dass wir Glück haben.
 Wir müssen nun zeigen, dass für alle $x$ ein $z$ existiert, so dass $x^2=z^2$.
-Wir müssen also für alle $x$ ein $z$ finden. Der entscheidene Punkt ist hierbei jedoch, dass $z$ von $x$ abhängen darf, weil $\exists y$ nach $\forall x$ kommt. Damit können wir $z=x$ wählen und dann gilt trivialerweise auch $x^2=z^2$. Damit ist die Aussage $F(x,y,z)$ wahr.
+Wir müssen also für alle $x$ ein $z$ finden. Der entscheidende Punkt ist hierbei jedoch, dass $z$ von $x$ abhängen darf, weil $\exists y$ nach $\forall x$ kommt. Damit können wir $z=x$ wählen und dann gilt trivialerweise auch $x^2=z^2$. Damit ist die Aussage $F(x,y,z)$ wahr.
 
 ````
 
 ### Negation von Prädikatenlogischen Formeln
 
-Die Negation von Prädikatenlogischen Formeln können wir im einfachen Fall ebenfalls intuitiv herleiten. Machen wir hiezu ein kurzes Beispiel:
+Die Negation von Prädikatenlogischen Formeln können wir im einfachen Fall ebenfalls intuitiv herleiten. Machen wir hierzu ein kurzes Beispiel:
 
 "Ich mag alle Kaffeesorten".
 
@@ -1044,7 +1038,7 @@ Die Negation von Prädikatenlogischen Formeln können wir im einfachen Fall eben
 
 Was ist die Negation von Ich mag alle Kaffeesorten?
 
-Es würde heißen es gibt Kaffeesorten, die ich nicht mag. Also etwas formaler:
+Es würde heißen, es existiert eine Kaffeesorte, die ich nicht mag. Also etwas formaler:
 
 "Es existiert eine Kaffeesorte x für die gilt: Ich mag x nicht".
 
@@ -1082,7 +1076,7 @@ Was ist $\neg F(x,y,z)$. Dafür können wir nun iterativ obigen Satz anwenden:
 
 Um eine Formel mit Quantoren zu negieren, geht man also wie folgt vor:
 
-- Man tauscht alle Existenzquantoren mit Allquantoren und anders herum
+- Man tauscht alle Existenzquantoren mit Allquantoren (und umgekehrt)
 
 - Man negiert das Prädikat am Ende
 
@@ -1097,50 +1091,50 @@ Im letzten Abschnitt hatten wir folgende Bemerkung gemacht:
 
 *Falls $F(x,y,z)$ eine geschlossene Formel ist, so kann $F$ einen Wahrheitswert besitzen, je nachdem ob die Aussage richtig oder falsch ist.*
 
-Beachten Sie, dass wir eben nicht gesagt haben dass $F$ einen Wahrheitswert besitzen muss.  Aber muss das nicht so sein?
+Beachten Sie, dass wir eben nicht gesagt haben, dass $F$ einen Wahrheitswert besitzen muss.  Aber muss das nicht so sein?
 
-Muss nicht jede Aussage, die Sinn ergibt entweder wahr oder falsch sein? Bzw. müssen wir nicht für jede Aussage einen Beweis für die Korrektheit oder die Korrektheit der Negation führen können?
+Muss nicht jede Aussage, die Sinn ergibt, entweder wahr oder falsch sein? Bzw. müssen wir nicht für jede Aussage einen Beweis für die Korrektheit oder die Korrektheit der Negation führen können?
 
 In der Tat war dies eine unser Prämissen für die Aussagenlogik und es wurde lange geglaubt, dass dies auch für die Prädikatenlogik richtig ist.
 
-Dann kam Gödel und er bewies einen der wohl meist zitiertesten Sätze der Mathematik. Den Gödel'schen Unvollständigkeitssatz.
+Dann kam Gödel und er bewies einen der wohl meist zitiertesten Sätze der Mathematik. Den Gödelschen Unvollständigkeitssatz.
 
 
 
-Der erste Gödelsch'sche Unvollständigkeitssatz lautet:
+Der erste Gödelsche Unvollständigkeitssatz lautet:
 ````{prf:theorem}
 Jedes hinreichend mächtige, rekursiv aufzählbare formale System ist entweder widersprüchlich oder unvollständig.
 ````
 
 **Widersprüchlich:**
 
-Am Besten Sie denken bei System zum Beispiel an die Axiome der Mengenlehre aus dem letzten Kapitel. Diese könnten natürlich Widersprüch sein. Das bedeutet dass wir eine Kontradiktion erzeugen können.
+Am besten Sie denken bei System zum Beispiel an die Axiome der Mengenlehre aus dem letzten Kapitel. Diese könnten natürlich widersprüchlich sein. Das bedeutet, dass wir eine Kontradiktion erzeugen können.
 
 **Unvollständig**
 
-Unvollständig bedeutet, dass es Aussagen gibt deren Korrektheit oder Falschheit nicht beweisbar ist. Wie wir aber sehen werden sind diese aber trotzdem wahr, was extrem verwirrend ist.
+Unvollständig bedeutet, dass es Aussagen gibt, deren Korrektheit oder Falschheit nicht beweisbar ist. Wie wir aber sehen werden, sind diese aber trotzdem wahr, was extrem verwirrend ist.
 
 
-Das Gesamte Bild wird unter Hinzunahme des zweiten Gödel'schen Unvollständigkeitssatzes noch diffuser:
+Das Gesamte Bild wird unter Hinzunahme des zweiten Gödelschen Unvollständigkeitssatzes noch diffuser:
 ````{prf:theorem}
 Jedes hinreichend mächtige konsistente formale System kann die eigene Konsistenz nicht beweisen.
 ````
 
-Dieser Satz besagt mehr oder weniger, dass wir uns nie wirklich sicher sein können, dass die Grundlagen, auf der unsere Mathematik aufbaut, wirklich Widerspruchsfrei ist. Das klingt auch erstmal sehr erschütternd.
+Dieser Satz besagt mehr oder weniger, dass wir uns nie wirklich sicher sein können, dass die Grundlagen, auf der unsere Mathematik aufbaut, wirklich widerspruchsfrei ist. Das klingt auch erstmal sehr erschütternd.
 
 
-Wie die Russel'sche Antinomie führten die Gödelsch'en Unvollständigkeitssätze zu einer Grundlagenkrise der Mathematik. Gödels Sätze sind bis heute gültig. Wir hatten aber nun 80 Jahre Zeit uns an die Vorstellung zu gewöhnen, dass wir niemals sicher sein können, dass die Mathematik wirklich Widerspruchsfrei ist. Bis jetzt scheint alles gut gegangen zu sein.
+Wie die Russellsche Antinomie führten die Gödelschen Unvollständigkeitssätze zu einer Grundlagenkrise der Mathematik. Gödels Sätze sind bis heute gültig. Wir hatten aber nun 80 Jahre Zeit uns an die Vorstellung zu gewöhnen, dass wir niemals sicher sein können, dass die Mathematik wirklich widerspruchsfrei ist. Bis jetzt scheint alles gut gegangen zu sein.
 
 
 #### Beweisidee des ersten Unvollständigkeitssatzes
 
-Gödels Idee ist ähnlich wie in der Russel'schen Antinomie folgenden Satz zu konstruieren:
+Gödels Idee ist ähnlich wie in der Russellschen Antinomie folgenden Satz zu konstruieren:
 
 "Ich bin nicht beweisbar".
 
 Dabei geht er wie folgt vor:
 
-- Er listet zunächst alle Möglichen formalen Sätze auf, die man hinschreiben kann
+- Er listet zunächst alle möglichen formalen Sätze auf, die man hinschreiben kann
 
 - Jeder Satz bekommt dann eine Nummer $n$, die sogenannte Gödelnummer
 
@@ -1149,13 +1143,13 @@ Dabei geht er wie folgt vor:
 Damit hat er genau den Satz "Ich bin nicht ableitbar konstruiert".
 
 
-Ähnlich wie in der Russel'schen Antinomie können wir durch ein Widerspruchsargument zeigen, dass er nicht ableitbar ist.
+Ähnlich wie in der Russellschen Antinomie können wir durch ein Widerspruchsargument zeigen, dass er nicht ableitbar ist.
 
 Und jetzt kommt das verwirrende: Damit ist der Satz zwar nicht ableitbar, aber er ist wahr.
 
 Das zu verstehen, würde wiederum den Rahmen dieses Kurses sprengen. Dennoch haben Sie damit die Ideen und Konzepte von Gödel kennengelernt.
 
-Doch gibt es solche Sätze die nicht beweisbar sind wirklich oder sind das nur komische Konstrukte.
+Doch gibt es solche Sätze, die nicht beweisbar sind, wirklich oder sind das nur komische Konstrukte.
 
 Das sehen wir im nächsten Kapitel.
 
@@ -1178,15 +1172,15 @@ Gilt der Satz auch für $\mathbb{Z}$?
 
 ```{toggle}
 
-Nein! Denn nichtmal die gesamte Menge $\mathbb{Z}$ hat ein kleinstes Element.
+Nein! Denn nicht einmal die gesamte Menge $\mathbb{Z}$ hat ein kleinstes Element.
 ```
 
 
 Tatsächlich hat Gödel gezeigt, dass dieser Satz nicht beweisbar ist. 
 
-Wir können diesen Satz als Axiom für die natürlichen Zahlen hinzufügen oder nicht. Falls die Mengenlehre Widersprüche enthält so enthält sie diese unabhängig vom Wohlordnungssatz.
+Wir können diesen Satz als Axiom für die natürlichen Zahlen hinzufügen oder nicht. Falls die Mengenlehre Widersprüche enthält, so enthält sie diese unabhängig vom Wohlordnungssatz.
 
-Daher nehmen fast alle Mathematiker:innen den Wohlordnungssatz als Wahr an.
+Daher nehmen fast alle Mathematiker:innen den Wohlordnungssatz als wahr an.
 
 Doch es gibt auch Kritiker:innen, die sagen, dass der Wohlordnungssatz sehr unintuitive Folgen hat. 
 
@@ -1194,9 +1188,9 @@ Man kann zeigen, dass man mithilfe des Wohlordnungssatzes und der Axiome der Men
 
 Grob gesagt besagt das Banach-Tarski Paradoxon das Folgende:
 ````{prf:theorem}
-Eine Kugel in drei oder mehr Dimensionen kann derart in Teilmengen zerleget werden, dass sich ihre Teile wieder zu zwei lückenlosen Kugeln zusammenfügen lassen, von denen jede denselben Durchmesser hat wie die ursprüngliche.
+Eine Kugel in drei oder mehr Dimensionen kann derart in Teilmengen zerlegt werden, dass sich ihre Teile wieder zu zwei lückenlosen Kugeln zusammenfügen lassen, von denen jede denselben Durchmesser hat wie die ursprüngliche.
 ````
 
-Okay, mit diesem Satz können wir aus eins zwei machen. Das klingt extrem unintuitiv. Viele Mathematiker:innen glauben aber wie gesagt an den Wohlordnungssatz und nehmen deshalb auch an, dass das Banach-Tarski Paradoxon stimmt.
+Okay, mit diesem Satz können wir aus einer Kugel zwei gleicher Größe konstruieren. Das klingt extrem unintuitiv. Viele Mathematiker:innen glauben aber wie gesagt an den Wohlordnungssatz und nehmen deshalb auch an, dass das Banach-Tarski Paradoxon stimmt.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WJGEnfu02cc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

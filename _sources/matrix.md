@@ -1,4 +1,4 @@
-# Kapitel 5 - Matrizen
+# Kapitel 5 – Matrizen
 
 
 
@@ -6,16 +6,16 @@
 
 In diesem Abschnitt lernen wir die folgenden Dinge:
 
-:::{admonition}  Lernziele
+:::{admonition} Lernziele
 :class: note
 
 - Verständnis der Matrixnotation und des Aufbaus von Matrizen
-- Beherrschung grundlegender Operationen mit Matrizen wie Addition, Subtraktion, Skalare Multiplikation und Transposition.
-- Verständnis der Matrixmultiplikation, einschließlich der Bedingungen für die Durchführung und der Eigenschaften der Matrixmultiplikation.
-::::::
+- Beherrschung grundlegender Operationen mit Matrizen wie Addition, Subtraktion, skalarer Multiplikation und Transposition
+- Verständnis der Matrixmultiplikation, einschließlich der Bedingungen für ihre Durchführung und der Eigenschaften der Matrixmultiplikation
+:::
 
-## 5.2 Was ist eine Matrix - z.B. ein Graustufenbild!.
-Eine Matrix ist nichts kompliziertes. Im Wesentlichen handelt es sich um eine tabelleraische Anordnung von Zahlen mit Spalten und Zeilen um die wir runde Klammern machen.
+## 5.2 Was ist eine Matrix – z. B. ein Graustufenbild?
+Eine Matrix ist nichts Kompliziertes. Im Wesentlichen handelt es sich um eine tabellarische Anordnung von Zahlen mit Spalten und Zeilen, die wir in runde Klammern setzen.
 Das kann so aussehen:
 ```{math}
 \begin{pmatrix} 1&3&8\\ 1&9& 13 \end{pmatrix}
@@ -23,9 +23,7 @@ Das kann so aussehen:
 Oder aber wenn wir es mit vielen Daten zu tun haben auch mal so:
 ![](images/big_matrix.png)
 
-Matrizen spielen eine Wichtige Rolle immer wenn es um Daten geht. So lassen sich Datentabellen als Matrizen interpretieren, wenn die Werte rein aus Zahlen bestehen. 
-Matrizen spielen ebenso in der Bildverarbeitung eine Wichtige Rolle.
-Am einfachsten wird diese Verbindung bei Graustufenbildern.
+Matrizen spielen eine wichtige Rolle, immer wenn es um Daten geht. So lassen sich Datentabellen als Matrizen interpretieren, wenn die Werte nur aus Zahlen bestehen. Matrizen spielen ebenso in der Bildverarbeitung eine wichtige Rolle – am einfachsten wird dies bei Graustufenbildern sichtbar.
 
 Die Pixel des Bildes ergeben die tabellarische Anordnung. Der Wert wird durch die Intensität des einzelnen Pixels gegeben.
 
@@ -42,8 +40,8 @@ Folgende Matrix:
 
 **Skalare Multiplikation**
 
-Wir können nun das Bild bearbeiten in dem Wir die Matrix verändern.
-Beispielsweise können wir jeden Wert mit 2 Multiplizieren: 
+Wir können nun das Bild bearbeiten, indem wir die Matrix verändern.
+Beispielsweise können wir jeden Wert mit 2 multiplizieren: 
 
 ![](images/2_matrix.png)
 
@@ -53,20 +51,20 @@ Es ist eine Erhöhung des Kontrasts:
 
 ![](images/contrast_schnupper.png)
 
-**Matrix Addition**
+**Matrixaddition**
 Sei nun ein weiteres Bild gegeben:
 
 ![](images/thb_logo.png)
 
 Wir nehmen nun weiter an, dass beide Bilder und damit auch die zugehörigen Matrizen die gleiche Größe besitzen.
-Wir wollen nun beide Bilder übereinanderlegen. Dies können wir durch Addition der beiden entsprechenden Matrizen schaffen. D.h. in jeder Komponente addieren wir einfach die beiden Zahlen miteinander, so dass eine neue Matrix der gleichen Größe entsteht.
+Wir wollen nun beide Bilder übereinanderlegen. Dies erreichen wir durch Addition der beiden entsprechenden Matrizen. Das heißt, in jeder Komponente addieren wir die beiden Zahlen miteinander, sodass eine neue Matrix derselben Größe entsteht.
 ![](images/addition_matrix.png)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Iu0lOxCO_nE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 ## 5.3 Matrixnotation
-In diesem Kapitel wollen wir uns mit der Matrixschreibweise bekannt machen und einige Formale Notationen einführen.
+In diesem Kapitel machen wir uns mit der Matrixschreibweise vertraut und führen einige formale Notationen ein.
 
 ### Matrizen
 Wir verwenden als Namen für Matrizen häufig Großbuchstaben. Zum Beispiel
@@ -75,9 +73,9 @@ Wir verwenden als Namen für Matrizen häufig Großbuchstaben. Zum Beispiel
 ```{math}
 B=\begin{pmatrix} 1&3&8\\ 1&9& 13 \end{pmatrix}
 ```
-Die Matrix $B$ hat in diesem Fall 2 Zeilen und 3 Spalten. Wir nennen sie auch eine $2\times 3$ Matrix.
+Die Matrix $B$ hat 2 Zeilen und 3 Spalten. Wir nennen sie eine $2\times 3$-Matrix.
 
-Wir schreiben eine Allgemeine $m\times n$ Matrix wie folgt hin:
+Wir schreiben eine allgemeine $m\times n$-Matrix wie folgt:
 
 ```{math}
 A = \begin{pmatrix}
@@ -87,50 +85,49 @@ a_{21} & a_{22} & \ldots & a_{2n} \\
 a_{m1} & a_{m2} & \ldots & a_{mn}
 \end{pmatrix}
 ```
-Wir nennen $m\times n$ auch die **Dimension** der Matrix A.
+Wir nennen $m\times n$ die **Dimension** der Matrix $A$.
 
 Obige Struktur bedeutet, dass wenn wir für eine Matrix $A$ den Wert $a_{ij}$ schreiben, dass wir den Wert in der $i$-ten Zeile und der $j$-ten Spalte meinen.
 
 
 **Frage**
 
-Im obigen Beispiel was ist $b_{12}$?
+Im obigen Beispiel: Was ist $b_{12}$?
 
 **Antwort:**
 ```{toggle}
 $b_{12}=3$
-````
+```
 
 Im nächsten Schritt müssen wir definieren, welchen Wertebereich die einzelnen Zahlen in der Matrix haben sollen.
 In der Regel wollen wir, dass die Zahlen in $\mathbb{R}$ sind.
 
-Wir schreiben dann für die Menge aller Möglichen $m\times n$  Matrizen mit reellen Zahlen
+Wir schreiben für die Menge aller möglichen $m\times n$-Matrizen mit reellen Einträgen:
 ```{math}
 \mathbb{R}^{m\times n}.
 ```
 
 ### Vektoren
 
-Eine $n\times 1$ Matrix nennen wir **Spaltenvektor** oder **Vektor**. 
+Eine $n\times 1$-Matrix nennen wir **Spaltenvektor** oder **Vektor**. 
 Zum Beispiel $v=\begin{pmatrix} 1\\2\\3\\4 \end{pmatrix}$.
 Wir schreiben statt $\mathbb{R}^{n\times 1}$ einfach nur $\mathbb{R}^n$.
 
-Eine $1\times n$ Matrix nennen wir **Zeilenvektor**.
+Eine $1\times n$-Matrix nennen wir **Zeilenvektor**.
 Zum Beispiel $v=\begin{pmatrix} 1 & 2 & 3 & 4 \end{pmatrix}$.
 
-Spalten- und Zeilenvektoren bezeichnen wir in der Regel mit einem kleinen lateinischen Buchstaben (z.B. $v,w,u$).
+Spalten- und Zeilenvektoren bezeichnen wir in der Regel mit einem kleinen lateinischen Buchstaben (z. B. $v,w,u$).
 
 
 ### Skalar
 
-Fall wir im Kontext der Matrizen und Vektorrechnung betonen wollen, dass es sich bei einem Objekt um ein einzige Zahl (z.B. in $\mathbb{R}$) handelt, so nennen wir das Objekt ein **Skalar**. Wir schreiben, dann häufig einen kleinen griechischen Buchstaben um das zu kennzeichnen (z.B. $\lambda \in \mathbb{R}$).
+Falls wir im Kontext der Matrizen- und Vektorrechnung betonen wollen, dass es sich bei einem Objekt um eine einzige Zahl (z. B. aus $\mathbb{R}$) handelt, nennen wir es einen **Skalar**. Wir schreiben dann häufig einen kleinen griechischen Buchstaben, um das zu kennzeichnen (z. B. $\lambda \in \mathbb{R}$).
 
 ### Besondere Matrizen
 
-Wir wollen noch zwei besondere Matrizen einführen, die es verdienen eine abkürzende Schreibweise zu bekommen.
+Wir wollen noch zwei besondere Matrizen einführen, die es verdienen, eine abkürzende Schreibweise zu bekommen.
 
-Zunächst die sogenannte, **Nullmatrix**.
-$\mathbf{0}_{mn} \in \mathbb{R}^{m\times n} $. Dies bezeichnet eine $m\times n$ Matrix, welche nur aus Nullen besteht. Ist im Kontext klar, welche Dimension $m\times n$ gemeint ist, so schreiben wir abkürzend auch nur $\mathbf{0}$.
+Zunächst die **Nullmatrix**: $\mathbf{0}_{m n}\in \mathbb{R}^{m\times n}$. Dies bezeichnet eine $m\times n$-Matrix, die nur aus Nullen besteht. Ist der Kontext klar, schreiben wir kurz $\mathbf{0}$.
 
 Zum Anderen die sogenannte **Einheitsmatrix**.
 
@@ -142,21 +139,21 @@ E_n=\begin{pmatrix}
 0 & 0 & \ldots & 1
 \end{pmatrix}\in \mathbb{R}^{n\times n}
 ```
-Dies ist eine spezielle Art von Matrix, bei der die Diagonalelemente 1 sind und alle anderen Elemente 0.
+Dies ist eine spezielle Matrix, bei der die Diagonalelemente 1 sind und alle anderen Elemente 0.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hTFhtAyJLpU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## 5.4 Skalare Multiplikation und Matrixaddition
 
 Die skalare Multiplikation und die Matrixaddition sind fundamentale Rechenoperationen für Matrizen.
-Wir starten zunächst mit der Matrixaddition.
+Wir beginnen mit der Matrixaddition.
 
 ### Matrixaddition
 
 ````{prf:definition}
 Gegeben seien zwei Matrizen $A,B\in \mathbb{R}^{m\times n}$ mit derselben Dimension $m \times n$. Die Addition von $A$ und $B$, dargestellt als $A + B$, ergibt eine neue Matrix $C$ der gleichen Dimension $m \times n$, wobei jedes Element $c_{ij}$ in $C$ definiert ist als:
 ```{math}
-c_{ij} = a_{ij} + b_{ij} \quad \text{ für alle } 1 ≤ i ≤ m \text{ und } 1 ≤ j ≤ n.
+c_{ij} = a_{ij} + b_{ij} \quad \text{für alle } 1 \le i \le m \text{ und } 1 \le j \le n.
 ```
 ````
 Machen wir dazu ein einfaches Beispiel.
@@ -189,15 +186,15 @@ Machen wir dazu ein einfaches Beispiel.
 ````{prf:definition}
 
 
-Sei $ A\in \mathbb{R}^{m\times n}$ eine $m \times n$ Matrix ist und $\lambda\in \mathbb{R} $ ein Skalar. Dann ist die skalare Multiplikation $C=\lambda\cdot A$ eine $m \times n$ Matrix, bei der 
+Sei $A \in \mathbb{R}^{m\times n}$ und $\lambda\in \mathbb{R}$ ein Skalar. Dann ist $C=\lambda A$ definiert durch
 ```{math}
-c_{ij}=\lambda\cdot a_{ij} \quad \text{ für alle } 1 ≤ i ≤ m \text{ und } 1 ≤ j ≤ n.
+c_{ij}=\lambda a_{ij} \quad \text{für alle } 1 \le i \le m \text{ und } 1 \le j \le n.
 ```
 ````
 Machen wir dazu ein einfaches Beispiel.
 
 ````{prf:example}
-Sei $A$ eine $2 \times 3$ Matrix und $\lambda = 3$ ein Skalar. Die skalare Multiplikation von $A$ mit $\lambda$ ergibt:
+Sei $A$ eine $2 \times 3$-Matrix und $\lambda = 3$ ein Skalar. Die skalare Multiplikation von $A$ mit $\lambda$ ergibt:
 
 ```{math}
 \lambda A = 3 \cdot \begin{pmatrix}
@@ -222,7 +219,7 @@ Dann gelten folgende Rechenregeln:
 Matrixaddition:
 1. Kommutativgesetz: $A + B = B + A$
 2. Assoziativgesetz: $(A + B) + C = A + (B + C)$
-3. Nullmatrix: $A + \textbf{0} = A$
+3. Nullmatrix: $A + \mathbf{0} = A$
 4. Negation: $A + (-A) = \mathbf{0}$
 
 Skalare Multiplikation:
@@ -231,19 +228,19 @@ Skalare Multiplikation:
 6. Distributivgesetz (Skalar): $(\lambda + \mu)A = \lambda A + \mu A$
 7. Distributivgesetz (Matrix): $\lambda (A + B) = \lambda A + \lambda B$
 8. Einheitselement: $1\cdot A = A$
-9. Skalare Multiplikation mit Null: $0\cdot A = \mathbf{0}$
+9. Null: $0\cdot A = \mathbf{0}$
 
 
 
 
 
 ## 5.5 Transposition von Matrizen
-Das Transponieren von Matrizen bedeutet die Spalten und Zeilen zu vertauschen. Das heißt aus einer $m\times n$ Matrix wird eine $n\times m$ Matrix, die wir mit $A^T$ bezeichnen.
+Das Transponieren einer Matrix vertauscht Zeilen und Spalten. Aus einer $m\times n$-Matrix wird eine $n\times m$-Matrix $A^T$.
 Genauer definieren wir:
 ````{prf:definition}
-Sei $A\in \mathbb{R}^{m\times n}$. Dann ist $C=A^T$ die $n\times m$ Matrix mit 
+Sei $A\in \mathbb{R}^{m\times n}$. Dann ist $C=A^T$ die $n\times m$-Matrix mit 
 ```{math}
-c_{ij}=a_{ji} \quad \text{ für alle} 1 ≤ i ≤ n \text{ und } 1 ≤ j ≤ m.
+c_{ij}=a_{ji} \quad \text{für alle } 1 \le i \le n \text{ und } 1 \le j \le m.
 ```
 ````
 
@@ -259,7 +256,7 @@ A = \begin{pmatrix}
 \end{pmatrix}
 ```
 
-Die Transposition von $A$, erhalten wir, indem wir die Zeilen von $A$ zu den Spalten von $A^T$ und die Spalten von $A$ zu den Zeilen von $A^T$ werden:
+Die Transposition von $A$ erhalten wir, indem wir die Zeilen von $A$ zu den Spalten von $A^T$ und die Spalten von $A$ zu den Zeilen von $A^T$ machen:
 
 ```{math}
 A^T = \begin{pmatrix}
@@ -282,11 +279,7 @@ $(A^T)^T=A$
 
 
 ## 5.6 Matrixmultiplikation
-Wir haben bisher die Addition und die skalare Multiplikation von Matrizen kennengelernt. Dabei waren die Definitionen sehr natürlich. Das was wir mit Zahlen normalerweise machen, übertragen wir auf Matrizen, in dem wir es komponentenweise durchführen.
-
-Die Multiplikation von zwei Matrizen funktioniert aber auf eine andere Art und Weise.
-
-Wir bauen die Multiplikation schrittweise auf.
+Bisher haben wir Addition und skalare Multiplikation komponentenweise definiert. Die Multiplikation zweier Matrizen funktioniert anders. Wir bauen sie schrittweise auf.
 
 ### Vektor mal Vektor
 Die einfachste Möglichkeit einer Matrixmultiplikation ist die Multiplikation eines Zeilenvektors mit einem Spaltenvektor.
@@ -295,10 +288,12 @@ Dies entspricht dem aus der Analytischen Geometrie bekannten **Skalarprodukt**.
 Sei dazu $v=\begin{pmatrix} a_1 & a_2 & \dots & a_n \end{pmatrix}\in \mathbb{R}^{1\times n}$ und 
 $w=\begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix}\in \mathbb{R}^{n\times 1}$.
 
-Dann definieren wir
+Dann definieren wir:
 
 ```{math}
-v\cdot w=v=\begin{pmatrix} a_1 & a_2 & \dots & a_n \end{pmatrix}\cdot\begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix} =a_1\cdot b_1 + a_2\cdot b_2 + \dots + a_n\cdot b_n.
+v\cdot w = \begin{pmatrix} a_1 & a_2 & \dots & a_n \end{pmatrix}
+\begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix}
+= a_1 b_1 + a_2 b_2 + \dots + a_n b_n.
 ```
 
 ````{prf:example}
@@ -320,7 +315,7 @@ Die Situation "Matrix mal Vektor" hatten wir schon im Kapitel Lineare Gleichunge
 
 ![](images/matrix_vector.png)
 
-Wir sehen anhand der obigen Gleichung, dass die Situation Matrix mal Vektor sich so verhält, dass ein neuer Vektor entsteht. Die einzelnen Komponenten sind nun die Skalarprodukte der Zeilen der Matrix mit dem Vektor, welcher multipliziert wird.
+Wir sehen, dass beim Produkt Matrix mal Vektor ein neuer Vektor entsteht; seine Komponenten sind die Skalarprodukte der Zeilen von $A$ mit $v$.
 
 Formal ausgedrückt heißt das:
 
@@ -329,7 +324,7 @@ Sei $A\in \mathbb{R}^{m\times n}$ und $v\in \mathbb{R}^{n\times 1}$.
 
 Dann ist $w=A\cdot v \in \mathbb{R}^{m\times 1}$ und es gilt:
 ```{math}
-w_i = a_{i*}\cdot v \quad \text{ für } i=1,\dots, m
+w_i = a_{i*}\cdot v \quad \text{für } i=1,\dots,m,
 ```
 wobei $a_{i*}\in \mathbb{R}^{1\times n}$ die $i$-te Zeile von $A$ ist.
 
@@ -381,13 +376,13 @@ Das Ergebnis der Multiplikation von $A$ und $v$ ist der Vektor $w = \begin{pmatr
 
 Als letztes betrachten wir nun das Produkt zweier Matrizen $A$ und $B$.
 
-Die erste frage, die sich stellt ist: Welche Dimensionen dürfen $A$ und $B$ haben, damit wir sie miteinander multiplizieren können.
+Die erste Frage lautet: Welche Dimensionen dürfen $A$ und $B$ haben, damit $AB$ definiert ist?
 
 ```{math}
 (m\times n)\cdot (n\times k) = (m\times k) \quad \text{ (Dimensionsformel)}
 ```
 
-Die obige Formel beschreibt, dies. Demnach muss die Anzahl der Spalten der ersten Matrix (die Anzahl der Zwischenprodukte) mit der Anzahl der Zeilen der zweiten Matrix (ebenfalls die Anzahl der Zwischenprodukte) übereinstimmt.
+Die obige Formel beschreibt dies. Demnach muss die Anzahl der Spalten der ersten Matrix mit der Anzahl der Zeilen der zweiten Matrix übereinstimmen.
 
 Aber wie berechnet man das Produkt von zwei Matrizen:
 
@@ -396,13 +391,13 @@ Aber wie berechnet man das Produkt von zwei Matrizen:
 Sei $A\in \mathbb{R}^{m\times n}$ und $B\in \mathbb{R}^{n\times k}$. Dann ist das Produkt $C=AB$ definiert durch
 
 ```{math}
-c_{ij}=a_{i*}\cdot b_{*j}=a_{i1}b_{1j}+a_{i2}b_{2j}+\dots + a_{in}b_{nj} 
+c_{ij}=a_{i*}\cdot b_{*j}=a_{i1}b_{1j}+a_{i2}b_{2j}+\dots + a_{in}b_{nj}.
 ```
 Dabei ist $a_{i*}\in \mathbb{R}^{1\times n}$ die $i$-te Zeile von $A$ und $b_{*j}\in\mathbb{R}^{n\times 1}$ die $j$-te Spalte von $B$.
 
 
 ````
-Das heißt das Produkt $A\cdot B$ ist die Matrix $C$, dere $i,j$-te Komponente $c_{ij}$ das Skalarprodukt aus dem $i$-ten Zeilenvektor von $A$ und dem $j$-ten Spaltenvektor von $B$ ist.
+Das heißt, das Produkt $AB$ ist die Matrix $C$, deren $(i,j)$-Eintrag das Skalarprodukt der $i$-ten Zeile von $A$ mit der $j$-ten Spalte von $B$ ist.
 
 Hier noch ein einfaches Beispiel
 ````{prf:example}
@@ -422,7 +417,7 @@ C = AB = \begin{pmatrix} (1 \cdot 7) + (2 \cdot 9) + (3 \cdot 11) & (1 \cdot 8) 
 
 ````
 
-Es gibt auch viele gute externe Quellen, die einem gut erklären wie man zwei Matrizen miteinander multiplizieren kann.
+Es gibt auch viele gute externe Quellen, die einem gut erklären, wie man zwei Matrizen miteinander multiplizieren kann.
 
 Z.B.
 
@@ -432,27 +427,20 @@ Z.B.
 
 ## 5.7 Gesetze der Matrixmultiplikation
 
-Es seien $A,B,C$ Matrizen deren Produkt so definiert ist, dass untere Produkte existieren.
-Sei weiter $\lambda\in \mathbb{R}$.
-Dann gelten die folgenden Gesetze der Matrixmultiplikation:
+Es seien $A,B,C$ Matrizen geeigneter Dimensionen und $\lambda\in \mathbb{R}$. Dann:
+- $(A B) C = A (B C) = A B C$
+- $(\lambda A) B = A (\lambda B) = \lambda (A B)$
+- $A E = E A = A$
+- $A \mathbf{0} = \mathbf{0} A = \mathbf{0}$
+- $A (B + C) = A B + A C$
+- $(A + B) C = A C + B C$
+- $(A B)^T = B^T A^T$
 
-- $(A \cdot B) \cdot C =  A \cdot (B \cdot C)  = A \cdot B \cdot C $
-- $(\lambda A) \cdot B =  A \cdot (\lambda B)  = \lambda (A \cdot B)$
-- $A \cdot E =  E \cdot A  = A$
-- $A \cdot \textbf{0} =  \textbf{0} \cdot A  = \textbf{0}$
-- $A \cdot(B + C) =  A \cdot B + A \cdot C$
-- $(A+B) \cdot C = A \cdot C + B \cdot C$
-- $(A \cdot B)^T =  B^T \cdot A^T$
-
-
-**ACHTUNG**
-
-Es gilt **nicht** 
+**Achtung:** Im Allgemeinen gilt
 ```{math}
-AB = BA.
+AB \ne BA.
 ```
-
-D.h. es gibt **kein Kommutativgesetz** für Matrizen.
+Es existiert also kein Kommutativgesetz für Matrizen.
 
 
 

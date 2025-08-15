@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'logik';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Kapitel 3 - Relationen und Funktionen" href="relationsAndFunctions.html" />
+    <link rel="next" title="Kapitel 3 – Relationen und Funktionen" href="relationsAndFunctions.html" />
     <link rel="prev" title="Kapitel 1 - Mengenlehre" href="mengenlehre.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -156,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="mengenlehre.html">Kapitel 1 - Mengenlehre</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Kapitel 2 Grundlagen der Logik</a></li>
-<li class="toctree-l1"><a class="reference internal" href="relationsAndFunctions.html">Kapitel 3 - Relationen und Funktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relationsAndFunctions.html">Kapitel 3 – Relationen und Funktionen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gauss.html">Kapitel 4 - Der Gauß-Algorithmus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matrix.html">Kapitel 5 - Matrizen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anwendung_matrix_mult.html">Kapitel 6 - Lineare Transformationen in der Ebene</a></li>
@@ -383,7 +383,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#de-morgan-sche-regeln">De Morgan’sche Regeln</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#absorptionsgesetz">Absorptionsgesetz</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neutralitatsgesetz">Neutralitätsgesetz</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#formelsammlung">Formelsammlung</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#formelsammlung-uberblick">Formelsammlung (Überblick)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgabentypen-zu-den-gesetzen-der-aussagenlogik">Aufgabentypen zu den Gesetzen der Aussagenlogik</a></li>
 </ul>
 </li>
@@ -437,7 +437,7 @@ document.write(`
 </section>
 <section id="einleitung-mit-sudoku">
 <h2>2.2 Einleitung mit Sudoku<a class="headerlink" href="#einleitung-mit-sudoku" title="Permalink to this heading">#</a></h2>
-<p>Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge, es ist aber wichtig, erst einmal festzuhalten, dass wir alle von Natur aus logisch denken können, ohne dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir das, was wir natürlicherweise machen, hier formalisieren wollen.</p>
+<p>Wir wollen uns in diesem Kapitel mit Logik auseinandersetzen. Dabei lernen wir zwar neue Dinge, es ist aber wichtig, erst einmal festzuhalten, dass wir alle von Natur aus logisch denken können, ohne dass wir die Gesetze der Logik dafür verstehen müssen. Es scheint eher so, dass wir das, was wir natürlicherweise machen, formal ausdrücken wollen.</p>
 <p>Um Sie davon zu überzeugen, dass Sie Logik bereits verstehen, will ich Ihnen folgendes Beispiel zeigen.</p>
 <p>Nehmen wir an, wir spielen Sudoku. Wir beschränken uns aber hierfür auf Zahlen <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(4\)</span> statt <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(9\)</span>.</p>
 <p>Nehmen wir an, wir haben also folgendes Sudoku gegeben:</p>
@@ -459,20 +459,20 @@ document.write(`
 <p><em>A oder B oder C oder D</em></p>
 <p>In der Logik schreibt man nun statt “oder” auch <span class="math notranslate nohighlight">\(\vee \)</span>.</p>
 <p>Also gilt:</p>
-<p><span class="math notranslate nohighlight">\( A\vee B\vee C\vee D\)</span></p>
+<p><span class="math notranslate nohighlight">\(A\vee B\vee C\vee D\)</span></p>
 <p>Ok, soweit so gut. Was wissen wir noch?</p>
 <p>Wir wissen, es darf keine 1 sein, denn diese Zahl ist bereits im Quadranten. Außerdem darf es keine 2 oder 3 sein, denn diese Zahlen sind in derselben Zeile.</p>
 <p>Damit wissen wir, dass gilt:</p>
 <p><em>Nicht A und Nicht B und Nicht C.</em></p>
 <p>Das ist aber dasselbe wie</p>
 <p><em>Nicht (A oder B oder C).</em></p>
-<p>Hier haben wir schon ein erstes Gesetz der Aussagenlogik angewendet: das Gesetz von <strong>de Morgan</strong>.</p>
+<p>Hier haben wir schon ein erstes Gesetz der Aussagenlogik angewendet: die <strong>de Morganschen Regeln</strong>.</p>
 <p>Anstatt <strong>nicht</strong> schreiben Mathematiker:innen <span class="math notranslate nohighlight">\(\neg\)</span> und anstatt <strong>und</strong> schreiben sie <span class="math notranslate nohighlight">\(\wedge\)</span>.</p>
 <p>Damit ergibt sich also:</p>
-<p><span class="math notranslate nohighlight">\( \neg A \wedge  \neg B \wedge \neg C  \)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\neg A\wedge \neg B\wedge \neg C\)</span>.</p>
 <p>Zusammen mit dem ersten Teil ergibt sich als Ausdruck:</p>
-<p><span class="math notranslate nohighlight">\((A\vee B\vee C\vee D)\wedge (\neg A \wedge \neg B \wedge \neg C)\)</span></p>
-<p>Es soll also A oder B oder C oder D gelten und <strong>nicht</strong> A und  <strong>nicht</strong> B und <strong>nicht</strong> C. Wir alle wissen, dass das nichts anderes heißt, dass <span class="math notranslate nohighlight">\(D\)</span> gilt. Also dass die Zahl die 4 sein muss.
+<p><span class="math notranslate nohighlight">\((A\vee B\vee C\vee D)\wedge (\neg A\wedge \neg B\wedge \neg C)\)</span></p>
+<p>Es soll also A oder B oder C oder D gelten und <strong>nicht</strong> A und <strong>nicht</strong> B und <strong>nicht</strong> C. Wir alle wissen, dass das nichts anderes heißt, dass <span class="math notranslate nohighlight">\(D\)</span> gilt. Also dass die Zahl die 4 sein muss.
 Aber warum eigentlich? Welche logischen Gesetze stecken dahinter? Genau das wollen wir in diesem Kapitel genauer untersuchen.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xleOtHLj61g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
@@ -482,7 +482,7 @@ Aber warum eigentlich? Welche logischen Gesetze stecken dahinter? Genau das woll
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 13 </span></p>
 <section class="definition-content" id="proof-content">
-<p>Eine Aussage ist ein Satz, der entweder wahr oder nicht wahr (falsch) ist.</p>
+<p>Eine Aussage ist ein Satz, der entweder wahr oder falsch ist.</p>
 </section>
 </div><div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 12 </span></p>
@@ -502,36 +502,36 @@ Aber warum eigentlich? Welche logischen Gesetze stecken dahinter? Genau das woll
 </section>
 </div><p>Häufig kürzen wir Aussagen mit Großbuchstaben ab.</p>
 <p>Z.B. <span class="math notranslate nohighlight">\(A=\)</span> “Heute hat es geregnet” oder <span class="math notranslate nohighlight">\(B=3+5=9\)</span>.</p>
-<p>Wir nennen dann <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> <strong>Aussagenvariablen</strong>.</p>
+<p>Wir nennen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> <strong>Aussagenvariablen</strong>.</p>
 <section id="zusatzliche-beispiele-fur-aussagenlogik">
 <h3>Zusätzliche Beispiele für Aussagenlogik<a class="headerlink" href="#zusatzliche-beispiele-fur-aussagenlogik" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>“Die Sonne scheint heute.” (Aussage)</p></li>
 <li><p>“Ist es kalt draußen?” (keine Aussage)</p></li>
 <li><p><span class="math notranslate nohighlight">\(2+2=4\)</span> (Aussage)</p></li>
-<li><p><span class="math notranslate nohighlight">\(x+3=5\)</span> (keine Aussage, da <span class="math notranslate nohighlight">\(x\)</span> nicht definiert ist)</p></li>
+<li><p><span class="math notranslate nohighlight">\(x+3=5\)</span> (keine Aussage, da <span class="math notranslate nohighlight">\(x\)</span> nicht definiert ist).</p></li>
 </ul>
-<p>Wir können nun Aussagen mithilfe von Operatoren verknüpfen. Dafür haben wir verschiedene Symbole zur Verfügung, die
-man alltagssprachlich wie folgt interpretieren können:</p>
+<p>Wir können nun Aussagen mithilfe von Operatoren verknüpfen. Dafür stehen uns verschiedene Symbole zur Verfügung, die
+alltagssprachlich wie folgt interpretiert werden können:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(A\wedge B\)</span> heißt A und B</p></li>
-<li><p><span class="math notranslate nohighlight">\(A\vee B\)</span> heißt A oder B</p></li>
-<li><p><span class="math notranslate nohighlight">\(\neg A\)</span> heißt nicht A</p></li>
-<li><p><span class="math notranslate nohighlight">\(A\to B\)</span> heißt A impliziert B</p></li>
-<li><p><span class="math notranslate nohighlight">\(A\leftrightarrow B\)</span> heißt A und B sind äquivalent.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\wedge B\)</span> bedeutet A und B.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\vee B\)</span> bedeutet A oder B.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\neg A\)</span> bedeutet nicht A.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\to B\)</span> bedeutet „wenn A, dann B“.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\leftrightarrow B\)</span> bedeutet A und B sind äquivalent.</p></li>
 </ul>
-<p>Wir werden im Kapitel zur Semantik noch genauer verstehen, was diese Operatoren <strong>genau</strong> bedeuten. Das reicht uns aber erstmal
+<p>Wir werden im Kapitel zur Semantik noch genauer verstehen, was diese Operatoren <strong>genau</strong> bedeuten. Das reicht uns aber erst einmal
 als Intuition für das nächste Kapitel.</p>
 </section>
 <section id="syntax-der-aussagenlogik-formeln">
 <h3>Syntax der Aussagenlogik - Formeln<a class="headerlink" href="#syntax-der-aussagenlogik-formeln" title="Permalink to this heading">#</a></h3>
-<p>Die Syntax der Aussagenlogik beschäftigt sich nur mit der Schreibweise von verknüpften Aussagen. Also wie können wir aus gegebenen Aussagen neue Aussagen erzeugen.
-Dabei ist die Bedeutung der Aussagen erst einmal nicht bedeutend.</p>
+<p>Die Syntax der Aussagenlogik beschäftigt sich nur mit der Schreibweise von verknüpften Aussagen. Also, wie können wir aus gegebenen Aussagen neue Aussagen erzeugen?
+Dabei ist die Bedeutung der Aussagen zunächst nicht relevant.</p>
 <p>Wir nennen zusammengesetzte Aussagen auch Formeln, und sie können wie folgt iterativ erzeugt werden:</p>
 <div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 14 </span></p>
 <section class="definition-content" id="proof-content">
-<p>Eine Formel ist eine Kombination aus Aussagen und logischen Operatoren und kann wie folgt iterativ erzeugt werden:</p>
+<p>Eine Formel ist eine Kombination aus Aussagenvariablen und logischen Operatoren und kann wie folgt iterativ erzeugt werden:</p>
 <ol class="arabic simple">
 <li><p>Einzelne Aussagen sind Formeln.</p></li>
 <li><p>0 (die immer falsche Aussage) und 1 (die immer wahre Aussage) sind Formeln.</p></li>
@@ -552,10 +552,10 @@ Dabei ist die Bedeutung der Aussagen erst einmal nicht bedeutend.</p>
 <section class="example-content" id="proof-content">
 <p>Seien <span class="math notranslate nohighlight">\(A,B,C\)</span> Aussagen. Dann sind folgende Ausdrücke Formeln:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\((\neg A) \wedge B \wedge C\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\((\neg A) \wedge B \vee (B\wedge C)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\((\neg A) \wedge B \wedge C \to A\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(((\neg A) \leftrightarrow (B \wedge C)) \to A\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((\neg A)\wedge B\wedge C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((\neg A)\wedge B\vee (B\wedge C)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((\neg A)\wedge B\wedge C \to A\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(((\neg A) \leftrightarrow (B\wedge C)) \to A\)</span></p></li>
 </ul>
 <p>Folgende Ausdrücke sind <strong>keine</strong> Formeln:</p>
 <ul class="simple">
@@ -574,11 +574,11 @@ Das wichtigste Werkzeug hierfür sind sogenannte Wahrheitstafeln.</p>
 <section id="wahrheitstafeln">
 <h4>Wahrheitstafeln<a class="headerlink" href="#wahrheitstafeln" title="Permalink to this heading">#</a></h4>
 <p>Nehmen wir an wir haben eine Formel <span class="math notranslate nohighlight">\(F\)</span>, die aus den Aussagenvariablen <span class="math notranslate nohighlight">\(A,B,C,\dots, \)</span> formuliert wurde. Dann beantwortet die Wahrheitstafel folgende Fragestellung:</p>
-<p>Unter welcher Belegung der Aussagen <span class="math notranslate nohighlight">\(A,B, \dots \)</span> ist die Formel <span class="math notranslate nohighlight">\(F\)</span> wahr oder Falsch.</p>
+<p>Unter welcher Belegung der Aussagenvariablen <span class="math notranslate nohighlight">\(A,B,\dots\)</span> ist die Formel <span class="math notranslate nohighlight">\(F\)</span> wahr oder falsch?</p>
 </section>
 <section id="der-lor-operator">
 <h4>Der <span class="math notranslate nohighlight">\(\lor\)</span> - Operator<a class="headerlink" href="#der-lor-operator" title="Permalink to this heading">#</a></h4>
-<p>Am einfachsten illustrieren wir dieses Konzept mit einem Beispiel und dem <span class="math notranslate nohighlight">\(\wedge\)</span>- Operator.</p>
+<p>Am besten illustrieren wir dieses Konzept mit einem Beispiel und dem <span class="math notranslate nohighlight">\(\lor\)</span>-Operator.</p>
 <p>Dafür betrachten wir nun die Formel <span class="math notranslate nohighlight">\(F=A\lor B\)</span>.</p>
 <p><strong>Schritt 1:</strong>
 Zunächst einmal schreiben wir eine Tabelle mit den Aussagen und der Formel</p>
@@ -597,7 +597,7 @@ A &amp; B &amp; A \lor B\\ % Use &amp; to separate the columns
  &amp;  &amp; \\
 \end{array}\end{split}\]</div>
 <p><strong>Schritt 2</strong></p>
-<p>Nun tragen wir alle Kombinationen aus wahr (T) oder falsch(F) für die Aussagenvariablen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> ein.</p>
+<p>Nun tragen wir alle Belegungen mit Wahrheitswerten für die Aussagenvariablen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> ein.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{|c c|c|}
 % |c c|c| means that there are three columns in the table and
@@ -613,7 +613,7 @@ F &amp; T &amp; \\
 F &amp; F &amp; \\
 \end{array}\end{split}\]</div>
 <p><strong>Schritt 3</strong></p>
-<p>Nun tragen wir die Wahrheitswerte für die Formel <span class="math notranslate nohighlight">\(F\)</span> ein unter der Berücksichtigung der Wahrheitswerte von <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span>. Denken Sie hierbei daran  dass <span class="math notranslate nohighlight">\(A\vee B\)</span>  genau dann wahr ist wenn mind. eine Aussagen wahr ist.</p>
+<p>Nun tragen wir die Wahrheitswerte für die Formel <span class="math notranslate nohighlight">\(F\)</span> ein unter der Berücksichtigung der Wahrheitswerte von <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span>. Denken Sie daran, dass <span class="math notranslate nohighlight">\(A\vee B\)</span> genau dann wahr ist, wenn mindestens eine der beiden Aussagen wahr ist.</p>
 <p>Wir bekommen also folgende Wahrheitstafel.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{|c c|c|}
@@ -632,7 +632,7 @@ F &amp; F &amp; F\\
 </section>
 <section id="der-land-operator">
 <h4>Der <span class="math notranslate nohighlight">\(\land\)</span> - Operator<a class="headerlink" href="#der-land-operator" title="Permalink to this heading">#</a></h4>
-<p>Die Aussage <span class="math notranslate nohighlight">\(A\land B\)</span> ist genau dann wahr wenn beide Aussagen wahr sind.</p>
+<p>Die Aussage <span class="math notranslate nohighlight">\(A\land B\)</span> ist genau dann wahr, wenn beide Aussagen wahr sind.</p>
 <p>Wir erhalten folgende Wahrheitstafel</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{|c c|c|}
@@ -668,7 +668,7 @@ F &amp; T\\
 <li><p><span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> wahr sind</p></li>
 <li><p><span class="math notranslate nohighlight">\(A\)</span> falsch ist.</p></li>
 </ul>
-<p>Intuitiv bedeutet dies, dass aus einer Falschen Aussage alles folgen kann.</p>
+<p>Anschaulich bedeutet dies, dass aus einer falschen Voraussetzung alles folgen kann.</p>
 <p>Als Wahrheitstafel:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{|c c|c|}
@@ -747,7 +747,7 @@ A &amp; B &amp; C &amp; A\land B &amp; A \lor C &amp; (A \land B) \to (A\lor C)\
 &amp; &amp; &amp; &amp; &amp;
 \end{array}\end{split}\]</div>
 <p><strong>Schritt 2</strong></p>
-<p>Wir tragen nun alle Varianten von wahrheitswerten für die Aussagen <span class="math notranslate nohighlight">\(A,B,C\)</span> ein.</p>
+<p>Wir tragen nun alle Belegungen mit Wahrheitswerten für die Aussagen <span class="math notranslate nohighlight">\(A,B,C\)</span> ein.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{|c  c c|c|c|c|}
 A &amp; B &amp; C &amp; A\land B &amp; A \lor C &amp; (A \land B) \to (A\lor C)\\
@@ -806,7 +806,7 @@ T&amp;T &amp;F &amp;T &amp;T &amp;T\\
 T&amp;F &amp;T &amp;F &amp;T &amp;T\\
 T&amp;T &amp;T &amp;T &amp;T &amp;T
 \end{array}\end{split}\]</div>
-<p>Wir sehen also, dass die Formel <span class="math notranslate nohighlight">\(F\)</span> immer wahr ist. Wir nennen <span class="math notranslate nohighlight">\(F\)</span> in diesem Fall eine <strong>Tautologie</strong>.</p>
+<p>Die Formel <span class="math notranslate nohighlight">\(F\)</span> ist damit eine <strong>Tautologie</strong>.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kvJrGAIrdDk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 </section>
@@ -826,7 +826,7 @@ T&amp;T &amp;T &amp;T &amp;T &amp;T
 <div class="proof example admonition" id="example-5">
 <p class="admonition-title"><span class="caption-number">Example 14 </span></p>
 <section class="example-content" id="proof-content">
-<p>Einfache Beispiele für Tautologien:</p>
+<p>Beispiele für Tautologien:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(A\to A\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(A\lor \neg A\)</span></p></li>
@@ -840,12 +840,12 @@ T&amp;T &amp;T &amp;T &amp;T &amp;T
 </section>
 </div><p><strong>Übung</strong></p>
 <p>Betrachten Sie die Formel <span class="math notranslate nohighlight">\(F= (A\to B) \to (\neg B \to \neg A)\)</span>.
-Man kann nun mithilfe einer Wahrheitstafel zeigen, dass dies eine Tautologie ist.</p>
-<p>Eine weitere wichtige Definition ist wann zwei Formeln semantisch gesehen gleich sind. D.h. dass sie die selbe Wahrheitstafel haben.</p>
+Man kann mithilfe einer Wahrheitstafel zeigen, dass dies eine Tautologie ist.</p>
+<p>Eine weitere wichtige Definition ist wann zwei Formeln semantisch gesehen gleich sind. D.h. dass sie dieselbe Wahrheitstafel haben.</p>
 <div class="proof definition admonition" id="definition-6">
 <p class="admonition-title"><span class="caption-number">Definition 16 </span></p>
 <section class="definition-content" id="proof-content">
-<p>Zwei Formeln <span class="math notranslate nohighlight">\(F_1\)</span> und <span class="math notranslate nohighlight">\(F_2\)</span> heißen <strong>logisch Äquivalent</strong>, falls beide Formeln für jede Belegung von Wahrheitswerten der Aussagenvariablen die selben Wahrheitswerte besitzen.</p>
+<p>Zwei Formeln <span class="math notranslate nohighlight">\(F_1\)</span> und <span class="math notranslate nohighlight">\(F_2\)</span> heißen <strong>logisch Äquivalent</strong>, falls beide Formeln für jede Belegung von Wahrheitswerten der Aussagenvariablen dieselben Wahrheitswerte besitzen.</p>
 <p>Wir schreiben dann <span class="math notranslate nohighlight">\(F_1 \equiv F_2\)</span>.</p>
 </section>
 </div><div class="proof example admonition" id="example-7">
@@ -875,15 +875,15 @@ T &amp; F &amp; F &amp; F\\
 F &amp; T &amp; T &amp; T\\
 F &amp; F &amp; T &amp; T\\
 \end{array}\end{split}\]</div>
-<p>Wie wir sehen, dass die letzte Spalte identisch ist und damit müssen beide Formeln logisch äquivalent sein.</p>
+<p>Wie wir sehen, ist die letzte Spalte identisch und damit müssen beide Formeln logisch äquivalent sein.</p>
 </section>
 </div><iframe width="560" height="315" src="https://www.youtube.com/embed/9sYbzC8irrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 <section id="gesetze-der-aussagenlogik">
 <h3>Gesetze der Aussagenlogik<a class="headerlink" href="#gesetze-der-aussagenlogik" title="Permalink to this heading">#</a></h3>
-<p>Wahrheitstafeln sind ein extrem nützliches Werkzeug um zu zeigen, dass etwas eine Tautologie ist oder die logische Äquivalenz  von Formeln zu beweisen. Wenn die Anzahl der Aussagenvariablen jedoch groß ist, so ist auch die Anzahl der Möglichen Belegungen hoch.</p>
+<p>Wahrheitstafeln sind ein wichtiges Werkzeug, um zu zeigen, dass etwas eine Tautologie ist oder die logische Äquivalenz von Formeln zu beweisen. Wenn die Anzahl der Aussagenvariablen jedoch groß ist, so ist auch die Anzahl der möglichen Belegungen hoch.</p>
 <p><strong>Frage</strong></p>
-<p>Wie viele Mögliche Belegungen gibt es für eine Formel mit <span class="math notranslate nohighlight">\(n\)</span> Aussagenvariablen?</p>
+<p>Wie viele mögliche Belegungen gibt es für eine Formel mit <span class="math notranslate nohighlight">\(n\)</span> Aussagenvariablen?</p>
 <p><strong>Antwort:</strong></p>
 <div class="toggle docutils container">
 <p>Es gibt <strong><span class="math notranslate nohighlight">\(2^n\)</span></strong> Belegungen, denn für jede Aussagenvariable gibt es 2 Möglichkeiten (T oder F).</p>
@@ -894,7 +894,7 @@ F &amp; F &amp; T &amp; T\\
 <div class="proof theorem admonition" id="theorem-8">
 <p class="admonition-title"><span class="caption-number">Theorem 4 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine Aussagenvariable dann gilt</p>
+<p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine Aussagenvariable. Dann gilt:</p>
 <div class="math notranslate nohighlight">
 \[A\land A\equiv A \quad \text{ und } A\lor A\equiv A.\]</div>
 </section>
@@ -906,7 +906,7 @@ Diese Identität hilft dabei Formeln mit dem doppelten Vorkommen von Aussagenvar
 <div class="proof theorem admonition" id="theorem-9">
 <p class="admonition-title"><span class="caption-number">Theorem 5 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>Seien <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span>  Aussagenvariablen dann gilt</p>
+<p>Seien <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> Aussagenvariablen. Dann gilt:</p>
 <div class="math notranslate nohighlight">
 \[A\land B\equiv B\land A \quad \text{ und } A\lor B\equiv B\lor A.\]</div>
 </section>
@@ -917,7 +917,7 @@ Diese Identität hilft dabei Formeln mit dem doppelten Vorkommen von Aussagenvar
 <div class="proof theorem admonition" id="theorem-10">
 <p class="admonition-title"><span class="caption-number">Theorem 6 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>Seien <span class="math notranslate nohighlight">\(A,B\)</span> und <span class="math notranslate nohighlight">\(C\)</span>  Aussagenvariablen dann gilt</p>
+<p>Seien <span class="math notranslate nohighlight">\(A,B,C\)</span> Aussagenvariablen. Dann gilt:</p>
 <div class="math notranslate nohighlight">
 \[A\land (B \land C )\equiv (A\land B)\land C \quad \text{ und } A\lor (B\lor C)\equiv (A\lor B)\lor C.\]</div>
 </section>
@@ -935,7 +935,7 @@ Nehmen wir an wir haben</p>
 <p>Wir können nun das Assoziativgesetz anwenden und erhalten:</p>
 <div class="math notranslate nohighlight">
 \[F\equiv (A\lor A)\lor B.\]</div>
-<p>Zu guter Letzt können wir das Idempotenzgesetz anwenden und erhalten letztenendes:</p>
+<p>Abschließend können wir das Idempotenzgesetz anwenden und erhalten letzten Endes:</p>
 <div class="math notranslate nohighlight">
 \[F\equiv A\lor B.\]</div>
 <p>Wir haben also gezeigt:</p>
@@ -949,30 +949,30 @@ Nehmen wir an wir haben</p>
 <div class="proof theorem admonition" id="theorem-12">
 <p class="admonition-title"><span class="caption-number">Theorem 7 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>Seien <span class="math notranslate nohighlight">\(A,B\)</span> und <span class="math notranslate nohighlight">\(C\)</span>  Aussagenvariablen dann gilt</p>
+<p>Seien <span class="math notranslate nohighlight">\(A,B,C\)</span> Aussagenvariablen. Dann gilt:</p>
 <div class="math notranslate nohighlight">
 \[A\lor (B \land C )\equiv (A\lor B) \land (A\lor C) \quad \text{ und } A\land (B\lor C)\equiv (A\land B) \lor (A\land C).\]</div>
 </section>
 </div></section>
 <section id="doppelte-negation">
 <h4>Doppelte Negation<a class="headerlink" href="#doppelte-negation" title="Permalink to this heading">#</a></h4>
-<p>Die doppelte Negation verstehen wir sehr intuitiv. Wenn etwas nicht nicht gilt. So gilt es.</p>
+<p>Die doppelte Negation ist intuitiv: „Nicht nicht A“ ist gleich „A“.</p>
 <div class="proof theorem admonition" id="theorem-13">
 <p class="admonition-title"><span class="caption-number">Theorem 8 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine Aussagenvariable dann gilt</p>
+<p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine Aussagenvariable. Dann gilt:</p>
 <div class="math notranslate nohighlight">
 \[\neg(\neg A)\equiv A.\]</div>
 </section>
 </div></section>
 <section id="de-morgan-sche-regeln">
 <h4>De Morgan’sche Regeln<a class="headerlink" href="#de-morgan-sche-regeln" title="Permalink to this heading">#</a></h4>
-<p>Die de Morgan’sche Regeln besagt, wie wir mit den Symbolen <span class="math notranslate nohighlight">\(\land\)</span> und <span class="math notranslate nohighlight">\(\lor\)</span> bei Negation umgehen sollen.</p>
+<p>Die de Morganschen Regeln besagen, wie wir mit den Symbolen <span class="math notranslate nohighlight">\(\land\)</span> und <span class="math notranslate nohighlight">\(\lor\)</span> bei Negation umgehen sollen.</p>
 <p>Die Regeln lauten wie folgt</p>
 <div class="proof theorem admonition" id="theorem-14">
 <p class="admonition-title"><span class="caption-number">Theorem 9 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>Seien <span class="math notranslate nohighlight">\(A,B\)</span>   Aussagenvariablen dann gilt</p>
+<p>Seien <span class="math notranslate nohighlight">\(A,B\)</span> Aussagenvariablen. Dann gilt:</p>
 <div class="math notranslate nohighlight">
 \[\neg (A\land B)\equiv \neg A \lor \neg B \quad \text{ und } \neg (A\lor B)\equiv \neg A \land \neg B.\]</div>
 </section>
@@ -980,7 +980,7 @@ Nehmen wir an wir haben</p>
 <div class="proof example admonition" id="example-15">
 <p class="admonition-title"><span class="caption-number">Example 17 </span></p>
 <section class="example-content" id="proof-content">
-<p>Sagen wir A=”Milch im Kaffee” und B=”Zucker im Kaffee”. Wenn dann in meinem Kaffer nicht Milch und Zucker drin ist (<span class="math notranslate nohighlight">\(\neg (A\land B)\)</span>). Dann ist dort nicht Milch oder nicht Zucker drin oder eben beides nicht (<span class="math notranslate nohighlight">\(\neg A \lor \neg B\)</span>).</p>
+<p>Sagen wir A=”Milch im Kaffee” und B=”Zucker im Kaffee”. Wenn dann in meinem Kaffee nicht Milch und Zucker drin ist (<span class="math notranslate nohighlight">\(\neg (A\land B)\)</span>). Dann ist dort nicht Milch oder nicht Zucker drin oder eben beides nicht (<span class="math notranslate nohighlight">\(\neg A \lor \neg B\)</span>).</p>
 </section>
 </div></section>
 <section id="absorptionsgesetz">
@@ -988,21 +988,21 @@ Nehmen wir an wir haben</p>
 <div class="proof theorem admonition" id="theorem-16">
 <p class="admonition-title"><span class="caption-number">Theorem 10 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>Seien <span class="math notranslate nohighlight">\(A,B\)</span>   Aussagenvariablen dann gilt</p>
+<p>Seien <span class="math notranslate nohighlight">\(A,B\)</span> Aussagenvariablen. Dann gilt:</p>
 <div class="math notranslate nohighlight">
 \[A\land (A\lor B)\equiv A \quad \text{und }A\lor (A\land B)\equiv A.\]</div>
 </section>
-</div><p>Auch das Absorptionsgesetz ist intuitiv klar. Denn es ist völlig irrelevant ob <span class="math notranslate nohighlight">\(B\)</span> Falsch oder wahr ist. Falls <span class="math notranslate nohighlight">\(B\)</span> Falsch ist, so ist sicher <span class="math notranslate nohighlight">\(A\land B\)</span> falsch und der Ausdruck hängt nur vom ersten <span class="math notranslate nohighlight">\(A\)</span> ab.</p>
-<p>Falls aber <span class="math notranslate nohighlight">\(B\)</span> Wahr ist, so ist <span class="math notranslate nohighlight">\(A\land B\)</span> wahr genau dann wenn <span class="math notranslate nohighlight">\(A\)</span> wahr ist. Also in beiden Fällen hängt der Wahrheitswert der Formel nur von <span class="math notranslate nohighlight">\(A\)</span> ab.</p>
+</div><p>Auch das Absorptionsgesetz ist intuitiv klar. Denn es ist völlig irrelevant ob <span class="math notranslate nohighlight">\(B\)</span> falsch oder wahr ist. Falls <span class="math notranslate nohighlight">\(B\)</span> falsch ist, so ist sicher <span class="math notranslate nohighlight">\(A\land B\)</span> falsch und der Ausdruck hängt nur vom ersten <span class="math notranslate nohighlight">\(A\)</span> ab.</p>
+<p>Falls aber <span class="math notranslate nohighlight">\(B\)</span> wahr ist, so ist <span class="math notranslate nohighlight">\(A\land B\)</span> wahr genau dann wenn <span class="math notranslate nohighlight">\(A\)</span> wahr ist. Also in beiden Fällen hängt der Wahrheitswert der Formel nur von <span class="math notranslate nohighlight">\(A\)</span> ab.</p>
 </section>
 <section id="neutralitatsgesetz">
 <h4>Neutralitätsgesetz<a class="headerlink" href="#neutralitatsgesetz" title="Permalink to this heading">#</a></h4>
 <div class="proof theorem admonition" id="theorem-17">
 <p class="admonition-title"><span class="caption-number">Theorem 11 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine  Aussagenvariable dann gilt</p>
+<p>Sei <span class="math notranslate nohighlight">\(A\)</span> eine Aussagenvariable. Dann gilt:</p>
 <div class="math notranslate nohighlight">
-\[A\land 1 \equiv A \quad \text{ and } A\lor 0  \equiv A.\]</div>
+\[A\land 1\equiv A \quad \text{ und } A\lor 0\equiv A.\]</div>
 </section>
 </div><p><strong>Erinnerung:</strong></p>
 <ul class="simple">
@@ -1012,8 +1012,8 @@ Nehmen wir an wir haben</p>
 <p><strong>Aufgabe</strong></p>
 <p>Machen Sie sich die obige Formel intuitiv klar.</p>
 </section>
-<section id="formelsammlung">
-<h4>Formelsammlung<a class="headerlink" href="#formelsammlung" title="Permalink to this heading">#</a></h4>
+<section id="formelsammlung-uberblick">
+<h4>Formelsammlung (Überblick)<a class="headerlink" href="#formelsammlung-uberblick" title="Permalink to this heading">#</a></h4>
 <p>Für einen besseren Überblick sind hier die wichtigsten Logischen Formeln nochmal aufgelistet:</p>
 <p><strong>Idempotenzgesetz(1)</strong></p>
 <ul class="simple">
@@ -1072,7 +1072,7 @@ Nehmen wir an wir haben</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\((A\leftrightarrow B) \equiv (\neg A \lor B) \land (A\lor \neg B)\)</span></p></li>
 </ul>
-<p><strong>Erweiterte Komplementarität</strong></p>
+<p><strong>Erweiterte Komplementarität(13)</strong></p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(A\lor (\neg A\land B)\equiv (A\lor B)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(A\land (\neg A\lor B)\equiv (A\land B)\)</span></p></li>
@@ -1100,7 +1100,7 @@ Nehmen wir an wir haben</p>
 <p>Nun können wir das Komplementaritätsgesetz(7) anwenden und erhalten</p>
 <div class="math notranslate nohighlight">
 \[F\equiv1\lor 1\]</div>
-<p>und mit dem Idempotenzgesetz(1) letztenendes</p>
+<p>und mit dem Idempotenzgesetz(1) letzten Endes</p>
 <div class="math notranslate nohighlight">
 \[F\equiv 1\]</div>
 </section>
@@ -1110,13 +1110,13 @@ Nehmen wir an wir haben</p>
 <div class="proof example admonition" id="example-19">
 <p class="admonition-title"><span class="caption-number">Example 19 </span></p>
 <section class="example-content" id="proof-content">
-<p>Beweisen Sie dass Prinzip der Kontraposition</p>
+<p>Beweisen Sie das Prinzip der Kontraposition</p>
 <div class="math notranslate nohighlight">
 \[A\to B \equiv \neg B \to \neg A.\]</div>
-<p>Dafür vereinfachen wir zunächst die inke Seite die wir mit <span class="math notranslate nohighlight">\(L\)</span> bezeichnen unter Verwendung von (11):</p>
+<p>Dafür vereinfachen wir zunächst die linke Seite, die wir mit <span class="math notranslate nohighlight">\(L\)</span> bezeichnen, unter Verwendung von (11):</p>
 <div class="math notranslate nohighlight">
 \[L:=A\to B \equiv \neg A \lor B\]</div>
-<p>Nun vereinfachen wir die Rechte Seite ebenfalls zunächst mit (11):</p>
+<p>Nun vereinfachen wir die rechte Seite ebenfalls zunächst mit (11):</p>
 <div class="math notranslate nohighlight">
 \[R:=\neg B\to \neg A \equiv \neg (\neg B) \lor \neg A\]</div>
 <p>Mittels (9) ergibt sich also:</p>
@@ -1145,7 +1145,7 @@ Dort haben wir die Gauß’sche Summenformel bewiesen:</p>
 <div class="proof definition admonition" id="definition-20">
 <p class="admonition-title"><span class="caption-number">Definition 17 </span></p>
 <section class="definition-content" id="proof-content">
-<p>Seien <span class="math notranslate nohighlight">\(x,y,z,x_1,x_2,\dots,\)</span> Variablen einer Grundmenge <span class="math notranslate nohighlight">\(M\)</span> (z.B. <span class="math notranslate nohighlight">\(M=\mathbb{N}\)</span>)). Dann ist <span class="math notranslate nohighlight">\(P(x,y,z,x_1,\dots)\)</span> ein <strong>Prädikat</strong> wenn durch einsetzen von beliebigen elementen aus der Grundmenge <span class="math notranslate nohighlight">\(M\)</span> in die Variablen eine Aussage entsteht.</p>
+<p>Seien <span class="math notranslate nohighlight">\(x,y,z,x_1,x_2,\dots,\)</span> Variablen einer Grundmenge <span class="math notranslate nohighlight">\(M\)</span> (z.B. <span class="math notranslate nohighlight">\(M=\mathbb{N}\)</span>)). Dann ist <span class="math notranslate nohighlight">\(P(x,y,z,x_1,\dots)\)</span> ein <strong>Prädikat</strong> wenn durch Einsetzen von beliebigen Elementen aus der Grundmenge <span class="math notranslate nohighlight">\(M\)</span> in die Variablen eine Aussage entsteht.</p>
 </section>
 </div><div class="proof example admonition" id="example-21">
 <p class="admonition-title"><span class="caption-number">Example 20 </span></p>
@@ -1172,11 +1172,11 @@ Dort haben wir die Gauß’sche Summenformel bewiesen:</p>
 <p>Wir schreiben obigen Ausdruck dann zu:</p>
 <div class="math notranslate nohighlight">
 \[\forall n\in \mathbb{N}:1+2+3+\dots + n = \frac{n(n+1)}{2}.\]</div>
-<p>Falls klar ist, dass die Grundmenge <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> ist schreiben wir auch einfach abgekürzt:</p>
+<p>Falls klar ist, dass die Grundmenge <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> ist, schreiben wir auch einfach abgekürzt:</p>
 <div class="math notranslate nohighlight">
 \[\forall n : P(n)\]</div>
 <p><strong>2. Der Existenzquantor</strong></p>
-<p>Der Existenzquantor wird mit <span class="math notranslate nohighlight">\(\exists\)</span> abekürzt und bedeutet ausgesprochen: “es existiert mindestens ein”.</p>
+<p>Der Existenzquantor wird mit <span class="math notranslate nohighlight">\(\exists\)</span> abgekürzt und bedeutet ausgesprochen: “es existiert mindestens ein”.</p>
 <p>Damit bedeutet die Aussage</p>
 <div class="math notranslate nohighlight">
 \[\exists n\in \mathbb{N}:1+2+3+\dots + n = \frac{n(n+1)}{2},\]</div>
@@ -1192,14 +1192,14 @@ Dort haben wir die Gauß’sche Summenformel bewiesen:</p>
 <ul class="simple">
 <li><p>Jedes Prädikat ist eine prädikatenlogische Formel</p></li>
 <li><p>Sind <span class="math notranslate nohighlight">\(F(x)\)</span> und <span class="math notranslate nohighlight">\(G(x)\)</span> prädikatenlogische Formeln, dann auch <span class="math notranslate nohighlight">\(\neg F(x), (F(x)\land G(x))\)</span> sowie <span class="math notranslate nohighlight">\((F(x)\lor G(x))\)</span>.</p></li>
-<li><p>Ist <span class="math notranslate nohighlight">\(F(x)\)</span> eine prädikatenlogische Formel so auch <span class="math notranslate nohighlight">\(\forall x:F(x)\)</span> und <span class="math notranslate nohighlight">\(\exists x : F(x)\)</span></p></li>
+<li><p>Ist <span class="math notranslate nohighlight">\(F(x)\)</span> eine prädikatenlogische Formel, so auch <span class="math notranslate nohighlight">\(\forall x:F(x)\)</span> und <span class="math notranslate nohighlight">\(\exists x : F(x)\)</span></p></li>
 </ul>
 </section>
 </div><div class="proof definition admonition" id="definition-23">
 <p class="admonition-title"><span class="caption-number">Definition 19 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Variablen, die sich im Wirkungsbereich eines Quantors befinden, heißen <strong>gebunden</strong>, nicht gebundene Variablen heißen <strong>frei</strong>.
-Eine Formel heißt <strong>geschlossen</strong> falls alle Variablen gebunden sind.</p>
+Eine Formel heißt <strong>geschlossen</strong>, falls alle Variablen gebunden sind.</p>
 </section>
 </div><div class="proof remark admonition" id="remark-24">
 <p class="admonition-title"><span class="caption-number">Remark 1 </span></p>
@@ -1213,26 +1213,26 @@ Eine Formel heißt <strong>geschlossen</strong> falls alle Variablen gebunden si
 <div class="math notranslate nohighlight">
 \[\forall x \exists z : x^2+y^2=z^2.\]</div>
 <p>Die Variablen <span class="math notranslate nohighlight">\(x,z\)</span> sind dabei gebunden und die Variable <span class="math notranslate nohighlight">\(y\)</span> ist frei. Also ist die Formel nicht geschlossen.</p>
-<p>Wenn wir für <span class="math notranslate nohighlight">\(y\)</span> einen weiteren Quantor einführen erhalten wir eine geschlossene Formel:</p>
+<p>Wenn wir für <span class="math notranslate nohighlight">\(y\)</span> einen weiteren Quantor einführen, erhalten wir eine geschlossene Formel:</p>
 <div class="math notranslate nohighlight">
 \[F(x,y,z)=\exists y \forall x\exists z : x^2+y^2=z^2\]</div>
-<p>Wir können nun fragen ob <span class="math notranslate nohighlight">\(F(x,y,z)\)</span> wahr oder falsch ist?</p>
+<p>Wir können nun fragen, ob <span class="math notranslate nohighlight">\(F(x,y,z)\)</span> wahr oder falsch ist?</p>
 <p>Dafür schreiben wir <span class="math notranslate nohighlight">\(F(x,y,z)\)</span> einmal mit Worten:</p>
-<p>“Es gibt ein y, so dass für alle x ein z existiert so dass <span class="math notranslate nohighlight">\(x^2+y^2=z^2\)</span>.”</p>
+<p>“Es gibt ein y, so dass für alle x ein z existiert, so dass <span class="math notranslate nohighlight">\(x^2+y^2=z^2\)</span>.”</p>
 <p>Wie können wir herausfinden, ob das wahr oder falsch ist?</p>
-<p>Wir lesen von links nach rechts. Der erste Quantor ist <span class="math notranslate nohighlight">\(\exists y\)</span>. Ok nehmen wir einfach mal <span class="math notranslate nohighlight">\(y=0\)</span> und hoffen, dass wir Glück haben.
+<p>Wir lesen von links nach rechts. Der erste Quantor ist <span class="math notranslate nohighlight">\(\exists y\)</span>. Wir wählen beispielsweise <span class="math notranslate nohighlight">\(y=0\)</span> und hoffen, dass wir Glück haben.
 Wir müssen nun zeigen, dass für alle <span class="math notranslate nohighlight">\(x\)</span> ein <span class="math notranslate nohighlight">\(z\)</span> existiert, so dass <span class="math notranslate nohighlight">\(x^2=z^2\)</span>.
-Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</span> ein <span class="math notranslate nohighlight">\(z\)</span> finden. Der entscheidene Punkt ist hierbei jedoch, dass <span class="math notranslate nohighlight">\(z\)</span> von <span class="math notranslate nohighlight">\(x\)</span> abhängen darf, weil <span class="math notranslate nohighlight">\(\exists y\)</span> nach <span class="math notranslate nohighlight">\(\forall x\)</span> kommt. Damit können wir <span class="math notranslate nohighlight">\(z=x\)</span> wählen und dann gilt trivialerweise auch <span class="math notranslate nohighlight">\(x^2=z^2\)</span>. Damit ist die Aussage <span class="math notranslate nohighlight">\(F(x,y,z)\)</span> wahr.</p>
+Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</span> ein <span class="math notranslate nohighlight">\(z\)</span> finden. Der entscheidende Punkt ist hierbei jedoch, dass <span class="math notranslate nohighlight">\(z\)</span> von <span class="math notranslate nohighlight">\(x\)</span> abhängen darf, weil <span class="math notranslate nohighlight">\(\exists y\)</span> nach <span class="math notranslate nohighlight">\(\forall x\)</span> kommt. Damit können wir <span class="math notranslate nohighlight">\(z=x\)</span> wählen und dann gilt trivialerweise auch <span class="math notranslate nohighlight">\(x^2=z^2\)</span>. Damit ist die Aussage <span class="math notranslate nohighlight">\(F(x,y,z)\)</span> wahr.</p>
 </section>
 </div></section>
 <section id="negation-von-pradikatenlogischen-formeln">
 <h3>Negation von Prädikatenlogischen Formeln<a class="headerlink" href="#negation-von-pradikatenlogischen-formeln" title="Permalink to this heading">#</a></h3>
-<p>Die Negation von Prädikatenlogischen Formeln können wir im einfachen Fall ebenfalls intuitiv herleiten. Machen wir hiezu ein kurzes Beispiel:</p>
+<p>Die Negation von Prädikatenlogischen Formeln können wir im einfachen Fall ebenfalls intuitiv herleiten. Machen wir hierzu ein kurzes Beispiel:</p>
 <p>“Ich mag alle Kaffeesorten”.</p>
 <p>Etwas formaler würden wir schreiben:</p>
 <p>“Für alle Kaffeesorten x gilt: Ich mag x”</p>
 <p>Was ist die Negation von Ich mag alle Kaffeesorten?</p>
-<p>Es würde heißen es gibt Kaffeesorten, die ich nicht mag. Also etwas formaler:</p>
+<p>Es würde heißen, es existiert eine Kaffeesorte, die ich nicht mag. Also etwas formaler:</p>
 <p>“Es existiert eine Kaffeesorte x für die gilt: Ich mag x nicht”.</p>
 <p>Was ist also passiert?</p>
 <p>Der Quantor hat sich getauscht und das Prädikat wurde negiert. Genau das besagt auch der folgende formale Satz.</p>
@@ -1259,7 +1259,7 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <p><strong>Zusammenfassung:</strong></p>
 <p>Um eine Formel mit Quantoren zu negieren, geht man also wie folgt vor:</p>
 <ul class="simple">
-<li><p>Man tauscht alle Existenzquantoren mit Allquantoren und anders herum</p></li>
+<li><p>Man tauscht alle Existenzquantoren mit Allquantoren (und umgekehrt)</p></li>
 <li><p>Man negiert das Prädikat am Ende</p></li>
 </ul>
 </section>
@@ -1270,43 +1270,43 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <h2>2.5 Gödelscher Unvollständigkeitssatz (optional)<a class="headerlink" href="#godelscher-unvollstandigkeitssatz-optional" title="Permalink to this heading">#</a></h2>
 <p>Im letzten Abschnitt hatten wir folgende Bemerkung gemacht:</p>
 <p><em>Falls <span class="math notranslate nohighlight">\(F(x,y,z)\)</span> eine geschlossene Formel ist, so kann <span class="math notranslate nohighlight">\(F\)</span> einen Wahrheitswert besitzen, je nachdem ob die Aussage richtig oder falsch ist.</em></p>
-<p>Beachten Sie, dass wir eben nicht gesagt haben dass <span class="math notranslate nohighlight">\(F\)</span> einen Wahrheitswert besitzen muss.  Aber muss das nicht so sein?</p>
-<p>Muss nicht jede Aussage, die Sinn ergibt entweder wahr oder falsch sein? Bzw. müssen wir nicht für jede Aussage einen Beweis für die Korrektheit oder die Korrektheit der Negation führen können?</p>
+<p>Beachten Sie, dass wir eben nicht gesagt haben, dass <span class="math notranslate nohighlight">\(F\)</span> einen Wahrheitswert besitzen muss.  Aber muss das nicht so sein?</p>
+<p>Muss nicht jede Aussage, die Sinn ergibt, entweder wahr oder falsch sein? Bzw. müssen wir nicht für jede Aussage einen Beweis für die Korrektheit oder die Korrektheit der Negation führen können?</p>
 <p>In der Tat war dies eine unser Prämissen für die Aussagenlogik und es wurde lange geglaubt, dass dies auch für die Prädikatenlogik richtig ist.</p>
-<p>Dann kam Gödel und er bewies einen der wohl meist zitiertesten Sätze der Mathematik. Den Gödel’schen Unvollständigkeitssatz.</p>
-<p>Der erste Gödelsch’sche Unvollständigkeitssatz lautet:</p>
+<p>Dann kam Gödel und er bewies einen der wohl meist zitiertesten Sätze der Mathematik. Den Gödelschen Unvollständigkeitssatz.</p>
+<p>Der erste Gödelsche Unvollständigkeitssatz lautet:</p>
 <div class="proof theorem admonition" id="theorem-28">
 <p class="admonition-title"><span class="caption-number">Theorem 13 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Jedes hinreichend mächtige, rekursiv aufzählbare formale System ist entweder widersprüchlich oder unvollständig.</p>
 </section>
 </div><p><strong>Widersprüchlich:</strong></p>
-<p>Am Besten Sie denken bei System zum Beispiel an die Axiome der Mengenlehre aus dem letzten Kapitel. Diese könnten natürlich Widersprüch sein. Das bedeutet dass wir eine Kontradiktion erzeugen können.</p>
+<p>Am besten Sie denken bei System zum Beispiel an die Axiome der Mengenlehre aus dem letzten Kapitel. Diese könnten natürlich widersprüchlich sein. Das bedeutet, dass wir eine Kontradiktion erzeugen können.</p>
 <p><strong>Unvollständig</strong></p>
-<p>Unvollständig bedeutet, dass es Aussagen gibt deren Korrektheit oder Falschheit nicht beweisbar ist. Wie wir aber sehen werden sind diese aber trotzdem wahr, was extrem verwirrend ist.</p>
-<p>Das Gesamte Bild wird unter Hinzunahme des zweiten Gödel’schen Unvollständigkeitssatzes noch diffuser:</p>
+<p>Unvollständig bedeutet, dass es Aussagen gibt, deren Korrektheit oder Falschheit nicht beweisbar ist. Wie wir aber sehen werden, sind diese aber trotzdem wahr, was extrem verwirrend ist.</p>
+<p>Das Gesamte Bild wird unter Hinzunahme des zweiten Gödelschen Unvollständigkeitssatzes noch diffuser:</p>
 <div class="proof theorem admonition" id="theorem-29">
 <p class="admonition-title"><span class="caption-number">Theorem 14 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Jedes hinreichend mächtige konsistente formale System kann die eigene Konsistenz nicht beweisen.</p>
 </section>
-</div><p>Dieser Satz besagt mehr oder weniger, dass wir uns nie wirklich sicher sein können, dass die Grundlagen, auf der unsere Mathematik aufbaut, wirklich Widerspruchsfrei ist. Das klingt auch erstmal sehr erschütternd.</p>
-<p>Wie die Russel’sche Antinomie führten die Gödelsch’en Unvollständigkeitssätze zu einer Grundlagenkrise der Mathematik. Gödels Sätze sind bis heute gültig. Wir hatten aber nun 80 Jahre Zeit uns an die Vorstellung zu gewöhnen, dass wir niemals sicher sein können, dass die Mathematik wirklich Widerspruchsfrei ist. Bis jetzt scheint alles gut gegangen zu sein.</p>
+</div><p>Dieser Satz besagt mehr oder weniger, dass wir uns nie wirklich sicher sein können, dass die Grundlagen, auf der unsere Mathematik aufbaut, wirklich widerspruchsfrei ist. Das klingt auch erstmal sehr erschütternd.</p>
+<p>Wie die Russellsche Antinomie führten die Gödelschen Unvollständigkeitssätze zu einer Grundlagenkrise der Mathematik. Gödels Sätze sind bis heute gültig. Wir hatten aber nun 80 Jahre Zeit uns an die Vorstellung zu gewöhnen, dass wir niemals sicher sein können, dass die Mathematik wirklich widerspruchsfrei ist. Bis jetzt scheint alles gut gegangen zu sein.</p>
 <section id="beweisidee-des-ersten-unvollstandigkeitssatzes">
 <h3>Beweisidee des ersten Unvollständigkeitssatzes<a class="headerlink" href="#beweisidee-des-ersten-unvollstandigkeitssatzes" title="Permalink to this heading">#</a></h3>
-<p>Gödels Idee ist ähnlich wie in der Russel’schen Antinomie folgenden Satz zu konstruieren:</p>
+<p>Gödels Idee ist ähnlich wie in der Russellschen Antinomie folgenden Satz zu konstruieren:</p>
 <p>“Ich bin nicht beweisbar”.</p>
 <p>Dabei geht er wie folgt vor:</p>
 <ul class="simple">
-<li><p>Er listet zunächst alle Möglichen formalen Sätze auf, die man hinschreiben kann</p></li>
+<li><p>Er listet zunächst alle möglichen formalen Sätze auf, die man hinschreiben kann</p></li>
 <li><p>Jeder Satz bekommt dann eine Nummer <span class="math notranslate nohighlight">\(n\)</span>, die sogenannte Gödelnummer</p></li>
 <li><p>Er konstruiert dann einen Satz: “Der Satz mit der Gödelnummer <span class="math notranslate nohighlight">\(x\)</span> ist nicht ableitbar” und zeigt, dass dieser Satz selbst Gödelnummer <span class="math notranslate nohighlight">\(x\)</span> besitzt.</p></li>
 </ul>
 <p>Damit hat er genau den Satz “Ich bin nicht ableitbar konstruiert”.</p>
-<p>Ähnlich wie in der Russel’schen Antinomie können wir durch ein Widerspruchsargument zeigen, dass er nicht ableitbar ist.</p>
+<p>Ähnlich wie in der Russellschen Antinomie können wir durch ein Widerspruchsargument zeigen, dass er nicht ableitbar ist.</p>
 <p>Und jetzt kommt das verwirrende: Damit ist der Satz zwar nicht ableitbar, aber er ist wahr.</p>
 <p>Das zu verstehen, würde wiederum den Rahmen dieses Kurses sprengen. Dennoch haben Sie damit die Ideen und Konzepte von Gödel kennengelernt.</p>
-<p>Doch gibt es solche Sätze die nicht beweisbar sind wirklich oder sind das nur komische Konstrukte.</p>
+<p>Doch gibt es solche Sätze, die nicht beweisbar sind, wirklich oder sind das nur komische Konstrukte.</p>
 <p>Das sehen wir im nächsten Kapitel.</p>
 </section>
 <section id="der-wohlordnungssatz">
@@ -1319,20 +1319,20 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <p>Gilt der Satz auch für <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>?</p>
 <p><strong>Antwort</strong></p>
 <div class="toggle docutils container">
-<p>Nein! Denn nichtmal die gesamte Menge <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> hat ein kleinstes Element.</p>
+<p>Nein! Denn nicht einmal die gesamte Menge <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> hat ein kleinstes Element.</p>
 </div>
 <p>Tatsächlich hat Gödel gezeigt, dass dieser Satz nicht beweisbar ist.</p>
-<p>Wir können diesen Satz als Axiom für die natürlichen Zahlen hinzufügen oder nicht. Falls die Mengenlehre Widersprüche enthält so enthält sie diese unabhängig vom Wohlordnungssatz.</p>
-<p>Daher nehmen fast alle Mathematiker:innen den Wohlordnungssatz als Wahr an.</p>
+<p>Wir können diesen Satz als Axiom für die natürlichen Zahlen hinzufügen oder nicht. Falls die Mengenlehre Widersprüche enthält, so enthält sie diese unabhängig vom Wohlordnungssatz.</p>
+<p>Daher nehmen fast alle Mathematiker:innen den Wohlordnungssatz als wahr an.</p>
 <p>Doch es gibt auch Kritiker:innen, die sagen, dass der Wohlordnungssatz sehr unintuitive Folgen hat.</p>
 <p>Man kann zeigen, dass man mithilfe des Wohlordnungssatzes und der Axiome der Mengenlehre folgenden paradoxen Satz beweisen kann.</p>
 <p>Grob gesagt besagt das Banach-Tarski Paradoxon das Folgende:</p>
 <div class="proof theorem admonition" id="theorem-30">
 <p class="admonition-title"><span class="caption-number">Theorem 15 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>Eine Kugel in drei oder mehr Dimensionen kann derart in Teilmengen zerleget werden, dass sich ihre Teile wieder zu zwei lückenlosen Kugeln zusammenfügen lassen, von denen jede denselben Durchmesser hat wie die ursprüngliche.</p>
+<p>Eine Kugel in drei oder mehr Dimensionen kann derart in Teilmengen zerlegt werden, dass sich ihre Teile wieder zu zwei lückenlosen Kugeln zusammenfügen lassen, von denen jede denselben Durchmesser hat wie die ursprüngliche.</p>
 </section>
-</div><p>Okay, mit diesem Satz können wir aus eins zwei machen. Das klingt extrem unintuitiv. Viele Mathematiker:innen glauben aber wie gesagt an den Wohlordnungssatz und nehmen deshalb auch an, dass das Banach-Tarski Paradoxon stimmt.</p>
+</div><p>Okay, mit diesem Satz können wir aus einer Kugel zwei gleicher Größe konstruieren. Das klingt extrem unintuitiv. Viele Mathematiker:innen glauben aber wie gesagt an den Wohlordnungssatz und nehmen deshalb auch an, dass das Banach-Tarski Paradoxon stimmt.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WJGEnfu02cc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
 </section>
 </section>
@@ -1379,7 +1379,7 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Kapitel 3 - Relationen und Funktionen</p>
+        <p class="prev-next-title">Kapitel 3 – Relationen und Funktionen</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1428,7 +1428,7 @@ Wir müssen also für alle <span class="math notranslate nohighlight">\(x\)</spa
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#de-morgan-sche-regeln">De Morgan’sche Regeln</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#absorptionsgesetz">Absorptionsgesetz</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neutralitatsgesetz">Neutralitätsgesetz</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#formelsammlung">Formelsammlung</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#formelsammlung-uberblick">Formelsammlung (Überblick)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgabentypen-zu-den-gesetzen-der-aussagenlogik">Aufgabentypen zu den Gesetzen der Aussagenlogik</a></li>
 </ul>
 </li>

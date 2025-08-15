@@ -1,95 +1,72 @@
-# Kapitel 4 - Der Gauß-Algorithmus
-
-
+# Kapitel 4 – Der Gauß-Algorithmus
 
 ## 4.1 Lernziele
 In diesem Abschnitt lernen wir die folgenden Dinge:
 
 - Grundbegriffe für Lineare Gleichungssysteme
-- Den Gauß-Algorithmus 
-- Anwendung des Page-Rank Algorithmus
+- Den Gauß-Algorithmus
+- Anwendung des PageRank-Algorithmus
 - Allgemeine Beschreibung der Lösungsmenge für ein Lineares Gleichungssystem
 
-:::{admonition}  Lernziele
+:::{admonition} Lernziele
 :class: note
-
-- Lösen von linearen Gleichungssystemen mittels Gauß-Algorithmus
+- Lösen von Linearen Gleichungssystemen mittels Gauß-Algorithmus
 - Matrizen in Zeilenstufenform bringen
-- Geometrisches Verständnis für Lineare Gleichungssysteme 
-- Zusammenhang herstellen zwischen Lösen von Linearen Gleichungssystemen und dem Pagerank Algorithmus
+- Geometrisches Verständnis für Lineare Gleichungssysteme
+- Zusammenhang herstellen zwischen dem Lösen von Linearen Gleichungssystemen und dem PageRank-Algorithmus
 :::
 
-## 4.2 Der PageRank Algorithmus als Beispiel
+## 4.2 Der PageRank-Algorithmus als Beispiel
+Der **PageRank-Algorithmus** ist ein Verfahren, das von Google entwickelt wurde, um die Popularität von Webseiten zu bemessen und damit bessere Suchergebnisse zu produzieren.
 
+Die Grundidee besteht darin, dass die Popularität davon abhängt, wie viele andere populäre Webseiten auf die ursprüngliche Seite verlinken. Wenn eine Seite also von vielen populären Webseiten verlinkt wird, ist der PageRank eher groß. Falls sie nur von wenigen, weniger populären Seiten verlinkt wird, ist er eher klein.
 
-Der **PageRank** Algorithmus ist ein Verfahren, das von Google entwickelt wurde um die Popularität von Webseiten zu bemessen und damit bessere Suchergebnisse zu produzieren.
-
-Die Grundidee besteht darin, dass wir die Popularität davon abhängt wie viele andere populäre Webseiten auf die ursprüngliche Seite verlinken. Wenn eine Seite also von vielen populären Webseiten verlinkt wird, so ist der PageRank eher groß. Falls es nur von wenigen weniger populären Seiten verlinkt wird so ist er eher klein.
-
-Als Beispiel nehmen wir an, wir haben ein Netzwerk aus vier Webseiten (A,B,C,D). Diese sind wie folgt verlinkt.
+Als Beispiel nehmen wir an, wir haben ein Netzwerk aus vier Webseiten (A, B, C, D). Diese sind wie folgt verlinkt.
 
 ![](images/pagerank_red.png)
 
+Das heißt, dass z. B. 0,5 der Links von Seite A auf Seite B verweisen und 0,2 der Links von B auf A verweisen.
 
-Das heißt, das z.B. 0,5 der Links von Seite A auf Seite B verweisen und 0,2 der Links von B auf A verweisen.
+Der PageRank basiert auf folgender Wahrscheinlichkeit:
 
+**$P(X)$** bezeichnet die Wahrscheinlichkeit, dass sich ein User zu einem gegebenen Zeitpunkt $t$ auf Webseite $X$ aufhält. Der PageRank ist die Sortierung nach $P(X)$. Je größer $P(X)$, desto populärer ist die Webseite.
 
-Der Pagerank ist nun durch die folgende Wahrscheinlichkeit gegeben:
+Es gibt zwei Möglichkeiten, auf die Seite $X$ zu gelangen:
 
-**$P(X)$** bezeichnet die Wahrscheinlichkeit, dass ein User sich auf Webseite $X$ zu einem gegebenen Zeitpunk $t$ aufhält.
+**Zwei Möglichkeiten**
+1) Der User ist auf Webseite $Y$ und klickt auf den Link zu $X$.
+2) Der User wählt eine zufällige Webseite ad hoc aus.
 
-Der Pagerank ist nun die Sortierung nach $P(X)$. Je größer $P(X)$ desto populärer ist diese Webseite.
+Der **Dämpfungsfaktor** (engl. *damping factor*) $d$ (typisch $d=0{,}85$) besagt, dass mit Wahrscheinlichkeit $d$ Möglichkeit 1 eintritt und mit Wahrscheinlichkeit $1-d$ Möglichkeit 2.
 
-Es gibt nun zwei Möglichkeiten auf die Seite $X$ zu gelangen:
+**Frage:** Wie berechnen wir die Wahrscheinlichkeiten $P(A), P(B), P(C)$ und $P(D)$?
 
-**2 Möglichkeiten**
-
-1) User ist auf Webseite Y und klickt auf den Link zu X.
-
-2) User wählt eine zufällige Webseite adhoc aus.
-
-
-Der **Dampingfaktor** d (normalerweise gilt d=0,85) besagt, dass mit Wahrscheinlichkeit $d$ die Möglichkeit 1) passiert und mit Wahrscheinlichkeit $1-d$ Möglichkeit 2).
-
-
-**Frage:**
-Wie berechnen wir die Wahrscheinlichkeiten $P(A),P(B),P(C)$ und $P(D)$.
-
-Wir versuchen zunächst eine Gleichung für $P(A)$ aufzustellen.
-
-Berechnen wir zunächst die Wahrscheinlichkeit für Variante 1): Die Wahrscheinlichkeit, dass jemand von Seite B auf A kommt ist: $0,2\cdot P(B)$, von C auf A ist $0,2\cdot P(C)$ und von D auf A ist $0,1\cdot P(D)$. Damit ergibt sich für Möglichkeit 1):
+Wir stellen zunächst eine Gleichung für $P(A)$ auf. Möglichkeit 1: Von B nach A: $0{,}2\cdot P(B)$, von C nach A: $0{,}2\cdot P(C)$, von D nach A: $0{,}1\cdot P(D)$. Damit
 ```{math}
-0,2P(B)+0,2P(C)+0,1P(D) 
+0{,}2P(B)+0{,}2P(C)+0{,}1P(D).
 ```
-Wie sieht es mit Variante 2) aus. Da es vier Webseiten gibt, ist die Wahrscheinlichkeit zufällig auf Seite 4 zu kommen: $1/4$.
+Möglichkeit 2: Zufallssprung auf eine von vier Seiten mit Wahrscheinlichkeit $1/4$.
 
-Insgesamt ergibt sich unter Berücksichtigung des Dampingfaktors $d=0.85$ folgende Gleichung:
-
+Unter Berücksichtigung von $d=0{,}85$:
 ```{math}
-P(A)=0,85(0,2P(B)+0,2P(C)+0,1P(D) )+0,15\cdot 1/4
-
+P(A)=0{,}85\bigl(0{,}2P(B)+0{,}2P(C)+0{,}1P(D)\bigr)+0{,}15\cdot \tfrac{1}{4}.
 ```
-Wenn wir das selbe für die Wahrscheinlichkeiten $P(B)$,$P(C)$ und $P(D)$ machen bekommen wir folgendes System von Gleichungen:
-
+Analog erhalten wir:
 ```{math}
-P(A)&=0,85(0,2𝑃(𝐶)+0,2𝑃(𝐵)+0,1𝑃(𝐷))+0,15⋅0.25 \\
-𝑃(𝐵)&=0,85(0,5𝑃(𝐴)+0,6𝑃(𝐶)+0,8𝑃(𝐷))+0,15⋅0,25\\
-𝑃(𝐶)&=0,85(0,4𝑃(𝐴)+0,7𝑃(𝐵)+0,1𝑃(𝐷))+0,15⋅0,25\\
-𝑃(𝐷)&=0,85(0,1𝑃(𝐴)+0,1𝑃(𝐵)+0,2𝑃(𝐶))+0,15⋅0,25
+P(A)&=0{,}85\bigl(0{,}2P(C)+0{,}2P(B)+0{,}1P(D)\bigr)+0{,}15\cdot 0{,}25 \\
+P(B)&=0{,}85\bigl(0{,}5P(A)+0{,}6P(C)+0{,}8P(D)\bigr)+0{,}15\cdot 0{,}25 \\
+P(C)&=0{,}85\bigl(0{,}4P(A)+0{,}7P(B)+0{,}1P(D)\bigr)+0{,}15\cdot 0{,}25 \\
+P(D)&=0{,}85\bigl(0{,}1P(A)+0{,}1P(B)+0{,}2P(C)\bigr)+0{,}15\cdot 0{,}25
 ```
 
-Das sind also 4 Gleichungen mit 4 Unbekannten. 
+Das sind 4 Gleichungen mit 4 Unbekannten.
 
-**Frage:**
-Wie können wir ein solches System lösen. Genau damit wollen wir uns in diesem Kapitel beschäftigen.
+**Frage:** Wie lösen wir ein solches System? – Mit dem **Lösen von Linearen Gleichungssystemen** mittels des **Gauß-Algorithmus**.
 
-Mit der Lösung von **Linearen Gleichungssystemen** mittels dem **Gauß-Algorithmus**.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KLDuFeOxvaA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KLDuFeOxvaA" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 
 ## 4.3 Lineare Gleichungssysteme
-
-In diesem Kapitel wollen wir formal einführen was ein lineares Gleichungssystem ist und wie dieses durch, sogenannte Matrizen, dargestellt werden kann.
+Wir führen nun formal ein, was ein Lineares Gleichungssystem ist und wie es durch Matrizen dargestellt wird.
 
 
 ````{prf:definition} 
@@ -126,7 +103,7 @@ a_{11}v_1 + a_{12}v_2 + \dots + a_{1n}v_n &=b_1 \\
 &\vdots \\
 a_{m1}v_1 + a_{m2}v_2 + \dots + a_{mn}v_n &=b_m. 
 ```
-Wir nennen die Mönge aller Lösungen die **Lösungsmenge**.
+Wir nennen die Menge aller Lösungen die **Lösungsmenge**.
 ````
 
 ````{prf:example}
@@ -365,8 +342,8 @@ Wir nennen eine Matrix, mit der folgenden Form eine **obere Dreiecksmatrix**
 
 ```{math}
 \left(
-\begin{array}
-a a_{1,1} & a_{1,2} & a_{1,3} & \dots & a_{1,n-1} & a_{1,n} \\
+\begin{array}{cccccc}
+a_{1,1} & a_{1,2} & a_{1,3} & \dots & a_{1,n-1} & a_{1,n} \\
 0 & a_{2,2} & a_{2,3} & \dots & a_{2,n-1} & a_{2,n} \\
 0 & 0 & a_{3,3} & \dots & a_{3,n-1} & a_{3,n} \\
 \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\

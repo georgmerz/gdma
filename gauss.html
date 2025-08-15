@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Kapitel 4 - Der Gauß-Algorithmus &#8212; Grundlagen der Mathematik</title>
+    <title>Kapitel 4 – Der Gauß-Algorithmus &#8212; Grundlagen der Mathematik</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'gauss';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Kapitel 5 - Matrizen" href="matrix.html" />
-    <link rel="prev" title="Kapitel 3 - Relationen und Funktionen" href="relationsAndFunctions.html" />
+    <link rel="next" title="Kapitel 5 – Matrizen" href="matrix.html" />
+    <link rel="prev" title="Kapitel 3 – Relationen und Funktionen" href="relationsAndFunctions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -156,9 +156,9 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="mengenlehre.html">Kapitel 1 - Mengenlehre</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logik.html">Kapitel 2 Grundlagen der Logik</a></li>
-<li class="toctree-l1"><a class="reference internal" href="relationsAndFunctions.html">Kapitel 3 - Relationen und Funktionen</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Kapitel 4 - Der Gauß-Algorithmus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="matrix.html">Kapitel 5 - Matrizen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relationsAndFunctions.html">Kapitel 3 – Relationen und Funktionen</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Kapitel 4 – Der Gauß-Algorithmus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix.html">Kapitel 5 – Matrizen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anwendung_matrix_mult.html">Kapitel 6 - Lineare Transformationen in der Ebene</a></li>
 </ul>
 
@@ -343,7 +343,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Kapitel 4 - Der Gauß-Algorithmus</h1>
+    <h1>Kapitel 4 – Der Gauß-Algorithmus</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -354,7 +354,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">4.1 Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-pagerank-algorithmus-als-beispiel">4.2 Der PageRank Algorithmus als Beispiel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-pagerank-algorithmus-als-beispiel">4.2 Der PageRank-Algorithmus als Beispiel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineare-gleichungssysteme">4.3 Lineare Gleichungssysteme</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zeileninterpretation">Zeileninterpretation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spalteninterpretation">Spalteninterpretation</a></li>
@@ -378,69 +378,63 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="kapitel-4-der-gausz-algorithmus">
-<h1>Kapitel 4 - Der Gauß-Algorithmus<a class="headerlink" href="#kapitel-4-der-gausz-algorithmus" title="Permalink to this heading">#</a></h1>
+<h1>Kapitel 4 – Der Gauß-Algorithmus<a class="headerlink" href="#kapitel-4-der-gausz-algorithmus" title="Permalink to this heading">#</a></h1>
 <section id="lernziele">
 <h2>4.1 Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
 <p>In diesem Abschnitt lernen wir die folgenden Dinge:</p>
 <ul class="simple">
 <li><p>Grundbegriffe für Lineare Gleichungssysteme</p></li>
 <li><p>Den Gauß-Algorithmus</p></li>
-<li><p>Anwendung des Page-Rank Algorithmus</p></li>
+<li><p>Anwendung des PageRank-Algorithmus</p></li>
 <li><p>Allgemeine Beschreibung der Lösungsmenge für ein Lineares Gleichungssystem</p></li>
 </ul>
 <div class="note admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Lösen von linearen Gleichungssystemen mittels Gauß-Algorithmus</p></li>
+<li><p>Lösen von Linearen Gleichungssystemen mittels Gauß-Algorithmus</p></li>
 <li><p>Matrizen in Zeilenstufenform bringen</p></li>
 <li><p>Geometrisches Verständnis für Lineare Gleichungssysteme</p></li>
-<li><p>Zusammenhang herstellen zwischen Lösen von Linearen Gleichungssystemen und dem Pagerank Algorithmus</p></li>
+<li><p>Zusammenhang herstellen zwischen dem Lösen von Linearen Gleichungssystemen und dem PageRank-Algorithmus</p></li>
 </ul>
 </div>
 </section>
 <section id="der-pagerank-algorithmus-als-beispiel">
-<h2>4.2 Der PageRank Algorithmus als Beispiel<a class="headerlink" href="#der-pagerank-algorithmus-als-beispiel" title="Permalink to this heading">#</a></h2>
-<p>Der <strong>PageRank</strong> Algorithmus ist ein Verfahren, das von Google entwickelt wurde um die Popularität von Webseiten zu bemessen und damit bessere Suchergebnisse zu produzieren.</p>
-<p>Die Grundidee besteht darin, dass wir die Popularität davon abhängt wie viele andere populäre Webseiten auf die ursprüngliche Seite verlinken. Wenn eine Seite also von vielen populären Webseiten verlinkt wird, so ist der PageRank eher groß. Falls es nur von wenigen weniger populären Seiten verlinkt wird so ist er eher klein.</p>
-<p>Als Beispiel nehmen wir an, wir haben ein Netzwerk aus vier Webseiten (A,B,C,D). Diese sind wie folgt verlinkt.</p>
+<h2>4.2 Der PageRank-Algorithmus als Beispiel<a class="headerlink" href="#der-pagerank-algorithmus-als-beispiel" title="Permalink to this heading">#</a></h2>
+<p>Der <strong>PageRank-Algorithmus</strong> ist ein Verfahren, das von Google entwickelt wurde, um die Popularität von Webseiten zu bemessen und damit bessere Suchergebnisse zu produzieren.</p>
+<p>Die Grundidee besteht darin, dass die Popularität davon abhängt, wie viele andere populäre Webseiten auf die ursprüngliche Seite verlinken. Wenn eine Seite also von vielen populären Webseiten verlinkt wird, ist der PageRank eher groß. Falls sie nur von wenigen, weniger populären Seiten verlinkt wird, ist er eher klein.</p>
+<p>Als Beispiel nehmen wir an, wir haben ein Netzwerk aus vier Webseiten (A, B, C, D). Diese sind wie folgt verlinkt.</p>
 <p><img alt="" src="_images/pagerank_red.png" /></p>
-<p>Das heißt, das z.B. 0,5 der Links von Seite A auf Seite B verweisen und 0,2 der Links von B auf A verweisen.</p>
-<p>Der Pagerank ist nun durch die folgende Wahrscheinlichkeit gegeben:</p>
-<p><strong><span class="math notranslate nohighlight">\(P(X)\)</span></strong> bezeichnet die Wahrscheinlichkeit, dass ein User sich auf Webseite <span class="math notranslate nohighlight">\(X\)</span> zu einem gegebenen Zeitpunk <span class="math notranslate nohighlight">\(t\)</span> aufhält.</p>
-<p>Der Pagerank ist nun die Sortierung nach <span class="math notranslate nohighlight">\(P(X)\)</span>. Je größer <span class="math notranslate nohighlight">\(P(X)\)</span> desto populärer ist diese Webseite.</p>
-<p>Es gibt nun zwei Möglichkeiten auf die Seite <span class="math notranslate nohighlight">\(X\)</span> zu gelangen:</p>
-<p><strong>2 Möglichkeiten</strong></p>
+<p>Das heißt, dass z. B. 0,5 der Links von Seite A auf Seite B verweisen und 0,2 der Links von B auf A verweisen.</p>
+<p>Der PageRank basiert auf folgender Wahrscheinlichkeit:</p>
+<p><strong><span class="math notranslate nohighlight">\(P(X)\)</span></strong> bezeichnet die Wahrscheinlichkeit, dass sich ein User zu einem gegebenen Zeitpunkt <span class="math notranslate nohighlight">\(t\)</span> auf Webseite <span class="math notranslate nohighlight">\(X\)</span> aufhält. Der PageRank ist die Sortierung nach <span class="math notranslate nohighlight">\(P(X)\)</span>. Je größer <span class="math notranslate nohighlight">\(P(X)\)</span>, desto populärer ist die Webseite.</p>
+<p>Es gibt zwei Möglichkeiten, auf die Seite <span class="math notranslate nohighlight">\(X\)</span> zu gelangen:</p>
+<p><strong>Zwei Möglichkeiten</strong></p>
 <ol class="arabic simple">
-<li><p>User ist auf Webseite Y und klickt auf den Link zu X.</p></li>
-<li><p>User wählt eine zufällige Webseite adhoc aus.</p></li>
+<li><p>Der User ist auf Webseite <span class="math notranslate nohighlight">\(Y\)</span> und klickt auf den Link zu <span class="math notranslate nohighlight">\(X\)</span>.</p></li>
+<li><p>Der User wählt eine zufällige Webseite ad hoc aus.</p></li>
 </ol>
-<p>Der <strong>Dampingfaktor</strong> d (normalerweise gilt d=0,85) besagt, dass mit Wahrscheinlichkeit <span class="math notranslate nohighlight">\(d\)</span> die Möglichkeit 1) passiert und mit Wahrscheinlichkeit <span class="math notranslate nohighlight">\(1-d\)</span> Möglichkeit 2).</p>
-<p><strong>Frage:</strong>
-Wie berechnen wir die Wahrscheinlichkeiten <span class="math notranslate nohighlight">\(P(A),P(B),P(C)\)</span> und <span class="math notranslate nohighlight">\(P(D)\)</span>.</p>
-<p>Wir versuchen zunächst eine Gleichung für <span class="math notranslate nohighlight">\(P(A)\)</span> aufzustellen.</p>
-<p>Berechnen wir zunächst die Wahrscheinlichkeit für Variante 1): Die Wahrscheinlichkeit, dass jemand von Seite B auf A kommt ist: <span class="math notranslate nohighlight">\(0,2\cdot P(B)\)</span>, von C auf A ist <span class="math notranslate nohighlight">\(0,2\cdot P(C)\)</span> und von D auf A ist <span class="math notranslate nohighlight">\(0,1\cdot P(D)\)</span>. Damit ergibt sich für Möglichkeit 1):</p>
+<p>Der <strong>Dämpfungsfaktor</strong> (engl. <em>damping factor</em>) <span class="math notranslate nohighlight">\(d\)</span> (typisch <span class="math notranslate nohighlight">\(d=0{,}85\)</span>) besagt, dass mit Wahrscheinlichkeit <span class="math notranslate nohighlight">\(d\)</span> Möglichkeit 1 eintritt und mit Wahrscheinlichkeit <span class="math notranslate nohighlight">\(1-d\)</span> Möglichkeit 2.</p>
+<p><strong>Frage:</strong> Wie berechnen wir die Wahrscheinlichkeiten <span class="math notranslate nohighlight">\(P(A), P(B), P(C)\)</span> und <span class="math notranslate nohighlight">\(P(D)\)</span>?</p>
+<p>Wir stellen zunächst eine Gleichung für <span class="math notranslate nohighlight">\(P(A)\)</span> auf. Möglichkeit 1: Von B nach A: <span class="math notranslate nohighlight">\(0{,}2\cdot P(B)\)</span>, von C nach A: <span class="math notranslate nohighlight">\(0{,}2\cdot P(C)\)</span>, von D nach A: <span class="math notranslate nohighlight">\(0{,}1\cdot P(D)\)</span>. Damit</p>
 <div class="math notranslate nohighlight">
-\[0,2P(B)+0,2P(C)+0,1P(D) \]</div>
-<p>Wie sieht es mit Variante 2) aus. Da es vier Webseiten gibt, ist die Wahrscheinlichkeit zufällig auf Seite 4 zu kommen: <span class="math notranslate nohighlight">\(1/4\)</span>.</p>
-<p>Insgesamt ergibt sich unter Berücksichtigung des Dampingfaktors <span class="math notranslate nohighlight">\(d=0.85\)</span> folgende Gleichung:</p>
+\[0{,}2P(B)+0{,}2P(C)+0{,}1P(D).\]</div>
+<p>Möglichkeit 2: Zufallssprung auf eine von vier Seiten mit Wahrscheinlichkeit <span class="math notranslate nohighlight">\(1/4\)</span>.</p>
+<p>Unter Berücksichtigung von <span class="math notranslate nohighlight">\(d=0{,}85\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[P(A)=0,85(0,2P(B)+0,2P(C)+0,1P(D) )+0,15\cdot 1/4
-\]</div>
-<p>Wenn wir das selbe für die Wahrscheinlichkeiten <span class="math notranslate nohighlight">\(P(B)\)</span>,<span class="math notranslate nohighlight">\(P(C)\)</span> und <span class="math notranslate nohighlight">\(P(D)\)</span> machen bekommen wir folgendes System von Gleichungen:</p>
+\[P(A)=0{,}85\bigl(0{,}2P(B)+0{,}2P(C)+0{,}1P(D)\bigr)+0{,}15\cdot \tfrac{1}{4}.\]</div>
+<p>Analog erhalten wir:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}P(A)&amp;=0,85(0,2𝑃(𝐶)+0,2𝑃(𝐵)+0,1𝑃(𝐷))+0,15⋅0.25 \\
-𝑃(𝐵)&amp;=0,85(0,5𝑃(𝐴)+0,6𝑃(𝐶)+0,8𝑃(𝐷))+0,15⋅0,25\\
-𝑃(𝐶)&amp;=0,85(0,4𝑃(𝐴)+0,7𝑃(𝐵)+0,1𝑃(𝐷))+0,15⋅0,25\\
-𝑃(𝐷)&amp;=0,85(0,1𝑃(𝐴)+0,1𝑃(𝐵)+0,2𝑃(𝐶))+0,15⋅0,25\end{split}\]</div>
-<p>Das sind also 4 Gleichungen mit 4 Unbekannten.</p>
-<p><strong>Frage:</strong>
-Wie können wir ein solches System lösen. Genau damit wollen wir uns in diesem Kapitel beschäftigen.</p>
-<p>Mit der Lösung von <strong>Linearen Gleichungssystemen</strong> mittels dem <strong>Gauß-Algorithmus</strong>.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KLDuFeOxvaA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+\[\begin{split}P(A)&amp;=0{,}85\bigl(0{,}2P(C)+0{,}2P(B)+0{,}1P(D)\bigr)+0{,}15\cdot 0{,}25 \\
+P(B)&amp;=0{,}85\bigl(0{,}5P(A)+0{,}6P(C)+0{,}8P(D)\bigr)+0{,}15\cdot 0{,}25 \\
+P(C)&amp;=0{,}85\bigl(0{,}4P(A)+0{,}7P(B)+0{,}1P(D)\bigr)+0{,}15\cdot 0{,}25 \\
+P(D)&amp;=0{,}85\bigl(0{,}1P(A)+0{,}1P(B)+0{,}2P(C)\bigr)+0{,}15\cdot 0{,}25\end{split}\]</div>
+<p>Das sind 4 Gleichungen mit 4 Unbekannten.</p>
+<p><strong>Frage:</strong> Wie lösen wir ein solches System? – Mit dem <strong>Lösen von Linearen Gleichungssystemen</strong> mittels des <strong>Gauß-Algorithmus</strong>.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KLDuFeOxvaA" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 </section>
 <section id="lineare-gleichungssysteme">
 <h2>4.3 Lineare Gleichungssysteme<a class="headerlink" href="#lineare-gleichungssysteme" title="Permalink to this heading">#</a></h2>
-<p>In diesem Kapitel wollen wir formal einführen was ein lineares Gleichungssystem ist und wie dieses durch, sogenannte Matrizen, dargestellt werden kann.</p>
+<p>Wir führen nun formal ein, was ein Lineares Gleichungssystem ist und wie es durch Matrizen dargestellt wird.</p>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 39 </span></p>
 <section class="definition-content" id="proof-content">
@@ -473,7 +467,7 @@ Falls das Einsetzen von <span class="math notranslate nohighlight">\(v\)</span> 
 \[\begin{split}a_{11}v_1 + a_{12}v_2 + \dots + a_{1n}v_n &amp;=b_1 \\
 &amp;\vdots \\
 a_{m1}v_1 + a_{m2}v_2 + \dots + a_{mn}v_n &amp;=b_m. \end{split}\]</div>
-<p>Wir nennen die Mönge aller Lösungen die <strong>Lösungsmenge</strong>.</p>
+<p>Wir nennen die Menge aller Lösungen die <strong>Lösungsmenge</strong>.</p>
 </section>
 </div><div class="proof example admonition" id="example-3">
 <p class="admonition-title"><span class="caption-number">Example 40 </span></p>
@@ -669,8 +663,8 @@ wobei die mit (*) markierten Einträge <span class="math notranslate nohighlight
 <p>Wir nennen eine Matrix, mit der folgenden Form eine <strong>obere Dreiecksmatrix</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\left(
-\begin{array}
-a a_{1,1} &amp; a_{1,2} &amp; a_{1,3} &amp; \dots &amp; a_{1,n-1} &amp; a_{1,n} \\
+\begin{array}{cccccc}
+a_{1,1} &amp; a_{1,2} &amp; a_{1,3} &amp; \dots &amp; a_{1,n-1} &amp; a_{1,n} \\
 0 &amp; a_{2,2} &amp; a_{2,3} &amp; \dots &amp; a_{2,n-1} &amp; a_{2,n} \\
 0 &amp; 0 &amp; a_{3,3} &amp; \dots &amp; a_{3,n-1} &amp; a_{3,n} \\
 \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
@@ -794,7 +788,7 @@ y+2z&amp;=0\end{split}\]</div>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Kapitel 3 - Relationen und Funktionen</p>
+        <p class="prev-next-title">Kapitel 3 – Relationen und Funktionen</p>
       </div>
     </a>
     <a class="right-next"
@@ -802,7 +796,7 @@ y+2z&amp;=0\end{split}\]</div>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Kapitel 5 - Matrizen</p>
+        <p class="prev-next-title">Kapitel 5 – Matrizen</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -822,7 +816,7 @@ y+2z&amp;=0\end{split}\]</div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">4.1 Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-pagerank-algorithmus-als-beispiel">4.2 Der PageRank Algorithmus als Beispiel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-pagerank-algorithmus-als-beispiel">4.2 Der PageRank-Algorithmus als Beispiel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineare-gleichungssysteme">4.3 Lineare Gleichungssysteme</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zeileninterpretation">Zeileninterpretation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spalteninterpretation">Spalteninterpretation</a></li>
