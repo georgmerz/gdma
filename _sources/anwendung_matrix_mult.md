@@ -175,7 +175,7 @@ Die Rotation ist die komplizierteste Variante der linearen Transformation. Dabei
 Wir betrachten zunächst ein Beispiel.
 
 ````{prf:example}
-Wir wollen die $90^\circ$-Drehung als Matrix darstellen. Dafür müssen wir überlegen, auf welche Vektoren die Basisvektoren $e_1$ und $e_2$ abgebildet werden. $e_1$ wird auf $\begin{pmatrix}0\\1\end{pmatrix}$ und $e_2$ auf $\begin{pmatrix}0\\-1\end{pmatrix}$ abgebildet.
+Wir wollen die $90^\circ$-Drehung als Matrix darstellen. Dafür müssen wir überlegen, auf welche Vektoren die Basisvektoren $e_1$ und $e_2$ abgebildet werden. $e_1$ wird auf $\begin{pmatrix}0\\1\end{pmatrix}$ und $e_2$ auf $\begin{pmatrix}-1\\0\end{pmatrix}$ abgebildet.
 
 Damit ergibt sich folgende Matrix:
 ```{math}
